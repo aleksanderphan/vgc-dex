@@ -6,11 +6,13 @@
 // Re-run this whenever src/data/usage.m-c.json gains a move or ability that
 // isn't in the movedex yet. The app never calls PokéAPI at runtime — it only
 // reads the snapshot this script produces. Every move/ability referenced by the
-// usage data gets an entry so the Usage panel can expand a row into its details.
+// usage data gets an entry: a short line for the inline row, plus a long-form
+// effect + structured mechanics + curated notes for its dedicated page.
 
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
+import { ABILITY_NOTES, MOVE_NOTES } from './reference-notes.mjs'
 
 const API = 'https://pokeapi.co/api/v2'
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -31,10 +33,30 @@ function slugify(name) {
     .replace(/^-+|-+$/g, '')
 }
 
-function pickEn(entries, key) {
+/** One-line text: newlines → spaces, whitespace collapsed. */
+function oneLine(entries, key) {
   const en = entries.filter((e) => e.language.name === 'en')
   const val = (en[en.length - 1] ?? en[0])?.[key] ?? ''
-  return val.replace(/[\n\f]/g, ' ').replace(/\s+/g, ' ').trim()
+  return val.replace(/\s+/g, ' ').trim()
+}
+
+/** Multi-line text: paragraph breaks kept, runs of spaces/newlines tidied. */
+function multiLine(entries, key) {
+  const en = entries.filter((e) => e.language.name === 'en')
+  const val = (en[en.length - 1] ?? en[0])?.[key] ?? ''
+  return val
+    .replace(/\r/g, '')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ *\n */g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
+
+function subChance(text, chance) {
+  return text.replace(
+    /\$effect_chance%/g,
+    chance != null ? `${chance}%` : 'a chance to',
+  )
 }
 
 async function getJSON(url) {
@@ -46,10 +68,11 @@ async function getJSON(url) {
 async function fetchMove(name) {
   const slug = MOVE_SLUG_OVERRIDES[name] ?? slugify(name)
   const m = await getJSON(`${API}/move/${slug}`)
-  const short = pickEn(m.effect_entries, 'short_effect').replace(
-    /\$effect_chance%/g,
-    m.effect_chance != null ? `${m.effect_chance}%` : 'a chance to',
-  )
+  const meta = m.meta ?? {}
+  const flavor = oneLine(m.flavor_text_entries, 'flavor_text')
+  const short = subChance(oneLine(m.effect_entries, 'short_effect'), m.effect_chance)
+  const long = subChance(multiLine(m.effect_entries, 'effect'), m.effect_chance)
+
   return {
     name,
     slug,
@@ -59,19 +82,42 @@ async function fetchMove(name) {
     accuracy: m.accuracy ?? null, // null = never misses
     pp: m.pp ?? null,
     priority: m.priority ?? 0,
-    effect: short || pickEn(m.flavor_text_entries, 'flavor_text'),
+    target: m.target?.name ?? null,
+    generation: m.generation?.name ?? null,
+    minHits: meta.min_hits ?? null,
+    maxHits: meta.max_hits ?? null,
+    drain: meta.drain ?? 0, // >0 heals from damage dealt, <0 recoil
+    healing: meta.healing ?? 0, // % of user max HP
+    critRate: meta.crit_rate ?? 0, // crit-stage boost
+    ailment:
+      meta.ailment && meta.ailment.name !== 'none' ? meta.ailment.name : null,
+    ailmentChance: meta.ailment_chance ?? 0,
+    flinchChance: meta.flinch_chance ?? 0,
+    statChance: meta.stat_chance ?? 0,
+    statChanges: (m.stat_changes ?? []).map((s) => ({
+      stat: s.stat.name,
+      change: s.change,
+    })),
+    effect: short || flavor,
+    longEffect: long || short || flavor,
+    notes: MOVE_NOTES[name] ?? [],
   }
 }
 
 async function fetchAbility(name) {
   const slug = ABILITY_SLUG_OVERRIDES[name] ?? slugify(name)
   const a = await getJSON(`${API}/ability/${slug}`)
+  const flavor = oneLine(a.flavor_text_entries, 'flavor_text')
+  const short = oneLine(a.effect_entries, 'short_effect')
+  const long = multiLine(a.effect_entries, 'effect')
+
   return {
     name,
     slug,
-    effect:
-      pickEn(a.effect_entries, 'short_effect') ||
-      pickEn(a.flavor_text_entries, 'flavor_text'),
+    generation: a.generation?.name ?? null,
+    effect: short || flavor,
+    longEffect: long || short || flavor,
+    notes: ABILITY_NOTES[name] ?? [],
   }
 }
 

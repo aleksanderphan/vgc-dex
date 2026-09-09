@@ -1,0 +1,1070 @@
+{
+  "generatedAt": "2026-09-09T07:52:45.507Z",
+  "source": "PokéAPI (pokeapi.co) v2",
+  "baseCount": 36,
+  "forms": {
+    "charizard": [
+      {
+        "key": "mega-x",
+        "label": "Mega X",
+        "name": "Mega Charizard X",
+        "stone": "Charizardite X",
+        "types": [
+          "fire",
+          "dragon"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "atk": 130,
+          "def": 111,
+          "spa": 130,
+          "spd": 85,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "tough-claws",
+            "name": "Tough Claws",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10034.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10034.png"
+      },
+      {
+        "key": "mega-y",
+        "label": "Mega Y",
+        "name": "Mega Charizard Y",
+        "stone": "Charizardite Y",
+        "types": [
+          "fire",
+          "flying"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "atk": 104,
+          "def": 78,
+          "spa": 159,
+          "spd": 115,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "drought",
+            "name": "Drought",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10035.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png"
+      }
+    ],
+    "venusaur": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Venusaur",
+        "stone": "Venusaurite",
+        "types": [
+          "grass",
+          "poison"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 100,
+          "def": 123,
+          "spa": 122,
+          "spd": 120,
+          "spe": 80
+        },
+        "abilities": [
+          {
+            "slug": "thick-fat",
+            "name": "Thick Fat",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10033.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10033.png"
+      }
+    ],
+    "blastoise": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Blastoise",
+        "stone": "Blastoisinite",
+        "types": [
+          "water"
+        ],
+        "baseStats": {
+          "hp": 79,
+          "atk": 103,
+          "def": 120,
+          "spa": 135,
+          "spd": 115,
+          "spe": 78
+        },
+        "abilities": [
+          {
+            "slug": "mega-launcher",
+            "name": "Mega Launcher",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10036.png"
+      }
+    ],
+    "alakazam": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Alakazam",
+        "stone": "Alakazite",
+        "types": [
+          "psychic"
+        ],
+        "baseStats": {
+          "hp": 55,
+          "atk": 50,
+          "def": 65,
+          "spa": 175,
+          "spd": 105,
+          "spe": 150
+        },
+        "abilities": [
+          {
+            "slug": "trace",
+            "name": "Trace",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10037.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10037.png"
+      }
+    ],
+    "gengar": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Gengar",
+        "stone": "Gengarite",
+        "types": [
+          "ghost",
+          "poison"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "atk": 65,
+          "def": 80,
+          "spa": 170,
+          "spd": 95,
+          "spe": 130
+        },
+        "abilities": [
+          {
+            "slug": "shadow-tag",
+            "name": "Shadow Tag",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10038.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10038.png"
+      }
+    ],
+    "kangaskhan": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Kangaskhan",
+        "stone": "Kangaskhanite",
+        "types": [
+          "normal"
+        ],
+        "baseStats": {
+          "hp": 105,
+          "atk": 125,
+          "def": 100,
+          "spa": 60,
+          "spd": 100,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "parental-bond",
+            "name": "Parental Bond",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10039.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10039.png"
+      }
+    ],
+    "pinsir": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Pinsir",
+        "stone": "Pinsirite",
+        "types": [
+          "bug",
+          "flying"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "atk": 155,
+          "def": 120,
+          "spa": 65,
+          "spd": 90,
+          "spe": 105
+        },
+        "abilities": [
+          {
+            "slug": "aerilate",
+            "name": "Aerilate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10040.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10040.png"
+      }
+    ],
+    "aerodactyl": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Aerodactyl",
+        "stone": "Aerodactylite",
+        "types": [
+          "rock",
+          "flying"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 135,
+          "def": 85,
+          "spa": 70,
+          "spd": 95,
+          "spe": 150
+        },
+        "abilities": [
+          {
+            "slug": "tough-claws",
+            "name": "Tough Claws",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10042.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10042.png"
+      }
+    ],
+    "ampharos": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Ampharos",
+        "stone": "Ampharosite",
+        "types": [
+          "electric",
+          "dragon"
+        ],
+        "baseStats": {
+          "hp": 90,
+          "atk": 95,
+          "def": 105,
+          "spa": 165,
+          "spd": 110,
+          "spe": 45
+        },
+        "abilities": [
+          {
+            "slug": "mold-breaker",
+            "name": "Mold Breaker",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10045.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png"
+      }
+    ],
+    "steelix": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Steelix",
+        "stone": "Steelixite",
+        "types": [
+          "steel",
+          "ground"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "atk": 125,
+          "def": 230,
+          "spa": 55,
+          "spd": 95,
+          "spe": 30
+        },
+        "abilities": [
+          {
+            "slug": "sand-force",
+            "name": "Sand Force",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10072.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10072.png"
+      }
+    ],
+    "heracross": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Heracross",
+        "stone": "Heracronite",
+        "types": [
+          "bug",
+          "fighting"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 185,
+          "def": 115,
+          "spa": 40,
+          "spd": 105,
+          "spe": 75
+        },
+        "abilities": [
+          {
+            "slug": "skill-link",
+            "name": "Skill Link",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10047.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png"
+      }
+    ],
+    "houndoom": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Houndoom",
+        "stone": "Houndoominite",
+        "types": [
+          "dark",
+          "fire"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "atk": 90,
+          "def": 90,
+          "spa": 140,
+          "spd": 90,
+          "spe": 115
+        },
+        "abilities": [
+          {
+            "slug": "solar-power",
+            "name": "Solar Power",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10048.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10048.png"
+      }
+    ],
+    "sableye": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Sableye",
+        "stone": "Sablenite",
+        "types": [
+          "dark",
+          "ghost"
+        ],
+        "baseStats": {
+          "hp": 50,
+          "atk": 85,
+          "def": 125,
+          "spa": 85,
+          "spd": 115,
+          "spe": 20
+        },
+        "abilities": [
+          {
+            "slug": "magic-bounce",
+            "name": "Magic Bounce",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10066.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10066.png"
+      }
+    ],
+    "mawile": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Mawile",
+        "stone": "Mawilite",
+        "types": [
+          "steel",
+          "fairy"
+        ],
+        "baseStats": {
+          "hp": 50,
+          "atk": 105,
+          "def": 125,
+          "spa": 55,
+          "spd": 95,
+          "spe": 50
+        },
+        "abilities": [
+          {
+            "slug": "huge-power",
+            "name": "Huge Power",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10052.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png"
+      }
+    ],
+    "aggron": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Aggron",
+        "stone": "Aggronite",
+        "types": [
+          "steel"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 140,
+          "def": 230,
+          "spa": 60,
+          "spd": 80,
+          "spe": 50
+        },
+        "abilities": [
+          {
+            "slug": "filter",
+            "name": "Filter",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10053.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10053.png"
+      }
+    ],
+    "medicham": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Medicham",
+        "stone": "Medichamite",
+        "types": [
+          "fighting",
+          "psychic"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "atk": 100,
+          "def": 85,
+          "spa": 80,
+          "spd": 85,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "pure-power",
+            "name": "Pure Power",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10054.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10054.png"
+      }
+    ],
+    "manectric": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Manectric",
+        "stone": "Manectite",
+        "types": [
+          "electric"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 75,
+          "def": 80,
+          "spa": 135,
+          "spd": 80,
+          "spe": 135
+        },
+        "abilities": [
+          {
+            "slug": "intimidate",
+            "name": "Intimidate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10055.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png"
+      }
+    ],
+    "sharpedo": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Sharpedo",
+        "stone": "Sharpedonite",
+        "types": [
+          "water",
+          "dark"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 140,
+          "def": 70,
+          "spa": 110,
+          "spd": 65,
+          "spe": 105
+        },
+        "abilities": [
+          {
+            "slug": "strong-jaw",
+            "name": "Strong Jaw",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10070.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10070.png"
+      }
+    ],
+    "camerupt": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Camerupt",
+        "stone": "Cameruptite",
+        "types": [
+          "fire",
+          "ground"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 120,
+          "def": 100,
+          "spa": 145,
+          "spd": 105,
+          "spe": 20
+        },
+        "abilities": [
+          {
+            "slug": "sheer-force",
+            "name": "Sheer Force",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10087.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10087.png"
+      }
+    ],
+    "altaria": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Altaria",
+        "stone": "Altarianite",
+        "types": [
+          "dragon",
+          "fairy"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "atk": 110,
+          "def": 110,
+          "spa": 110,
+          "spd": 105,
+          "spe": 80
+        },
+        "abilities": [
+          {
+            "slug": "pixilate",
+            "name": "Pixilate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10067.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10067.png"
+      }
+    ],
+    "banette": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Banette",
+        "stone": "Banettite",
+        "types": [
+          "ghost"
+        ],
+        "baseStats": {
+          "hp": 64,
+          "atk": 165,
+          "def": 75,
+          "spa": 93,
+          "spd": 83,
+          "spe": 75
+        },
+        "abilities": [
+          {
+            "slug": "prankster",
+            "name": "Prankster",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10056.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10056.png"
+      }
+    ],
+    "absol": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Absol",
+        "stone": "Absolite",
+        "types": [
+          "dark"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "atk": 150,
+          "def": 60,
+          "spa": 115,
+          "spd": 60,
+          "spe": 115
+        },
+        "abilities": [
+          {
+            "slug": "magic-bounce",
+            "name": "Magic Bounce",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10057.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"
+      }
+    ],
+    "glalie": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Glalie",
+        "stone": "Glalitite",
+        "types": [
+          "ice"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 120,
+          "def": 80,
+          "spa": 120,
+          "spd": 80,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "refrigerate",
+            "name": "Refrigerate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10074.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10074.png"
+      }
+    ],
+    "lopunny": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Lopunny",
+        "stone": "Lopunnite",
+        "types": [
+          "normal",
+          "fighting"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "atk": 136,
+          "def": 94,
+          "spa": 54,
+          "spd": 96,
+          "spe": 135
+        },
+        "abilities": [
+          {
+            "slug": "scrappy",
+            "name": "Scrappy",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10088.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10088.png"
+      }
+    ],
+    "lucario": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Lucario",
+        "stone": "Lucarionite",
+        "types": [
+          "fighting",
+          "steel"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 145,
+          "def": 88,
+          "spa": 140,
+          "spd": 70,
+          "spe": 112
+        },
+        "abilities": [
+          {
+            "slug": "adaptability",
+            "name": "Adaptability",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10059.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png"
+      }
+    ],
+    "beedrill": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Beedrill",
+        "stone": "Beedrillite",
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "atk": 150,
+          "def": 40,
+          "spa": 15,
+          "spd": 80,
+          "spe": 145
+        },
+        "abilities": [
+          {
+            "slug": "adaptability",
+            "name": "Adaptability",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10090.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png"
+      }
+    ],
+    "pidgeot": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Pidgeot",
+        "stone": "Pidgeotite",
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "baseStats": {
+          "hp": 83,
+          "atk": 80,
+          "def": 80,
+          "spa": 135,
+          "spd": 80,
+          "spe": 121
+        },
+        "abilities": [
+          {
+            "slug": "no-guard",
+            "name": "No Guard",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10073.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10073.png"
+      }
+    ],
+    "slowbro": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Slowbro",
+        "stone": "Slowbronite",
+        "types": [
+          "water",
+          "psychic"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "atk": 75,
+          "def": 180,
+          "spa": 130,
+          "spd": 80,
+          "spe": 30
+        },
+        "abilities": [
+          {
+            "slug": "shell-armor",
+            "name": "Shell Armor",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10071.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10071.png"
+      }
+    ],
+    "abomasnow": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Abomasnow",
+        "stone": "Abomasite",
+        "types": [
+          "grass",
+          "ice"
+        ],
+        "baseStats": {
+          "hp": 90,
+          "atk": 132,
+          "def": 105,
+          "spa": 132,
+          "spd": 105,
+          "spe": 30
+        },
+        "abilities": [
+          {
+            "slug": "snow-warning",
+            "name": "Snow Warning",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png"
+      }
+    ],
+    "garchomp": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Garchomp",
+        "stone": "Garchompite",
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "baseStats": {
+          "hp": 108,
+          "atk": 170,
+          "def": 115,
+          "spa": 120,
+          "spd": 95,
+          "spe": 92
+        },
+        "abilities": [
+          {
+            "slug": "sand-force",
+            "name": "Sand Force",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10058.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png"
+      }
+    ],
+    "gardevoir": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Gardevoir",
+        "stone": "Gardevoirite",
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "baseStats": {
+          "hp": 68,
+          "atk": 85,
+          "def": 65,
+          "spa": 165,
+          "spd": 135,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "pixilate",
+            "name": "Pixilate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10051.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10051.png"
+      }
+    ],
+    "gyarados": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Gyarados",
+        "stone": "Gyaradosite",
+        "types": [
+          "water",
+          "dark"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "atk": 155,
+          "def": 109,
+          "spa": 70,
+          "spd": 130,
+          "spe": 81
+        },
+        "abilities": [
+          {
+            "slug": "mold-breaker",
+            "name": "Mold Breaker",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10041.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10041.png"
+      }
+    ],
+    "metagross": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Metagross",
+        "stone": "Metagrossite",
+        "types": [
+          "steel",
+          "psychic"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 145,
+          "def": 150,
+          "spa": 105,
+          "spd": 110,
+          "spe": 110
+        },
+        "abilities": [
+          {
+            "slug": "tough-claws",
+            "name": "Tough Claws",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10076.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10076.png"
+      }
+    ],
+    "salamence": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Salamence",
+        "stone": "Salamencite",
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "atk": 145,
+          "def": 130,
+          "spa": 120,
+          "spd": 90,
+          "spe": 120
+        },
+        "abilities": [
+          {
+            "slug": "aerilate",
+            "name": "Aerilate",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10089.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10089.png"
+      }
+    ],
+    "scizor": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Scizor",
+        "stone": "Scizorite",
+        "types": [
+          "bug",
+          "steel"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 150,
+          "def": 140,
+          "spa": 65,
+          "spd": 100,
+          "spe": 75
+        },
+        "abilities": [
+          {
+            "slug": "technician",
+            "name": "Technician",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10046.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png"
+      }
+    ],
+    "tyranitar": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Tyranitar",
+        "stone": "Tyranitarite",
+        "types": [
+          "rock",
+          "dark"
+        ],
+        "baseStats": {
+          "hp": 100,
+          "atk": 164,
+          "def": 150,
+          "spa": 95,
+          "spd": 120,
+          "spe": 71
+        },
+        "abilities": [
+          {
+            "slug": "sand-stream",
+            "name": "Sand Stream",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10049.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png"
+      }
+    ]
+  }
+}

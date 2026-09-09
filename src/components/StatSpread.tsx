@@ -21,8 +21,6 @@ function barColor(value: number): string {
 const MAX_STAT = 200 // bar scale ceiling; a few mons exceed this and clamp full
 
 export function StatSpread({ stats }: { stats: BaseStats }) {
-  const total = ROWS.reduce((sum, r) => sum + stats[r.key], 0)
-
   return (
     <div className="stat-spread">
       {ROWS.map((r) => {
@@ -41,11 +39,6 @@ export function StatSpread({ stats }: { stats: BaseStats }) {
           </div>
         )
       })}
-      <div className="stat-row stat-row--total">
-        <span className="stat-row__label">BST</span>
-        <span className="stat-row__value">{total}</span>
-        <span className="stat-row__track" />
-      </div>
     </div>
   )
 }

@@ -20,7 +20,16 @@
         { "name": "Dragon Claw", "pct": 40.7 },
         { "name": "Swords Dance", "pct": 33.2 },
         { "name": "Scale Shot", "pct": 24.6 },
-        { "name": "Substitute", "pct": 18.9 }
+        { "name": "Substitute", "pct": 18.9 },
+        { "name": "Stomping Tantrum", "pct": 15.4 },
+        { "name": "Iron Head", "pct": 9.7 },
+        { "name": "Fire Fang", "pct": 6.2 }
+      ],
+      "items": [
+        { "name": "Life Orb", "pct": 27.4 },
+        { "name": "Garchompite", "pct": 21.3 },
+        { "name": "Rocky Helmet", "pct": 16.8 },
+        { "name": "Loaded Dice", "pct": 12.1 }
       ]
     },
     "incineroar": {
@@ -33,8 +42,17 @@
         { "name": "Parting Shot", "pct": 69.5 },
         { "name": "Flare Blitz", "pct": 58.2 },
         { "name": "Will-O-Wisp", "pct": 29.8 },
+        { "name": "Darkest Lariat", "pct": 24.6 },
         { "name": "Protect", "pct": 23.6 },
-        { "name": "U-turn", "pct": 17.1 }
+        { "name": "U-turn", "pct": 17.1 },
+        { "name": "Taunt", "pct": 13.9 },
+        { "name": "Snarl", "pct": 9.2 }
+      ],
+      "items": [
+        { "name": "Safety Goggles", "pct": 29.7 },
+        { "name": "Sitrus Berry", "pct": 24.1 },
+        { "name": "Assault Vest", "pct": 18.3 },
+        { "name": "Rocky Helmet", "pct": 13.6 }
       ]
     },
     "rillaboom": {
@@ -48,7 +66,16 @@
         { "name": "U-turn", "pct": 43.8 },
         { "name": "Protect", "pct": 39.6 },
         { "name": "High Horsepower", "pct": 28.5 },
-        { "name": "Knock Off", "pct": 23.1 }
+        { "name": "Knock Off", "pct": 23.1 },
+        { "name": "Superpower", "pct": 18.2 },
+        { "name": "Drum Beating", "pct": 12.4 },
+        { "name": "Taunt", "pct": 7.1 }
+      ],
+      "items": [
+        { "name": "Assault Vest", "pct": 27.2 },
+        { "name": "Miracle Seed", "pct": 19.8 },
+        { "name": "Choice Band", "pct": 16.4 },
+        { "name": "Sitrus Berry", "pct": 12.7 }
       ]
     },
     "amoonguss": {
@@ -64,7 +91,16 @@
         { "name": "Sludge Bomb", "pct": 61.8 },
         { "name": "Protect", "pct": 57.4 },
         { "name": "Clear Smog", "pct": 39.5 },
-        { "name": "Pollen Puff", "pct": 27.2 }
+        { "name": "Pollen Puff", "pct": 27.2 },
+        { "name": "Foul Play", "pct": 22.1 },
+        { "name": "Giga Drain", "pct": 14.7 },
+        { "name": "Toxic", "pct": 8.3 }
+      ],
+      "items": [
+        { "name": "Rocky Helmet", "pct": 33.1 },
+        { "name": "Sitrus Berry", "pct": 25.4 },
+        { "name": "Mental Herb", "pct": 17.2 },
+        { "name": "Covert Cloak", "pct": 12.8 }
       ]
     },
     "gholdengo": {
@@ -78,7 +114,16 @@
         { "name": "Nasty Plot", "pct": 43.7 },
         { "name": "Thunderbolt", "pct": 29.4 },
         { "name": "Trick", "pct": 19.8 },
-        { "name": "Recover", "pct": 15.5 }
+        { "name": "Recover", "pct": 15.5 },
+        { "name": "Substitute", "pct": 13.2 },
+        { "name": "Focus Blast", "pct": 10.5 },
+        { "name": "Dazzling Gleam", "pct": 7.9 }
+      ],
+      "items": [
+        { "name": "Choice Specs", "pct": 28.6 },
+        { "name": "Life Orb", "pct": 22.4 },
+        { "name": "Leftovers", "pct": 15.1 },
+        { "name": "Covert Cloak", "pct": 11.9 }
       ]
     },
     "whimsicott": {
@@ -94,9 +139,18 @@
         { "name": "Moonblast", "pct": 57.4 },
         { "name": "Protect", "pct": 39.8 },
         { "name": "Beat Up", "pct": 33.5 },
-        { "name": "Light Screen", "pct": 24.0 },
+        { "name": "Light Screen", "pct": 24 },
         { "name": "Helping Hand", "pct": 21.7 },
-        { "name": "Sunny Day", "pct": 11.3 }
+        { "name": "Fake Tears", "pct": 17.5 },
+        { "name": "Taunt", "pct": 12.9 },
+        { "name": "Sunny Day", "pct": 11.3 },
+        { "name": "Charm", "pct": 6.4 }
+      ],
+      "items": [
+        { "name": "Covert Cloak", "pct": 26.3 },
+        { "name": "Focus Sash", "pct": 21.7 },
+        { "name": "Mental Herb", "pct": 16.4 },
+        { "name": "Sitrus Berry", "pct": 12.1 }
       ]
     },
     "dragonite": {
@@ -114,12 +168,21 @@
         { "name": "Ice Spinner", "pct": 25.7 },
         { "name": "Stomping Tantrum", "pct": 21.5 },
         { "name": "Roost", "pct": 19.4 },
-        { "name": "Encore", "pct": 13.8 }
+        { "name": "Encore", "pct": 13.8 },
+        { "name": "Tailwind", "pct": 12.7 },
+        { "name": "Haze", "pct": 8.4 },
+        { "name": "Fire Punch", "pct": 6.9 }
+      ],
+      "items": [
+        { "name": "Loaded Dice", "pct": 24.8 },
+        { "name": "Lum Berry", "pct": 19.3 },
+        { "name": "Sitrus Berry", "pct": 16.1 },
+        { "name": "Life Orb", "pct": 13.4 }
       ]
     },
     "kingambit": {
       "usagePct": 18.3,
-      "winPct": 51.0,
+      "winPct": 51,
       "abilities": [
         { "name": "Defiant", "pct": 67.5 },
         { "name": "Supreme Overlord", "pct": 30.4 },
@@ -131,7 +194,16 @@
         { "name": "Protect", "pct": 54.9 },
         { "name": "Iron Head", "pct": 43.8 },
         { "name": "Swords Dance", "pct": 33.7 },
-        { "name": "Low Kick", "pct": 12.4 }
+        { "name": "Low Kick", "pct": 12.4 },
+        { "name": "Assurance", "pct": 11.8 },
+        { "name": "Brick Break", "pct": 7.5 },
+        { "name": "Substitute", "pct": 5.9 }
+      ],
+      "items": [
+        { "name": "Assault Vest", "pct": 24.1 },
+        { "name": "Black Glasses", "pct": 19.6 },
+        { "name": "Focus Sash", "pct": 16.2 },
+        { "name": "Lum Berry", "pct": 12.7 }
       ]
     },
     "sinistcha": {
@@ -149,7 +221,16 @@
         { "name": "Life Dew", "pct": 33.8 },
         { "name": "Strength Sap", "pct": 25.6 },
         { "name": "Shadow Ball", "pct": 20.2 },
-        { "name": "Hex", "pct": 9.7 }
+        { "name": "Calm Mind", "pct": 18.4 },
+        { "name": "Giga Drain", "pct": 12.1 },
+        { "name": "Hex", "pct": 9.7 },
+        { "name": "Foul Play", "pct": 7.6 }
+      ],
+      "items": [
+        { "name": "Sitrus Berry", "pct": 28.4 },
+        { "name": "Leftovers", "pct": 21.1 },
+        { "name": "Covert Cloak", "pct": 16.8 },
+        { "name": "Rocky Helmet", "pct": 11.3 }
       ]
     },
     "basculegion": {
@@ -165,7 +246,16 @@
         { "name": "Last Respects", "pct": 59.9 },
         { "name": "Protect", "pct": 51.6 },
         { "name": "Aqua Jet", "pct": 40.2 },
-        { "name": "Endeavor", "pct": 11.5 }
+        { "name": "Endeavor", "pct": 11.5 },
+        { "name": "Head Smash", "pct": 9.4 },
+        { "name": "Liquidation", "pct": 7.2 },
+        { "name": "Substitute", "pct": 5.1 }
+      ],
+      "items": [
+        { "name": "Choice Band", "pct": 26.7 },
+        { "name": "Choice Scarf", "pct": 20.4 },
+        { "name": "Life Orb", "pct": 17.2 },
+        { "name": "Mystic Water", "pct": 12.9 }
       ]
     },
     "gastrodon": {
@@ -182,15 +272,24 @@
         { "name": "Yawn", "pct": 39.5 },
         { "name": "Recover", "pct": 30.4 },
         { "name": "Muddy Water", "pct": 25.7 },
-        { "name": "Clear Smog", "pct": 12.2 }
+        { "name": "Surf", "pct": 20.3 },
+        { "name": "Clear Smog", "pct": 12.2 },
+        { "name": "Toxic", "pct": 11.6 },
+        { "name": "Sludge Bomb", "pct": 8.2 }
+      ],
+      "items": [
+        { "name": "Leftovers", "pct": 30.2 },
+        { "name": "Sitrus Berry", "pct": 22.8 },
+        { "name": "Assault Vest", "pct": 15.4 },
+        { "name": "Covert Cloak", "pct": 10.7 }
       ]
     },
     "tyranitar": {
       "usagePct": 12.9,
       "winPct": 50.1,
       "abilities": [
-        { "name": "Sand Stream", "pct": 84.0 },
-        { "name": "Unnerve", "pct": 16.0 }
+        { "name": "Sand Stream", "pct": 84 },
+        { "name": "Unnerve", "pct": 16 }
       ],
       "moves": [
         { "name": "Rock Slide", "pct": 74.3 },
@@ -198,7 +297,16 @@
         { "name": "Knock Off", "pct": 56.4 },
         { "name": "Low Kick", "pct": 35.8 },
         { "name": "Assurance", "pct": 22.1 },
-        { "name": "Dragon Dance", "pct": 19.7 }
+        { "name": "Dragon Dance", "pct": 19.7 },
+        { "name": "Earthquake", "pct": 17.9 },
+        { "name": "Stone Edge", "pct": 11.2 },
+        { "name": "Ice Punch", "pct": 7.4 }
+      ],
+      "items": [
+        { "name": "Assault Vest", "pct": 25.3 },
+        { "name": "Tyranitarite", "pct": 18.9 },
+        { "name": "Life Orb", "pct": 14.6 },
+        { "name": "Lum Berry", "pct": 11.2 }
       ]
     },
     "dragapult": {
@@ -206,7 +314,7 @@
       "winPct": 51.3,
       "abilities": [
         { "name": "Clear Body", "pct": 61.8 },
-        { "name": "Infiltrator", "pct": 36.0 },
+        { "name": "Infiltrator", "pct": 36 },
         { "name": "Cursed Body", "pct": 2.2 }
       ],
       "moves": [
@@ -215,7 +323,16 @@
         { "name": "U-turn", "pct": 43.5 },
         { "name": "Protect", "pct": 39.8 },
         { "name": "Draco Meteor", "pct": 29.6 },
-        { "name": "Will-O-Wisp", "pct": 15.9 }
+        { "name": "Will-O-Wisp", "pct": 15.9 },
+        { "name": "Phantom Force", "pct": 12.8 },
+        { "name": "Thunderbolt", "pct": 10.1 },
+        { "name": "Hex", "pct": 5.5 }
+      ],
+      "items": [
+        { "name": "Choice Specs", "pct": 23.7 },
+        { "name": "Life Orb", "pct": 19.8 },
+        { "name": "Choice Band", "pct": 16.2 },
+        { "name": "Clear Amulet", "pct": 12.4 }
       ]
     },
     "talonflame": {
@@ -232,7 +349,16 @@
         { "name": "Protect", "pct": 37.9 },
         { "name": "Dual Wingbeat", "pct": 25.8 },
         { "name": "Quick Guard", "pct": 20.3 },
-        { "name": "Overheat", "pct": 11.6 }
+        { "name": "Roost", "pct": 18.9 },
+        { "name": "Flare Blitz", "pct": 14.2 },
+        { "name": "Overheat", "pct": 11.6 },
+        { "name": "Swords Dance", "pct": 6.7 }
+      ],
+      "items": [
+        { "name": "Life Orb", "pct": 23.8 },
+        { "name": "Sitrus Berry", "pct": 19.1 },
+        { "name": "Covert Cloak", "pct": 15.4 },
+        { "name": "Sharp Beak", "pct": 10.7 }
       ]
     },
     "grimmsnarl": {
@@ -249,7 +375,16 @@
         { "name": "Thunder Wave", "pct": 30.1 },
         { "name": "Fake Out", "pct": 25.7 },
         { "name": "Taunt", "pct": 19.8 },
-        { "name": "Scary Face", "pct": 11.4 }
+        { "name": "Trick Room", "pct": 12.4 },
+        { "name": "Scary Face", "pct": 11.4 },
+        { "name": "Foul Play", "pct": 9.8 },
+        { "name": "Bulk Up", "pct": 6.1 }
+      ],
+      "items": [
+        { "name": "Light Clay", "pct": 35.7 },
+        { "name": "Sitrus Berry", "pct": 20.4 },
+        { "name": "Focus Sash", "pct": 14.1 },
+        { "name": "Mental Herb", "pct": 11.6 }
       ]
     },
     "gardevoir": {
@@ -257,7 +392,7 @@
       "winPct": 50.4,
       "abilities": [
         { "name": "Trace", "pct": 57.9 },
-        { "name": "Telepathy", "pct": 40.0 },
+        { "name": "Telepathy", "pct": 40 },
         { "name": "Synchronize", "pct": 2.1 }
       ],
       "moves": [
@@ -267,7 +402,16 @@
         { "name": "Dazzling Gleam", "pct": 43.6 },
         { "name": "Trick Room", "pct": 21.8 },
         { "name": "Encore", "pct": 17.5 },
-        { "name": "Shadow Ball", "pct": 13.9 }
+        { "name": "Expanding Force", "pct": 16.7 },
+        { "name": "Shadow Ball", "pct": 13.9 },
+        { "name": "Helping Hand", "pct": 13.2 },
+        { "name": "Imprison", "pct": 8.9 }
+      ],
+      "items": [
+        { "name": "Choice Specs", "pct": 25.4 },
+        { "name": "Gardevoirite", "pct": 17.9 },
+        { "name": "Sitrus Berry", "pct": 15.8 },
+        { "name": "Life Orb", "pct": 12.3 }
       ]
     },
     "hydreigon": {
@@ -281,16 +425,25 @@
         { "name": "Snarl", "pct": 40.1 },
         { "name": "Earth Power", "pct": 30.2 },
         { "name": "Flamethrower", "pct": 24.4 },
-        { "name": "Tailwind", "pct": 18.3 }
+        { "name": "Tailwind", "pct": 18.3 },
+        { "name": "Nasty Plot", "pct": 15.3 },
+        { "name": "Substitute", "pct": 10.8 },
+        { "name": "Fire Blast", "pct": 8.1 }
+      ],
+      "items": [
+        { "name": "Choice Specs", "pct": 24.1 },
+        { "name": "Life Orb", "pct": 20.3 },
+        { "name": "Choice Scarf", "pct": 16.7 },
+        { "name": "Clear Amulet", "pct": 11.4 }
       ]
     },
     "scizor": {
       "usagePct": 8.1,
-      "winPct": 50.0,
+      "winPct": 50,
       "abilities": [
         { "name": "Technician", "pct": 82.4 },
         { "name": "Light Metal", "pct": 15.6 },
-        { "name": "Swarm", "pct": 2.0 }
+        { "name": "Swarm", "pct": 2 }
       ],
       "moves": [
         { "name": "Bullet Punch", "pct": 78.1 },
@@ -298,7 +451,16 @@
         { "name": "U-turn", "pct": 43.9 },
         { "name": "Close Combat", "pct": 39.6 },
         { "name": "Swords Dance", "pct": 27.8 },
-        { "name": "Bug Bite", "pct": 21.4 }
+        { "name": "Bug Bite", "pct": 21.4 },
+        { "name": "Dual Wingbeat", "pct": 13.6 },
+        { "name": "Knock Off", "pct": 11.9 },
+        { "name": "Trailblaze", "pct": 7.2 }
+      ],
+      "items": [
+        { "name": "Scizorite", "pct": 23.6 },
+        { "name": "Choice Band", "pct": 19.2 },
+        { "name": "Life Orb", "pct": 15.8 },
+        { "name": "Sitrus Berry", "pct": 12.4 }
       ]
     },
     "corviknight": {
@@ -306,17 +468,26 @@
       "winPct": 49.4,
       "abilities": [
         { "name": "Mirror Armor", "pct": 61.9 },
-        { "name": "Pressure", "pct": 36.0 },
+        { "name": "Pressure", "pct": 36 },
         { "name": "Unnerve", "pct": 2.1 }
       ],
       "moves": [
         { "name": "Brave Bird", "pct": 63.8 },
         { "name": "Roost", "pct": 52.4 },
-        { "name": "Bulk Up", "pct": 40.1 },
         { "name": "Protect", "pct": 43.7 },
+        { "name": "Bulk Up", "pct": 40.1 },
         { "name": "Tailwind", "pct": 29.6 },
         { "name": "Taunt", "pct": 23.5 },
-        { "name": "Iron Head", "pct": 17.9 }
+        { "name": "U-turn", "pct": 21.7 },
+        { "name": "Iron Head", "pct": 17.9 },
+        { "name": "Body Press", "pct": 16.4 },
+        { "name": "Iron Defense", "pct": 10.9 }
+      ],
+      "items": [
+        { "name": "Leftovers", "pct": 31.2 },
+        { "name": "Sitrus Berry", "pct": 22.4 },
+        { "name": "Rocky Helmet", "pct": 16.1 },
+        { "name": "Covert Cloak", "pct": 10.8 }
       ]
     },
     "garganacl": {
@@ -330,7 +501,16 @@
         { "name": "Wide Guard", "pct": 36.2 },
         { "name": "Body Press", "pct": 29.8 },
         { "name": "Iron Defense", "pct": 22.3 },
-        { "name": "Earthquake", "pct": 11.9 }
+        { "name": "Earthquake", "pct": 11.9 },
+        { "name": "Stealth Rock", "pct": 9.4 },
+        { "name": "Curse", "pct": 6.8 },
+        { "name": "Stone Edge", "pct": 5.2 }
+      ],
+      "items": [
+        { "name": "Leftovers", "pct": 34.6 },
+        { "name": "Sitrus Berry", "pct": 19.2 },
+        { "name": "Covert Cloak", "pct": 15.3 },
+        { "name": "Rocky Helmet", "pct": 11.7 }
       ]
     },
     "salamence": {
@@ -346,7 +526,16 @@
         { "name": "Dragon Dance", "pct": 33.6 },
         { "name": "Earthquake", "pct": 25.7 },
         { "name": "Draco Meteor", "pct": 23.9 },
-        { "name": "Roost", "pct": 15.8 }
+        { "name": "Roost", "pct": 15.8 },
+        { "name": "Hydro Pump", "pct": 13.4 },
+        { "name": "Fire Blast", "pct": 10.2 },
+        { "name": "Tailwind", "pct": 8.7 }
+      ],
+      "items": [
+        { "name": "Salamencite", "pct": 27.8 },
+        { "name": "Life Orb", "pct": 20.4 },
+        { "name": "Lum Berry", "pct": 14.7 },
+        { "name": "Clear Amulet", "pct": 11.9 }
       ]
     },
     "gyarados": {
@@ -362,7 +551,16 @@
         { "name": "Dragon Dance", "pct": 39.7 },
         { "name": "Taunt", "pct": 30.4 },
         { "name": "Ice Fang", "pct": 24.1 },
-        { "name": "Thunder Wave", "pct": 12.2 }
+        { "name": "Wave Crash", "pct": 19.8 },
+        { "name": "Crunch", "pct": 14.6 },
+        { "name": "Thunder Wave", "pct": 12.2 },
+        { "name": "Earthquake", "pct": 9.2 }
+      ],
+      "items": [
+        { "name": "Gyaradosite", "pct": 25.3 },
+        { "name": "Life Orb", "pct": 19.1 },
+        { "name": "Lum Berry", "pct": 15.6 },
+        { "name": "Sitrus Berry", "pct": 11.8 }
       ]
     },
     "metagross": {
@@ -376,7 +574,16 @@
         { "name": "Meteor Mash", "pct": 34.2 },
         { "name": "Earthquake", "pct": 29.7 },
         { "name": "Stomping Tantrum", "pct": 21.5 },
-        { "name": "Ice Punch", "pct": 14.8 }
+        { "name": "Ice Punch", "pct": 14.8 },
+        { "name": "Agility", "pct": 12.3 },
+        { "name": "Zen Headbutt", "pct": 9.7 },
+        { "name": "Hammer Arm", "pct": 4.9 }
+      ],
+      "items": [
+        { "name": "Metagrossite", "pct": 24.7 },
+        { "name": "Assault Vest", "pct": 19.3 },
+        { "name": "Life Orb", "pct": 16.2 },
+        { "name": "Weakness Policy", "pct": 11.4 }
       ]
     },
     "meowscarada": {
@@ -393,7 +600,16 @@
         { "name": "U-turn", "pct": 43.6 },
         { "name": "Triple Axel", "pct": 30.2 },
         { "name": "Sucker Punch", "pct": 24.1 },
-        { "name": "Play Rough", "pct": 13.7 }
+        { "name": "Play Rough", "pct": 13.7 },
+        { "name": "Trailblaze", "pct": 11.4 },
+        { "name": "Low Kick", "pct": 7.9 },
+        { "name": "Toxic Spikes", "pct": 6.2 }
+      ],
+      "items": [
+        { "name": "Focus Sash", "pct": 27.9 },
+        { "name": "Life Orb", "pct": 22.1 },
+        { "name": "Choice Band", "pct": 17.4 },
+        { "name": "Black Glasses", "pct": 10.8 }
       ]
     },
     "arcanine": {
@@ -410,7 +626,16 @@
         { "name": "Snarl", "pct": 43.6 },
         { "name": "Will-O-Wisp", "pct": 29.4 },
         { "name": "Howl", "pct": 20.1 },
-        { "name": "Close Combat", "pct": 15.8 }
+        { "name": "Flamethrower", "pct": 18.7 },
+        { "name": "Close Combat", "pct": 15.8 },
+        { "name": "Morning Sun", "pct": 12.4 },
+        { "name": "Roar", "pct": 4.3 }
+      ],
+      "items": [
+        { "name": "Sitrus Berry", "pct": 25.7 },
+        { "name": "Safety Goggles", "pct": 19.4 },
+        { "name": "Assault Vest", "pct": 15.8 },
+        { "name": "Clear Amulet", "pct": 12.1 }
       ]
     }
   }

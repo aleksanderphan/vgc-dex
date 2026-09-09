@@ -1,8 +1,13 @@
 import type {
   AbilityInfo,
+  ItemDex,
+  ItemInfo,
+  MegaDex,
+  MegaForm,
   MoveDex,
   MoveInfo,
   Pokemon,
+  PokemonForm,
   PokemonSnapshot,
   Regulation,
   UsageEntry,
@@ -12,6 +17,8 @@ import pokemonJson from '../data/pokemon.json'
 import usageJson from '../data/usage.m-c.json'
 import regulationJson from '../data/regulation.m-c.json'
 import movedexJson from '../data/movedex.m-c.json'
+import itemdexJson from '../data/itemdex.m-c.json'
+import megadexJson from '../data/megadex.m-c.json'
 
 const snapshot = pokemonJson as unknown as PokemonSnapshot
 
@@ -22,9 +29,13 @@ export const POKEMON: Pokemon[] = [...snapshot.pokemon].sort((a, b) =>
   a.name.localeCompare(b.name),
 )
 
+const bySlug = new Map(POKEMON.map((p) => [p.slug, p]))
+
 export const USAGE = usageJson as unknown as UsageSnapshot
 export const REGULATION = regulationJson as unknown as Regulation
 export const MOVEDEX = movedexJson as unknown as MoveDex
+export const ITEMDEX = itemdexJson as unknown as ItemDex
+export const MEGADEX = megadexJson as unknown as MegaDex
 
 const normalize = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '')
 
@@ -32,6 +43,11 @@ const moveByName = new Map(MOVEDEX.moves.map((m) => [normalize(m.name), m]))
 const abilityByName = new Map(
   MOVEDEX.abilities.map((a) => [normalize(a.name), a]),
 )
+const itemByName = new Map(ITEMDEX.items.map((i) => [normalize(i.name), i]))
+
+const moveBySlug = new Map(MOVEDEX.moves.map((m) => [m.slug, m]))
+const abilityBySlug = new Map(MOVEDEX.abilities.map((a) => [a.slug, a]))
+const itemBySlug = new Map(ITEMDEX.items.map((i) => [i.slug, i]))
 
 export function moveInfo(name: string): MoveInfo | undefined {
   return moveByName.get(normalize(name))
@@ -41,7 +57,63 @@ export function abilityInfo(name: string): AbilityInfo | undefined {
   return abilityByName.get(normalize(name))
 }
 
-const bySlug = new Map(POKEMON.map((p) => [p.slug, p]))
+export function itemInfo(name: string): ItemInfo | undefined {
+  return itemByName.get(normalize(name))
+}
+
+export type EntityKind = 'move' | 'ability' | 'item'
+
+/** Look up a move / ability / item by its dedicated-page slug. */
+export function entityBySlug(
+  kind: EntityKind,
+  slug: string,
+): MoveInfo | AbilityInfo | ItemInfo | undefined {
+  if (kind === 'move') return moveBySlug.get(slug)
+  if (kind === 'ability') return abilityBySlug.get(slug)
+  return itemBySlug.get(slug)
+}
+
+export interface EntityUser {
+  slug: string
+  name: string
+  pct: number
+}
+
+/** Pokémon in the usage snapshot that run this move / ability / item. */
+export function usersOf(kind: EntityKind, name: string): EntityUser[] {
+  const key = normalize(name)
+  const field =
+    kind === 'move' ? 'moves' : kind === 'ability' ? 'abilities' : 'items'
+  const out: EntityUser[] = []
+  for (const [slug, entry] of Object.entries(USAGE.entries)) {
+    const hit = (entry[field] ?? []).find((x) => normalize(x.name) === key)
+    if (hit) out.push({ slug, name: bySlug.get(slug)?.name ?? slug, pct: hit.pct })
+  }
+  return out.sort((a, b) => b.pct - a.pct)
+}
+
+/** Mega Evolution forms for a Pokémon, or [] if it has none. */
+export function megaFormsFor(slug: string): MegaForm[] {
+  return MEGADEX.forms[slug] ?? []
+}
+
+/**
+ * The base Pokémon plus any Mega forms, as a uniform list for the form switcher.
+ * A single-element result means "no forms to switch between".
+ */
+export function formsFor(pokemon: Pokemon): PokemonForm[] {
+  const base: PokemonForm = {
+    key: 'base',
+    label: 'Base',
+    name: pokemon.name,
+    types: pokemon.types,
+    baseStats: pokemon.baseStats,
+    abilities: pokemon.abilities,
+    sprite: pokemon.sprite,
+    artwork: pokemon.artwork,
+  }
+  return [base, ...megaFormsFor(pokemon.slug)]
+}
 
 export function findPokemon(slug: string): Pokemon | undefined {
   return bySlug.get(slug)

@@ -127,15 +127,29 @@ Built (prototype):
 
 - **Search-first, mobile-first UI** — sticky search bar on top; a horizontally
   scrolling "popular" row (ordered by usage); deep-linkable via `#slug`.
-- **Pokémon page** — official artwork, base-stat spread with a BST total,
-  type badges, and abilities.
+- **Pokémon page** — official artwork, base-stat spread, type badges, and
+  abilities. Pokémon with a Mega Evolution get a form switcher beneath the
+  artwork (**Base / Mega**, or **Base / Mega X / Mega Y** for Charizard) that
+  swaps the art, typing, ability, Mega Stone, base stats and type matchups
+  (`src/data/megadex.m-c.json`, `npm run build:megadex` — 36 classic Megas in
+  the curated pool).
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
   "Weak to" / "Resists" / "Immune to" defensively, each with ×4/×2/×½/×¼/×0 tags.
-- **Usage panel** — usage rate %, win rate, **common abilities** and **common
-  moves** ranked by percentage side by side. Tap any ability or move to expand
-  it: abilities show their effect; moves show type, category, power, accuracy,
-  PP, priority and effect (reference data from `src/data/movedex.m-c.json`,
-  built by `npm run build:movedex`).
+- **Usage panel** — usage rate %, win rate, **common abilities** then **common
+  moves** ranked by percentage, followed by a **Common items** section. Tap any
+  ability, move or item to expand it in place (several can stay open at once):
+  abilities/items show their effect, moves show type, category, power, accuracy,
+  PP, priority and effect.
+- **Move / ability / item pages** — the expanded row links through to a
+  deep-linkable page (`#move/<slug>`, `#ability/<slug>`, `#item/<slug>`) with the
+  full mechanical breakdown: PokéAPI's long-form effect text, structured stats
+  (multi-hit count, drain/recoil, status + chance, stat changes, target,
+  generation, Fling power), a hand-authored **competitive notes** block for
+  interactions PokéAPI's text omits (e.g. Triple Axel's 20→40→60 BP ramp,
+  Prankster failing vs Dark types, Life Orb's 1.3× / 10% recoil), and a "run by"
+  list of Pokémon in the usage data that carry it. Reference data from
+  `src/data/movedex.m-c.json` / `src/data/itemdex.m-c.json` + curated
+  `scripts/reference-notes.mjs` (`npm run build:movedex`, `npm run build:itemdex`).
 
 Planned — see [TODO.md](TODO.md):
 
@@ -144,7 +158,8 @@ Planned — see [TODO.md](TODO.md):
 - **Move dex** — per move: distribution across the meta and top users.
 - **Meta overview** — usage leaderboard with a rating-cutoff toggle.
 - **Regulation switcher** — M‑A / M‑B / M‑C snapshots; usage **trends** over time.
-- Mega forms (typing / stat overrides), EV spreads, teammates.
+- Champions-original Megas, base-stat deltas on the Mega view, EV spreads,
+  teammates.
 
 ---
 
@@ -170,9 +185,13 @@ usage snapshots ─┘     (regulation +      (versioned    (read   (Pokémon pa
 
 ```
 Pokemon        { id, natId, name, forms[], types[], baseStats, abilities[], sprites }
-Form           { key, name, typesOverride?, baseStatsOverride?, isMega, megaStone? }
-Move           { name, slug, type, category, power, accuracy, pp, priority, effect } // implemented (movedex.m-c.json)
-Ability        { name, slug, effect }                                                // implemented (movedex.m-c.json)
+MegaForm       { key, label, name, stone, types, baseStats, abilities, sprite, artwork } // implemented (megadex.m-c.json)
+Move           { name, slug, type, category, power, accuracy, pp, priority, target,      // implemented (movedex.m-c.json)
+                 generation, minHits, maxHits, drain, healing, critRate, ailment,
+                 ailmentChance, flinchChance, statChance, statChanges[], effect,
+                 longEffect, notes[] }
+Ability        { name, slug, generation, effect, longEffect, notes[] }                   // implemented (movedex.m-c.json)
+Item           { name, slug, category, sprite, flingPower, effect, longEffect, notes[] } // implemented (itemdex.m-c.json)
 Regulation     { code: "M-C", startsOn, endsOn, format: "doubles",
                  legalPokemon[], legalMoves[], legalItems[], megasAllowed[],
                  clauses[], notes }
@@ -181,7 +200,7 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
                    "<slug>": { usagePct?, winPct?,
                                abilities: [{ name, pct }],   // implemented
                                moves:     [{ name, pct }],   // implemented
-                               items?:     [{ name, pct }],
+                               items:     [{ name, pct }],   // implemented
                                /* teammates, spreads — planned */ } } }
 ```
 
@@ -204,16 +223,24 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
 scripts/
   pokemon-list.mjs     curated Reg M-C pool (edit + re-run the ETL)
   build-data.mjs       PokéAPI ETL -> src/data/pokemon.json
+  build-movedex.mjs    PokéAPI ETL -> src/data/movedex.m-c.json  (moves + abilities in the usage data)
+  build-itemdex.mjs    PokéAPI ETL -> src/data/itemdex.m-c.json  (items in the usage data)
+  build-megadex.mjs    PokéAPI ETL -> src/data/megadex.m-c.json  (Mega forms for the pool)
+  reference-notes.mjs  hand-authored competitive notes, merged into movedex/itemdex by the ETLs
 src/
   data/
     pokemon.json       generated reference snapshot
     usage.m-c.json     usage snapshot (labelled SAMPLE — swap for a real ingest)
+    movedex.m-c.json   generated move + ability reference
+    itemdex.m-c.json   generated held-item reference
+    megadex.m-c.json   generated Mega Evolution reference
     regulation.m-c.json regulation metadata
   lib/
     typechart.ts       type effectiveness + strong/weak-against helpers
     data.ts            loads + indexes the snapshots
-  components/          SearchBar, PokemonView, StatSpread, TypeMatchups, UsagePanel, TypeBadge
-  App.tsx  main.tsx  styles.css
+  components/          SearchBar, PokemonView, StatSpread, TypeMatchups, UsagePanel,
+                       ItemsPanel, RankedList, EntityPage, TypeBadge
+  App.tsx  main.tsx  styles.css   (App.tsx also does the hash routing: #slug vs #move|ability|item/<slug>)
 ```
 
 ---
@@ -229,12 +256,14 @@ npm run dev          # http://localhost:5173
 ```
 
 Other scripts: `npm run build` (typecheck + production build), `npm run preview`,
-`npm run typecheck`.
+`npm run typecheck`, and the reference ETLs `npm run build:movedex` /
+`build:itemdex` / `build:megadex` (re-run after editing `usage.m-c.json` so every
+move / ability / item it names has a detail entry).
 
 To change the Pokémon pool, edit `scripts/pokemon-list.mjs` and re-run
 `npm run build:data`. To wire in real usage numbers, replace
 `src/data/usage.m-c.json` (same shape) — the UI reads whatever is there and shows
-the `source` / `capturedAt` it carries.
+the `source` / `capturedAt` it carries — then re-run the reference ETLs above.
 
 ---
 

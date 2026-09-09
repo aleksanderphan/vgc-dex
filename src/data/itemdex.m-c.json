@@ -1,0 +1,335 @@
+{
+  "generatedAt": "2026-09-09T07:40:21.098Z",
+  "source": "PokéAPI (pokeapi.co) v2",
+  "itemCount": 28,
+  "items": [
+    {
+      "name": "Assault Vest",
+      "slug": "assault-vest",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/assault-vest.png",
+      "flingPower": 80,
+      "effect": "Raises the holder’s Special Defense to 1.5×. Prevents the holder from selecting a status move.",
+      "longEffect": "Raises the holder’s Special Defense to 1.5×. Prevents the holder from selecting a status move.",
+      "notes": [
+        "1.5× Special Defense.",
+        "The holder cannot select status moves at all — including Protect, Substitute, Fake Out, Trick Room, Tailwind, Will-O-Wisp."
+      ]
+    },
+    {
+      "name": "Black Glasses",
+      "slug": "black-glasses",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-glasses.png",
+      "flingPower": 30,
+      "effect": "Held: Dark-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Dark moves by 20%.",
+      "notes": [
+        "Dark-type moves used by the holder deal 1.2× damage."
+      ]
+    },
+    {
+      "name": "Choice Band",
+      "slug": "choice-band",
+      "category": "choice",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-band.png",
+      "flingPower": 10,
+      "effect": "Held: Increases Attack by 50%, but restricts the holder to only one move.",
+      "longEffect": "Held in battle\n: Holder has 1.5× its Attack. When the holder attempts to use a move, all its other moves are disabled until it leaves battle or loses this item.\n\nThe restriction ends even if this item is swapped for another Choice item\nvia Trick or Switcheroo.",
+      "notes": [
+        "1.5× Attack, locked into the first move picked until switch-out."
+      ]
+    },
+    {
+      "name": "Choice Scarf",
+      "slug": "choice-scarf",
+      "category": "choice",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-scarf.png",
+      "flingPower": 10,
+      "effect": "Held: Increases Speed by 50%, but restricts the holder to only one move.",
+      "longEffect": "Held: Increases the holder’s Speed by 50%, but restricts it to the first move it uses until it leaves battle or loses this item. If this item is swapped for another Choice item via Trick or Switcheroo, the holder’s restriction is still lifted, but it will again be restricted to the next move it uses.\n(Quirk: If the holder is switched in by U-Turn and it also knows U-Turn, U-Turn becomes its restricted move.)",
+      "notes": [
+        "1.5× Speed, locked into the first move picked until switch-out."
+      ]
+    },
+    {
+      "name": "Choice Specs",
+      "slug": "choice-specs",
+      "category": "choice",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-specs.png",
+      "flingPower": 10,
+      "effect": "Held: Increases Special Attack by 50%, but restricts the holder to only one move.",
+      "longEffect": "Held: Increases the holder’s Special Attack by 50%, but restricts it to the first move it uses until it leaves battle or loses this item. If this item is swapped for another Choice item via Trick or Switcheroo, the holder’s restriction is still lifted, but it will again be restricted to the next move it uses.\n(Quirk: If the holder is switched in by U-Turn and it also knows U-Turn, U-Turn becomes its restricted move.)",
+      "notes": [
+        "1.5× Special Attack, but the holder is locked into the first move it picks until it switches out.",
+        "Selecting a move the holder cannot use afterwards (0 PP, disabled) leaves it Struggling — bring Protect coverage on a teammate, not the Choice user."
+      ]
+    },
+    {
+      "name": "Clear Amulet",
+      "slug": "clear-amulet",
+      "category": "held-items",
+      "sprite": null,
+      "flingPower": null,
+      "effect": "Held: prevents the holder's stats from being lowered by other Pokémon.",
+      "longEffect": "Held: the holder's stats cannot be lowered by any other Pokémon — Intimidate, Snarl, Icy Wind, Parting Shot, Sticky Web, etc.\nSelf-inflicted drops (Close Combat, Draco Meteor, Overheat, Superpower) still apply.",
+      "notes": [
+        "Prevents the holder's stats from being lowered by any other Pokémon — Intimidate, Snarl, Icy Wind, Parting Shot, sticky-web-style drops.",
+        "Does not stop self-inflicted drops (Draco Meteor, Close Combat, Overheat)."
+      ]
+    },
+    {
+      "name": "Covert Cloak",
+      "slug": "covert-cloak",
+      "category": "held-items",
+      "sprite": null,
+      "flingPower": null,
+      "effect": "Held: protects the holder from the additional effects of attacking moves.",
+      "longEffect": "Held: the holder ignores the additional effects of attacking moves used against it — flinch (Rock Slide, Fake Out), burn (Scald), stat drops (Make It Rain), Salt Cure residual, and so on.\nThe primary effect of a status move is unaffected (Thunder Wave still paralyses).",
+      "notes": [
+        "The holder is immune to the additional effects of attacking moves — no flinch from Rock Slide / Fake Out, no burn from Scald, no drops from Make It Rain, no Salt Cure residual, etc.",
+        "Does not block the primary effect of a status move (Thunder Wave still paralyses)."
+      ]
+    },
+    {
+      "name": "Focus Sash",
+      "slug": "focus-sash",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/focus-sash.png",
+      "flingPower": 10,
+      "effect": "Held: Holder survives any single-hit attack at 1 HP if at max HP, then the item is consumed.",
+      "longEffect": "Held: If the holder has full HP and is attacked for regular damage that would faint it, this item is consumed and prevents the holder’s HP from lowering below 1. This effect works against multi-hit attacks, but does not work against the effects of Doom Desire or Future Sight.",
+      "notes": []
+    },
+    {
+      "name": "Garchompite",
+      "slug": "garchompite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/garchompite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Garchomp to Mega Evolve into Mega Garchomp.",
+      "longEffect": "Held: Allows Garchomp to Mega Evolve into Mega Garchomp.",
+      "notes": []
+    },
+    {
+      "name": "Gardevoirite",
+      "slug": "gardevoirite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gardevoirite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Gardevoir to Mega Evolve into Mega Gardevoir.",
+      "longEffect": "Held: Allows Gardevoir to Mega Evolve into Mega Gardevoir.",
+      "notes": []
+    },
+    {
+      "name": "Gyaradosite",
+      "slug": "gyaradosite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gyaradosite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Gyarados to Mega Evolve into Mega Gyarados.",
+      "longEffect": "Held: Allows Gyarados to Mega Evolve into Mega Gyarados.",
+      "notes": []
+    },
+    {
+      "name": "Leftovers",
+      "slug": "leftovers",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leftovers.png",
+      "flingPower": 10,
+      "effect": "Held: Restores 1/16 (6.25%) holder’s max HP at the end of each turn.",
+      "longEffect": "Held: Heals the holder by 1/16 its max HP at the end of each turn.",
+      "notes": [
+        "Restores 1/16 (6.25%) of max HP at the end of every turn the holder is in."
+      ]
+    },
+    {
+      "name": "Life Orb",
+      "slug": "life-orb",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/life-orb.png",
+      "flingPower": 30,
+      "effect": "Held: Holder’s moves inflict 30% extra damage, but cost 10% max HP.",
+      "longEffect": "Held: Damage from the holder’s moves is increased by 30%. On each turn the holder uses a damage-inflicting move, it takes 10% its max HP in damage.",
+      "notes": [
+        "Damage multiplier is 1.3× (5324⁄4096).",
+        "Costs 10% of max HP after any damaging move the holder uses, even one that misses or is protected. Magic Guard removes the recoil; on a Sheer Force move the boost is lost but so is the recoil."
+      ]
+    },
+    {
+      "name": "Light Clay",
+      "slug": "light-clay",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/light-clay.png",
+      "flingPower": 30,
+      "effect": "Held: Light Screen and Reflect used by the holder last 8 rounds instead of 5.",
+      "longEffect": "Held: The holder’s Reflect and Light Screen will create effects lasting for eight turns rather than five. As this item affects the move rather than the barrier itself, the effect is not lost if the holder leaves battle or drops this item.",
+      "notes": [
+        "Reflect, Light Screen and Aurora Veil set by the holder last 8 turns instead of 5."
+      ]
+    },
+    {
+      "name": "Loaded Dice",
+      "slug": "loaded-dice",
+      "category": "held-items",
+      "sprite": null,
+      "flingPower": null,
+      "effect": "Held: the holder’s multi-hit moves always hit at least four times.",
+      "longEffect": "Held: multi-hit moves that would roll 2–5 hits instead hit 4–5 times.\nFor Triple Axel and Triple Kick it removes the accuracy check on the later hits rather than adding hits.",
+      "notes": [
+        "Multi-hit moves that roll 2–5 hits (Bullet Seed, Rock Blast, Scale Shot, Bone Rush) always hit at least 4 times.",
+        "For Triple Axel / Triple Kick it removes the accuracy check on the later hits instead."
+      ]
+    },
+    {
+      "name": "Lum Berry",
+      "slug": "lum-berry",
+      "category": "medicine",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lum-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed to cure any status condition or confusion.",
+      "longEffect": "Held in battle\n: When the holder is afflicted with a major status ailment, it consumes this item to cure the ailment.\n\nUsed on a party Pokémon\n: Cures any major status ailment.",
+      "notes": []
+    },
+    {
+      "name": "Mental Herb",
+      "slug": "mental-herb",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mental-herb.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed to cure infatuation. Gen V: Also removes Taunt, Encore, Torment, Disable, and Cursed Body.",
+      "longEffect": "Held in battle\n: When the holder is attracted, it consumes this item to cure the attraction.",
+      "notes": [
+        "Single use: cures infatuation, Taunt, Encore, Torment, Disable and Heal Block the moment one is applied, then the herb is gone."
+      ]
+    },
+    {
+      "name": "Metagrossite",
+      "slug": "metagrossite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metagrossite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Metagross to Mega Evolve into Mega Metagross.",
+      "longEffect": "Held: Allows Metagross to Mega Evolve into Mega Metagross.",
+      "notes": []
+    },
+    {
+      "name": "Miracle Seed",
+      "slug": "miracle-seed",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/miracle-seed.png",
+      "flingPower": 30,
+      "effect": "Held: Grass-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Grass moves by 20%.",
+      "notes": [
+        "Grass-type moves used by the holder deal 1.2× damage."
+      ]
+    },
+    {
+      "name": "Mystic Water",
+      "slug": "mystic-water",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mystic-water.png",
+      "flingPower": 30,
+      "effect": "Held: Water-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Water moves by 20%.",
+      "notes": [
+        "Water-type moves used by the holder deal 1.2× damage. No downside, no lock-in."
+      ]
+    },
+    {
+      "name": "Rocky Helmet",
+      "slug": "rocky-helmet",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rocky-helmet.png",
+      "flingPower": 60,
+      "effect": "Held: When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage.",
+      "longEffect": "Held\n: When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage.",
+      "notes": [
+        "A Pokémon that hits the holder with a contact move loses 1/6 of its max HP.",
+        "Stacks with Rough Skin / Iron Barbs and with Life Orb recoil on the attacker."
+      ]
+    },
+    {
+      "name": "Safety Goggles",
+      "slug": "safety-goggles",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/safety-goggles.png",
+      "flingPower": 80,
+      "effect": "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm.",
+      "longEffect": "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm.",
+      "notes": [
+        "Blocks powder and spore moves (Spore, Rage Powder, Sleep Powder, Powder) and prevents Sand / Hail chip damage.",
+        "Does not stop weather-based abilities such as Slush Rush or Sand Rush from activating."
+      ]
+    },
+    {
+      "name": "Salamencite",
+      "slug": "salamencite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/salamencite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
+      "longEffect": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
+      "notes": []
+    },
+    {
+      "name": "Scizorite",
+      "slug": "scizorite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scizorite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Scizor to Mega Evolve into Mega Scizor.",
+      "longEffect": "Held: Allows Scizor to Mega Evolve into Mega Scizor.",
+      "notes": []
+    },
+    {
+      "name": "Sharp Beak",
+      "slug": "sharp-beak",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sharp-beak.png",
+      "flingPower": 50,
+      "effect": "Held: Flying-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Flying moves by 20%.",
+      "notes": [
+        "Flying-type moves used by the holder deal 1.2× damage."
+      ]
+    },
+    {
+      "name": "Sitrus Berry",
+      "slug": "sitrus-berry",
+      "category": "medicine",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sitrus-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed at 1/2 max HP to recover 1/4 max HP.",
+      "longEffect": "Held in battle\n: When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/4 its max HP.\n\nUsed on a party Pokémon\n: Restores 1/4 the Pokémon’s max HP.",
+      "notes": [
+        "Restores 25% of max HP once, automatically, when the holder drops to 50% HP or below.",
+        "Consumed by Bug Bite / Pluck, tossed by Fling, and recyclable with Recycle; eaten earlier (75% HP) if the holder has Gluttony."
+      ]
+    },
+    {
+      "name": "Tyranitarite",
+      "slug": "tyranitarite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tyranitarite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Tyranitar to Mega Evolve into Mega Tyranitar.",
+      "longEffect": "Held: Allows Tyranitar to Mega Evolve into Mega Tyranitar.",
+      "notes": []
+    },
+    {
+      "name": "Weakness Policy",
+      "slug": "weakness-policy",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/weakness-policy.png",
+      "flingPower": 80,
+      "effect": "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages.",
+      "longEffect": "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages.",
+      "notes": [
+        "When the holder is hit by a super-effective move it gains +2 Attack and +2 Special Attack, then the item is consumed.",
+        "Triggers even on a hit that would not KO — pair with Substitute, a defensive spread, or a Sash. No effect on status or non-super-effective hits."
+      ]
+    }
+  ]
+}

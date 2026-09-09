@@ -11,21 +11,35 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
 ## Shipped in the prototype
 
 - Vite + React 18 + TS app, mobile-first plain CSS, dark theme.
-- `scripts/build-data.mjs` ETL → `src/data/pokemon.json` (56-Pokémon curated
-  Reg M‑C pool; re-runnable). Sprites hotlinked from PokéAPI's GitHub.
+- `scripts/build-data.mjs` ETL → `src/data/pokemon.json` (94-Pokémon curated
+  Reg M‑C pool incl. the Mega-capable classics; re-runnable). Sprites hotlinked
+  from PokéAPI's GitHub.
 - Local Gen VI+ type chart + `strong against` / `weak to` / `resists` / `immune`
   helpers (`src/lib/typechart.ts`).
 - Sticky top search + `#slug` deep-linking + usage-ordered "popular" row.
-- Pokémon page: artwork, stat spread + BST, type badges, abilities.
-- Usage panel: usage % / win %, **common abilities** and **common moves** ranked
-  by % — reading `src/data/usage.m-c.json` (**labelled SAMPLE**,
-  `source: "placeholder"`). Each ability/move row expands to its details from
-  `src/data/movedex.m-c.json` (`scripts/build-movedex.mjs`, PokéAPI).
+- Pokémon page: artwork, stat spread (no BST total), type badges, abilities.
+  Pokémon with a Mega get a **Base / Mega** form switcher that swaps art, typing,
+  ability, Mega Stone, base stats and type matchups
+  (`src/data/megadex.m-c.json`, `scripts/build-megadex.mjs`, PokéAPI — 7 classic
+  Megas in the pool; Champions-original Megas would need hand-adding).
+- Usage panel: usage % / win %, **common abilities** then **common moves**
+  stacked (was side-by-side), then a **Common items** section — reading
+  `src/data/usage.m-c.json` (**labelled SAMPLE**, `source: "placeholder"`). Each
+  ability/move/item row expands in place to its short details (several at once)
+  from `src/data/movedex.m-c.json` / `src/data/itemdex.m-c.json`
+  (`scripts/build-movedex.mjs`, `scripts/build-itemdex.mjs`, PokéAPI).
+- Dedicated **move / ability / item pages** — hash-routed (`#move/<slug>`,
+  `#ability/<slug>`, `#item/<slug>`, deep-linkable) via `App.tsx` +
+  `components/EntityPage.tsx`. Shows PokéAPI's long-form effect, structured
+  mechanics (multi-hit, drain/recoil, status + %, stat changes, target,
+  generation, Fling power) and a curated **competitive notes** block from
+  `scripts/reference-notes.mjs` for interactions PokéAPI omits, plus a "run by"
+  list back into the usage data.
 - No Terastallization: Pokémon Champions doesn't implement it, so there is no
   Tera type / Tera Blast data or UI.
 
 Biggest gaps: real usage ingest (Phase 3), regulation legality filtering
-(Phase 2), Mega forms, move dex, full browsable grid.
+(Phase 2), Champions-original Megas, move dex, full browsable grid.
 
 ---
 
@@ -61,14 +75,14 @@ These shape the data model, so resolve them before Phase 2.
 ## Phase 1 — Reference data layer (PokéAPI + @pkmn)
 
 - [x] ETL pulls from PokéAPI and writes a committed snapshot (`npm run build:data`); the app never calls PokéAPI at runtime.
-- [~] Snapshot covers a **curated 56-mon subset**, not the full legal dex — expand to the whole Reg M‑C pool once the list is verified.
+- [~] Snapshot covers a **curated 94-mon subset**, not the full legal dex — expand to the whole Reg M‑C pool once the list is verified.
 - [ ] Pin the ETL to a PokéAPI dataset version / commit for reproducibility.
 - [x] Import species, base stats, types, abilities, sprites.
-- [~] Import **moves** + **abilities** (type/category/power/accuracy/PP/priority/effect) — `scripts/build-movedex.mjs` covers every name referenced by the usage data → `src/data/movedex.m-c.json`. Still TODO: whole-dex coverage + a move index / move page. (Type chart is encoded locally.)
+- [~] Import **moves** + **abilities** + **items** — `scripts/build-movedex.mjs` + `scripts/build-itemdex.mjs` cover every name referenced by the usage data → `src/data/movedex.m-c.json` / `itemdex.m-c.json`, now with the long-form effect, structured mechanics (multi-hit, drain/recoil, ailment + %, stat changes, target, generation, Fling power) and curated `scripts/reference-notes.mjs`. Still TODO: whole-dex coverage, a browsable move index, per-source reconciliation. (Type chart is encoded locally.)
 - [ ] Add `@pkmn/dex` + `@pkmn/data` for battle-accurate species/move/ability/item data and learnsets.
 - [ ] Reconciliation report: diff PokéAPI vs `@pkmn/dex` and pick the source of truth per field.
-- [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` added (`src/types.ts`). `Form` (Mega) type still to add.
-- [ ] Handle Mega forms explicitly (typing + base-stat overrides, required Mega Stone).
+- [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` / `ItemInfo` / `MegaForm` / `PokemonForm` added (`src/types.ts`).
+- [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone) for 36 classic Megas in the pool, surfaced via the Base / Mega switcher (Charizard gets Base / Mega X / Mega Y). Still TODO: Champions-original Megas (Golisopod→Steel, Baxcalibur), Z-Megas, base-stat delta display, per-regulation legality.
 - [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork (revisit if offline/asset-pinning is needed).
 - [ ] Unit tests for the normalizer + type chart (a manual sanity check was done, no runner yet).
 
@@ -119,17 +133,18 @@ These shape the data model, so resolve them before Phase 2.
 
 - [ ] Regulation switcher (default: current = M‑C) + season / rating-cutoff / source selectors.
 - [~] Search + usage-ordered "popular" row exist; still need a full browsable/filterable grid (by type/ability/role).
-- [~] Pokémon page: base stats, typing, abilities done. Still: Mega toggle + typing changes, Champions-legal movepool with legality badges.
-- [ ] Move dex + move page (base data + usage distribution + top users).
+- [~] Pokémon page: base stats, typing, abilities done; **Base/Mega form switcher** live (swaps art, typing, ability, Mega Stone, stats, matchups). Still: base-stat delta vs base form, Champions-legal movepool with legality badges.
+- [~] Move / ability / item **pages** shipped (`#move|ability|item/<slug>`, `EntityPage`): long-form effect, structured mechanics, curated notes, "run by" list. Still: a browsable move **dex** (grid/filter), damage-roll numbers, top-users beyond the 25-mon sample.
 - [ ] Meta overview page (usage leaderboard, movable cutoff).
 - [~] Sample-data pill + snapshot label + footer note; extend "which source" labelling as more sources land.
 - [x] Responsive, mobile-first, dark theme (palette tokens in `styles.css`; a light mode / toggle could be added later).
-- [~] Accessibility pass — ranked-list rows are now real buttons with `aria-expanded` / `aria-controls` + focus-visible outline. Still: keyboard nav in the search results list, a wider sweep.
+- [~] Accessibility pass — ranked-list rows and the form switcher are real buttons with `aria-expanded` / `aria-controls` / `role="tab"` + focus-visible outlines. Still: keyboard nav in the search results list, a wider sweep.
 
 ## Phase 7 — Usage & move analytics UI
 
-- [x] Usage panel: usage %, win %, abilities % and moves % ranked side by side; each row expands to move/ability details (`movedex.m-c.json`).
-- [ ] Add items %, teammates, and sample EV spreads to the panel (schema already allows items).
+- [x] Usage panel: usage %, win %, **common abilities** then **common moves** stacked, then a **Common items** section; each row expands in place (multiple at once) to short details, and links to the full move/ability/item page.
+- [~] Items % shipped (sample). Still: teammates and sample EV spreads in the panel.
+- [~] Curated competitive-notes layer (`scripts/reference-notes.mjs`) covers a starter set of moves/abilities/items; extend as gaps show up, or replace with `@pkmn/dex` descriptions.
 - [ ] Compare view: 2–4 Pokémon side by side.
 - [ ] Trend charts: usage over time within a season (needs snapshot history from Phase 3).
 - [ ] "Meta shift" diff between two regulations or two dates.

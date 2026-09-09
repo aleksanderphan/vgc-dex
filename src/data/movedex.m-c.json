@@ -1,9 +1,39 @@
 {
-  "generatedAt": "2026-09-09T06:29:15.412Z",
+  "generatedAt": "2026-09-09T07:40:20.312Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "moveCount": 89,
+  "moveCount": 122,
   "abilityCount": 41,
   "moves": [
+    {
+      "name": "Agility",
+      "slug": "agility",
+      "type": "psychic",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": 2
+        }
+      ],
+      "effect": "Raises the user’s Speed by two stages.",
+      "longEffect": "Raises the user’s Speed by two stages.",
+      "notes": []
+    },
     {
       "name": "Aqua Jet",
       "slug": "aqua-jet",
@@ -13,7 +43,21 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 1,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Assurance",
@@ -24,7 +68,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Power is doubled if the target has already received damage this turn."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Power is doubled if the target has already received damage this turn.",
+      "longEffect": "Inflicts regular damage. If the target takes damage this turn for any reason before this move is used, this move has double power.",
+      "notes": []
     },
     {
       "name": "Beat Up",
@@ -35,7 +93,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Hits once for every conscious Pokémon the trainer has."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": 6,
+      "maxHits": 6,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Hits once for every conscious Pokémon the trainer has.",
+      "longEffect": "Inflicts typeless regular damage. Every Pokémon in the user’s party, excepting those that have fainted or have a major status effect, attacks the target. Calculated stats are ignored; the base stats for the target and assorted attackers are used instead. The random factor in the damage formula is not used. Dark Pokémon still get STAB.\n\nThis effect breaks through Wonder Guard.",
+      "notes": []
     },
     {
       "name": "Body Press",
@@ -46,7 +118,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes.",
+      "longEffect": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes.",
+      "notes": []
     },
     {
       "name": "Brave Bird",
@@ -57,7 +143,46 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "User receives 1/3 the damage inflicted in recoil."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": -33,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User receives 1/3 the damage inflicted in recoil.",
+      "longEffect": "Inflicts regular damage. User takes 1/3 the damage it inflicts in recoil.",
+      "notes": []
+    },
+    {
+      "name": "Brick Break",
+      "slug": "brick-break",
+      "type": "fighting",
+      "category": "physical",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Destroys Reflect and Light Screen.",
+      "longEffect": "Destroys any Light Screen or Reflect on the target’s side of the field, then inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Bug Bite",
@@ -68,7 +193,21 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "If target has a berry, inflicts double damage and uses the berry."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "If target has a berry, inflicts double damage and uses the berry.",
+      "longEffect": "Inflicts regular damage. If the target is holding a berry, this move has double power, and the user takes the berry and uses it immediately.\n\nIf the target is holding a Jaboca Berry or Rowap Berry, the berry is still removed, but has no effect.\n\nIf this move is super effective and the target is holding a berry that can reduce this move’s damage, it will do so, and will not be stolen.",
+      "notes": []
     },
     {
       "name": "Bulk Up",
@@ -79,7 +218,30 @@
       "accuracy": null,
       "pp": 20,
       "priority": 0,
-      "effect": "Raises the user’s Attack and Defense by one stage."
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": 1
+        },
+        {
+          "stat": "defense",
+          "change": 1
+        }
+      ],
+      "effect": "Raises the user’s Attack and Defense by one stage.",
+      "longEffect": "Raises the user’s Attack and Defense by one stage each.",
+      "notes": []
     },
     {
       "name": "Bullet Punch",
@@ -90,7 +252,85 @@
       "accuracy": 100,
       "pp": 30,
       "priority": 1,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
+    },
+    {
+      "name": "Calm Mind",
+      "slug": "calm-mind",
+      "type": "psychic",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": 1
+        },
+        {
+          "stat": "special-defense",
+          "change": 1
+        }
+      ],
+      "effect": "Raises the user’s Special Attack and Special Defense by one stage.",
+      "longEffect": "Raises the user’s Special Attack and Special Defense by one stage each.",
+      "notes": []
+    },
+    {
+      "name": "Charm",
+      "slug": "charm",
+      "type": "fairy",
+      "category": "status",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the target’s Attack by two stages.",
+      "longEffect": "Lowers the target’s Attack by two stages.",
+      "notes": []
     },
     {
       "name": "Clear Smog",
@@ -101,7 +341,21 @@
       "accuracy": null,
       "pp": 15,
       "priority": 0,
-      "effect": "Removes all of the target’s stat modifiers."
+      "target": "selected-pokemon",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Removes all of the target’s stat modifiers.",
+      "longEffect": "Inflicts regular damage. All of the target’s stat modifiers are reset to zero.",
+      "notes": []
     },
     {
       "name": "Close Combat",
@@ -112,7 +366,85 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 0,
-      "effect": "Lowers the user’s Defense and Special Defense by one stage after inflicting damage."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "defense",
+          "change": -1
+        },
+        {
+          "stat": "special-defense",
+          "change": -1
+        }
+      ],
+      "effect": "Lowers the user’s Defense and Special Defense by one stage after inflicting damage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Defense and Special Defense by one stage each.",
+      "notes": []
+    },
+    {
+      "name": "Crunch",
+      "slug": "crunch",
+      "type": "dark",
+      "category": "physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 20,
+      "statChanges": [
+        {
+          "stat": "defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Defense by one stage.",
+      "notes": []
+    },
+    {
+      "name": "Curse",
+      "slug": "curse",
+      "type": "ghost",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "priority": 0,
+      "target": "specific-move",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Ghosts pay half their max HP to hurt the target every turn. Others decrease Speed but raise Attack and Defense.",
+      "longEffect": "If the user is a Ghost: user pays half its max HP to place a curse on the target, damaging it for 1/4 its max HP every turn.\nOtherwise: Lowers the user’s Speed by one stage, and raises its Attack and Defense by one stage each.\n\nThe curse effect is passed on by Baton Pass.\n\nThis move cannot be copied by Mirror Move.",
+      "notes": []
     },
     {
       "name": "Dark Pulse",
@@ -123,7 +455,46 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to make the target flinch."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 20,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
+      "notes": []
+    },
+    {
+      "name": "Darkest Lariat",
+      "slug": "darkest-lariat",
+      "type": "dark",
+      "category": "physical",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Ignores the target’s stat modifiers.",
+      "longEffect": "Inflicts regular damage. Damage calculation ignores the target’s stat modifiers, including evasion.",
+      "notes": []
     },
     {
       "name": "Dazzling Gleam",
@@ -134,7 +505,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "all-opponents",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Draco Meteor",
@@ -145,7 +530,28 @@
       "accuracy": 90,
       "pp": 5,
       "priority": 0,
-      "effect": "Lowers the user’s Special Attack by two stages after inflicting damage."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the user’s Special Attack by two stages after inflicting damage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Special Attack by two stages.",
+      "notes": [
+        "Lowers the user's Special Attack by two stages after damage; chain it with a switch or use once off a Choice item."
+      ]
     },
     {
       "name": "Dragon Claw",
@@ -156,7 +562,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Dragon Dance",
@@ -167,7 +587,30 @@
       "accuracy": null,
       "pp": 20,
       "priority": 0,
-      "effect": "Raises the user’s Attack and Speed by one stage."
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": 1
+        },
+        {
+          "stat": "speed",
+          "change": 1
+        }
+      ],
+      "effect": "Raises the user’s Attack and Speed by one stage.",
+      "longEffect": "Raises the user’s Attack and Speed by one stage each.",
+      "notes": []
     },
     {
       "name": "Dragon Darts",
@@ -178,7 +621,51 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Hits twice in one turn. In Double Battles, this move will hit both enemy targets. If it would fail to hit one of the targets, the other target will be hit twice."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": 2,
+      "maxHits": 2,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Hits twice in one turn. In Double Battles, this move will hit both enemy targets. If it would fail to hit one of the targets, the other target will be hit twice.",
+      "longEffect": "Hits twice in one turn. In Double Battles, this move will hit both enemy targets. If it would fail to hit one of the targets, the other target will be hit twice.",
+      "notes": []
+    },
+    {
+      "name": "Drum Beating",
+      "slug": "drum-beating",
+      "type": "grass",
+      "category": "physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Speed by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Speed by one stage.",
+      "notes": []
     },
     {
       "name": "Dual Wingbeat",
@@ -189,7 +676,21 @@
       "accuracy": 90,
       "pp": 10,
       "priority": 0,
-      "effect": "Hits twice in one turn."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": 2,
+      "maxHits": 2,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Hits twice in one turn.",
+      "longEffect": "Inflicts regular damage. Hits twice in one turn.",
+      "notes": []
     },
     {
       "name": "Earth Power",
@@ -200,7 +701,26 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Defense by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 10,
+      "statChanges": [
+        {
+          "stat": "special-defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Defense by one stage.",
+      "notes": []
     },
     {
       "name": "Earthquake",
@@ -211,7 +731,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Inflicts regular damage and can hit Dig users."
+      "target": "all-other-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage and can hit Dig users.",
+      "longEffect": "Inflicts regular damage.\n\nIf the target is in the first turn of Dig, this move will hit with double power.",
+      "notes": []
     },
     {
       "name": "Encore",
@@ -222,7 +756,25 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 0,
-      "effect": "Forces the target to repeat its last used move every turn for 2 to 6 turns."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
+      "longEffect": "The next 4–8 times (selected at random) the target attempts to move, it is forced to repeat its last used move. If the selected move allows the trainer to select a target, an opponent will be selected at random each turn. If the target is prevented from using the selected move by some other effect, Struggle will be used instead. This effect ends if the selected move runs out of PP.\n\nIf the target hasn’t used a move since entering the field, if it tried to use a move this turn and failed, if it does not know the selected move, or if the selected move has 0 PP remaining, this move will fail. If the target’s last used move was Encore, Mimic, Mirror Move, Sketch, Struggle, or Transform, this move will fail.",
+      "notes": [
+        "Locks the target into its last move for 3 turns.",
+        "Fails if the target has not moved yet, or is already locked (Bide, Outrage), or if the move has 0 PP left.",
+        "From a Prankster user the +1 priority does not apply against Dark-type targets (see the ability note)."
+      ]
     },
     {
       "name": "Endeavor",
@@ -233,7 +785,46 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 0,
-      "effect": "Lowers the target’s HP to equal the user’s."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Lowers the target’s HP to equal the user’s.",
+      "longEffect": "Inflicts exactly enough damage to lower the target’s HP to equal the user’s. If the target’s HP is not higher than the user’s, this move has no effect. Type immunity applies, but other type effects are ignored. This effect counts as damage for moves that respond to damage.",
+      "notes": []
+    },
+    {
+      "name": "Expanding Force",
+      "slug": "expanding-force",
+      "type": "psychic",
+      "category": "special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "If Psychic Terrain is active and the user is grounded, this move hits all opposing Pokemon and has its power incrased by 50%.",
+      "longEffect": "If Psychic Terrain is active and the user is grounded, this move hits all opposing Pokemon and has its power incrased by 50%.",
+      "notes": []
     },
     {
       "name": "Extreme Speed",
@@ -244,7 +835,21 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 2,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Fake Out",
@@ -255,7 +860,130 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 3,
-      "effect": "Can only be used as the first move after the user enters battle. Causes the target to flinch."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 100,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Can only be used as the first move after the user enters battle. Causes the target to flinch.",
+      "longEffect": "Inflicts regular damage. Causes the target to flinch. Can only be used on the user’s first turn after entering the field.",
+      "notes": [
+        "Only selectable on the user's first turn after switching in.",
+        "Flinch only lands on a target that has not moved yet this turn, so it does nothing into a faster foe.",
+        "Makes contact — triggers Rocky Helmet, Static, Flame Body, Rough Skin, etc."
+      ]
+    },
+    {
+      "name": "Fake Tears",
+      "slug": "fake-tears",
+      "type": "dark",
+      "category": "status",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "special-defense",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the target’s Special Defense by two stages.",
+      "longEffect": "Lowers the target’s Special Defense by two stages.",
+      "notes": []
+    },
+    {
+      "name": "Fire Blast",
+      "slug": "fire-blast",
+      "type": "fire",
+      "category": "special",
+      "power": 110,
+      "accuracy": 85,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
+    },
+    {
+      "name": "Fire Fang",
+      "slug": "fire-fang",
+      "type": "fire",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 95,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 10,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target and a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target and a separate chance to make the target flinch.",
+      "notes": []
+    },
+    {
+      "name": "Fire Punch",
+      "slug": "fire-punch",
+      "type": "fire",
+      "category": "physical",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
     },
     {
       "name": "Flamethrower",
@@ -266,7 +994,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to burn the target."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
     },
     {
       "name": "Flare Blitz",
@@ -277,7 +1019,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "User takes 1/3 the damage inflicted in recoil. Has a chance to burn the target."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": -33,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User takes 1/3 the damage inflicted in recoil. Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. User takes 1/3 the damage it inflicts in recoil. Has a chance to burn the target. Frozen Pokémon may use this move, in which case they will thaw.",
+      "notes": []
     },
     {
       "name": "Flower Trick",
@@ -288,7 +1044,101 @@
       "accuracy": null,
       "pp": 10,
       "priority": 0,
-      "effect": "The user throws a rigged bouquet of flowers at the target. This attack never misses and always lands a critical hit."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user throws a rigged bouquet of flowers at the target. This attack never misses and always lands a critical hit.",
+      "longEffect": "The user throws a rigged bouquet of flowers at the target. This attack never misses and always lands a critical hit.",
+      "notes": []
+    },
+    {
+      "name": "Focus Blast",
+      "slug": "focus-blast",
+      "type": "fighting",
+      "category": "special",
+      "power": 120,
+      "accuracy": 70,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 10,
+      "statChanges": [
+        {
+          "stat": "special-defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Defense by one stage.",
+      "notes": []
+    },
+    {
+      "name": "Foul Play",
+      "slug": "foul-play",
+      "type": "dark",
+      "category": "physical",
+      "power": 95,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Calculates damage with the target’s attacking stat.",
+      "longEffect": "Inflicts regular damage. Damage is calculated using the target’s attacking stat rather than the user’s.",
+      "notes": []
+    },
+    {
+      "name": "Giga Drain",
+      "slug": "giga-drain",
+      "type": "grass",
+      "category": "special",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 50,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Drains half the damage inflicted to heal the user.",
+      "longEffect": "Inflicts regular damage. Drains half the damage inflicted to heal the user.",
+      "notes": []
     },
     {
       "name": "Grassy Glide",
@@ -299,7 +1149,101 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1.",
+      "longEffect": "If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1.",
+      "notes": []
+    },
+    {
+      "name": "Hammer Arm",
+      "slug": "hammer-arm",
+      "type": "fighting",
+      "category": "physical",
+      "power": 100,
+      "accuracy": 90,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": -1
+        }
+      ],
+      "effect": "Lowers user’s Speed by one stage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Speed by one stage.",
+      "notes": []
+    },
+    {
+      "name": "Haze",
+      "slug": "haze",
+      "type": "ice",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "priority": 0,
+      "target": "entire-field",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Resets all Pokémon’s stats, accuracy, and evasion.",
+      "longEffect": "Removes stat, accuracy, and evasion modifiers from every Pokémon on the field.\n\nThis does not count as a stat reduction for the purposes of Clear Body or White Smoke.",
+      "notes": []
+    },
+    {
+      "name": "Head Smash",
+      "slug": "head-smash",
+      "type": "rock",
+      "category": "physical",
+      "power": 150,
+      "accuracy": 80,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": -50,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User receives 1/2 the damage inflicted in recoil.",
+      "longEffect": "Inflicts regular damage. User takes 1/2 the damage it inflicts in recoil.",
+      "notes": []
     },
     {
       "name": "Helping Hand",
@@ -310,7 +1254,21 @@
       "accuracy": null,
       "pp": 20,
       "priority": 5,
-      "effect": "Ally’s next move inflicts half more damage."
+      "target": "ally",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Ally’s next move inflicts half more damage.",
+      "longEffect": "Boosts the power of the target’s moves by 50% until the end of this turn.\n\nThis move cannot be copied by Mirror Move, nor selected by Assist or Metronome.",
+      "notes": []
     },
     {
       "name": "Hex",
@@ -321,7 +1279,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has double power if the target has a major status ailment."
+      "target": "selected-pokemon",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has double power if the target has a major status ailment.",
+      "longEffect": "Inflicts regular damage. If the target has a major status ailment, this move has double power.",
+      "notes": []
     },
     {
       "name": "High Horsepower",
@@ -332,7 +1304,21 @@
       "accuracy": 95,
       "pp": 10,
       "priority": 0,
-      "effect": "Inflicts regular damage with no additional effect."
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Howl",
@@ -343,7 +1329,51 @@
       "accuracy": null,
       "pp": 40,
       "priority": 0,
-      "effect": "Raises the user’s Attack by one stage."
+      "target": "user-and-allies",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": 1
+        }
+      ],
+      "effect": "Raises the user’s Attack by one stage.",
+      "longEffect": "Raises the user’s Attack by one stage.",
+      "notes": []
+    },
+    {
+      "name": "Hydro Pump",
+      "slug": "hydro-pump",
+      "type": "water",
+      "category": "special",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage with no additional effect.",
+      "longEffect": "Inflicts regular damage.",
+      "notes": []
     },
     {
       "name": "Ice Beam",
@@ -354,7 +1384,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to freeze the target."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "freeze",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to freeze the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to freeze the target.",
+      "notes": []
     },
     {
       "name": "Ice Fang",
@@ -365,7 +1409,21 @@
       "accuracy": 95,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to freeze the target and a chance to make the target flinch."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "freeze",
+      "ailmentChance": 10,
+      "flinchChance": 10,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to freeze the target and a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to freeze the target and a separate chance to make the target flinch.",
+      "notes": []
     },
     {
       "name": "Ice Punch",
@@ -376,7 +1434,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to freeze the target."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "freeze",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to freeze the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to freeze the target.",
+      "notes": []
     },
     {
       "name": "Ice Spinner",
@@ -387,7 +1459,46 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "The user covers its feet in thin ice and twirls around, slamming into the target. This move's spinning motion also destroys the terrain."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user covers its feet in thin ice and twirls around, slamming into the target. This move's spinning motion also destroys the terrain.",
+      "longEffect": "The user covers its feet in thin ice and twirls around, slamming into the target. This move's spinning motion also destroys the terrain.",
+      "notes": []
+    },
+    {
+      "name": "Imprison",
+      "slug": "imprison",
+      "type": "psychic",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Prevents the target from using any moves that the user also knows.",
+      "longEffect": "Prevents any Pokémon on the opposing side of the field from using any move the user knows until the user leaves the field. This effect is live; if the user obtains new moves while on the field, these moves become restricted. If no opposing Pokémon knows any of the user’s moves when this move is used, this move will fail.",
+      "notes": []
     },
     {
       "name": "Iron Defense",
@@ -398,7 +1509,26 @@
       "accuracy": null,
       "pp": 15,
       "priority": 0,
-      "effect": "Raises the user’s Defense by two stages."
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "defense",
+          "change": 2
+        }
+      ],
+      "effect": "Raises the user’s Defense by two stages.",
+      "longEffect": "Raises the user’s Defense by two stages.",
+      "notes": []
     },
     {
       "name": "Iron Head",
@@ -409,7 +1539,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to make the target flinch."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 30,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
+      "notes": []
     },
     {
       "name": "Knock Off",
@@ -420,7 +1564,25 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "Target drops its held item."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Target drops its held item.",
+      "longEffect": "Inflicts regular damage. Target loses its held item.\n\nNeither the user nor the target can recover its item with Recycle.\n\nIf the target has Multitype or Sticky Hold, it will take damage but not lose its item.",
+      "notes": [
+        "Deals 1.5× damage on the hit that removes the target's held item.",
+        "Cannot remove a Mega Stone from the Pokémon it belongs to, a Z-Crystal, or a form-defining item (e.g. Griseous Orb, Booster Energy is removable).",
+        "The item is only knocked off if the target survives the hit and Knock Off connects (blocked by Protect, Substitute, and by the ability Sticky Hold)."
+      ]
     },
     {
       "name": "Kowtow Cleave",
@@ -431,7 +1593,21 @@
       "accuracy": null,
       "pp": 10,
       "priority": 0,
-      "effect": "The user slashes at the target after kowtowing to make the target let down its guard. This attack never misses."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user slashes at the target after kowtowing to make the target let down its guard. This attack never misses.",
+      "longEffect": "The user slashes at the target after kowtowing to make the target let down its guard. This attack never misses.",
+      "notes": []
     },
     {
       "name": "Last Respects",
@@ -442,7 +1618,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "The user attacks to avenge its allies. The more defeated allies there are in the user's party, the greater the move's power."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user attacks to avenge its allies. The more defeated allies there are in the user's party, the greater the move's power.",
+      "longEffect": "The user attacks to avenge its allies. The more defeated allies there are in the user's party, the greater the move's power.",
+      "notes": []
     },
     {
       "name": "Life Dew",
@@ -453,7 +1643,21 @@
       "accuracy": null,
       "pp": 10,
       "priority": 0,
-      "effect": "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up."
+      "target": "user-and-allies",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 25,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
+      "longEffect": "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
+      "notes": []
     },
     {
       "name": "Light Screen",
@@ -464,7 +1668,51 @@
       "accuracy": null,
       "pp": 30,
       "priority": 0,
-      "effect": "Reduces damage from special attacks by 50% for five turns."
+      "target": "users-field",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Reduces damage from special attacks by 50% for five turns.",
+      "longEffect": "Erects a barrier around the user’s side of the field that reduces damage from special attacks by half for five turns. In double battles, the reduction is 1/3. Critical hits are not affected by the barrier.\n\nIf the user is holding Light Clay, the barrier lasts for eight turns.\n\nBrick Break or Defog used by an opponent will destroy the barrier.",
+      "notes": []
+    },
+    {
+      "name": "Liquidation",
+      "slug": "liquidation",
+      "type": "water",
+      "category": "physical",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 20,
+      "statChanges": [
+        {
+          "stat": "defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Defense by one stage.",
+      "notes": []
     },
     {
       "name": "Low Kick",
@@ -475,7 +1723,21 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "Inflicts more damage to heavier targets, with a maximum of 120 power."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts more damage to heavier targets, with a maximum of 120 power.",
+      "longEffect": "Inflicts regular damage. Power increases with the target’s weight in kilograms, to a maximum of 120.\n\nTarget’s weight | Power\n--------------- | ----:\nUp to 10kg | 20\nUp to 25kg | 40\nUp to 50kg | 60\nUp to 100kg | 80\nUp to 200kg | 100\nAbove 200kg | 120",
+      "notes": []
     },
     {
       "name": "Make It Rain",
@@ -486,7 +1748,28 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 0,
-      "effect": "The user attacks by throwing out a mass of coins. This also lowers the user's Sp. Atk stat. Money is earned after the battle."
+      "target": "all-opponents",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -1
+        }
+      ],
+      "effect": "The user attacks by throwing out a mass of coins. This also lowers the user's Sp. Atk stat. Money is earned after the battle.",
+      "longEffect": "The user attacks by throwing out a mass of coins. This also lowers the user's Sp. Atk stat. Money is earned after the battle.",
+      "notes": [
+        "Hits both opponents in doubles and lowers the user's Special Attack by one stage."
+      ]
     },
     {
       "name": "Matcha Gotcha",
@@ -497,7 +1780,21 @@
       "accuracy": 90,
       "pp": 15,
       "priority": 0,
-      "effect": "The user fires a blast of tea that it mixed. The user's HP is restored by up to half the damage taken by the target. This may also leave the target with a burn."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user fires a blast of tea that it mixed. The user's HP is restored by up to half the damage taken by the target. This may also leave the target with a burn.",
+      "longEffect": "The user fires a blast of tea that it mixed. The user's HP is restored by up to half the damage taken by the target. This may also leave the target with a burn.",
+      "notes": []
     },
     {
       "name": "Meteor Mash",
@@ -508,7 +1805,26 @@
       "accuracy": 90,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to raise the user’s Attack by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 20,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": 1
+        }
+      ],
+      "effect": "Has a chance to raise the user’s Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to raise the user’s Attack one stage.",
+      "notes": []
     },
     {
       "name": "Moonblast",
@@ -519,7 +1835,51 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Attack by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 30,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Attack by one stage.",
+      "notes": []
+    },
+    {
+      "name": "Morning Sun",
+      "slug": "morning-sun",
+      "type": "normal",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 50,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Heals the user by half its max HP. Affected by weather.",
+      "longEffect": "Heals the user for half its max HP.\n\nDuring Sunny Day, the healing is increased to 2/3 max HP.\n\nDuring Hail, Rain Dance, or Sandstorm, the healing is decreased to 1/4 max HP.",
+      "notes": []
     },
     {
       "name": "Muddy Water",
@@ -530,7 +1890,26 @@
       "accuracy": 85,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s accuracy by one stage."
+      "target": "all-opponents",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 30,
+      "statChanges": [
+        {
+          "stat": "accuracy",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s accuracy by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s accuracy by one stage.",
+      "notes": []
     },
     {
       "name": "Nasty Plot",
@@ -541,7 +1920,26 @@
       "accuracy": null,
       "pp": 20,
       "priority": 0,
-      "effect": "Raises the user’s Special Attack by two stages."
+      "target": "user",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": 2
+        }
+      ],
+      "effect": "Raises the user’s Special Attack by two stages.",
+      "longEffect": "Raises the user’s Special Attack by two stages.",
+      "notes": []
     },
     {
       "name": "Overheat",
@@ -552,7 +1950,28 @@
       "accuracy": 90,
       "pp": 5,
       "priority": 0,
-      "effect": "Lowers the user’s Special Attack by two stages after inflicting damage."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the user’s Special Attack by two stages after inflicting damage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Special Attack by two stages.",
+      "notes": [
+        "Lowers the user's Special Attack by two stages after damage."
+      ]
     },
     {
       "name": "Parting Shot",
@@ -563,7 +1982,55 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "Lowers all targets’ Attack and Special Attack by one stage. Makes the user switch out."
+      "target": "selected-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -1
+        },
+        {
+          "stat": "special-attack",
+          "change": -1
+        }
+      ],
+      "effect": "Lowers all targets’ Attack and Special Attack by one stage. Makes the user switch out.",
+      "longEffect": "Lowers all targets’ Attack and Special Attack by one stage. Makes the user switch out.",
+      "notes": []
+    },
+    {
+      "name": "Phantom Force",
+      "slug": "phantom-force",
+      "type": "ghost",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User vanishes, dodging all attacks, and hits next turn. Hits through Protect and Detect.",
+      "longEffect": "Inflicts regular damage. User vanishes for one turn, becoming immune to attack, and hits on the second turn.\n\nThis move ignores the effects of Detect and Protect.\n\nThis move cannot be selected by Sleep Talk.",
+      "notes": []
     },
     {
       "name": "Play Rough",
@@ -574,7 +2041,26 @@
       "accuracy": 90,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Attack by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 10,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Attack by one stage.",
+      "notes": []
     },
     {
       "name": "Pollen Puff",
@@ -585,7 +2071,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Damages opponents, but heals allies for 50% of their max HP."
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Damages opponents, but heals allies for 50% of their max HP.",
+      "longEffect": "If the target is an opponent, inflicts regular damage. If the target is an ally, heals the target for 50% of its max HP.",
+      "notes": []
     },
     {
       "name": "Protect",
@@ -596,7 +2096,24 @@
       "accuracy": null,
       "pp": 10,
       "priority": 4,
-      "effect": "Prevents any moves from hitting the user this turn."
+      "target": "user",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "protect",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Prevents any moves from hitting the user this turn.",
+      "longEffect": "No moves will hit the user for the remainder of this turn. If the user is last to act this turn, this move will fail.\n\nIf the user successfully used Detect, Endure, Protect, Quick Guard, or Wide Guard on the last turn, this move has a 50% chance to fail.\n\nLock-On, Mind Reader, and No Guard provide a (100 – accuracy)% chance for moves to break through this move. This does not apply to one-hit KO moves (Fissure, Guillotine, Horn Drill, and Sheer Cold); those are always blocked by this move.\n\nThunder during Rain Dance and Blizzard during Hail have a 30% chance to break through this move.\n\nThe following effects are not prevented by this move:\n\n* Acupressure from an ally\n* Curse’s curse effect\n* Delayed damage from Doom Desire and Future Sight; however, these moves will be prevented if they are used this turn\n* Feint, which will also end this move’s protection after it hits\n* Imprison\n* Perish Song\n* Shadow Force\n* Moves that merely copy the user, such as Transform or Psych Up\n\nThis move cannot be selected by Assist or Metronome.",
+      "notes": [
+        "Consecutive protection moves share a success counter: the chance to succeed is 1, then 1/3, then 1/9, … halving-ish each turn, and resets when the user does anything else.",
+        "Does not block Feint, Shadow Force / Phantom Force, ally moves, or field effects like Perish Song and entry hazards."
+      ]
     },
     {
       "name": "Psychic",
@@ -607,7 +2124,26 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Defense by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 10,
+      "statChanges": [
+        {
+          "stat": "special-defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Defense by one stage.",
+      "notes": []
     },
     {
       "name": "Quick Guard",
@@ -618,7 +2154,21 @@
       "accuracy": null,
       "pp": 15,
       "priority": 3,
-      "effect": "Prevents any priority moves from hitting friendly Pokémon this turn."
+      "target": "users-field",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Prevents any priority moves from hitting friendly Pokémon this turn.",
+      "longEffect": "Moves with priority greater than 0 will not hit friendly Pokémon for the remainder of this turn. If the user is last to act this turn, this move will fail.\n\nThis move cannot be selected by Assist or Metronome.",
+      "notes": []
     },
     {
       "name": "Rage Powder",
@@ -629,7 +2179,24 @@
       "accuracy": null,
       "pp": 20,
       "priority": 2,
-      "effect": "Redirects the target’s single-target effects to the user for this turn."
+      "target": "user",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Redirects the target’s single-target effects to the user for this turn.",
+      "longEffect": "Until the end of this turn, any moves that opposing Pokémon target solely at the user’s ally will instead target the user. If both Pokémon on the same side of the field use this move on the same turn, the Pokémon that uses it last will become the target.\n\nThis effect takes priority over Lightning Rod and Storm Drain.\n\nIf the user’s ally switches out, opposing Pokémon may still hit it with Pursuit.\n\nThis move cannot be selected by Assist or Metronome.",
+      "notes": [
+        "Redirects single-target moves from opponents to the user in doubles.",
+        "Has no effect on Grass-type Pokémon, or on holders of Safety Goggles, or on users of Overcoat — those ignore the redirection."
+      ]
     },
     {
       "name": "Recover",
@@ -640,7 +2207,21 @@
       "accuracy": null,
       "pp": 5,
       "priority": 0,
-      "effect": "Heals the user by half its max HP."
+      "target": "user",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 50,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Heals the user by half its max HP.",
+      "longEffect": "Heals the user for half its max HP.",
+      "notes": []
     },
     {
       "name": "Reflect",
@@ -651,7 +2232,46 @@
       "accuracy": null,
       "pp": 20,
       "priority": 0,
-      "effect": "Reduces damage from physical attacks by half."
+      "target": "users-field",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Reduces damage from physical attacks by half.",
+      "longEffect": "Erects a barrier around the user’s side of the field that reduces damage from physical attacks by half for five turns. In double battles, the reduction is 1/3. Critical hits are not affected by the barrier.\n\nIf the user is holding Light Clay, the barrier lasts for eight turns.\n\nBrick Break or Defog used by an opponent will destroy the barrier.",
+      "notes": []
+    },
+    {
+      "name": "Roar",
+      "slug": "roar",
+      "type": "normal",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "priority": -6,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Immediately ends wild battles. Forces trainers to switch Pokémon.",
+      "longEffect": "Switches the target out for another of its trainer’s Pokémon selected at random. Wild battles end immediately.\n\nDoesn’t affect Pokémon with Suction Cups or under the effect of Ingrain.",
+      "notes": []
     },
     {
       "name": "Rock Slide",
@@ -662,7 +2282,21 @@
       "accuracy": 90,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to make the target flinch."
+      "target": "all-opponents",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 30,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
+      "notes": []
     },
     {
       "name": "Roost",
@@ -673,7 +2307,21 @@
       "accuracy": null,
       "pp": 5,
       "priority": 0,
-      "effect": "Heals the user by half its max HP."
+      "target": "user",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 50,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Heals the user by half its max HP.",
+      "longEffect": "Heals the user for half its max HP. If the user is Flying, its Flying type is ignored until the end of this turn.",
+      "notes": []
     },
     {
       "name": "Salt Cure",
@@ -684,7 +2332,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "The user salt cures the target, inflicting damage every turn. Steel and Water types are more strongly affected by this move."
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user salt cures the target, inflicting damage every turn. Steel and Water types are more strongly affected by this move.",
+      "longEffect": "The user salt cures the target, inflicting damage every turn. Steel and Water types are more strongly affected by this move.",
+      "notes": []
     },
     {
       "name": "Scale Shot",
@@ -695,7 +2357,21 @@
       "accuracy": 90,
       "pp": 20,
       "priority": 0,
-      "effect": "Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": 2,
+      "maxHits": 5,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.",
+      "longEffect": "Inflicts regular damage two to five times in a row, raising the user’s Speed and lowering the user’s Defense by one stage each upon last hit.",
+      "notes": []
     },
     {
       "name": "Scary Face",
@@ -706,7 +2382,26 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Lowers the target’s Speed by two stages."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the target’s Speed by two stages.",
+      "longEffect": "Lowers the target’s Speed by two stages.",
+      "notes": []
     },
     {
       "name": "Shadow Ball",
@@ -717,7 +2412,26 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Defense by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 20,
+      "statChanges": [
+        {
+          "stat": "special-defense",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Defense by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Defense by one stage.",
+      "notes": []
     },
     {
       "name": "Sludge Bomb",
@@ -728,7 +2442,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has a chance to poison the target."
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "poison",
+      "ailmentChance": 30,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to poison the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to poison the target.",
+      "notes": []
     },
     {
       "name": "Snarl",
@@ -739,7 +2467,26 @@
       "accuracy": 95,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Attack by one stage."
+      "target": "all-opponents",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Attack by one stage.",
+      "notes": []
     },
     {
       "name": "Spirit Break",
@@ -750,7 +2497,26 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to lower the target’s Special Attack by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": -1
+        }
+      ],
+      "effect": "Has a chance to lower the target’s Special Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to lower the target’s Special Attack by one stage.",
+      "notes": []
     },
     {
       "name": "Spore",
@@ -761,7 +2527,46 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Puts the target to sleep."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "sleep",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Puts the target to sleep.",
+      "longEffect": "Puts the target to sleep.",
+      "notes": []
+    },
+    {
+      "name": "Stealth Rock",
+      "slug": "stealth-rock",
+      "type": "rock",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "priority": 0,
+      "target": "opponents-field",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Causes damage when opposing Pokémon switch in.",
+      "longEffect": "Spreads sharp rocks around the opposing field, damaging any Pokémon that enters the field for 1/8 its max HP. This damage is affected by the entering Pokémon’s susceptibility to Rock moves.\n\nRapid Spin removes this effect from its user’s side of the field.",
+      "notes": []
     },
     {
       "name": "Stomping Tantrum",
@@ -772,7 +2577,46 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Has double power if the user’s last move failed."
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has double power if the user’s last move failed.",
+      "longEffect": "Inflicts regular damage. Power is doubled if the user’s last move failed for any reason (i.e., produced the message \"But it failed!\") or was ineffective due to types.",
+      "notes": []
+    },
+    {
+      "name": "Stone Edge",
+      "slug": "stone-edge",
+      "type": "rock",
+      "category": "physical",
+      "power": 100,
+      "accuracy": 80,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 1,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has an increased chance for a critical hit.",
+      "longEffect": "Inflicts regular damage. User’s critical hit rate is one level higher when using this move.",
+      "notes": []
     },
     {
       "name": "Strength Sap",
@@ -783,7 +2627,26 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "Heals the user by the target’s current Attack stat and lowers the target’s Attack by one stage."
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -1
+        }
+      ],
+      "effect": "Heals the user by the target’s current Attack stat and lowers the target’s Attack by one stage.",
+      "longEffect": "Lowers the target’s Attack by one stage. Heals the user by the target’s current Attack, including modifiers, but not including this move’s Attack-lowering effect.\n\nIf the target’s Attack is already at -6, this move will fail. In any other situation that would prevent a stat modification, the healing will still succeed.",
+      "notes": []
     },
     {
       "name": "Substitute",
@@ -794,7 +2657,21 @@
       "accuracy": null,
       "pp": 10,
       "priority": 0,
-      "effect": "Transfers 1/4 of the user’s max HP into a doll, protecting the user from further damage or status changes until it breaks."
+      "target": "user",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Transfers 1/4 of the user’s max HP into a doll, protecting the user from further damage or status changes until it breaks.",
+      "longEffect": "Transfers 1/4 the user’s max HP into a doll that absorbs damage and causes most negative move effects to fail. If the user leaves the field, the doll will vanish. If the user cannot pay the HP cost, this move will fail.\n\nThe doll takes damage as normal, using the user’s stats and types, and will break when its HP reaches zero. Self-inflicted damage from confusion or recoil is not absorbed. Healing effects from opponents ignore the doll and heal the user as normal. Moves that work based on the user’s HP still do so; the doll’s HP does not influence any move.\n\nThe doll will block major status effects, confusion, and flinching. The effects of Smelling Salts and Wake-Up Slap do not trigger against a doll, even if the Pokémon behind the doll has the appropriate major status effect. Multi-turn trapping moves like Wrap will hit the doll for their regular damage, but the multi-turn trapping and damage effects will not activate.\n\nMoves blocked or damage absorbed by the doll do not count as hitting the user or inflicting damage for any effects that respond to such, e.g., Avalanche, Counter, or a Rowap Berry. Magic Coat still works as normal, even against moves the doll would block. Opposing Pokémon that damage the doll with a leech move like Absorb are healed as normal.\n\nIt will also block Acupressure, Block, the curse effect of Curse, Dream Eater, Embargo, Flatter, Gastro Acid, Grudge, Heal Block, Leech Seed, Lock-On, Mean Look, Mimic, Mind Reader, Nightmare, Pain Split, Psycho Shift, Spider Web, Sketch, Swagger, Switcheroo, Trick, Worry Seed, and Yawn. A Pokémon affected by Yawn before summoning the doll will still fall to sleep.\n\nThe doll blocks Intimidate, but all other abilities act as though the doll did not exist. If the user has an ability that absorbs moves of a certain type for HP (such as Volt Absorb absorbing Thunder Wave), such moves will not be blocked.\n\nLife Orb and berries that cause confusion still work as normal, but their respective HP loss and confusion are absorbed/blocked by the doll.\n\nThe user is still vulnerable to damage inflicted when entering or leaving the field, such as by Pursuit or Spikes; however, the doll will block the poison effect of Toxic Spikes.\n\nThe doll is passed on by Baton Pass. It keeps its existing HP, but uses the replacement Pokémon’s stats and types for damage calculation.\n\nAll other effects work as normal.",
+      "notes": []
     },
     {
       "name": "Sucker Punch",
@@ -805,7 +2682,21 @@
       "accuracy": 100,
       "pp": 5,
       "priority": 1,
-      "effect": "Only works if the target is about to use a damaging move."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Only works if the target is about to use a damaging move.",
+      "longEffect": "Inflicts regular damage. If the target has not selected a damaging move this turn, or if the target has already acted this turn, this move will fail.\n\nThis move is not affected by Iron Fist.",
+      "notes": []
     },
     {
       "name": "Sunny Day",
@@ -816,7 +2707,80 @@
       "accuracy": null,
       "pp": 5,
       "priority": 0,
-      "effect": "Changes the weather to sunny for five turns."
+      "target": "entire-field",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Changes the weather to sunny for five turns.",
+      "longEffect": "Changes the weather to sunshine for five turns, during which Fire moves inflict 50% extra damage, and Water moves inflict half damage.\n\nIf the user is holding Heat Rock, this effect lasts for eight turns.\n\nPokémon cannot become frozen.\n\nThunder has 50% accuracy.\n\nSolar Beam skips its charge turn.\n\nMoonlight, Morning Sun, and Synthesis heal 2/3 of the user’s max HP.\n\nPokémon with Chlorophyll have doubled original Speed.\n\nPokémon with Forecast become Fire.\n\nPokémon with Leaf Guard are not affected by major status effects.\n\nPokémon with Flower Gift change form; every Pokémon on their side of the field have their original Attack and Special Attack increased by 50%.\n\nPokémon with Dry Skin lose 1/8 max HP at the end of each turn.\n\nPokémon with Solar Power have their original Special Attack raised by 50% but lose 1/8 their max HP at the end of each turn.",
+      "notes": []
+    },
+    {
+      "name": "Superpower",
+      "slug": "superpower",
+      "type": "fighting",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -1
+        },
+        {
+          "stat": "defense",
+          "change": -1
+        }
+      ],
+      "effect": "Lowers the user’s Attack and Defense by one stage after inflicting damage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Attack and Defense by one stage each.",
+      "notes": []
+    },
+    {
+      "name": "Surf",
+      "slug": "surf",
+      "type": "water",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "all-other-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage and can hit Dive users.",
+      "longEffect": "Inflicts regular damage.\n\nIf the target is in the first turn of Dive, this move will hit with double power.",
+      "notes": []
     },
     {
       "name": "Swords Dance",
@@ -827,7 +2791,26 @@
       "accuracy": null,
       "pp": 20,
       "priority": 0,
-      "effect": "Raises the user’s Attack by two stages."
+      "target": "user",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": 2
+        }
+      ],
+      "effect": "Raises the user’s Attack by two stages.",
+      "longEffect": "Raises the user’s Attack by two stages.",
+      "notes": []
     },
     {
       "name": "Tailwind",
@@ -838,7 +2821,21 @@
       "accuracy": null,
       "pp": 15,
       "priority": 0,
-      "effect": "For three turns, friendly Pokémon have doubled Speed."
+      "target": "users-field",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "For three turns, friendly Pokémon have doubled Speed.",
+      "longEffect": "For the next three turns, all Pokémon on the user’s side of the field have their original Speed doubled. This effect remains if the user leaves the field.",
+      "notes": []
     },
     {
       "name": "Taunt",
@@ -849,7 +2846,24 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "For the next few turns, the target can only use damaging moves."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "For the next few turns, the target can only use damaging moves.",
+      "longEffect": "Target is forced to only use damaging moves for the next 3–5 turns, selected at random. Moves that select other moves not known in advance do not count as damaging.\n\nAssist, Copycat, Me First, Metronome, Mirror Move, and Sleep Talk do not directly inflict damage and thus may not be used.\n\nBide, Counter, Endeavor, Metal Burst, and Mirror Coat are allowed.",
+      "notes": [
+        "Stops the target selecting status moves for 3 turns.",
+        "From a Prankster user it does not gain priority against Dark-type targets."
+      ]
     },
     {
       "name": "Thunder Wave",
@@ -860,7 +2874,21 @@
       "accuracy": 90,
       "pp": 20,
       "priority": 0,
-      "effect": "Paralyzes the target."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "paralysis",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Paralyzes the target.",
+      "longEffect": "Paralyzes the target.",
+      "notes": []
     },
     {
       "name": "Thunderbolt",
@@ -871,7 +2899,101 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to paralyze the target."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "paralysis",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to paralyze the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to paralyze the target.",
+      "notes": []
+    },
+    {
+      "name": "Toxic",
+      "slug": "toxic",
+      "type": "poison",
+      "category": "status",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "poison",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Badly poisons the target, inflicting more damage every turn.",
+      "longEffect": "Badly poisons the target. Never misses when used by a Poison-type Pokémon.",
+      "notes": []
+    },
+    {
+      "name": "Toxic Spikes",
+      "slug": "toxic-spikes",
+      "type": "poison",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "priority": 0,
+      "target": "opponents-field",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Scatters poisoned spikes, poisoning opposing Pokémon that switch in.",
+      "longEffect": "Scatters poisoned spikes around the opposing field, which poison opposing Pokémon that enter the field. A second layer of these spikes may be laid down, in which case Pokémon will be badly poisoned instead. Pokémon immune to either Ground moves or being poisoned are immune to this effect. Pokémon otherwise immune to Ground moves are affected during Gravity.\n\nIf a Poison Pokémon not immune to Ground moves enters a field covered with poisoned spikes, the spikes are removed.\n\nRapid Spin will remove this effect from its user’s side of the field. Defog will remove this effect from its target’s side of the field.\n\nThis move does not trigger Synchronize, unless the Pokémon with Synchronize was forced to enter the field by another effect such as Roar.\n\nPokémon entering the field due to Baton Pass are not affected by this effect.",
+      "notes": []
+    },
+    {
+      "name": "Trailblaze",
+      "slug": "trailblaze",
+      "type": "grass",
+      "category": "physical",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": 1
+        }
+      ],
+      "effect": "The user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
+      "longEffect": "The user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
+      "notes": []
     },
     {
       "name": "Trick",
@@ -882,7 +3004,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "User and target swap items."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User and target swap items.",
+      "longEffect": "User and target permanently swap held items. Works even if one of the Pokémon isn’t holding anything. If either Pokémon is holding mail, this move will fail.\n\nIf either Pokémon has Multitype or Sticky Hold, this move will fail.\n\nIf this move results in a Pokémon obtaining Choice Band, Choice Scarf, or Choice Specs, and that Pokémon was the latter of the pair to move this turn, then the move it used this turn becomes its chosen forced move. This applies even if both Pokémon had a choice item before this move was used. If the first of the two Pokémon gains a choice item, it may select whatever choice move it wishes next turn.\n\nNeither the user nor the target can recover its item with Recycle.\n\nThis move cannot be selected by Assist or Metronome.",
+      "notes": []
     },
     {
       "name": "Trick Room",
@@ -893,7 +3029,21 @@
       "accuracy": null,
       "pp": 5,
       "priority": -7,
-      "effect": "For five turns, slower Pokémon will act before faster Pokémon."
+      "target": "entire-field",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "For five turns, slower Pokémon will act before faster Pokémon.",
+      "longEffect": "For five turns (including this one), slower Pokémon will act before faster Pokémon. Move priority is not affected. Using this move when its effect is already active will end the effect.\n\nPokémon holding Full Incense, Lagging Tail, or Quick Claw and Pokémon with Stall ignore this effect.",
+      "notes": []
     },
     {
       "name": "Triple Axel",
@@ -904,7 +3054,25 @@
       "accuracy": 90,
       "pp": 10,
       "priority": 0,
-      "effect": "Hits three times, increasing power by 100% with each successful hit."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": 3,
+      "maxHits": 3,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Hits three times, increasing power by 100% with each successful hit.",
+      "longEffect": "Inflicts regular damage. Hits three times in the same turn. The second hit has double power, and the third hit has triple power. Each hit has a separate accuracy check, and this move stops if a hit misses.\n\nSkill Link does not apply.",
+      "notes": [
+        "Ramps in power across its three hits: 20 BP, then 40, then 60 (120 total if all land).",
+        "Each hit rolls its own 90% accuracy check and the move stops at the first miss. Loaded Dice removes the accuracy check on the 2nd and 3rd hits; Skill Link does not force all three.",
+        "Every hit is boosted (or resisted) independently, so it can break a Focus Sash or Substitute on an earlier hit and still KO."
+      ]
     },
     {
       "name": "U-turn",
@@ -915,7 +3083,21 @@
       "accuracy": 100,
       "pp": 20,
       "priority": 0,
-      "effect": "User must switch out after attacking."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User must switch out after attacking.",
+      "longEffect": "Inflicts regular damage, then the user immediately switches out, and the trainer selects a replacement Pokémon from the party. If the target faints from this attack, the user’s trainer selects the new Pokémon to send out first. If the user is the last Pokémon in its party that can battle, it will not switch out.\n\nThe user may be hit by Pursuit when it switches out, if it has been targeted and Pursuit has not yet been used.\n\nThis move may be used even if the user is under the effect of Ingrain. Ingrain’s effect will end.",
+      "notes": []
     },
     {
       "name": "Waterfall",
@@ -926,7 +3108,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "Has a chance to make the target flinch."
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 20,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
+      "notes": []
     },
     {
       "name": "Wave Crash",
@@ -937,7 +3133,21 @@
       "accuracy": 100,
       "pp": 10,
       "priority": 0,
-      "effect": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot."
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot.",
+      "longEffect": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot.",
+      "notes": []
     },
     {
       "name": "Wide Guard",
@@ -948,7 +3158,21 @@
       "accuracy": null,
       "pp": 10,
       "priority": 3,
-      "effect": "Prevents any multi-target moves from hitting friendly Pokémon this turn."
+      "target": "users-field",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Prevents any multi-target moves from hitting friendly Pokémon this turn.",
+      "longEffect": "Moves with multiple targets will not hit friendly Pokémon for the remainder of this turn. If the user is last to act this turn, this move will fail.\n\nThis move cannot be selected by Assist or Metronome.",
+      "notes": []
     },
     {
       "name": "Will-O-Wisp",
@@ -959,7 +3183,24 @@
       "accuracy": 85,
       "pp": 15,
       "priority": 0,
-      "effect": "Burns the target."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Burns the target.",
+      "longEffect": "Burns the target.",
+      "notes": [
+        "Burn halves physical damage and chips 1/16 max HP per turn.",
+        "Fails into Fire types, Comatose, and holders of certain abilities (Water Veil, Thermal Exchange, Water Bubble). 85% accuracy — it can miss."
+      ]
     },
     {
       "name": "Wood Hammer",
@@ -970,7 +3211,21 @@
       "accuracy": 100,
       "pp": 15,
       "priority": 0,
-      "effect": "User receives 1/3 the damage inflicted in recoil."
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": -33,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "User receives 1/3 the damage inflicted in recoil.",
+      "longEffect": "Inflicts regular damage. User takes 1/3 the damage it inflicts in recoil.",
+      "notes": []
     },
     {
       "name": "Yawn",
@@ -981,214 +3236,396 @@
       "accuracy": null,
       "pp": 10,
       "priority": 0,
-      "effect": "Target sleeps at the end of the next turn."
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "yawn",
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Target sleeps at the end of the next turn.",
+      "longEffect": "Puts the target to sleep at the end of the next turn. Ignores accuracy and evasion modifiers. If the target leaves the field, this effect is canceled. If the target has a status effect when this move is used, this move will fail.\n\nIf the target is protected by Safeguard when this move is used, this move will fail.\n\nInsomnia and Vital Spirit prevent the sleep if the target has either at the end of the next turn, but will not cause this move to fail on use.",
+      "notes": []
+    },
+    {
+      "name": "Zen Headbutt",
+      "slug": "zen-headbutt",
+      "type": "psychic",
+      "category": "physical",
+      "power": 80,
+      "accuracy": 90,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 20,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to make the target flinch.",
+      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
+      "notes": []
     }
   ],
   "abilities": [
     {
       "name": "Adaptability",
       "slug": "adaptability",
-      "effect": "Increases the same-type attack bonus from 1.5× to 2×."
+      "generation": "generation-iv",
+      "effect": "Increases the same-type attack bonus from 1.5× to 2×.",
+      "longEffect": "This Pokémon inflicts twice as much damage with moves whose types match its own, rather than the usual same-type attack bonus of 1.5×.",
+      "notes": []
     },
     {
       "name": "Clear Body",
       "slug": "clear-body",
-      "effect": "Prevents stats from being lowered by other Pokémon."
+      "generation": "generation-iii",
+      "effect": "Prevents stats from being lowered by other Pokémon.",
+      "longEffect": "This Pokémon cannot have its stats lowered by other Pokémon.\n\nThis ability does not prevent any stat losses other than stat modifiers, such as the Speed cut from paralysis. This Pokémon can still be passed negative stat modifiers through Guard Swap, Heart Swap, or Power Swap.\n\nThis ability functions identically to White Smoke in battle.",
+      "notes": []
     },
     {
       "name": "Cursed Body",
       "slug": "cursed-body",
-      "effect": "Has a 30% chance of Disabling any move that hits the Pokémon."
+      "generation": "generation-v",
+      "effect": "Has a 30% chance of Disabling any move that hits the Pokémon.",
+      "longEffect": "Moves that hit this Pokémon have a 30% chance of being Disabled afterward.",
+      "notes": []
     },
     {
       "name": "Defiant",
       "slug": "defiant",
-      "effect": "Raises Attack two stages upon having any stat lowered."
+      "generation": "generation-v",
+      "effect": "Raises Attack two stages upon having any stat lowered.",
+      "longEffect": "When any of this Pokémon's stats are lowered, its Attack rises by two stages.\n\nIf multiple stats are lowered at once, this ability takes effect with each stat lowered.",
+      "notes": []
     },
     {
       "name": "Effect Spore",
       "slug": "effect-spore",
-      "effect": "Has a 30% chance of inflcting either paralysis, poison, or sleep on attacking Pokémon on contact."
+      "generation": "generation-iii",
+      "effect": "Has a 30% chance of inflcting either paralysis, poison, or sleep on attacking Pokémon on contact.",
+      "longEffect": "Whenever a move makes contact with this Pokémon, the move's user has a 30% chance of being paralyzed, poisoned, or put to sleep, chosen at random.\n\nNothing is done to compensate if the move's user is immune to one of these ailments; there is simply a lower chance that the move's user will be affected.",
+      "notes": []
     },
     {
       "name": "Flame Body",
       "slug": "flame-body",
-      "effect": "Has a 30% chance of burning attacking Pokémon on contact."
+      "generation": "generation-iii",
+      "effect": "Has a 30% chance of burning attacking Pokémon on contact.",
+      "longEffect": "Whenever a move makes contact with this Pokémon, the move's user has a 30% chance of being burned.\n\nOverworld: If any Pokémon in the party has this ability, each egg in the party has its hatch counter decreased by 2 (rather than 1) each step cycle, making eggs hatch roughly twice as quickly. This effect does not stack if multiple Pokémon have this ability or Magma Armor.",
+      "notes": [
+        "30% chance to burn a Pokémon that hits the holder with a contact move."
+      ]
     },
     {
       "name": "Flash Fire",
       "slug": "flash-fire",
-      "effect": "Protects against Fire moves. Once one has been blocked, the Pokémon's own Fire moves inflict 1.5× damage until it leaves battle."
+      "generation": "generation-iii",
+      "effect": "Protects against Fire moves. Once one has been blocked, the Pokémon's own Fire moves inflict 1.5× damage until it leaves battle.",
+      "longEffect": "This Pokémon is immune to Fire-type moves. Once this Pokémon has been hit by a Fire move, its own Fire moves will inflict 1.5× as much damage until it leaves battle.\n\nThis ability has no effect while the Pokémon is frozen. The Fire damage bonus is retained even if the Pokémon is frozen and thawed or the ability is lost or disabled. Fire moves will ignore this Pokémon's Substitute. This ability takes effect even on non-damaging moves, i.e. Will-O-Wisp.",
+      "notes": []
     },
     {
       "name": "Frisk",
       "slug": "frisk",
-      "effect": "Reveals an opponent's held item upon entering battle."
+      "generation": "generation-iv",
+      "effect": "Reveals an opponent's held item upon entering battle.",
+      "longEffect": "When this Pokémon enters battle, it reveals an opposing Pokémon's held item to all participating trainers.\n\nIn a double battle, if one opponent has an item, this Pokémon will Frisk that Pokémon; if both have an item, it will Frisk one at random.",
+      "notes": []
     },
     {
       "name": "Gale Wings",
       "slug": "gale-wings",
-      "effect": "Raises Flying moves' priority by one stage."
+      "generation": "generation-vi",
+      "effect": "Raises Flying moves' priority by one stage.",
+      "longEffect": "Raises Flying moves' priority by one stage.",
+      "notes": []
     },
     {
       "name": "Good as Gold",
       "slug": "good-as-gold",
-      "effect": "Gives immunity to status moves."
+      "generation": "generation-ix",
+      "effect": "Gives immunity to status moves.",
+      "longEffect": "A body of pure, solid gold gives the Pokémon full immunity to other Pokémon’s status moves.",
+      "notes": [
+        "The holder is immune to status moves targeted at it — Will-O-Wisp, Thunder Wave, Spore, Parting Shot, Toxic, Encore, Trick, etc.",
+        "Does not block Intimidate, entry hazards, weather, Terrain, or damaging moves with secondary effects."
+      ]
     },
     {
       "name": "Grassy Surge",
       "slug": "grassy-surge",
-      "effect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain."
+      "generation": "generation-vii",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+      "longEffect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+      "notes": [
+        "Sets Grassy Terrain for 5 turns (8 with Terrain Extender): grounded Pokémon heal 1/16 max HP per turn, Grass moves are boosted 1.3×, and Earthquake / Bulldoze / Magnitude are halved."
+      ]
     },
     {
       "name": "Heatproof",
       "slug": "heatproof",
-      "effect": "Halves damage from Fire moves and burns."
+      "generation": "generation-iv",
+      "effect": "Halves damage from Fire moves and burns.",
+      "longEffect": "This Pokémon takes half as much damage from Fire-type moves and burns.",
+      "notes": []
     },
     {
       "name": "Hospitality",
       "slug": "hospitality",
-      "effect": "When a Pokémon with Hospitality enters a battle, it restores HP for an ally by 25%."
+      "generation": "generation-ix",
+      "effect": "When a Pokémon with Hospitality enters a battle, it restores HP for an ally by 25%.",
+      "longEffect": "When the Pokémon enters a battle, it showers its ally with hospitality, restoring a small amount of the ally's HP.",
+      "notes": []
     },
     {
       "name": "Infiltrator",
       "slug": "infiltrator",
-      "effect": "Bypasses Light Screen, Reflect, and Safeguard."
+      "generation": "generation-v",
+      "effect": "Bypasses Light Screen, Reflect, and Safeguard.",
+      "longEffect": "This Pokémon's moves ignore Light Screen, Reflect, and Safeguard.",
+      "notes": []
     },
     {
       "name": "Inner Focus",
       "slug": "inner-focus",
-      "effect": "Prevents flinching."
+      "generation": "generation-iii",
+      "effect": "Prevents flinching.",
+      "longEffect": "This Pokémon cannot flinch.",
+      "notes": []
     },
     {
       "name": "Intimidate",
       "slug": "intimidate",
-      "effect": "Lowers opponents' Attack one stage upon entering battle."
+      "generation": "generation-iii",
+      "effect": "Lowers opponents' Attack one stage upon entering battle.",
+      "longEffect": "When this Pokémon enters battle, the opponent's Attack is lowered by one stage. In a double battle, both opponents are affected.\n\nThis ability also takes effect when acquired during a battle, but will not take effect again if lost and reobtained without leaving battle.\n\nThis ability has no effect on an opponent that has a Substitute.\n\nOverworld: If the first Pokémon in the party has this ability, any random encounter with a Pokémon five or more levels lower than it has a 50% chance of being skipped.",
+      "notes": [
+        "Lowers the Attack of both opposing Pokémon by one stage on switch-in.",
+        "Blocked or punished by Clear Body, Hyper Cutter, White Smoke, Full Metal Body, Inner Focus, Oblivious, Own Tempo, Scrappy (Gen 8+), Guard Dog (raises Attack instead), Rattled (raises Speed), and Defiant / Competitive (sharp offensive boost). Mirror Armor reflects the drop back onto the Intimidate user."
+      ]
     },
     {
       "name": "Levitate",
       "slug": "levitate",
-      "effect": "Evades Ground moves."
+      "generation": "generation-iii",
+      "effect": "Evades Ground moves.",
+      "longEffect": "This Pokémon is immune to Ground-type moves, Spikes, Toxic Spikes, and Arena Trap.\n\nThis ability is disabled during Gravity or Ingrain, or while holding an Iron Ball. This ability is not disabled during Roost.",
+      "notes": []
     },
     {
       "name": "Light Metal",
       "slug": "light-metal",
-      "effect": "Halves the Pokémon's weight."
+      "generation": "generation-v",
+      "effect": "Halves the Pokémon's weight.",
+      "longEffect": "This Pokémon has half the usual weight for its species.",
+      "notes": []
     },
     {
       "name": "Mirror Armor",
       "slug": "mirror-armor",
-      "effect": "Reflects any stat-lowering effects."
+      "generation": "generation-viii",
+      "effect": "Reflects any stat-lowering effects.",
+      "longEffect": "Bounces back only the stat-lowering effects that the Pokémon receives.",
+      "notes": []
     },
     {
       "name": "Mold Breaker",
       "slug": "mold-breaker",
-      "effect": "Bypasses targets' abilities if they could hinder or prevent a move."
+      "generation": "generation-iv",
+      "effect": "Bypasses targets' abilities if they could hinder or prevent a move.",
+      "longEffect": "This Pokémon's moves completely ignore abilities that could hinder or prevent their effect on the target.\n\nFor example, this Pokémon's moves ignore abilities that would fully negate them, such as Water Absorb; abilities that would prevent any of their effects, such as Clear Body, Shell Armor, or Sticky Hold; and abilities that grant any general protective benefit, such as Simple, Snow Cloak, or Thick Fat. If an ability could either hinder or help this Pokémon's moves, e.g. Dry Skin or Unaware, the ability is ignored either way.\n\nAbilities that do not fit this description, even if they could hinder moves in some other way, are not affected. For example, Cursed Body only affects potential future uses of the move, while Liquid Ooze and Shadow Tag can only hinder a move's effect on the user. This ablity cannot ignore type or form changes granted by abilities, for example Color Change or Forecast; nor effects that were caused by abilities but are no longer tied to an ability, such as the rain from Drizzle. This ability cannot ignore Multitype at all.\n\nAn ability ignored by this ability is only nullified while the move is being used. For example, this Pokémon's moves can paralyze a Pokémon with Limber, but Limber will activate and heal the paralysis immediately thereafter, and this Pokémon's Spikes are not affected by this ability after they have been placed.\n\nWhen this Pokémon enters battle, all participating trainers are notified that it has this ability.\n\nThis ability functions identically to Teravolt and Turboblaze.",
+      "notes": []
     },
     {
       "name": "Moxie",
       "slug": "moxie",
-      "effect": "Raises Attack one stage upon KOing a Pokémon."
+      "generation": "generation-v",
+      "effect": "Raises Attack one stage upon KOing a Pokémon.",
+      "longEffect": "This Pokémon's Attack rises one stage upon knocking out another Pokémon, even a friendly Pokémon.\n\nThis ability does not take effect when the Pokémon indirectly causes another Pokémon to faint, e.g. through poison or Spikes.\n\nIf this Pokémon knocks out a Pokémon with Mummy, the former's ability will change without taking effect.",
+      "notes": []
     },
     {
       "name": "Multiscale",
       "slug": "multiscale",
-      "effect": "Halves damage taken from full HP."
+      "generation": "generation-v",
+      "effect": "Halves damage taken from full HP.",
+      "longEffect": "This Pokémon takes half as much damage when it is hit having full HP.",
+      "notes": []
     },
     {
       "name": "Overgrow",
       "slug": "overgrow",
-      "effect": "Strengthens Grass moves to inflict 1.5× damage at 1/3 max HP or less."
+      "generation": "generation-iii",
+      "effect": "Strengthens Grass moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "longEffect": "When this Pokémon has 1/3 or less of its HP remaining, its Grass-type moves inflict 1.5× as much regular damage.",
+      "notes": []
     },
     {
       "name": "Prankster",
       "slug": "prankster",
-      "effect": "Raises non-damaging moves' priority by one stage."
+      "generation": "generation-v",
+      "effect": "Raises non-damaging moves' priority by one stage.",
+      "longEffect": "This Pokémon's non-damaging moves have their priority increased by one stage.",
+      "notes": [
+        "Gives +1 priority to the holder’s status (non-damaging) moves.",
+        "Since Gen 7, a Prankster-boosted status move fails outright against Dark-type Pokémon — a Prankster user cannot Encore, Taunt, Thunder Wave, Spore, etc. a Dark type by way of the priority. Using the same move without the priority boost (e.g. a Dark type ignoring Prankster) still works.",
+        "The boosted move is also stopped by an opponent’s Psychic Terrain if the target is grounded."
+      ]
     },
     {
       "name": "Pressure",
       "slug": "pressure",
-      "effect": "Increases the PP cost of moves targetting the Pokémon by one."
+      "generation": "generation-iii",
+      "effect": "Increases the PP cost of moves targetting the Pokémon by one.",
+      "longEffect": "Moves targetting this Pokémon use one extra PP.\n\nThis ability stacks if multiple targets have it. This ability still affects moves that fail or miss. This ability does not affect ally moves that target either the entire field or just its side, nor this Pokémon's self-targetted moves; it does, however, affect single-targetted ally moves aimed at this Pokémon, ally moves that target all other Pokémon, and opponents' moves that target the entire field. If this ability raises a move's PP cost above its remaining PP, it will use all remaining PP.\n\nWhen this Pokémon enters battle, all participating trainers are notified that it has this ability.\n\nOverworld: If the lead Pokémon has this ability, higher-levelled Pokémon have their encounter rate increased.",
+      "notes": []
     },
     {
       "name": "Protean",
       "slug": "protean",
-      "effect": "Changes the bearer's type to match each move it uses."
+      "generation": "generation-vi",
+      "effect": "Changes the bearer's type to match each move it uses.",
+      "longEffect": "Changes the bearer's type to match each move it uses.\n\nThe type change takes place just before the move is used.",
+      "notes": []
     },
     {
       "name": "Purifying Salt",
       "slug": "purifying-salt",
-      "effect": "Protects from status conditions and halves damage from Ghost-type moves."
+      "generation": "generation-ix",
+      "effect": "Protects from status conditions and halves damage from Ghost-type moves.",
+      "longEffect": "The Pokémon’s pure salt protects it from status conditions and halves the damage taken from Ghost-type moves.",
+      "notes": []
     },
     {
       "name": "Regenerator",
       "slug": "regenerator",
-      "effect": "Heals for 1/3 max HP upon switching out."
+      "generation": "generation-v",
+      "effect": "Heals for 1/3 max HP upon switching out.",
+      "longEffect": "This Pokémon regains 1/3 of its maximum HP when it is switched out for another Pokémon under any circumstances other than having fainted.\n\nThis ability does not take effect when a battle ends.",
+      "notes": [
+        "Restores 1/3 of max HP whenever the holder switches out."
+      ]
     },
     {
       "name": "Rough Skin",
       "slug": "rough-skin",
-      "effect": "Damages attacking Pokémon for 1/8 their max HP on contact."
+      "generation": "generation-iii",
+      "effect": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+      "longEffect": "Whenever a move makes contact with this Pokémon, the move's user takes 1/8 of its maximum HP in damage.\n\nThis ability functions identically to Iron Barbs.",
+      "notes": []
     },
     {
       "name": "Sand Stream",
       "slug": "sand-stream",
-      "effect": "Summons a sandstorm that lasts indefinitely upon entering battle."
+      "generation": "generation-iii",
+      "effect": "Summons a sandstorm that lasts indefinitely upon entering battle.",
+      "longEffect": "The weather changes to a sandstorm when this Pokémon enters battle and does not end unless cancelled by another weather condition.\n\nIf multiple Pokémon with this ability, Drizzle, Drought, or Snow Warning are sent out at the same time, the abilities will activate in order of Speed, respecting Trick Room. Each ability's weather will cancel the previous weather, and only the weather summoned by the slowest of the Pokémon will stay.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is halved in a sandstorm.",
+      "notes": []
     },
     {
       "name": "Sand Veil",
       "slug": "sand-veil",
-      "effect": "Increases evasion to 1.25× during a sandstorm. Protects against sandstorm damage."
+      "generation": "generation-iii",
+      "effect": "Increases evasion to 1.25× during a sandstorm. Protects against sandstorm damage.",
+      "longEffect": "During a sandstorm, this Pokémon has 1.25× its evasion, and it does not take sandstorm damage regardless of type.\n\nThe evasion bonus does not count as a stat modifier.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is halved in a sandstorm.",
+      "notes": []
     },
     {
       "name": "Sticky Hold",
       "slug": "sticky-hold",
-      "effect": "Prevents a held item from being removed by other Pokémon."
+      "generation": "generation-iii",
+      "effect": "Prevents a held item from being removed by other Pokémon.",
+      "longEffect": "This Pokémon's hold item cannot be removed by other Pokémon.\n\nDamaging moves that would remove this Pokémon's item can still inflict damage against this Pokémon, e.g. Knock Off or Pluck. This Pokémon can still use moves that involve the loss of its own item, e.g. Fling or Trick.\n\nOverworld: If the lead Pokémon has this ability, the encounter rate while fishing is increased.",
+      "notes": []
     },
     {
       "name": "Storm Drain",
       "slug": "storm-drain",
-      "effect": "Redirects single-target Water moves to this Pokémon where possible. Absorbs Water moves, raising Special Attack one stage."
+      "generation": "generation-iv",
+      "effect": "Redirects single-target Water moves to this Pokémon where possible. Absorbs Water moves, raising Special Attack one stage.",
+      "longEffect": "All other Pokémon's single-target Water-type moves are redirected to this Pokémon, if it is an eligible target. Other Pokémon's Water moves raise this Pokémon's Special Attack one stage, negating any other effect on it, and cannot miss it.\n\nIf the move's intended target also has this ability, the move is not redirected. When multiple Pokémon with this ability are possible targets for redirection, the move is redirected to the one with the highest Speed stat, or, in the case of a tie, to a random tied Pokémon. Follow Me takes precedence over this ability.",
+      "notes": [
+        "Draws all single-target Water moves in doubles (even those aimed at the ally) and raises the holder’s Special Attack one stage instead of taking damage."
+      ]
     },
     {
       "name": "Supreme Overlord",
       "slug": "supreme-overlord",
-      "effect": "Attack and Special Attack are boosted for each party Pokémon that has been defeated."
+      "generation": "generation-ix",
+      "effect": "Attack and Special Attack are boosted for each party Pokémon that has been defeated.",
+      "longEffect": "When the Pokémon enters a battle, its Attack and Sp. Atk stats are slightly boosted for each of the allies in its party that have already been defeated.",
+      "notes": []
     },
     {
       "name": "Swarm",
       "slug": "swarm",
-      "effect": "Strengthens Bug moves to inflict 1.5× damage at 1/3 max HP or less."
+      "generation": "generation-iii",
+      "effect": "Strengthens Bug moves to inflict 1.5× damage at 1/3 max HP or less.",
+      "longEffect": "When this Pokémon has 1/3 or less of its HP remaining, its Bug-type moves inflict 1.5× as much regular damage.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is increased.",
+      "notes": []
     },
     {
       "name": "Swift Swim",
       "slug": "swift-swim",
-      "effect": "Doubles Speed during rain."
+      "generation": "generation-iii",
+      "effect": "Doubles Speed during rain.",
+      "longEffect": "This Pokémon's Speed is doubled during rain.\n\nThis bonus does not count as a stat modifier.",
+      "notes": []
     },
     {
       "name": "Synchronize",
       "slug": "synchronize",
-      "effect": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them."
+      "generation": "generation-iii",
+      "effect": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them.",
+      "longEffect": "Whenever this Pokémon is burned, paralyzed, or poisoned, the Pokémon who gave this Pokémon that ailment is also given the ailment.\n\nThis ability passes back bad poison when this Pokémon is badly poisoned. This ability cannot pass on a status ailment that the Pokémon did not directly receive from another Pokémon, such as the poison from Toxic Spikes or the burn from a Flame Orb.\n\nOverworld: If the lead Pokémon has this ability, wild Pokémon have a 50% chance of having the lead Pokémon's nature, and a 50% chance of being given a random nature as usual, including the lead Pokémon's nature. This does not work on Pokémon received outside of battle or roaming legendaries.",
+      "notes": []
     },
     {
       "name": "Technician",
       "slug": "technician",
-      "effect": "Strengthens moves of 60 base power or less to 1.5× their power."
+      "generation": "generation-iv",
+      "effect": "Strengthens moves of 60 base power or less to 1.5× their power.",
+      "longEffect": "This Pokémon's moves have 1.5× their power if their base power is 60 or less.\n\nThis includes moves of variable power, such as Hidden Power and Magnitude, when their power is 60 or less. Helping Hand's power boost is taken into account for any move, as is Defense Curl's power boost for Rollout.",
+      "notes": []
     },
     {
       "name": "Telepathy",
       "slug": "telepathy",
-      "effect": "Protects against friendly Pokémon's damaging moves."
+      "generation": "generation-v",
+      "effect": "Protects against friendly Pokémon's damaging moves.",
+      "longEffect": "This Pokémon does not take damage from friendly Pokémon's moves, including single-target moves aimed at it.",
+      "notes": []
     },
     {
       "name": "Trace",
       "slug": "trace",
-      "effect": "Copies an opponent's ability upon entering battle."
+      "generation": "generation-iii",
+      "effect": "Copies an opponent's ability upon entering battle.",
+      "longEffect": "When this Pokémon enters battle, it copies a random opponent's ability.\n\nThis ability cannot copy Flower Gift, Forecast, Illusion, Imposter, Multitype, Trace, Wonder Guard, or Zen Mode.",
+      "notes": []
     },
     {
       "name": "Unnerve",
       "slug": "unnerve",
-      "effect": "Prevents opposing Pokémon from eating held Berries."
+      "generation": "generation-v",
+      "effect": "Prevents opposing Pokémon from eating held Berries.",
+      "longEffect": "Opposing Pokémon cannot eat held Berries while this Pokémon is in battle.\n\nAffected Pokémon can still use Bug Bite or Pluck to eat a target's Berry.",
+      "notes": [
+        "Opposing Pokémon cannot eat their Berries while the Unnerve user is on the field (also suppresses Booster Energy on switch-in for the turn it matters, and pairs with Neutralizing Gas discussions — but Unnerve only touches Berries)."
+      ]
     }
   ]
 }

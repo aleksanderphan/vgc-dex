@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "build:data": "node scripts/build-data.mjs",
-    "build:movedex": "node scripts/build-movedex.mjs"
+    "build:movedex": "node scripts/build-movedex.mjs",
+    "build:itemdex": "node scripts/build-itemdex.mjs",
+    "build:megadex": "node scripts/build-megadex.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

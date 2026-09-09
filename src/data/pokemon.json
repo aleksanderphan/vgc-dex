@@ -1,8 +1,167 @@
 {
-  "generatedAt": "2026-09-09T04:45:19.447Z",
+  "generatedAt": "2026-09-09T07:52:44.573Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "count": 56,
+  "count": 94,
   "pokemon": [
+    {
+      "id": 3,
+      "slug": "venusaur",
+      "name": "Venusaur",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 82,
+        "def": 83,
+        "spa": 100,
+        "spd": 100,
+        "spe": 80
+      },
+      "abilities": [
+        {
+          "slug": "overgrow",
+          "name": "Overgrow",
+          "isHidden": false
+        },
+        {
+          "slug": "chlorophyll",
+          "name": "Chlorophyll",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+    },
+    {
+      "id": 6,
+      "slug": "charizard",
+      "name": "Charizard",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spa": 109,
+        "spd": 85,
+        "spe": 100
+      },
+      "abilities": [
+        {
+          "slug": "blaze",
+          "name": "Blaze",
+          "isHidden": false
+        },
+        {
+          "slug": "solar-power",
+          "name": "Solar Power",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+    },
+    {
+      "id": 9,
+      "slug": "blastoise",
+      "name": "Blastoise",
+      "types": [
+        "water"
+      ],
+      "baseStats": {
+        "hp": 79,
+        "atk": 83,
+        "def": 100,
+        "spa": 85,
+        "spd": 105,
+        "spe": 78
+      },
+      "abilities": [
+        {
+          "slug": "torrent",
+          "name": "Torrent",
+          "isHidden": false
+        },
+        {
+          "slug": "rain-dish",
+          "name": "Rain Dish",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png"
+    },
+    {
+      "id": 15,
+      "slug": "beedrill",
+      "name": "Beedrill",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 90,
+        "def": 40,
+        "spa": 45,
+        "spd": 80,
+        "spe": 75
+      },
+      "abilities": [
+        {
+          "slug": "swarm",
+          "name": "Swarm",
+          "isHidden": false
+        },
+        {
+          "slug": "sniper",
+          "name": "Sniper",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png"
+    },
+    {
+      "id": 18,
+      "slug": "pidgeot",
+      "name": "Pidgeot",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 83,
+        "atk": 80,
+        "def": 75,
+        "spa": 70,
+        "spd": 70,
+        "spe": 101
+      },
+      "abilities": [
+        {
+          "slug": "keen-eye",
+          "name": "Keen Eye",
+          "isHidden": false
+        },
+        {
+          "slug": "tangled-feet",
+          "name": "Tangled Feet",
+          "isHidden": false
+        },
+        {
+          "slug": "big-pecks",
+          "name": "Big Pecks",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png"
+    },
     {
       "id": 36,
       "slug": "clefable",
@@ -74,6 +233,173 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png"
     },
     {
+      "id": 65,
+      "slug": "alakazam",
+      "name": "Alakazam",
+      "types": [
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "atk": 50,
+        "def": 45,
+        "spa": 135,
+        "spd": 95,
+        "spe": 120
+      },
+      "abilities": [
+        {
+          "slug": "synchronize",
+          "name": "Synchronize",
+          "isHidden": false
+        },
+        {
+          "slug": "inner-focus",
+          "name": "Inner Focus",
+          "isHidden": false
+        },
+        {
+          "slug": "magic-guard",
+          "name": "Magic Guard",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png"
+    },
+    {
+      "id": 80,
+      "slug": "slowbro",
+      "name": "Slowbro",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 75,
+        "def": 110,
+        "spa": 100,
+        "spd": 80,
+        "spe": 30
+      },
+      "abilities": [
+        {
+          "slug": "oblivious",
+          "name": "Oblivious",
+          "isHidden": false
+        },
+        {
+          "slug": "own-tempo",
+          "name": "Own Tempo",
+          "isHidden": false
+        },
+        {
+          "slug": "regenerator",
+          "name": "Regenerator",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png"
+    },
+    {
+      "id": 94,
+      "slug": "gengar",
+      "name": "Gengar",
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 60,
+        "spa": 130,
+        "spd": 75,
+        "spe": 110
+      },
+      "abilities": [
+        {
+          "slug": "cursed-body",
+          "name": "Cursed Body",
+          "isHidden": false
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png"
+    },
+    {
+      "id": 115,
+      "slug": "kangaskhan",
+      "name": "Kangaskhan",
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 105,
+        "atk": 95,
+        "def": 80,
+        "spa": 40,
+        "spd": 80,
+        "spe": 90
+      },
+      "abilities": [
+        {
+          "slug": "early-bird",
+          "name": "Early Bird",
+          "isHidden": false
+        },
+        {
+          "slug": "scrappy",
+          "name": "Scrappy",
+          "isHidden": false
+        },
+        {
+          "slug": "inner-focus",
+          "name": "Inner Focus",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png"
+    },
+    {
+      "id": 127,
+      "slug": "pinsir",
+      "name": "Pinsir",
+      "types": [
+        "bug"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 125,
+        "def": 100,
+        "spa": 55,
+        "spd": 70,
+        "spe": 85
+      },
+      "abilities": [
+        {
+          "slug": "hyper-cutter",
+          "name": "Hyper Cutter",
+          "isHidden": false
+        },
+        {
+          "slug": "mold-breaker",
+          "name": "Mold Breaker",
+          "isHidden": false
+        },
+        {
+          "slug": "moxie",
+          "name": "Moxie",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png"
+    },
+    {
       "id": 130,
       "slug": "gyarados",
       "name": "Gyarados",
@@ -105,6 +431,42 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png"
     },
     {
+      "id": 142,
+      "slug": "aerodactyl",
+      "name": "Aerodactyl",
+      "types": [
+        "rock",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 105,
+        "def": 65,
+        "spa": 60,
+        "spd": 75,
+        "spe": 130
+      },
+      "abilities": [
+        {
+          "slug": "rock-head",
+          "name": "Rock Head",
+          "isHidden": false
+        },
+        {
+          "slug": "pressure",
+          "name": "Pressure",
+          "isHidden": false
+        },
+        {
+          "slug": "unnerve",
+          "name": "Unnerve",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png"
+    },
+    {
       "id": 149,
       "slug": "dragonite",
       "name": "Dragonite",
@@ -134,6 +496,36 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+    },
+    {
+      "id": 181,
+      "slug": "ampharos",
+      "name": "Ampharos",
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 75,
+        "def": 85,
+        "spa": 115,
+        "spd": 90,
+        "spe": 55
+      },
+      "abilities": [
+        {
+          "slug": "static",
+          "name": "Static",
+          "isHidden": false
+        },
+        {
+          "slug": "plus",
+          "name": "Plus",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png"
     },
     {
       "id": 184,
@@ -172,6 +564,42 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/184.png"
     },
     {
+      "id": 208,
+      "slug": "steelix",
+      "name": "Steelix",
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 85,
+        "def": 200,
+        "spa": 55,
+        "spd": 65,
+        "spe": 30
+      },
+      "abilities": [
+        {
+          "slug": "rock-head",
+          "name": "Rock Head",
+          "isHidden": false
+        },
+        {
+          "slug": "sturdy",
+          "name": "Sturdy",
+          "isHidden": false
+        },
+        {
+          "slug": "sheer-force",
+          "name": "Sheer Force",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png"
+    },
+    {
       "id": 212,
       "slug": "scizor",
       "name": "Scizor",
@@ -208,6 +636,78 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png"
     },
     {
+      "id": 214,
+      "slug": "heracross",
+      "name": "Heracross",
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 125,
+        "def": 75,
+        "spa": 40,
+        "spd": 95,
+        "spe": 85
+      },
+      "abilities": [
+        {
+          "slug": "swarm",
+          "name": "Swarm",
+          "isHidden": false
+        },
+        {
+          "slug": "guts",
+          "name": "Guts",
+          "isHidden": false
+        },
+        {
+          "slug": "moxie",
+          "name": "Moxie",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/214.png"
+    },
+    {
+      "id": 229,
+      "slug": "houndoom",
+      "name": "Houndoom",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 90,
+        "def": 50,
+        "spa": 110,
+        "spd": 80,
+        "spe": 95
+      },
+      "abilities": [
+        {
+          "slug": "early-bird",
+          "name": "Early Bird",
+          "isHidden": false
+        },
+        {
+          "slug": "flash-fire",
+          "name": "Flash Fire",
+          "isHidden": false
+        },
+        {
+          "slug": "unnerve",
+          "name": "Unnerve",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/229.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/229.png"
+    },
+    {
       "id": 233,
       "slug": "porygon2",
       "name": "Porygon2",
@@ -241,6 +741,41 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/233.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/233.png"
+    },
+    {
+      "id": 237,
+      "slug": "hitmontop",
+      "name": "Hitmontop",
+      "types": [
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 95,
+        "def": 95,
+        "spa": 35,
+        "spd": 110,
+        "spe": 70
+      },
+      "abilities": [
+        {
+          "slug": "intimidate",
+          "name": "Intimidate",
+          "isHidden": false
+        },
+        {
+          "slug": "technician",
+          "name": "Technician",
+          "isHidden": false
+        },
+        {
+          "slug": "steadfast",
+          "name": "Steadfast",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/237.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/237.png"
     },
     {
       "id": 248,
@@ -382,6 +917,247 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/286.png"
     },
     {
+      "id": 302,
+      "slug": "sableye",
+      "name": "Sableye",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 75,
+        "def": 75,
+        "spa": 65,
+        "spd": 65,
+        "spe": 50
+      },
+      "abilities": [
+        {
+          "slug": "keen-eye",
+          "name": "Keen Eye",
+          "isHidden": false
+        },
+        {
+          "slug": "stall",
+          "name": "Stall",
+          "isHidden": false
+        },
+        {
+          "slug": "prankster",
+          "name": "Prankster",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png"
+    },
+    {
+      "id": 303,
+      "slug": "mawile",
+      "name": "Mawile",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 85,
+        "def": 85,
+        "spa": 55,
+        "spd": 55,
+        "spe": 50
+      },
+      "abilities": [
+        {
+          "slug": "hyper-cutter",
+          "name": "Hyper Cutter",
+          "isHidden": false
+        },
+        {
+          "slug": "intimidate",
+          "name": "Intimidate",
+          "isHidden": false
+        },
+        {
+          "slug": "sheer-force",
+          "name": "Sheer Force",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/303.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/303.png"
+    },
+    {
+      "id": 306,
+      "slug": "aggron",
+      "name": "Aggron",
+      "types": [
+        "steel",
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 180,
+        "spa": 60,
+        "spd": 60,
+        "spe": 50
+      },
+      "abilities": [
+        {
+          "slug": "sturdy",
+          "name": "Sturdy",
+          "isHidden": false
+        },
+        {
+          "slug": "rock-head",
+          "name": "Rock Head",
+          "isHidden": false
+        },
+        {
+          "slug": "heavy-metal",
+          "name": "Heavy Metal",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png"
+    },
+    {
+      "id": 308,
+      "slug": "medicham",
+      "name": "Medicham",
+      "types": [
+        "fighting",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 60,
+        "def": 75,
+        "spa": 60,
+        "spd": 75,
+        "spe": 80
+      },
+      "abilities": [
+        {
+          "slug": "pure-power",
+          "name": "Pure Power",
+          "isHidden": false
+        },
+        {
+          "slug": "telepathy",
+          "name": "Telepathy",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/308.png"
+    },
+    {
+      "id": 310,
+      "slug": "manectric",
+      "name": "Manectric",
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 75,
+        "def": 60,
+        "spa": 105,
+        "spd": 60,
+        "spe": 105
+      },
+      "abilities": [
+        {
+          "slug": "static",
+          "name": "Static",
+          "isHidden": false
+        },
+        {
+          "slug": "lightning-rod",
+          "name": "Lightning Rod",
+          "isHidden": false
+        },
+        {
+          "slug": "minus",
+          "name": "Minus",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/310.png"
+    },
+    {
+      "id": 319,
+      "slug": "sharpedo",
+      "name": "Sharpedo",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 120,
+        "def": 40,
+        "spa": 95,
+        "spd": 40,
+        "spe": 95
+      },
+      "abilities": [
+        {
+          "slug": "rough-skin",
+          "name": "Rough Skin",
+          "isHidden": false
+        },
+        {
+          "slug": "speed-boost",
+          "name": "Speed Boost",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/319.png"
+    },
+    {
+      "id": 323,
+      "slug": "camerupt",
+      "name": "Camerupt",
+      "types": [
+        "fire",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 105,
+        "spd": 75,
+        "spe": 40
+      },
+      "abilities": [
+        {
+          "slug": "magma-armor",
+          "name": "Magma Armor",
+          "isHidden": false
+        },
+        {
+          "slug": "solid-rock",
+          "name": "Solid Rock",
+          "isHidden": false
+        },
+        {
+          "slug": "anger-point",
+          "name": "Anger Point",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/323.png"
+    },
+    {
       "id": 324,
       "slug": "torkoal",
       "name": "Torkoal",
@@ -417,6 +1193,37 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/324.png"
     },
     {
+      "id": 334,
+      "slug": "altaria",
+      "name": "Altaria",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 70,
+        "def": 90,
+        "spa": 70,
+        "spd": 105,
+        "spe": 80
+      },
+      "abilities": [
+        {
+          "slug": "natural-cure",
+          "name": "Natural Cure",
+          "isHidden": false
+        },
+        {
+          "slug": "cloud-nine",
+          "name": "Cloud Nine",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png"
+    },
+    {
       "id": 350,
       "slug": "milotic",
       "name": "Milotic",
@@ -450,6 +1257,111 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/350.png"
+    },
+    {
+      "id": 354,
+      "slug": "banette",
+      "name": "Banette",
+      "types": [
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 64,
+        "atk": 115,
+        "def": 65,
+        "spa": 83,
+        "spd": 63,
+        "spe": 65
+      },
+      "abilities": [
+        {
+          "slug": "insomnia",
+          "name": "Insomnia",
+          "isHidden": false
+        },
+        {
+          "slug": "frisk",
+          "name": "Frisk",
+          "isHidden": false
+        },
+        {
+          "slug": "cursed-body",
+          "name": "Cursed Body",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/354.png"
+    },
+    {
+      "id": 359,
+      "slug": "absol",
+      "name": "Absol",
+      "types": [
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 130,
+        "def": 60,
+        "spa": 75,
+        "spd": 60,
+        "spe": 75
+      },
+      "abilities": [
+        {
+          "slug": "pressure",
+          "name": "Pressure",
+          "isHidden": false
+        },
+        {
+          "slug": "super-luck",
+          "name": "Super Luck",
+          "isHidden": false
+        },
+        {
+          "slug": "justified",
+          "name": "Justified",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png"
+    },
+    {
+      "id": 362,
+      "slug": "glalie",
+      "name": "Glalie",
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 80,
+        "def": 80,
+        "spa": 80,
+        "spd": 80,
+        "spe": 80
+      },
+      "abilities": [
+        {
+          "slug": "inner-focus",
+          "name": "Inner Focus",
+          "isHidden": false
+        },
+        {
+          "slug": "ice-body",
+          "name": "Ice Body",
+          "isHidden": false
+        },
+        {
+          "slug": "moody",
+          "name": "Moody",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/362.png"
     },
     {
       "id": 373,
@@ -514,6 +1426,37 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png"
     },
     {
+      "id": 398,
+      "slug": "staraptor",
+      "name": "Staraptor",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 120,
+        "def": 70,
+        "spa": 50,
+        "spd": 60,
+        "spe": 100
+      },
+      "abilities": [
+        {
+          "slug": "intimidate",
+          "name": "Intimidate",
+          "isHidden": false
+        },
+        {
+          "slug": "reckless",
+          "name": "Reckless",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/398.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/398.png"
+    },
+    {
       "id": 423,
       "slug": "gastrodon",
       "name": "Gastrodon",
@@ -550,6 +1493,41 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/423.png"
     },
     {
+      "id": 428,
+      "slug": "lopunny",
+      "name": "Lopunny",
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 76,
+        "def": 84,
+        "spa": 54,
+        "spd": 96,
+        "spe": 105
+      },
+      "abilities": [
+        {
+          "slug": "cute-charm",
+          "name": "Cute Charm",
+          "isHidden": false
+        },
+        {
+          "slug": "klutz",
+          "name": "Klutz",
+          "isHidden": false
+        },
+        {
+          "slug": "limber",
+          "name": "Limber",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/428.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/428.png"
+    },
+    {
       "id": 445,
       "slug": "garchomp",
       "name": "Garchomp",
@@ -581,6 +1559,73 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png"
     },
     {
+      "id": 448,
+      "slug": "lucario",
+      "name": "Lucario",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 70,
+        "spa": 115,
+        "spd": 70,
+        "spe": 90
+      },
+      "abilities": [
+        {
+          "slug": "steadfast",
+          "name": "Steadfast",
+          "isHidden": false
+        },
+        {
+          "slug": "inner-focus",
+          "name": "Inner Focus",
+          "isHidden": false
+        },
+        {
+          "slug": "justified",
+          "name": "Justified",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png"
+    },
+    {
+      "id": 460,
+      "slug": "abomasnow",
+      "name": "Abomasnow",
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 92,
+        "def": 75,
+        "spa": 92,
+        "spd": 85,
+        "spe": 60
+      },
+      "abilities": [
+        {
+          "slug": "snow-warning",
+          "name": "Snow Warning",
+          "isHidden": false
+        },
+        {
+          "slug": "soundproof",
+          "name": "Soundproof",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/460.png"
+    },
+    {
       "id": 461,
       "slug": "weavile",
       "name": "Weavile",
@@ -610,6 +1655,42 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/461.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/461.png"
+    },
+    {
+      "id": 462,
+      "slug": "magnezone",
+      "name": "Magnezone",
+      "types": [
+        "electric",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 70,
+        "def": 115,
+        "spa": 130,
+        "spd": 90,
+        "spe": 60
+      },
+      "abilities": [
+        {
+          "slug": "magnet-pull",
+          "name": "Magnet Pull",
+          "isHidden": false
+        },
+        {
+          "slug": "sturdy",
+          "name": "Sturdy",
+          "isHidden": false
+        },
+        {
+          "slug": "analytic",
+          "name": "Analytic",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/462.png"
     },
     {
       "id": 468,
@@ -646,6 +1727,77 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/468.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/468.png"
+    },
+    {
+      "id": 530,
+      "slug": "excadrill",
+      "name": "Excadrill",
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "atk": 135,
+        "def": 60,
+        "spa": 50,
+        "spd": 65,
+        "spe": 88
+      },
+      "abilities": [
+        {
+          "slug": "sand-rush",
+          "name": "Sand Rush",
+          "isHidden": false
+        },
+        {
+          "slug": "sand-force",
+          "name": "Sand Force",
+          "isHidden": false
+        },
+        {
+          "slug": "mold-breaker",
+          "name": "Mold Breaker",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/530.png"
+    },
+    {
+      "id": 534,
+      "slug": "conkeldurr",
+      "name": "Conkeldurr",
+      "types": [
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 105,
+        "atk": 140,
+        "def": 95,
+        "spa": 55,
+        "spd": 65,
+        "spe": 45
+      },
+      "abilities": [
+        {
+          "slug": "guts",
+          "name": "Guts",
+          "isHidden": false
+        },
+        {
+          "slug": "sheer-force",
+          "name": "Sheer Force",
+          "isHidden": false
+        },
+        {
+          "slug": "iron-fist",
+          "name": "Iron Fist",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/534.png"
     },
     {
       "id": 547,
@@ -746,6 +1898,42 @@
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/598.png"
     },
     {
+      "id": 609,
+      "slug": "chandelure",
+      "name": "Chandelure",
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 55,
+        "def": 90,
+        "spa": 145,
+        "spd": 90,
+        "spe": 80
+      },
+      "abilities": [
+        {
+          "slug": "flash-fire",
+          "name": "Flash Fire",
+          "isHidden": false
+        },
+        {
+          "slug": "flame-body",
+          "name": "Flame Body",
+          "isHidden": false
+        },
+        {
+          "slug": "infiltrator",
+          "name": "Infiltrator",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/609.png"
+    },
+    {
       "id": 620,
       "slug": "mienshao",
       "name": "Mienshao",
@@ -805,6 +1993,37 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/635.png"
+    },
+    {
+      "id": 637,
+      "slug": "volcarona",
+      "name": "Volcarona",
+      "types": [
+        "bug",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 60,
+        "def": 65,
+        "spa": 135,
+        "spd": 105,
+        "spe": 100
+      },
+      "abilities": [
+        {
+          "slug": "flame-body",
+          "name": "Flame Body",
+          "isHidden": false
+        },
+        {
+          "slug": "swarm",
+          "name": "Swarm",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/637.png"
     },
     {
       "id": 663,
@@ -897,6 +2116,37 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/727.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/727.png"
+    },
+    {
+      "id": 730,
+      "slug": "primarina",
+      "name": "Primarina",
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 74,
+        "def": 74,
+        "spa": 126,
+        "spd": 116,
+        "spe": 60
+      },
+      "abilities": [
+        {
+          "slug": "torrent",
+          "name": "Torrent",
+          "isHidden": false
+        },
+        {
+          "slug": "liquid-voice",
+          "name": "Liquid Voice",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/730.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/730.png"
     },
     {
       "id": 778,
@@ -1025,6 +2275,42 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/823.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png"
+    },
+    {
+      "id": 858,
+      "slug": "hatterene",
+      "name": "Hatterene",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 57,
+        "atk": 90,
+        "def": 95,
+        "spa": 136,
+        "spd": 103,
+        "spe": 29
+      },
+      "abilities": [
+        {
+          "slug": "healer",
+          "name": "Healer",
+          "isHidden": false
+        },
+        {
+          "slug": "anticipation",
+          "name": "Anticipation",
+          "isHidden": false
+        },
+        {
+          "slug": "magic-bounce",
+          "name": "Magic Bounce",
+          "isHidden": true
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/858.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png"
     },
     {
       "id": 861,

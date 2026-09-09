@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { SearchBar } from './components/SearchBar'
 import { PokemonView } from './components/PokemonView'
+import { EntityPage } from './components/EntityPage'
+import type { EntityKind } from './lib/data'
 import {
   POKEMON,
   POKEMON_GENERATED_AT,
@@ -14,34 +16,56 @@ import {
 
 const FALLBACK_SLUG = POKEMON[0]?.slug ?? ''
 
-function slugFromHash(): string {
-  const h = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim()
-  return h && findPokemon(h) ? h : ''
+type Route =
+  | { kind: 'pokemon'; slug: string }
+  | { kind: EntityKind; slug: string }
+
+const ENTITY_KINDS: EntityKind[] = ['move', 'ability', 'item']
+
+function parseHash(): Route {
+  const raw = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim()
+  const slash = raw.indexOf('/')
+  if (slash > 0) {
+    const head = raw.slice(0, slash)
+    const rest = raw.slice(slash + 1)
+    if ((ENTITY_KINDS as string[]).includes(head) && rest) {
+      return { kind: head as EntityKind, slug: rest }
+    }
+  }
+  return { kind: 'pokemon', slug: raw && findPokemon(raw) ? raw : '' }
 }
 
 export function App() {
   const [query, setQuery] = useState('')
-  const [slug, setSlug] = useState<string>(
-    () => slugFromHash() || popularSlugs(1)[0] || FALLBACK_SLUG,
+  const [route, setRoute] = useState<Route>(parseHash)
+  const [pokeSlug, setPokeSlug] = useState<string>(
+    () =>
+      (route.kind === 'pokemon' && route.slug) ||
+      popularSlugs(1)[0] ||
+      FALLBACK_SLUG,
   )
 
   useEffect(() => {
-    const onHash = () => {
-      const s = slugFromHash()
-      if (s) setSlug(s)
-    }
+    const onHash = () => setRoute(parseHash())
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  function select(next: string) {
-    setSlug(next)
-    window.location.hash = next
+  // Remember the last Pokémon viewed so returning from a move/ability/item page
+  // lands back on it.
+  useEffect(() => {
+    if (route.kind === 'pokemon' && route.slug) setPokeSlug(route.slug)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [route])
+
+  function select(next: string) {
+    window.location.hash = next
   }
 
   const results = useMemo(() => searchPokemon(query), [query])
-  const pokemon = findPokemon(slug) ?? POKEMON[0]
+  const activeSlug =
+    route.kind === 'pokemon' && route.slug ? route.slug : pokeSlug
+  const pokemon = findPokemon(activeSlug) ?? POKEMON[0]
   const popular = useMemo(() => popularSlugs(12), [])
 
   const generated = new Date(POKEMON_GENERATED_AT)
@@ -62,11 +86,12 @@ export function App() {
         {popular.map((s) => {
           const p = findPokemon(s)
           if (!p) return null
+          const isActive = route.kind === 'pokemon' && s === activeSlug
           return (
             <button
               key={s}
               type="button"
-              className={`popular__chip${s === slug ? ' is-active' : ''}`}
+              className={`popular__chip${isActive ? ' is-active' : ''}`}
               onClick={() => select(s)}
             >
               <img src={p.sprite} alt="" width="28" height="28" loading="lazy" />
@@ -77,10 +102,14 @@ export function App() {
       </nav>
 
       <main className="content">
-        {pokemon ? (
-          <PokemonView pokemon={pokemon} snapshot={USAGE} />
+        {route.kind === 'pokemon' ? (
+          pokemon ? (
+            <PokemonView pokemon={pokemon} snapshot={USAGE} />
+          ) : (
+            <p className="muted-sm">No Pokémon in the dataset.</p>
+          )
         ) : (
-          <p className="muted-sm">No Pokémon in the dataset.</p>
+          <EntityPage kind={route.kind} slug={route.slug} onPickPokemon={select} />
         )}
       </main>
 

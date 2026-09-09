@@ -51,6 +51,42 @@ export interface PokemonSnapshot {
   pokemon: Pokemon[]
 }
 
+/** A Mega Evolution form, layered over its base Pokémon. */
+export interface MegaForm {
+  key: string
+  label: string
+  name: string
+  stone: string
+  types: TypeName[]
+  baseStats: BaseStats
+  abilities: Ability[]
+  sprite: string
+  artwork: string
+}
+
+export interface MegaDex {
+  generatedAt: string
+  source: string
+  baseCount: number
+  forms: Record<string, MegaForm[]>
+}
+
+/**
+ * One selectable form in the Pokémon page's form switcher — the base Pokémon or
+ * one of its Mega Evolutions, normalised to the same shape.
+ */
+export interface PokemonForm {
+  key: string
+  label: string
+  name: string
+  types: TypeName[]
+  baseStats: BaseStats
+  abilities: Ability[]
+  sprite: string
+  artwork: string
+  stone?: string
+}
+
 export interface UsageItem {
   name: string
   pct: number
@@ -66,6 +102,11 @@ export interface UsageEntry {
 
 export type MoveCategory = 'physical' | 'special' | 'status'
 
+export interface MoveStatChange {
+  stat: string
+  change: number
+}
+
 export interface MoveInfo {
   name: string
   slug: string
@@ -77,13 +118,53 @@ export interface MoveInfo {
   accuracy: number | null
   pp: number | null
   priority: number
+  target: string | null
+  generation: string | null
+  minHits: number | null
+  maxHits: number | null
+  /** >0 heals from damage dealt, <0 recoil, as a % of the amount. */
+  drain: number
+  /** flat heal as a % of the user's max HP. */
+  healing: number
+  critRate: number
+  ailment: string | null
+  ailmentChance: number
+  flinchChance: number
+  statChance: number
+  statChanges: MoveStatChange[]
+  /** one-liner for the inline row. */
   effect: string
+  /** long-form effect for the move's page; may contain blank-line paragraphs. */
+  longEffect: string
+  /** curated competitive notes PokéAPI's text doesn't cover. */
+  notes: string[]
 }
 
 export interface AbilityInfo {
   name: string
   slug: string
+  generation: string | null
   effect: string
+  longEffect: string
+  notes: string[]
+}
+
+export interface ItemInfo {
+  name: string
+  slug: string
+  category: string | null
+  sprite: string | null
+  flingPower: number | null
+  effect: string
+  longEffect: string
+  notes: string[]
+}
+
+export interface ItemDex {
+  generatedAt: string
+  source: string
+  itemCount: number
+  items: ItemInfo[]
 }
 
 export interface MoveDex {
