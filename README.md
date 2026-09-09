@@ -23,7 +23,7 @@ project combines three things that normally live in separate places:
 1. Accurate reference data (base stats, types, abilities, moves, sprites).
 2. The Pokémon Champions **regulation ruleset** (what is legal in Reg M‑C).
 3. Live **usage statistics** from the Champions ranked ladder / tournaments
-   (usage %, win rate, move usage %, item %, ability %, Tera %, teammates).
+   (usage %, win rate, move usage %, item %, ability %, teammates).
 
 ---
 
@@ -59,9 +59,10 @@ Online Competitions.
 | **M‑B** | 17 Jun – 9 Sep 2026 | M‑A roster + ~22 new Pokémon; M‑A Megas + ~16 new Megas. Used at the 2026 World Championships. |
 | **M‑C** | 9 Sep – 2 Dec 2026 | **Current.** Same restrictions as M‑A (no Legendaries/Restricteds). ~248 Pokémon legal. Adds ~24 Pokémon (incl. Rillaboom, Baxcalibur, Cinderace, Inteleon, Persian‑Alola). Adds Mega Salamence, Mega Golisopod (→ Steel), Mega Baxcalibur, and the Z‑Megas Absol‑Z, Garchomp‑Z, Lucario‑Z. New items: Terrain Extender, terrain seeds, Rocky Helmet, Eject Button. |
 
-> ⚠️ Roster counts, banned-move/item lists, and Terastallization rules for Reg M‑C
-> still need to be pinned to a primary source — see the **Verify** section in
-> [TODO.md](TODO.md). Treat the table above as a working draft.
+> ⚠️ Roster counts and banned-move/item lists for Reg M‑C still need to be pinned
+> to a primary source — see the **Verify** section in [TODO.md](TODO.md). Treat the
+> table above as a working draft. Pokémon Champions does **not** implement
+> Terastallization, so there is no Tera data or Tera UI in this project.
 
 ---
 
@@ -106,7 +107,7 @@ it becomes available.
 
 | Source | What it gives | Access |
 | --- | --- | --- |
-| **Official in-game Battle Data** (Battle Menu → Battle Data) | Source of truth: most-used Pokémon / moves / items / abilities / Tera, tournament winners, per Ranked Season & Online Competition, updated daily | No public API — manual export / community mirror |
+| **Official in-game Battle Data** (Battle Menu → Battle Data) | Source of truth: most-used Pokémon / moves / items / abilities, tournament winners, per Ranked Season & Online Competition, updated daily | No public API — manual export / community mirror |
 | **Pokémon Zone – Champions Ranked Seasons** | Per-season Singles & Doubles usage derived from official data | Web (structured pages) |
 | **Pikalytics – `/champions`** | Usage %, win rate, top moves, items, abilities, teammates; ladder (Glicko cutoffs 0+/1500+/1630+/1760+) + tournaments | Web / undocumented JSON |
 | **Smogon usage stats** via `@pkmn/smogon` / `data.pkmn.cc/stats/<format>.json` | Machine-readable monthly "chaos" JSON: moves, items, abilities, spreads, teammates, checks & counters — **Pokémon Showdown simulator ladder, not the official in-game ladder** | Free HTTP / npm |
@@ -131,7 +132,10 @@ Built (prototype):
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
   "Weak to" / "Resists" / "Immune to" defensively, each with ×4/×2/×½/×¼/×0 tags.
 - **Usage panel** — usage rate %, win rate, **common abilities** and **common
-  moves** ranked by percentage side by side, plus common Tera types.
+  moves** ranked by percentage side by side. Tap any ability or move to expand
+  it: abilities show their effect; moves show type, category, power, accuracy,
+  PP, priority and effect (reference data from `src/data/movedex.m-c.json`,
+  built by `npm run build:movedex`).
 
 Planned — see [TODO.md](TODO.md):
 
@@ -167,7 +171,8 @@ usage snapshots ─┘     (regulation +      (versioned    (read   (Pokémon pa
 ```
 Pokemon        { id, natId, name, forms[], types[], baseStats, abilities[], sprites }
 Form           { key, name, typesOverride?, baseStatsOverride?, isMega, megaStone? }
-Move           { id, name, type, category, power, accuracy, pp, priority, effect }
+Move           { name, slug, type, category, power, accuracy, pp, priority, effect } // implemented (movedex.m-c.json)
+Ability        { name, slug, effect }                                                // implemented (movedex.m-c.json)
 Regulation     { code: "M-C", startsOn, endsOn, format: "doubles",
                  legalPokemon[], legalMoves[], legalItems[], megasAllowed[],
                  clauses[], notes }
@@ -176,7 +181,6 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
                    "<slug>": { usagePct?, winPct?,
                                abilities: [{ name, pct }],   // implemented
                                moves:     [{ name, pct }],   // implemented
-                               teraTypes?: [{ name, pct }],  // implemented
                                items?:     [{ name, pct }],
                                /* teammates, spreads — planned */ } } }
 ```

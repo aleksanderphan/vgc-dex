@@ -1,4 +1,7 @@
 import type {
+  AbilityInfo,
+  MoveDex,
+  MoveInfo,
   Pokemon,
   PokemonSnapshot,
   Regulation,
@@ -8,6 +11,7 @@ import type {
 import pokemonJson from '../data/pokemon.json'
 import usageJson from '../data/usage.m-c.json'
 import regulationJson from '../data/regulation.m-c.json'
+import movedexJson from '../data/movedex.m-c.json'
 
 const snapshot = pokemonJson as unknown as PokemonSnapshot
 
@@ -20,6 +24,22 @@ export const POKEMON: Pokemon[] = [...snapshot.pokemon].sort((a, b) =>
 
 export const USAGE = usageJson as unknown as UsageSnapshot
 export const REGULATION = regulationJson as unknown as Regulation
+export const MOVEDEX = movedexJson as unknown as MoveDex
+
+const normalize = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+const moveByName = new Map(MOVEDEX.moves.map((m) => [normalize(m.name), m]))
+const abilityByName = new Map(
+  MOVEDEX.abilities.map((a) => [normalize(a.name), a]),
+)
+
+export function moveInfo(name: string): MoveInfo | undefined {
+  return moveByName.get(normalize(name))
+}
+
+export function abilityInfo(name: string): AbilityInfo | undefined {
+  return abilityByName.get(normalize(name))
+}
 
 const bySlug = new Map(POKEMON.map((p) => [p.slug, p]))
 

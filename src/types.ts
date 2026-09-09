@@ -61,8 +61,38 @@ export interface UsageEntry {
   winPct?: number
   abilities: UsageItem[]
   moves: UsageItem[]
-  teraTypes?: UsageItem[]
   items?: UsageItem[]
+}
+
+export type MoveCategory = 'physical' | 'special' | 'status'
+
+export interface MoveInfo {
+  name: string
+  slug: string
+  type: TypeName
+  category: MoveCategory
+  /** null for status / variable-power moves. */
+  power: number | null
+  /** null means the move never misses. */
+  accuracy: number | null
+  pp: number | null
+  priority: number
+  effect: string
+}
+
+export interface AbilityInfo {
+  name: string
+  slug: string
+  effect: string
+}
+
+export interface MoveDex {
+  generatedAt: string
+  source: string
+  moveCount: number
+  abilityCount: number
+  moves: MoveInfo[]
+  abilities: AbilityInfo[]
 }
 
 export interface UsageSnapshot {

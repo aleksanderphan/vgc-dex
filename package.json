@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "build:data": "node scripts/build-data.mjs"
+    "build:data": "node scripts/build-data.mjs",
+    "build:movedex": "node scripts/build-movedex.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

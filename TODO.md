@@ -18,8 +18,11 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
 - Sticky top search + `#slug` deep-linking + usage-ordered "popular" row.
 - Pokémon page: artwork, stat spread + BST, type badges, abilities.
 - Usage panel: usage % / win %, **common abilities** and **common moves** ranked
-  by %, common Tera types — reading `src/data/usage.m-c.json`
-  (**labelled SAMPLE**, `source: "placeholder"`).
+  by % — reading `src/data/usage.m-c.json` (**labelled SAMPLE**,
+  `source: "placeholder"`). Each ability/move row expands to its details from
+  `src/data/movedex.m-c.json` (`scripts/build-movedex.mjs`, PokéAPI).
+- No Terastallization: Pokémon Champions doesn't implement it, so there is no
+  Tera type / Tera Blast data or UI.
 
 Biggest gaps: real usage ingest (Phase 3), regulation legality filtering
 (Phase 2), Mega forms, move dex, full browsable grid.
@@ -32,7 +35,7 @@ These shape the data model, so resolve them before Phase 2.
 
 - [ ] Confirm the exact Reg M‑C **legal Pokémon list** and count (README says ~248) against Serebii / Victory Road / in-game rules.
 - [ ] Confirm the full **Mega Evolution list** legal in M‑C (base Megas + Z‑Megas) and any typing changes (e.g. Mega Golisopod → Steel).
-- [ ] Confirm whether **Terastallization** exists in Pokémon Champions and, if so, the M‑C rules (any Tera bans, Tera-per-battle limits, Stellar type).
+- [x] Confirm whether **Terastallization** exists in Pokémon Champions — it does **not**. Tera data + UI removed (no Tera types, no Tera Blast).
 - [ ] Confirm **banned moves / banned items** for M‑C (if any) and the newly added item list.
 - [ ] Confirm the base-format details: Bo1 vs Bo3 by round, timer values, open-sheet policy.
 - [ ] Confirm the M‑A and M‑B rosters/Megas for the historical regulation switcher.
@@ -61,10 +64,10 @@ These shape the data model, so resolve them before Phase 2.
 - [~] Snapshot covers a **curated 56-mon subset**, not the full legal dex — expand to the whole Reg M‑C pool once the list is verified.
 - [ ] Pin the ETL to a PokéAPI dataset version / commit for reproducibility.
 - [x] Import species, base stats, types, abilities, sprites.
-- [ ] Import **moves** (power/accuracy/PP/priority/category/effect) and build a move index. (Type chart is encoded locally instead.)
+- [~] Import **moves** + **abilities** (type/category/power/accuracy/PP/priority/effect) — `scripts/build-movedex.mjs` covers every name referenced by the usage data → `src/data/movedex.m-c.json`. Still TODO: whole-dex coverage + a move index / move page. (Type chart is encoded locally.)
 - [ ] Add `@pkmn/dex` + `@pkmn/data` for battle-accurate species/move/ability/item data and learnsets.
 - [ ] Reconciliation report: diff PokéAPI vs `@pkmn/dex` and pick the source of truth per field.
-- [~] Normalized to the internal `Pokemon` type; `Form` (Mega) and `Move` types still to add.
+- [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` added (`src/types.ts`). `Form` (Mega) type still to add.
 - [ ] Handle Mega forms explicitly (typing + base-stat overrides, required Mega Stone).
 - [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork (revisit if offline/asset-pinning is needed).
 - [ ] Unit tests for the normalizer + type chart (a manual sanity check was done, no runner yet).
@@ -89,7 +92,7 @@ These shape the data model, so resolve them before Phase 2.
 - [ ] Ingester: **Pokémon Zone** Champions Ranked Seasons (Singles + Doubles) — pending licensing check.
 - [ ] Ingester: **Pikalytics** `/champions` (usage %, win rate, moves, items, abilities, teammates, cutoffs) — pending licensing check.
 - [ ] Optional: **Limitless** tournament results / team lists.
-- [ ] Name-mapping layer: reconcile each source's naming (forms, Megas, "Urshifu-*", Tera) to internal ids; fail loudly on unmapped names.
+- [ ] Name-mapping layer: reconcile each source's naming (forms, Megas, "Urshifu-*") to internal ids; fail loudly on unmapped names.
 - [ ] Per-source normalizer → `UsageSnapshot`; keep raw payloads for reproducibility.
 - [ ] Snapshot store with history (don't overwrite; append dated snapshots).
 - [ ] Tests + a schema/consistency check (percentages sane, ids resolve, no source mixing).
@@ -121,11 +124,11 @@ These shape the data model, so resolve them before Phase 2.
 - [ ] Meta overview page (usage leaderboard, movable cutoff).
 - [~] Sample-data pill + snapshot label + footer note; extend "which source" labelling as more sources land.
 - [x] Responsive, mobile-first, dark theme (palette tokens in `styles.css`; a light mode / toggle could be added later).
-- [ ] Accessibility pass (focus states, keyboard nav in the results list, ARIA on the ranked lists).
+- [~] Accessibility pass — ranked-list rows are now real buttons with `aria-expanded` / `aria-controls` + focus-visible outline. Still: keyboard nav in the search results list, a wider sweep.
 
 ## Phase 7 — Usage & move analytics UI
 
-- [x] Usage panel: usage %, win %, abilities % and moves % ranked side by side, Tera %.
+- [x] Usage panel: usage %, win %, abilities % and moves % ranked side by side; each row expands to move/ability details (`movedex.m-c.json`).
 - [ ] Add items %, teammates, and sample EV spreads to the panel (schema already allows items).
 - [ ] Compare view: 2–4 Pokémon side by side.
 - [ ] Trend charts: usage over time within a season (needs snapshot history from Phase 3).

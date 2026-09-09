@@ -20,14 +20,7 @@
         { "name": "Dragon Claw", "pct": 40.7 },
         { "name": "Swords Dance", "pct": 33.2 },
         { "name": "Scale Shot", "pct": 24.6 },
-        { "name": "Substitute", "pct": 18.9 },
-        { "name": "Tera Blast", "pct": 12.1 }
-      ],
-      "teraTypes": [
-        { "name": "Steel", "pct": 26.5 },
-        { "name": "Fire", "pct": 21.0 },
-        { "name": "Ground", "pct": 15.3 },
-        { "name": "Water", "pct": 11.8 }
+        { "name": "Substitute", "pct": 18.9 }
       ]
     },
     "incineroar": {
@@ -42,11 +35,6 @@
         { "name": "Will-O-Wisp", "pct": 29.8 },
         { "name": "Protect", "pct": 23.6 },
         { "name": "U-turn", "pct": 17.1 }
-      ],
-      "teraTypes": [
-        { "name": "Grass", "pct": 34.2 },
-        { "name": "Water", "pct": 19.7 },
-        { "name": "Ghost", "pct": 14.5 }
       ]
     },
     "rillaboom": {
@@ -61,11 +49,6 @@
         { "name": "Protect", "pct": 39.6 },
         { "name": "High Horsepower", "pct": 28.5 },
         { "name": "Knock Off", "pct": 23.1 }
-      ],
-      "teraTypes": [
-        { "name": "Fire", "pct": 28.0 },
-        { "name": "Grass", "pct": 22.4 },
-        { "name": "Water", "pct": 16.9 }
       ]
     },
     "amoonguss": {
@@ -82,11 +65,6 @@
         { "name": "Protect", "pct": 57.4 },
         { "name": "Clear Smog", "pct": 39.5 },
         { "name": "Pollen Puff", "pct": 27.2 }
-      ],
-      "teraTypes": [
-        { "name": "Water", "pct": 31.6 },
-        { "name": "Fairy", "pct": 18.9 },
-        { "name": "Steel", "pct": 15.4 }
       ]
     },
     "gholdengo": {
@@ -101,12 +79,6 @@
         { "name": "Thunderbolt", "pct": 29.4 },
         { "name": "Trick", "pct": 19.8 },
         { "name": "Recover", "pct": 15.5 }
-      ],
-      "teraTypes": [
-        { "name": "Steel", "pct": 24.1 },
-        { "name": "Flying", "pct": 17.7 },
-        { "name": "Water", "pct": 13.9 },
-        { "name": "Fairy", "pct": 11.2 }
       ]
     },
     "whimsicott": {
@@ -125,11 +97,6 @@
         { "name": "Light Screen", "pct": 24.0 },
         { "name": "Helping Hand", "pct": 21.7 },
         { "name": "Sunny Day", "pct": 11.3 }
-      ],
-      "teraTypes": [
-        { "name": "Dark", "pct": 22.6 },
-        { "name": "Steel", "pct": 18.4 },
-        { "name": "Ghost", "pct": 12.1 }
       ]
     },
     "dragonite": {
@@ -148,11 +115,6 @@
         { "name": "Stomping Tantrum", "pct": 21.5 },
         { "name": "Roost", "pct": 19.4 },
         { "name": "Encore", "pct": 13.8 }
-      ],
-      "teraTypes": [
-        { "name": "Normal", "pct": 33.9 },
-        { "name": "Flying", "pct": 16.2 },
-        { "name": "Steel", "pct": 12.4 }
       ]
     },
     "kingambit": {
@@ -169,13 +131,7 @@
         { "name": "Protect", "pct": 54.9 },
         { "name": "Iron Head", "pct": 43.8 },
         { "name": "Swords Dance", "pct": 33.7 },
-        { "name": "Low Kick", "pct": 12.4 },
-        { "name": "Tera Blast", "pct": 10.1 }
-      ],
-      "teraTypes": [
-        { "name": "Dark", "pct": 27.9 },
-        { "name": "Fairy", "pct": 19.1 },
-        { "name": "Flying", "pct": 14.8 }
+        { "name": "Low Kick", "pct": 12.4 }
       ]
     },
     "sinistcha": {
@@ -194,11 +150,6 @@
         { "name": "Strength Sap", "pct": 25.6 },
         { "name": "Shadow Ball", "pct": 20.2 },
         { "name": "Hex", "pct": 9.7 }
-      ],
-      "teraTypes": [
-        { "name": "Water", "pct": 29.4 },
-        { "name": "Fairy", "pct": 17.2 },
-        { "name": "Fire", "pct": 13.0 }
       ]
     },
     "basculegion": {
@@ -214,13 +165,7 @@
         { "name": "Last Respects", "pct": 59.9 },
         { "name": "Protect", "pct": 51.6 },
         { "name": "Aqua Jet", "pct": 40.2 },
-        { "name": "Tera Blast", "pct": 17.8 },
         { "name": "Endeavor", "pct": 11.5 }
-      ],
-      "teraTypes": [
-        { "name": "Water", "pct": 34.7 },
-        { "name": "Ghost", "pct": 20.3 },
-        { "name": "Grass", "pct": 10.9 }
       ]
     },
     "gastrodon": {
@@ -238,11 +183,6 @@
         { "name": "Recover", "pct": 30.4 },
         { "name": "Muddy Water", "pct": 25.7 },
         { "name": "Clear Smog", "pct": 12.2 }
-      ],
-      "teraTypes": [
-        { "name": "Fairy", "pct": 24.8 },
-        { "name": "Poison", "pct": 19.4 },
-        { "name": "Grass", "pct": 14.1 }
       ]
     },
     "tyranitar": {
@@ -258,13 +198,7 @@
         { "name": "Knock Off", "pct": 56.4 },
         { "name": "Low Kick", "pct": 35.8 },
         { "name": "Assurance", "pct": 22.1 },
-        { "name": "Dragon Dance", "pct": 19.7 },
-        { "name": "Tera Blast", "pct": 13.6 }
-      ],
-      "teraTypes": [
-        { "name": "Flying", "pct": 23.5 },
-        { "name": "Fairy", "pct": 16.7 },
-        { "name": "Ghost", "pct": 12.9 }
+        { "name": "Dragon Dance", "pct": 19.7 }
       ]
     },
     "dragapult": {
@@ -281,13 +215,7 @@
         { "name": "U-turn", "pct": 43.5 },
         { "name": "Protect", "pct": 39.8 },
         { "name": "Draco Meteor", "pct": 29.6 },
-        { "name": "Tera Blast", "pct": 17.4 },
         { "name": "Will-O-Wisp", "pct": 15.9 }
-      ],
-      "teraTypes": [
-        { "name": "Fairy", "pct": 20.1 },
-        { "name": "Steel", "pct": 17.8 },
-        { "name": "Ghost", "pct": 13.2 }
       ]
     },
     "talonflame": {
@@ -305,11 +233,6 @@
         { "name": "Dual Wingbeat", "pct": 25.8 },
         { "name": "Quick Guard", "pct": 20.3 },
         { "name": "Overheat", "pct": 11.6 }
-      ],
-      "teraTypes": [
-        { "name": "Ghost", "pct": 21.7 },
-        { "name": "Grass", "pct": 17.4 },
-        { "name": "Dragon", "pct": 12.0 }
       ]
     },
     "grimmsnarl": {
@@ -327,11 +250,6 @@
         { "name": "Fake Out", "pct": 25.7 },
         { "name": "Taunt", "pct": 19.8 },
         { "name": "Scary Face", "pct": 11.4 }
-      ],
-      "teraTypes": [
-        { "name": "Ghost", "pct": 24.6 },
-        { "name": "Steel", "pct": 21.9 },
-        { "name": "Poison", "pct": 12.3 }
       ]
     },
     "gardevoir": {
@@ -350,11 +268,6 @@
         { "name": "Trick Room", "pct": 21.8 },
         { "name": "Encore", "pct": 17.5 },
         { "name": "Shadow Ball", "pct": 13.9 }
-      ],
-      "teraTypes": [
-        { "name": "Fairy", "pct": 30.7 },
-        { "name": "Fire", "pct": 15.4 },
-        { "name": "Water", "pct": 12.8 }
       ]
     },
     "hydreigon": {
@@ -369,11 +282,6 @@
         { "name": "Earth Power", "pct": 30.2 },
         { "name": "Flamethrower", "pct": 24.4 },
         { "name": "Tailwind", "pct": 18.3 }
-      ],
-      "teraTypes": [
-        { "name": "Steel", "pct": 22.0 },
-        { "name": "Fairy", "pct": 17.6 },
-        { "name": "Flying", "pct": 12.1 }
       ]
     },
     "scizor": {
@@ -391,11 +299,6 @@
         { "name": "Close Combat", "pct": 39.6 },
         { "name": "Swords Dance", "pct": 27.8 },
         { "name": "Bug Bite", "pct": 21.4 }
-      ],
-      "teraTypes": [
-        { "name": "Steel", "pct": 25.3 },
-        { "name": "Fire", "pct": 18.9 },
-        { "name": "Ghost", "pct": 11.7 }
       ]
     },
     "corviknight": {
@@ -414,11 +317,6 @@
         { "name": "Tailwind", "pct": 29.6 },
         { "name": "Taunt", "pct": 23.5 },
         { "name": "Iron Head", "pct": 17.9 }
-      ],
-      "teraTypes": [
-        { "name": "Dragon", "pct": 21.4 },
-        { "name": "Fire", "pct": 17.0 },
-        { "name": "Water", "pct": 13.6 }
       ]
     },
     "garganacl": {
@@ -433,11 +331,6 @@
         { "name": "Body Press", "pct": 29.8 },
         { "name": "Iron Defense", "pct": 22.3 },
         { "name": "Earthquake", "pct": 11.9 }
-      ],
-      "teraTypes": [
-        { "name": "Ghost", "pct": 26.1 },
-        { "name": "Water", "pct": 19.3 },
-        { "name": "Fairy", "pct": 14.7 }
       ]
     },
     "salamence": {
@@ -451,15 +344,9 @@
         { "name": "Protect", "pct": 57.9 },
         { "name": "Dual Wingbeat", "pct": 39.8 },
         { "name": "Dragon Dance", "pct": 33.6 },
-        { "name": "Tera Blast", "pct": 30.1 },
         { "name": "Earthquake", "pct": 25.7 },
         { "name": "Draco Meteor", "pct": 23.9 },
         { "name": "Roost", "pct": 15.8 }
-      ],
-      "teraTypes": [
-        { "name": "Ground", "pct": 22.7 },
-        { "name": "Steel", "pct": 18.1 },
-        { "name": "Flying", "pct": 13.4 }
       ]
     },
     "gyarados": {
@@ -475,13 +362,7 @@
         { "name": "Dragon Dance", "pct": 39.7 },
         { "name": "Taunt", "pct": 30.4 },
         { "name": "Ice Fang", "pct": 24.1 },
-        { "name": "Tera Blast", "pct": 17.8 },
         { "name": "Thunder Wave", "pct": 12.2 }
-      ],
-      "teraTypes": [
-        { "name": "Flying", "pct": 27.3 },
-        { "name": "Ground", "pct": 16.9 },
-        { "name": "Water", "pct": 12.1 }
       ]
     },
     "metagross": {
@@ -496,11 +377,6 @@
         { "name": "Earthquake", "pct": 29.7 },
         { "name": "Stomping Tantrum", "pct": 21.5 },
         { "name": "Ice Punch", "pct": 14.8 }
-      ],
-      "teraTypes": [
-        { "name": "Steel", "pct": 23.9 },
-        { "name": "Ghost", "pct": 16.4 },
-        { "name": "Water", "pct": 12.7 }
       ]
     },
     "meowscarada": {
@@ -518,11 +394,6 @@
         { "name": "Triple Axel", "pct": 30.2 },
         { "name": "Sucker Punch", "pct": 24.1 },
         { "name": "Play Rough", "pct": 13.7 }
-      ],
-      "teraTypes": [
-        { "name": "Grass", "pct": 24.6 },
-        { "name": "Dark", "pct": 19.8 },
-        { "name": "Water", "pct": 12.4 }
       ]
     },
     "arcanine": {
@@ -540,11 +411,6 @@
         { "name": "Will-O-Wisp", "pct": 29.4 },
         { "name": "Howl", "pct": 20.1 },
         { "name": "Close Combat", "pct": 15.8 }
-      ],
-      "teraTypes": [
-        { "name": "Grass", "pct": 23.1 },
-        { "name": "Normal", "pct": 17.6 },
-        { "name": "Dragon", "pct": 12.9 }
       ]
     }
   }
