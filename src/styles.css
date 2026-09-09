@@ -1,0 +1,602 @@
+/* ─────────────────────────────────────────────────────────────
+   vgc-dex — mobile-first styles
+   Base rules target a phone; @media (min-width: …) enhances upward.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  color-scheme: dark;
+  --bg: #0e1014;
+  --surface: #171a20;
+  --surface-2: #222732;
+  --text: #eceef3;
+  --text-dim: #98a1b2;
+  --border: #2b313d;
+  --accent: #ff5a5f;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.38);
+  --maxw: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.app {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.muted-sm {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+/* ── Search ─────────────────────────────────────────────── */
+
+.search {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.search__inner {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 14px;
+  box-shadow: var(--shadow);
+}
+
+.search__icon {
+  color: var(--text-dim);
+  flex: none;
+}
+
+.search__input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  padding: 12px 4px;
+  font-size: 16px; /* keeps iOS from zooming on focus */
+}
+
+.search__input::placeholder {
+  color: var(--text-dim);
+}
+
+.search__results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.search__result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.search__result:hover,
+.search__result:focus-visible {
+  background: var(--surface-2);
+}
+
+.search__result img {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  image-rendering: pixelated;
+}
+
+.search__result-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.search__result-types {
+  display: flex;
+  gap: 4px;
+}
+
+.search__result-no {
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ── Popular quick-pick row ─────────────────────────────── */
+
+.popular {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px;
+  scrollbar-width: none;
+}
+
+.popular::-webkit-scrollbar {
+  display: none;
+}
+
+.popular__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 6px 12px 6px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.popular__chip img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+
+.popular__chip.is-active {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* ── Content / cards ────────────────────────────────────── */
+
+.content {
+  padding: 4px 12px 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.pill--warn {
+  background: rgba(234, 179, 8, 0.14);
+  color: #f2c665;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+/* ── Hero ───────────────────────────────────────────────── */
+
+.poke__hero {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: center;
+}
+
+.poke__art {
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+    circle at 50% 45%,
+    var(--surface-2),
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.poke__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.poke__no {
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.poke__name {
+  font-size: 26px;
+  margin: 2px 0 10px;
+}
+
+.badge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.poke__abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.ability-chip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.ability-chip--hidden {
+  border-style: dashed;
+}
+
+.ability-chip i {
+  color: var(--text-dim);
+  font-style: normal;
+}
+
+/* ── Type badges ────────────────────────────────────────── */
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.type-badge--md {
+  font-size: 12px;
+  padding: 5px 12px;
+}
+
+.type-badge--sm {
+  font-size: 11px;
+  padding: 4px 9px;
+}
+
+.type-badge__tag {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Stat spread ────────────────────────────────────────── */
+
+.stat-spread {
+  display: grid;
+  gap: 8px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 34px 38px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-row__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.stat-row__value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: right;
+}
+
+.stat-row__track {
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stat-row__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.stat-row--total {
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+.stat-row--total .stat-row__label,
+.stat-row--total .stat-row__value {
+  color: var(--text);
+}
+
+/* ── Matchups ───────────────────────────────────────────── */
+
+.matchups {
+  display: grid;
+  gap: 16px;
+}
+
+.matchup-group__head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.matchup-group__head h3 {
+  font-size: 14px;
+}
+
+.matchup-group__hint {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ── Usage panel ────────────────────────────────────────── */
+
+.usage__stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.usage__stat {
+  flex: 1;
+  background: var(--surface-2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.usage__stat-num {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.usage__stat-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.usage__grid {
+  display: grid;
+  gap: 18px;
+}
+
+.ranked__title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.ranked__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.ranked__row {
+  display: grid;
+  grid-template-columns: 16px 1fr 64px 46px;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.ranked__rank {
+  color: var(--text-dim);
+  font-size: 11px;
+  text-align: right;
+}
+
+.ranked__name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ranked__track {
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ranked__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.ranked__pct {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.usage__tera {
+  margin-top: 18px;
+}
+
+.tera-chip {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.tera-chip b {
+  font-variant-numeric: tabular-nums;
+}
+
+.usage__meta {
+  margin: 16px 0 0;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+
+.foot {
+  padding: 16px 24px 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.foot strong {
+  color: var(--text);
+}
+
+.foot__meta {
+  margin-top: 8px;
+}
+
+/* ── ≥ 560px: hero becomes a row ────────────────────────── */
+
+@media (min-width: 560px) {
+  .poke__hero {
+    grid-template-columns: 190px 1fr;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .badge-wrap,
+  .poke__abilities {
+    justify-content: flex-start;
+  }
+
+  .matchup-group__head {
+    align-items: baseline;
+  }
+}
+
+/* ── ≥ 680px: two-column matchups & usage lists ─────────── */
+
+@media (min-width: 680px) {
+  .matchups {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usage__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,73 @@
+// Curated Pokémon pool for the first cut of vgc-dex, aimed at the
+// Pokémon Champions Regulation M-C metagame (VGC Doubles, no Legendaries).
+//
+// This is intentionally a subset — it keeps `npm run build:data` fast and the
+// bundled snapshot small. Add or remove entries freely and re-run the ETL;
+// the app reads whatever `src/data/pokemon.json` contains.
+//
+// An entry is either a PokéAPI slug string, or an object:
+//   { slug, display?, api? }
+//     slug    — canonical id used everywhere in the app (and to match usage data)
+//     display — nicer label when the auto-generated name is awkward
+//     api     — the PokéAPI `/pokemon/<…>` slug to fetch, when it differs from
+//               `slug` (species with only form-specific resources)
+
+/** @type {(string | { slug: string, display?: string, api?: string })[]} */
+export const REG_MC_POKEMON = [
+  'garchomp',
+  'dragonite',
+  'gholdengo',
+  'kingambit',
+  'amoonguss',
+  'rillaboom',
+  'incineroar',
+  'whimsicott',
+  'dragapult',
+  'gardevoir',
+  'hydreigon',
+  'tyranitar',
+  'scizor',
+  'metagross',
+  'salamence',
+  'gyarados',
+  'milotic',
+  'gastrodon',
+  'arcanine',
+  'talonflame',
+  'corviknight',
+  'grimmsnarl',
+  'sylveon',
+  'glimmora',
+  'garganacl',
+  'annihilape',
+  { slug: 'maushold', display: 'Maushold', api: 'maushold-family-of-four' },
+  'meowscarada',
+  'skeledirge',
+  'quaquaval',
+  'baxcalibur',
+  'tinkaton',
+  { slug: 'mimikyu', display: 'Mimikyu', api: 'mimikyu-disguised' },
+  'ceruledge',
+  'armarouge',
+  'dondozo',
+  { slug: 'tatsugiri', display: 'Tatsugiri', api: 'tatsugiri-curly' },
+  'breloom',
+  'togekiss',
+  'ferrothorn',
+  'weavile',
+  'mienshao',
+  'porygon2',
+  'sinistcha',
+  'pelipper',
+  'torkoal',
+  'ursaluna',
+  'kommo-o',
+  'azumarill',
+  'clefable',
+  { slug: 'basculegion', display: 'Basculegion', api: 'basculegion-male' },
+  { slug: 'indeedee', display: 'Indeedee', api: 'indeedee-male' },
+  { slug: 'rotom-wash', display: 'Rotom-Wash' },
+  { slug: 'rotom-heat', display: 'Rotom-Heat' },
+  { slug: 'ninetales-alola', display: 'Alolan Ninetales' },
+  { slug: 'lilligant-hisui', display: 'Hisuian Lilligant' },
+]

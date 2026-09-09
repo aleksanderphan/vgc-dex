@@ -1,0 +1,551 @@
+{
+  "regulation": "M-C",
+  "season": "Season 4 (early)",
+  "ratingCutoff": "1760+",
+  "source": "placeholder",
+  "capturedAt": "2026-09-09",
+  "disclaimer": "Illustrative sample data, NOT live usage stats. Move and ability choices reflect real competitive sets; the percentages are hand-authored estimates. Replace with a real ingest from the Pokémon Champions in-game Battle Data (or Smogon / Pikalytics / Pokémon Zone) — see TODO.md Phase 3.",
+  "entries": {
+    "garchomp": {
+      "usagePct": 38.4,
+      "winPct": 52.1,
+      "abilities": [
+        { "name": "Rough Skin", "pct": 95.8 },
+        { "name": "Sand Veil", "pct": 4.2 }
+      ],
+      "moves": [
+        { "name": "Protect", "pct": 82.3 },
+        { "name": "Earthquake", "pct": 79.1 },
+        { "name": "Rock Slide", "pct": 66.4 },
+        { "name": "Dragon Claw", "pct": 40.7 },
+        { "name": "Swords Dance", "pct": 33.2 },
+        { "name": "Scale Shot", "pct": 24.6 },
+        { "name": "Substitute", "pct": 18.9 },
+        { "name": "Tera Blast", "pct": 12.1 }
+      ],
+      "teraTypes": [
+        { "name": "Steel", "pct": 26.5 },
+        { "name": "Fire", "pct": 21.0 },
+        { "name": "Ground", "pct": 15.3 },
+        { "name": "Water", "pct": 11.8 }
+      ]
+    },
+    "incineroar": {
+      "usagePct": 33.1,
+      "winPct": 51.4,
+      "abilities": [{ "name": "Intimidate", "pct": 100 }],
+      "moves": [
+        { "name": "Fake Out", "pct": 92.7 },
+        { "name": "Knock Off", "pct": 81.9 },
+        { "name": "Parting Shot", "pct": 69.5 },
+        { "name": "Flare Blitz", "pct": 58.2 },
+        { "name": "Will-O-Wisp", "pct": 29.8 },
+        { "name": "Protect", "pct": 23.6 },
+        { "name": "U-turn", "pct": 17.1 }
+      ],
+      "teraTypes": [
+        { "name": "Grass", "pct": 34.2 },
+        { "name": "Water", "pct": 19.7 },
+        { "name": "Ghost", "pct": 14.5 }
+      ]
+    },
+    "rillaboom": {
+      "usagePct": 28.7,
+      "winPct": 50.9,
+      "abilities": [{ "name": "Grassy Surge", "pct": 100 }],
+      "moves": [
+        { "name": "Grassy Glide", "pct": 88.4 },
+        { "name": "Fake Out", "pct": 77.9 },
+        { "name": "Wood Hammer", "pct": 61.2 },
+        { "name": "U-turn", "pct": 43.8 },
+        { "name": "Protect", "pct": 39.6 },
+        { "name": "High Horsepower", "pct": 28.5 },
+        { "name": "Knock Off", "pct": 23.1 }
+      ],
+      "teraTypes": [
+        { "name": "Fire", "pct": 28.0 },
+        { "name": "Grass", "pct": 22.4 },
+        { "name": "Water", "pct": 16.9 }
+      ]
+    },
+    "amoonguss": {
+      "usagePct": 26.2,
+      "winPct": 49.7,
+      "abilities": [
+        { "name": "Regenerator", "pct": 96.1 },
+        { "name": "Effect Spore", "pct": 3.9 }
+      ],
+      "moves": [
+        { "name": "Spore", "pct": 90.3 },
+        { "name": "Rage Powder", "pct": 84.7 },
+        { "name": "Sludge Bomb", "pct": 61.8 },
+        { "name": "Protect", "pct": 57.4 },
+        { "name": "Clear Smog", "pct": 39.5 },
+        { "name": "Pollen Puff", "pct": 27.2 }
+      ],
+      "teraTypes": [
+        { "name": "Water", "pct": 31.6 },
+        { "name": "Fairy", "pct": 18.9 },
+        { "name": "Steel", "pct": 15.4 }
+      ]
+    },
+    "gholdengo": {
+      "usagePct": 24.9,
+      "winPct": 52.8,
+      "abilities": [{ "name": "Good as Gold", "pct": 100 }],
+      "moves": [
+        { "name": "Make It Rain", "pct": 81.6 },
+        { "name": "Shadow Ball", "pct": 73.9 },
+        { "name": "Protect", "pct": 65.2 },
+        { "name": "Nasty Plot", "pct": 43.7 },
+        { "name": "Thunderbolt", "pct": 29.4 },
+        { "name": "Trick", "pct": 19.8 },
+        { "name": "Recover", "pct": 15.5 }
+      ],
+      "teraTypes": [
+        { "name": "Steel", "pct": 24.1 },
+        { "name": "Flying", "pct": 17.7 },
+        { "name": "Water", "pct": 13.9 },
+        { "name": "Fairy", "pct": 11.2 }
+      ]
+    },
+    "whimsicott": {
+      "usagePct": 21.5,
+      "winPct": 49.2,
+      "abilities": [
+        { "name": "Prankster", "pct": 97.8 },
+        { "name": "Infiltrator", "pct": 2.2 }
+      ],
+      "moves": [
+        { "name": "Tailwind", "pct": 73.6 },
+        { "name": "Encore", "pct": 61.9 },
+        { "name": "Moonblast", "pct": 57.4 },
+        { "name": "Protect", "pct": 39.8 },
+        { "name": "Beat Up", "pct": 33.5 },
+        { "name": "Light Screen", "pct": 24.0 },
+        { "name": "Helping Hand", "pct": 21.7 },
+        { "name": "Sunny Day", "pct": 11.3 }
+      ],
+      "teraTypes": [
+        { "name": "Dark", "pct": 22.6 },
+        { "name": "Steel", "pct": 18.4 },
+        { "name": "Ghost", "pct": 12.1 }
+      ]
+    },
+    "dragonite": {
+      "usagePct": 19.8,
+      "winPct": 50.3,
+      "abilities": [
+        { "name": "Multiscale", "pct": 96.9 },
+        { "name": "Inner Focus", "pct": 3.1 }
+      ],
+      "moves": [
+        { "name": "Protect", "pct": 70.4 },
+        { "name": "Extreme Speed", "pct": 60.8 },
+        { "name": "Scale Shot", "pct": 33.1 },
+        { "name": "Dragon Dance", "pct": 30.2 },
+        { "name": "Ice Spinner", "pct": 25.7 },
+        { "name": "Stomping Tantrum", "pct": 21.5 },
+        { "name": "Roost", "pct": 19.4 },
+        { "name": "Encore", "pct": 13.8 }
+      ],
+      "teraTypes": [
+        { "name": "Normal", "pct": 33.9 },
+        { "name": "Flying", "pct": 16.2 },
+        { "name": "Steel", "pct": 12.4 }
+      ]
+    },
+    "kingambit": {
+      "usagePct": 18.3,
+      "winPct": 51.0,
+      "abilities": [
+        { "name": "Defiant", "pct": 67.5 },
+        { "name": "Supreme Overlord", "pct": 30.4 },
+        { "name": "Pressure", "pct": 2.1 }
+      ],
+      "moves": [
+        { "name": "Sucker Punch", "pct": 84.2 },
+        { "name": "Kowtow Cleave", "pct": 70.6 },
+        { "name": "Protect", "pct": 54.9 },
+        { "name": "Iron Head", "pct": 43.8 },
+        { "name": "Swords Dance", "pct": 33.7 },
+        { "name": "Low Kick", "pct": 12.4 },
+        { "name": "Tera Blast", "pct": 10.1 }
+      ],
+      "teraTypes": [
+        { "name": "Dark", "pct": 27.9 },
+        { "name": "Fairy", "pct": 19.1 },
+        { "name": "Flying", "pct": 14.8 }
+      ]
+    },
+    "sinistcha": {
+      "usagePct": 16.4,
+      "winPct": 50.6,
+      "abilities": [
+        { "name": "Hospitality", "pct": 87.9 },
+        { "name": "Heatproof", "pct": 12.1 }
+      ],
+      "moves": [
+        { "name": "Matcha Gotcha", "pct": 78.3 },
+        { "name": "Trick Room", "pct": 55.7 },
+        { "name": "Rage Powder", "pct": 44.1 },
+        { "name": "Protect", "pct": 39.5 },
+        { "name": "Life Dew", "pct": 33.8 },
+        { "name": "Strength Sap", "pct": 25.6 },
+        { "name": "Shadow Ball", "pct": 20.2 },
+        { "name": "Hex", "pct": 9.7 }
+      ],
+      "teraTypes": [
+        { "name": "Water", "pct": 29.4 },
+        { "name": "Fairy", "pct": 17.2 },
+        { "name": "Fire", "pct": 13.0 }
+      ]
+    },
+    "basculegion": {
+      "usagePct": 15.1,
+      "winPct": 51.7,
+      "abilities": [
+        { "name": "Adaptability", "pct": 73.8 },
+        { "name": "Swift Swim", "pct": 24.1 },
+        { "name": "Mold Breaker", "pct": 2.1 }
+      ],
+      "moves": [
+        { "name": "Wave Crash", "pct": 68.4 },
+        { "name": "Last Respects", "pct": 59.9 },
+        { "name": "Protect", "pct": 51.6 },
+        { "name": "Aqua Jet", "pct": 40.2 },
+        { "name": "Tera Blast", "pct": 17.8 },
+        { "name": "Endeavor", "pct": 11.5 }
+      ],
+      "teraTypes": [
+        { "name": "Water", "pct": 34.7 },
+        { "name": "Ghost", "pct": 20.3 },
+        { "name": "Grass", "pct": 10.9 }
+      ]
+    },
+    "gastrodon": {
+      "usagePct": 13.7,
+      "winPct": 49.9,
+      "abilities": [
+        { "name": "Storm Drain", "pct": 92.3 },
+        { "name": "Sticky Hold", "pct": 7.7 }
+      ],
+      "moves": [
+        { "name": "Earth Power", "pct": 76.1 },
+        { "name": "Ice Beam", "pct": 61.9 },
+        { "name": "Protect", "pct": 57.8 },
+        { "name": "Yawn", "pct": 39.5 },
+        { "name": "Recover", "pct": 30.4 },
+        { "name": "Muddy Water", "pct": 25.7 },
+        { "name": "Clear Smog", "pct": 12.2 }
+      ],
+      "teraTypes": [
+        { "name": "Fairy", "pct": 24.8 },
+        { "name": "Poison", "pct": 19.4 },
+        { "name": "Grass", "pct": 14.1 }
+      ]
+    },
+    "tyranitar": {
+      "usagePct": 12.9,
+      "winPct": 50.1,
+      "abilities": [
+        { "name": "Sand Stream", "pct": 84.0 },
+        { "name": "Unnerve", "pct": 16.0 }
+      ],
+      "moves": [
+        { "name": "Rock Slide", "pct": 74.3 },
+        { "name": "Protect", "pct": 62.1 },
+        { "name": "Knock Off", "pct": 56.4 },
+        { "name": "Low Kick", "pct": 35.8 },
+        { "name": "Assurance", "pct": 22.1 },
+        { "name": "Dragon Dance", "pct": 19.7 },
+        { "name": "Tera Blast", "pct": 13.6 }
+      ],
+      "teraTypes": [
+        { "name": "Flying", "pct": 23.5 },
+        { "name": "Fairy", "pct": 16.7 },
+        { "name": "Ghost", "pct": 12.9 }
+      ]
+    },
+    "dragapult": {
+      "usagePct": 12.1,
+      "winPct": 51.3,
+      "abilities": [
+        { "name": "Clear Body", "pct": 61.8 },
+        { "name": "Infiltrator", "pct": 36.0 },
+        { "name": "Cursed Body", "pct": 2.2 }
+      ],
+      "moves": [
+        { "name": "Dragon Darts", "pct": 65.9 },
+        { "name": "Shadow Ball", "pct": 51.7 },
+        { "name": "U-turn", "pct": 43.5 },
+        { "name": "Protect", "pct": 39.8 },
+        { "name": "Draco Meteor", "pct": 29.6 },
+        { "name": "Tera Blast", "pct": 17.4 },
+        { "name": "Will-O-Wisp", "pct": 15.9 }
+      ],
+      "teraTypes": [
+        { "name": "Fairy", "pct": 20.1 },
+        { "name": "Steel", "pct": 17.8 },
+        { "name": "Ghost", "pct": 13.2 }
+      ]
+    },
+    "talonflame": {
+      "usagePct": 11.4,
+      "winPct": 49.5,
+      "abilities": [
+        { "name": "Gale Wings", "pct": 78.2 },
+        { "name": "Flame Body", "pct": 21.8 }
+      ],
+      "moves": [
+        { "name": "Brave Bird", "pct": 66.1 },
+        { "name": "Tailwind", "pct": 62.4 },
+        { "name": "Will-O-Wisp", "pct": 39.7 },
+        { "name": "Protect", "pct": 37.9 },
+        { "name": "Dual Wingbeat", "pct": 25.8 },
+        { "name": "Quick Guard", "pct": 20.3 },
+        { "name": "Overheat", "pct": 11.6 }
+      ],
+      "teraTypes": [
+        { "name": "Ghost", "pct": 21.7 },
+        { "name": "Grass", "pct": 17.4 },
+        { "name": "Dragon", "pct": 12.0 }
+      ]
+    },
+    "grimmsnarl": {
+      "usagePct": 10.8,
+      "winPct": 48.9,
+      "abilities": [
+        { "name": "Prankster", "pct": 95.7 },
+        { "name": "Frisk", "pct": 4.3 }
+      ],
+      "moves": [
+        { "name": "Spirit Break", "pct": 70.2 },
+        { "name": "Reflect", "pct": 66.5 },
+        { "name": "Light Screen", "pct": 63.9 },
+        { "name": "Thunder Wave", "pct": 30.1 },
+        { "name": "Fake Out", "pct": 25.7 },
+        { "name": "Taunt", "pct": 19.8 },
+        { "name": "Scary Face", "pct": 11.4 }
+      ],
+      "teraTypes": [
+        { "name": "Ghost", "pct": 24.6 },
+        { "name": "Steel", "pct": 21.9 },
+        { "name": "Poison", "pct": 12.3 }
+      ]
+    },
+    "gardevoir": {
+      "usagePct": 9.6,
+      "winPct": 50.4,
+      "abilities": [
+        { "name": "Trace", "pct": 57.9 },
+        { "name": "Telepathy", "pct": 40.0 },
+        { "name": "Synchronize", "pct": 2.1 }
+      ],
+      "moves": [
+        { "name": "Moonblast", "pct": 81.7 },
+        { "name": "Protect", "pct": 60.2 },
+        { "name": "Psychic", "pct": 55.9 },
+        { "name": "Dazzling Gleam", "pct": 43.6 },
+        { "name": "Trick Room", "pct": 21.8 },
+        { "name": "Encore", "pct": 17.5 },
+        { "name": "Shadow Ball", "pct": 13.9 }
+      ],
+      "teraTypes": [
+        { "name": "Fairy", "pct": 30.7 },
+        { "name": "Fire", "pct": 15.4 },
+        { "name": "Water", "pct": 12.8 }
+      ]
+    },
+    "hydreigon": {
+      "usagePct": 8.9,
+      "winPct": 49.8,
+      "abilities": [{ "name": "Levitate", "pct": 100 }],
+      "moves": [
+        { "name": "Draco Meteor", "pct": 63.9 },
+        { "name": "Dark Pulse", "pct": 57.6 },
+        { "name": "Protect", "pct": 52.3 },
+        { "name": "Snarl", "pct": 40.1 },
+        { "name": "Earth Power", "pct": 30.2 },
+        { "name": "Flamethrower", "pct": 24.4 },
+        { "name": "Tailwind", "pct": 18.3 }
+      ],
+      "teraTypes": [
+        { "name": "Steel", "pct": 22.0 },
+        { "name": "Fairy", "pct": 17.6 },
+        { "name": "Flying", "pct": 12.1 }
+      ]
+    },
+    "scizor": {
+      "usagePct": 8.1,
+      "winPct": 50.0,
+      "abilities": [
+        { "name": "Technician", "pct": 82.4 },
+        { "name": "Light Metal", "pct": 15.6 },
+        { "name": "Swarm", "pct": 2.0 }
+      ],
+      "moves": [
+        { "name": "Bullet Punch", "pct": 78.1 },
+        { "name": "Protect", "pct": 55.7 },
+        { "name": "U-turn", "pct": 43.9 },
+        { "name": "Close Combat", "pct": 39.6 },
+        { "name": "Swords Dance", "pct": 27.8 },
+        { "name": "Bug Bite", "pct": 21.4 }
+      ],
+      "teraTypes": [
+        { "name": "Steel", "pct": 25.3 },
+        { "name": "Fire", "pct": 18.9 },
+        { "name": "Ghost", "pct": 11.7 }
+      ]
+    },
+    "corviknight": {
+      "usagePct": 7.7,
+      "winPct": 49.4,
+      "abilities": [
+        { "name": "Mirror Armor", "pct": 61.9 },
+        { "name": "Pressure", "pct": 36.0 },
+        { "name": "Unnerve", "pct": 2.1 }
+      ],
+      "moves": [
+        { "name": "Brave Bird", "pct": 63.8 },
+        { "name": "Roost", "pct": 52.4 },
+        { "name": "Bulk Up", "pct": 40.1 },
+        { "name": "Protect", "pct": 43.7 },
+        { "name": "Tailwind", "pct": 29.6 },
+        { "name": "Taunt", "pct": 23.5 },
+        { "name": "Iron Head", "pct": 17.9 }
+      ],
+      "teraTypes": [
+        { "name": "Dragon", "pct": 21.4 },
+        { "name": "Fire", "pct": 17.0 },
+        { "name": "Water", "pct": 13.6 }
+      ]
+    },
+    "garganacl": {
+      "usagePct": 7.2,
+      "winPct": 51.1,
+      "abilities": [{ "name": "Purifying Salt", "pct": 100 }],
+      "moves": [
+        { "name": "Salt Cure", "pct": 82.4 },
+        { "name": "Protect", "pct": 66.1 },
+        { "name": "Recover", "pct": 49.7 },
+        { "name": "Wide Guard", "pct": 36.2 },
+        { "name": "Body Press", "pct": 29.8 },
+        { "name": "Iron Defense", "pct": 22.3 },
+        { "name": "Earthquake", "pct": 11.9 }
+      ],
+      "teraTypes": [
+        { "name": "Ghost", "pct": 26.1 },
+        { "name": "Water", "pct": 19.3 },
+        { "name": "Fairy", "pct": 14.7 }
+      ]
+    },
+    "salamence": {
+      "usagePct": 6.8,
+      "winPct": 50.5,
+      "abilities": [
+        { "name": "Intimidate", "pct": 95.9 },
+        { "name": "Moxie", "pct": 4.1 }
+      ],
+      "moves": [
+        { "name": "Protect", "pct": 57.9 },
+        { "name": "Dual Wingbeat", "pct": 39.8 },
+        { "name": "Dragon Dance", "pct": 33.6 },
+        { "name": "Tera Blast", "pct": 30.1 },
+        { "name": "Earthquake", "pct": 25.7 },
+        { "name": "Draco Meteor", "pct": 23.9 },
+        { "name": "Roost", "pct": 15.8 }
+      ],
+      "teraTypes": [
+        { "name": "Ground", "pct": 22.7 },
+        { "name": "Steel", "pct": 18.1 },
+        { "name": "Flying", "pct": 13.4 }
+      ]
+    },
+    "gyarados": {
+      "usagePct": 6.3,
+      "winPct": 49.6,
+      "abilities": [
+        { "name": "Intimidate", "pct": 94.2 },
+        { "name": "Moxie", "pct": 5.8 }
+      ],
+      "moves": [
+        { "name": "Waterfall", "pct": 60.3 },
+        { "name": "Protect", "pct": 58.1 },
+        { "name": "Dragon Dance", "pct": 39.7 },
+        { "name": "Taunt", "pct": 30.4 },
+        { "name": "Ice Fang", "pct": 24.1 },
+        { "name": "Tera Blast", "pct": 17.8 },
+        { "name": "Thunder Wave", "pct": 12.2 }
+      ],
+      "teraTypes": [
+        { "name": "Flying", "pct": 27.3 },
+        { "name": "Ground", "pct": 16.9 },
+        { "name": "Water", "pct": 12.1 }
+      ]
+    },
+    "metagross": {
+      "usagePct": 5.9,
+      "winPct": 50.2,
+      "abilities": [{ "name": "Clear Body", "pct": 100 }],
+      "moves": [
+        { "name": "Bullet Punch", "pct": 61.8 },
+        { "name": "Iron Head", "pct": 57.9 },
+        { "name": "Protect", "pct": 53.6 },
+        { "name": "Meteor Mash", "pct": 34.2 },
+        { "name": "Earthquake", "pct": 29.7 },
+        { "name": "Stomping Tantrum", "pct": 21.5 },
+        { "name": "Ice Punch", "pct": 14.8 }
+      ],
+      "teraTypes": [
+        { "name": "Steel", "pct": 23.9 },
+        { "name": "Ghost", "pct": 16.4 },
+        { "name": "Water", "pct": 12.7 }
+      ]
+    },
+    "meowscarada": {
+      "usagePct": 5.4,
+      "winPct": 49.1,
+      "abilities": [
+        { "name": "Protean", "pct": 91.7 },
+        { "name": "Overgrow", "pct": 8.3 }
+      ],
+      "moves": [
+        { "name": "Flower Trick", "pct": 78.4 },
+        { "name": "Knock Off", "pct": 65.9 },
+        { "name": "Protect", "pct": 49.8 },
+        { "name": "U-turn", "pct": 43.6 },
+        { "name": "Triple Axel", "pct": 30.2 },
+        { "name": "Sucker Punch", "pct": 24.1 },
+        { "name": "Play Rough", "pct": 13.7 }
+      ],
+      "teraTypes": [
+        { "name": "Grass", "pct": 24.6 },
+        { "name": "Dark", "pct": 19.8 },
+        { "name": "Water", "pct": 12.4 }
+      ]
+    },
+    "arcanine": {
+      "usagePct": 5.1,
+      "winPct": 49.3,
+      "abilities": [
+        { "name": "Intimidate", "pct": 91.6 },
+        { "name": "Flash Fire", "pct": 8.4 }
+      ],
+      "moves": [
+        { "name": "Flare Blitz", "pct": 61.9 },
+        { "name": "Extreme Speed", "pct": 55.7 },
+        { "name": "Protect", "pct": 51.8 },
+        { "name": "Snarl", "pct": 43.6 },
+        { "name": "Will-O-Wisp", "pct": 29.4 },
+        { "name": "Howl", "pct": 20.1 },
+        { "name": "Close Combat", "pct": 15.8 }
+      ],
+      "teraTypes": [
+        { "name": "Grass", "pct": 23.1 },
+        { "name": "Normal", "pct": 17.6 },
+        { "name": "Dragon", "pct": 12.9 }
+      ]
+    }
+  }
+}
