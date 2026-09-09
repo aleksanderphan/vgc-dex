@@ -280,8 +280,9 @@ npm run dev          # http://localhost:5173
 
 Other scripts: `npm run build` (typecheck + production build, incl. the PWA
 service worker), `npm run preview` (serve the built PWA locally — the SW only
-runs on a real build), `npm run typecheck`, and `npm run build:icons`
-(regenerate `public/` PWA icons).
+runs on a real build), `npm run typecheck`, `npm run build:icons`
+(regenerate `public/` PWA icons), and `npm run version:bump` (see
+[Versioning](#versioning)).
 
 **Refreshing the data** (all offline-safe, re-runnable):
 
@@ -295,6 +296,24 @@ npm run build:megadex   # Mega forms for the pool
 
 `ingest:usage` prints any Pokémon with ≥0.5% usage that isn't in the reference
 pool — add those to `scripts/pokemon-list.mjs` and re-run `build:data`.
+
+---
+
+## Versioning
+
+`<Major>.<Minor>.<Patch>`, where **Patch = total git commit count**. It lives in
+[`package.json`](package.json) (`version`), is injected into the bundle at build
+time via `__APP_VERSION__` ([`vite.config.ts`](vite.config.ts)), and shows in the
+app footer as `v0.0.x`.
+
+- **Every commit bumps Patch by one.** Run `npm run version:bump` immediately
+  before `git commit` — it writes `0.0.<commits + 1>` into `package.json` so the
+  new commit ships with its own version — then stage `package.json` in that same
+  commit.
+- `npm run version:check` asserts `package.json` matches the current commit count
+  (post-commit / CI guard). `node scripts/version.mjs --print` just prints it.
+- **Major / Minor are hand-managed** — edit `package.json` directly to roll them;
+  the script keeps writing `0.0.x` until you do.
 
 ---
 

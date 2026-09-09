@@ -913,6 +913,13 @@ button {
   margin-top: 8px;
 }
 
+.foot__version {
+  margin-top: 8px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+}
+
 /* ── Browse: filter bar + all-Pokémon grid ─────────────── */
 
 .browse {

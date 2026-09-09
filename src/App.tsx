@@ -163,6 +163,7 @@ export function App() {
           Unofficial fan project; not affiliated with Nintendo / The Pokémon
           Company.
         </p>
+        <p className="foot__version">v{__APP_VERSION__}</p>
       </footer>
     </div>
   )
