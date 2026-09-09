@@ -7,9 +7,11 @@ interface Props {
   onChange: (v: string) => void
   results: Pokemon[]
   onPick: (slug: string) => void
+  /** Jump to the browse grid, keeping the current query as a filter. */
+  onSeeAll?: () => void
 }
 
-export function SearchBar({ value, onChange, results, onPick }: Props) {
+export function SearchBar({ value, onChange, results, onPick, onSeeAll }: Props) {
   const [open, setOpen] = useState(false)
   const blurTimer = useRef<number | undefined>(undefined)
 
@@ -99,6 +101,20 @@ export function SearchBar({ value, onChange, results, onPick }: Props) {
                 </button>
               </li>
             ))}
+            {onSeeAll && results.length > shown.length && (
+              <li>
+                <button
+                  type="button"
+                  className="search__result search__result--all"
+                  onClick={() => {
+                    onSeeAll()
+                    setOpen(false)
+                  }}
+                >
+                  View all {results.length} matches in the grid →
+                </button>
+              </li>
+            )}
           </ul>
         )}
       </div>

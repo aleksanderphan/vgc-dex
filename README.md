@@ -129,6 +129,11 @@ Built (prototype):
 
 - **Search-first, mobile-first UI** — sticky search bar on top; a horizontally
   scrolling "popular" row (ordered by usage); deep-linkable via `#slug`.
+- **Browse all** (`#browse`) — a "Browse" toggle by the popular row opens a card
+  grid over the whole pool, filterable by type (up to two, AND) and ability,
+  sortable by usage % / base-stat total / any single base stat, with an
+  "in usage data" toggle. The search box doubles as a live name filter for the
+  grid, and its dropdown offers a "view all N matches" jump into it.
 - **Pokémon page** — official artwork, base-stat spread, type badges, and
   abilities. Pokémon with a Mega Evolution get a form switcher beneath the
   artwork (**Base / Mega**, or **Base / Mega X / Mega Y** for Charizard) that
@@ -254,10 +259,11 @@ src/
   lib/
     typechart.ts       type effectiveness + strong/weak-against helpers
     data.ts            loads + indexes the snapshots
-  components/          SearchBar, PokemonView, StatSpread, TypeMatchups, UsagePanel,
-                       ItemsPanel, RankedList, EntityPage, DataPill, UpdateToast, TypeBadge
+  components/          SearchBar, PokemonView, BrowseGrid, StatSpread, TypeMatchups,
+                       UsagePanel, ItemsPanel, RankedList, EntityPage, DataPill,
+                       UpdateToast, TypeBadge
   vite-env.d.ts        Vite + vite-plugin-pwa ambient types
-  App.tsx  main.tsx  styles.css   (App.tsx also does the hash routing: #slug vs #move|ability|item/<slug>)
+  App.tsx  main.tsx  styles.css   (App.tsx also does the hash routing: #slug vs #browse vs #move|ability|item/<slug>)
 ```
 
 ---

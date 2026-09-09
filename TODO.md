@@ -138,7 +138,12 @@ These shape the data model, so resolve them before Phase 2.
 ## Phase 6 — Dex UI
 
 - [ ] Regulation switcher (default: current = M‑C) + season / rating-cutoff / source selectors.
-- [~] Search + usage-ordered "popular" row exist; still need a full browsable/filterable grid (by type/ability/role).
+- [x] Search + usage-ordered "popular" row + a **Browse all** grid (`#browse`,
+  `components/BrowseGrid.tsx`): a "Browse" toggle by the popular row opens a
+  card grid over the whole pool, filterable by type (up to 2, AND) and ability,
+  sortable by usage % / BST / any base stat, with an "in usage data" toggle. The
+  sticky search box doubles as a name filter for the grid, and its dropdown has
+  a "view all N matches" jump. Still: role/archetype filter (needs role data).
 - [~] Pokémon page: base stats, typing, abilities done; **Base/Mega form switcher** live (swaps art, typing, ability, Mega Stone, stats, matchups). Still: base-stat delta vs base form, Champions-legal movepool with legality badges.
 - [~] Move / ability / item **pages** shipped (`#move|ability|item/<slug>`, `EntityPage`): long-form effect, structured mechanics, curated notes, "run by" list. Still: a browsable move **dex** (grid/filter) and damage-roll numbers.
 - [ ] Meta overview page (usage leaderboard, movable cutoff).
