@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-09T07:52:45.507Z",
+  "generatedAt": "2026-09-09T08:51:18.058Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "baseCount": 36,
+  "baseCount": 41,
   "forms": {
     "charizard": [
       {
@@ -114,6 +114,93 @@
         ],
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png",
         "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10036.png"
+      }
+    ],
+    "blaziken": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Blaziken",
+        "stone": "Blazikenite",
+        "types": [
+          "fire",
+          "fighting"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "atk": 160,
+          "def": 80,
+          "spa": 130,
+          "spd": 80,
+          "spe": 100
+        },
+        "abilities": [
+          {
+            "slug": "speed-boost",
+            "name": "Speed Boost",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10050.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10050.png"
+      }
+    ],
+    "swampert": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Swampert",
+        "stone": "Swampertite",
+        "types": [
+          "water",
+          "ground"
+        ],
+        "baseStats": {
+          "hp": 100,
+          "atk": 150,
+          "def": 110,
+          "spa": 95,
+          "spd": 110,
+          "spe": 70
+        },
+        "abilities": [
+          {
+            "slug": "swift-swim",
+            "name": "Swift Swim",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10064.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10064.png"
+      }
+    ],
+    "gallade": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Gallade",
+        "stone": "Galladite",
+        "types": [
+          "psychic",
+          "fighting"
+        ],
+        "baseStats": {
+          "hp": 68,
+          "atk": 165,
+          "def": 95,
+          "spa": 65,
+          "spd": 115,
+          "spe": 110
+        },
+        "abilities": [
+          {
+            "slug": "inner-focus",
+            "name": "Inner Focus",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10068.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10068.png"
       }
     ],
     "alakazam": [
@@ -861,6 +948,64 @@
         ],
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png",
         "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png"
+      }
+    ],
+    "sceptile": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Sceptile",
+        "stone": "Sceptilite",
+        "types": [
+          "grass",
+          "dragon"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "atk": 110,
+          "def": 75,
+          "spa": 145,
+          "spd": 85,
+          "spe": 145
+        },
+        "abilities": [
+          {
+            "slug": "lightning-rod",
+            "name": "Lightning Rod",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10065.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10065.png"
+      }
+    ],
+    "audino": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Audino",
+        "stone": "Audinite",
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "baseStats": {
+          "hp": 103,
+          "atk": 60,
+          "def": 126,
+          "spa": 80,
+          "spd": 126,
+          "spe": 50
+        },
+        "abilities": [
+          {
+            "slug": "healer",
+            "name": "Healer",
+            "isHidden": false
+          }
+        ],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10069.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10069.png"
       }
     ],
     "garchomp": [

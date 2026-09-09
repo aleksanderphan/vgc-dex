@@ -138,6 +138,8 @@ export interface MoveInfo {
   longEffect: string
   /** curated competitive notes PokéAPI's text doesn't cover. */
   notes: string[]
+  /** true when PokéAPI has no record (likely a Champions-original move). */
+  unlisted?: boolean
 }
 
 export interface AbilityInfo {
@@ -147,6 +149,7 @@ export interface AbilityInfo {
   effect: string
   longEffect: string
   notes: string[]
+  unlisted?: boolean
 }
 
 export interface ItemInfo {
@@ -158,6 +161,7 @@ export interface ItemInfo {
   effect: string
   longEffect: string
   notes: string[]
+  unlisted?: boolean
 }
 
 export interface ItemDex {

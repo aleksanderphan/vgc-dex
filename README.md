@@ -7,10 +7,12 @@ each Pokémon's stats, typing, abilities, and (Champions-legal) movepool.
 
 Current target regulation: **Regulation Set M‑C** (9 September 2026 – 2 December 2026).
 
-> Status: **working prototype** — mobile-first React app with search, a Pokémon
-> page (sprite, stat spread, type matchups), and a usage panel (abilities & moves
-> ranked by %). Reference data is live from PokéAPI; usage data is a labelled
-> sample pending a real ingest. See [TODO.md](TODO.md) for what's left.
+> Status: **working prototype** — installable, offline-capable mobile-first React
+> app with search, a Pokémon page (sprite, stat spread, type matchups, Base/Mega
+> switcher), a usage panel (abilities, moves and items ranked by %), and dedicated
+> move / ability / item pages. Reference data is built from PokéAPI; **usage data
+> is a real ingest from the Pokémon Showdown ladder** (Smogon monthly stats for
+> the `gen9championsvgc2026` format). See [TODO.md](TODO.md) for what's left.
 
 ---
 
@@ -135,11 +137,12 @@ Built (prototype):
   the curated pool).
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
   "Weak to" / "Resists" / "Immune to" defensively, each with ×4/×2/×½/×¼/×0 tags.
-- **Usage panel** — usage rate %, win rate, **common abilities** then **common
-  moves** ranked by percentage, followed by a **Common items** section. Tap any
-  ability, move or item to expand it in place (several can stay open at once):
-  abilities/items show their effect, moves show type, category, power, accuracy,
-  PP, priority and effect.
+- **Usage panel** — usage rate %, **common abilities** then **common moves**
+  ranked by percentage, followed by a **Common items** section — from a real
+  ingest of the Pokémon Showdown ladder (`scripts/ingest-usage.mjs`, Smogon
+  monthly stats via `data.pkmn.cc`; ~120 Pokémon, Mega/Primal formes merged into
+  the base species). No win rate — that source doesn't publish one. Tap any
+  ability, move or item to expand it in place (several can stay open at once).
 - **Move / ability / item pages** — the expanded row links through to a
   deep-linkable page (`#move/<slug>`, `#ability/<slug>`, `#item/<slug>`) with the
   full mechanical breakdown: PokéAPI's long-form effect text, structured stats
@@ -150,11 +153,19 @@ Built (prototype):
   list of Pokémon in the usage data that carry it. Reference data from
   `src/data/movedex.m-c.json` / `src/data/itemdex.m-c.json` + curated
   `scripts/reference-notes.mjs` (`npm run build:movedex`, `npm run build:itemdex`).
+- **Installable PWA / offline** — `vite-plugin-pwa` (Workbox) precaches the whole
+  app shell. Since every dataset is bundled into the JS, the app works fully
+  offline after the first load; the hotlinked PokéAPI sprites are runtime-cached
+  (`CacheFirst`). `registerType: 'prompt'` — a small toast offers **Reload** when
+  a new build is deployed. Icons are generated dependency-free by
+  `npm run build:icons` (`scripts/make-icons.mjs`).
 
 Planned — see [TODO.md](TODO.md):
 
 - Regulation-scoped legality (show only Reg M‑C-legal species / moves / items /
-  Megas, with a legality badge) and a **real usage ingest** to replace the sample.
+  Megas, with a legality badge).
+- A source closer to the **official in-game** Champions ladder (Pikalytics /
+  Pokémon Zone / Battle Data) and Champions-original Mega data.
 - **Move dex** — per move: distribution across the meta and top users.
 - **Meta overview** — usage leaderboard with a rating-cutoff toggle.
 - **Regulation switcher** — M‑A / M‑B / M‑C snapshots; usage **trends** over time.
@@ -196,11 +207,11 @@ Regulation     { code: "M-C", startsOn, endsOn, format: "doubles",
                  legalPokemon[], legalMoves[], legalItems[], megasAllowed[],
                  clauses[], notes }
 UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaimer?,
-                 entries: {                       // keyed by Pokémon slug
-                   "<slug>": { usagePct?, winPct?,
-                               abilities: [{ name, pct }],   // implemented
-                               moves:     [{ name, pct }],   // implemented
-                               items:     [{ name, pct }],   // implemented
+                 entries: {                       // keyed by Pokémon slug, usage-ordered
+                   "<slug>": { usagePct,         // winPct absent — Showdown stats have none
+                               abilities: [{ name, pct }],   // ingested from the Showdown ladder
+                               moves:     [{ name, pct }],
+                               items:     [{ name, pct }],
                                /* teammates, spreads — planned */ } } }
 ```
 
@@ -209,6 +220,8 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
 - **App:** Vite + React 18 + TypeScript, plain CSS (mobile-first, dark theme, no
   UI framework). No runtime calls to any third-party API — the app only reads
   bundled JSON snapshots.
+- **PWA:** `vite-plugin-pwa` (Workbox) — installable, offline-capable, with a
+  reload-on-new-build prompt. Config lives in `vite.config.ts`.
 - **ETL:** a plain Node script (`scripts/build-data.mjs`) that pulls reference
   data from PokéAPI and writes `src/data/pokemon.json`. Re-runnable any time the
   source data changes.
@@ -221,16 +234,19 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
 
 ```
 scripts/
-  pokemon-list.mjs     curated Reg M-C pool (edit + re-run the ETL)
+  pokemon-list.mjs     curated Reg M-C pool (edit + re-run build:data)
   build-data.mjs       PokéAPI ETL -> src/data/pokemon.json
+  ingest-usage.mjs     Showdown/Smogon ladder ETL -> src/data/usage.m-c.json
   build-movedex.mjs    PokéAPI ETL -> src/data/movedex.m-c.json  (moves + abilities in the usage data)
   build-itemdex.mjs    PokéAPI ETL -> src/data/itemdex.m-c.json  (items in the usage data)
   build-megadex.mjs    PokéAPI ETL -> src/data/megadex.m-c.json  (Mega forms for the pool)
   reference-notes.mjs  hand-authored competitive notes, merged into movedex/itemdex by the ETLs
+  make-icons.mjs       dependency-free PNG generator -> public/ PWA icons (npm run build:icons)
+public/                pwa-192.png, pwa-512.png, pwa-maskable-512.png, apple-touch-icon.png, favicon.svg
 src/
   data/
     pokemon.json       generated reference snapshot
-    usage.m-c.json     usage snapshot (labelled SAMPLE — swap for a real ingest)
+    usage.m-c.json     usage snapshot — ingested from the Showdown ladder (data.pkmn.cc)
     movedex.m-c.json   generated move + ability reference
     itemdex.m-c.json   generated held-item reference
     megadex.m-c.json   generated Mega Evolution reference
@@ -239,7 +255,8 @@ src/
     typechart.ts       type effectiveness + strong/weak-against helpers
     data.ts            loads + indexes the snapshots
   components/          SearchBar, PokemonView, StatSpread, TypeMatchups, UsagePanel,
-                       ItemsPanel, RankedList, EntityPage, TypeBadge
+                       ItemsPanel, RankedList, EntityPage, DataPill, UpdateToast, TypeBadge
+  vite-env.d.ts        Vite + vite-plugin-pwa ambient types
   App.tsx  main.tsx  styles.css   (App.tsx also does the hash routing: #slug vs #move|ability|item/<slug>)
 ```
 
@@ -255,15 +272,23 @@ npm run build:data   # optional — refresh src/data/pokemon.json from PokéAPI
 npm run dev          # http://localhost:5173
 ```
 
-Other scripts: `npm run build` (typecheck + production build), `npm run preview`,
-`npm run typecheck`, and the reference ETLs `npm run build:movedex` /
-`build:itemdex` / `build:megadex` (re-run after editing `usage.m-c.json` so every
-move / ability / item it names has a detail entry).
+Other scripts: `npm run build` (typecheck + production build, incl. the PWA
+service worker), `npm run preview` (serve the built PWA locally — the SW only
+runs on a real build), `npm run typecheck`, and `npm run build:icons`
+(regenerate `public/` PWA icons).
 
-To change the Pokémon pool, edit `scripts/pokemon-list.mjs` and re-run
-`npm run build:data`. To wire in real usage numbers, replace
-`src/data/usage.m-c.json` (same shape) — the UI reads whatever is there and shows
-the `source` / `capturedAt` it carries — then re-run the reference ETLs above.
+**Refreshing the data** (all offline-safe, re-runnable):
+
+```bash
+npm run build:data      # reference: PokéAPI -> pokemon.json  (edit pokemon-list.mjs first)
+npm run ingest:usage    # usage: Showdown/Smogon ladder -> usage.m-c.json
+npm run build:movedex   # then rebuild the detail dexes so every
+npm run build:itemdex   #   move / ability / item in usage.m-c.json resolves
+npm run build:megadex   # Mega forms for the pool
+```
+
+`ingest:usage` prints any Pokémon with ≥0.5% usage that isn't in the reference
+pool — add those to `scripts/pokemon-list.mjs` and re-run `build:data`.
 
 ---
 

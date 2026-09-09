@@ -33,6 +33,12 @@ const EFFECT_OVERRIDES = {
     "Held: when an opposing Pokémon's stats rise, the holder copies the boost once, then the herb is used up.",
   'Booster Energy':
     'Held: activates the holder’s Protosynthesis or Quark Drive, boosting its highest stat.',
+  'Fairy Feather': 'Held: Fairy-type moves from the holder do 20% more damage.',
+  'Ability Shield': "Held: the holder's Ability cannot be changed or suppressed.",
+  'Punching Glove':
+    'Held: punching moves do 10% more damage and no longer make contact.',
+  'Loaded Dice':
+    'Held: the holder’s multi-hit moves always hit at least four times.',
 }
 
 // Long-form fallback where PokéAPI has no `effect` entry at all.
@@ -72,24 +78,56 @@ function multiLine(entries, key) {
     .trim()
 }
 
+class NotFound extends Error {}
+
 async function getJSON(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'vgc-dex-etl' } })
+  if (res.status === 404) throw new NotFound(url)
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`)
   return res.json()
 }
 
 async function fetchItem(name) {
   const slug = SLUG_OVERRIDES[name] ?? slugify(name)
-  const d = await getJSON(`${API}/item/${slug}`)
+  let d
+  try {
+    d = await getJSON(`${API}/item/${slug}`)
+  } catch (err) {
+    if (err instanceof NotFound) {
+      // Champions-original item PokéAPI doesn't carry.
+      return {
+        name,
+        slug,
+        category: null,
+        sprite: null,
+        flingPower: null,
+        effect: EFFECT_OVERRIDES[name] || '',
+        longEffect: LONG_OVERRIDES[name] || EFFECT_OVERRIDES[name] || '',
+        notes: ITEM_NOTES[name] ?? [],
+        unlisted: true,
+      }
+    }
+    throw err
+  }
+  // Champions adds Mega Stones for its original Megas; PokéAPI carries the item
+  // but no text. Synthesise the standard "lets X Mega Evolve" line.
+  const isStone =
+    d.category?.name === 'all-mega-stones' || /ite( [XY])?$/.test(name)
+  const stoneText = isStone
+    ? `Held: lets the matching Pokémon Mega Evolve.`
+    : ''
+
   const short =
     EFFECT_OVERRIDES[name] ||
     oneLine(d.effect_entries, 'short_effect') ||
-    oneLine(d.flavor_text_entries, 'text')
+    oneLine(d.flavor_text_entries, 'text') ||
+    stoneText
   const long =
     multiLine(d.effect_entries, 'effect') ||
     LONG_OVERRIDES[name] ||
     short ||
-    oneLine(d.flavor_text_entries, 'text')
+    oneLine(d.flavor_text_entries, 'text') ||
+    stoneText
   return {
     name,
     slug,
@@ -132,19 +170,23 @@ async function main() {
   console.log(`Fetching ${list.length} items from PokéAPI…`)
   const items = await pool(list, CONCURRENCY, fetchItem)
 
-  const missing = list.filter((n) => !items.some((it) => it.name === n))
-  if (missing.length) {
-    console.error(
-      `\n${missing.length} item(s) did not resolve — add a slug override:\n  ${missing.join('\n  ')}`,
-    )
+  const dropped = list.filter((n) => !items.some((it) => it.name === n))
+  if (dropped.length) {
+    console.error(`\nDROPPED (retry the ETL): ${dropped.join(', ')}`)
     process.exit(1)
   }
 
-  const noEffect = items.filter((it) => !it.effect).map((it) => it.name)
-  if (noEffect.length) {
-    console.warn(
-      `\nNo effect text for: ${noEffect.join(', ')} — add to EFFECT_OVERRIDES.`,
+  const stubs = items.filter((it) => it.unlisted).map((it) => it.name)
+  if (stubs.length) {
+    console.log(
+      `\nNot in PokéAPI (likely Champions-original) — stubbed: ${stubs.join(', ')}`,
     )
+  }
+  const noEffect = items
+    .filter((it) => !it.effect && !it.unlisted)
+    .map((it) => it.name)
+  if (noEffect.length) {
+    console.warn(`\nNo effect text for: ${noEffect.join(', ')}`)
   }
 
   const payload = {

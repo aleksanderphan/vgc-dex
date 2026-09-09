@@ -12,7 +12,9 @@
     "build:data": "node scripts/build-data.mjs",
     "build:movedex": "node scripts/build-movedex.mjs",
     "build:itemdex": "node scripts/build-itemdex.mjs",
-    "build:megadex": "node scripts/build-megadex.mjs"
+    "build:megadex": "node scripts/build-megadex.mjs",
+    "build:icons": "node scripts/make-icons.mjs",
+    "ingest:usage": "node scripts/ingest-usage.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -23,6 +25,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vite-plugin-pwa": "^0.20.5"
   }
 }

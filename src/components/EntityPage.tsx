@@ -3,6 +3,7 @@ import type { AbilityInfo, ItemInfo, MoveInfo } from '../types'
 import type { EntityKind } from '../lib/data'
 import { entityBySlug, usersOf } from '../lib/data'
 import { TypeBadge } from './TypeBadge'
+import { DataPill } from './DataPill'
 import { titleCase } from '../lib/typechart'
 
 const KIND_LABEL: Record<EntityKind, string> = {
@@ -246,8 +247,17 @@ export function EntityPage({ kind, slug, onPickPokemon }: Props) {
         ) : null}
 
         <h3 className="entity__section">How it works</h3>
-        <RichText text={info.longEffect || info.effect} />
-        <p className="entity__src">Effect text from PokéAPI.</p>
+        {info.longEffect || info.effect ? (
+          <>
+            <RichText text={info.longEffect || info.effect} />
+            <p className="entity__src">Effect text from PokéAPI.</p>
+          </>
+        ) : (
+          <p className="detail__text detail__text--muted">
+            No reference text — {info.unlisted ? 'not in PokéAPI, ' : ''}likely a
+            Champions-original {KIND_LABEL[kind].toLowerCase()}.
+          </p>
+        )}
 
         {info.notes.length ? <Notes notes={info.notes} /> : null}
       </section>
@@ -256,7 +266,7 @@ export function EntityPage({ kind, slug, onPickPokemon }: Props) {
         <section className="card">
           <div className="section-head">
             <h2>Run by</h2>
-            <span className="pill pill--warn">sample data</span>
+            <DataPill />
           </div>
           <ul className="used-by">
             {users.map((u) => (

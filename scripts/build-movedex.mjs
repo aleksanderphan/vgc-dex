@@ -59,15 +59,68 @@ function subChance(text, chance) {
   )
 }
 
+class NotFound extends Error {}
+
 async function getJSON(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'vgc-dex-etl' } })
+  if (res.status === 404) throw new NotFound(url)
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`)
   return res.json()
 }
 
+// Champions has original moves / abilities PokéAPI will never carry. Emit a
+// minimal record for those so the row + page still render (just without the
+// mechanical breakdown) instead of failing the whole build.
+function moveStub(name, slug) {
+  return {
+    name,
+    slug,
+    type: 'normal',
+    category: 'status',
+    power: null,
+    accuracy: null,
+    pp: null,
+    priority: 0,
+    target: null,
+    generation: null,
+    minHits: null,
+    maxHits: null,
+    drain: 0,
+    healing: 0,
+    critRate: 0,
+    ailment: null,
+    ailmentChance: 0,
+    flinchChance: 0,
+    statChance: 0,
+    statChanges: [],
+    effect: '',
+    longEffect: '',
+    notes: MOVE_NOTES[name] ?? [],
+    unlisted: true,
+  }
+}
+
+function abilityStub(name, slug) {
+  return {
+    name,
+    slug,
+    generation: null,
+    effect: '',
+    longEffect: '',
+    notes: ABILITY_NOTES[name] ?? [],
+    unlisted: true,
+  }
+}
+
 async function fetchMove(name) {
   const slug = MOVE_SLUG_OVERRIDES[name] ?? slugify(name)
-  const m = await getJSON(`${API}/move/${slug}`)
+  let m
+  try {
+    m = await getJSON(`${API}/move/${slug}`)
+  } catch (err) {
+    if (err instanceof NotFound) return moveStub(name, slug)
+    throw err
+  }
   const meta = m.meta ?? {}
   const flavor = oneLine(m.flavor_text_entries, 'flavor_text')
   const short = subChance(oneLine(m.effect_entries, 'short_effect'), m.effect_chance)
@@ -106,7 +159,13 @@ async function fetchMove(name) {
 
 async function fetchAbility(name) {
   const slug = ABILITY_SLUG_OVERRIDES[name] ?? slugify(name)
-  const a = await getJSON(`${API}/ability/${slug}`)
+  let a
+  try {
+    a = await getJSON(`${API}/ability/${slug}`)
+  } catch (err) {
+    if (err instanceof NotFound) return abilityStub(name, slug)
+    throw err
+  }
   const flavor = oneLine(a.flavor_text_entries, 'flavor_text')
   const short = oneLine(a.effect_entries, 'short_effect')
   const long = multiLine(a.effect_entries, 'effect')
@@ -160,15 +219,21 @@ async function main() {
     pool(abilityList, CONCURRENCY, fetchAbility),
   ])
 
-  const missing = [
+  // Genuinely dropped (network errors, not 404s) — worth a loud warning.
+  const dropped = [
     ...moveList.filter((n) => !moves.some((m) => m.name === n)),
     ...abilityList.filter((n) => !abilities.some((a) => a.name === n)),
   ]
-  if (missing.length) {
-    console.error(
-      `\n${missing.length} name(s) did not resolve — add a slug override:\n  ${missing.join('\n  ')}`,
-    )
+  if (dropped.length) {
+    console.error(`\nDROPPED (retry the ETL): ${dropped.join(', ')}`)
     process.exit(1)
+  }
+
+  const stubs = [...moves, ...abilities].filter((x) => x.unlisted).map((x) => x.name)
+  if (stubs.length) {
+    console.log(
+      `\nNot in PokéAPI (likely Champions-original) — stubbed: ${stubs.join(', ')}`,
+    )
   }
 
   const payload = {

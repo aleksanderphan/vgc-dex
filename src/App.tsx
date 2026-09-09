@@ -9,6 +9,7 @@ import {
   POKEMON_SOURCE,
   REGULATION,
   USAGE,
+  USAGE_IS_SAMPLE,
   findPokemon,
   popularSlugs,
   searchPokemon,
@@ -121,9 +122,12 @@ export function App() {
         </p>
         <p className="foot__meta">
           {POKEMON.length} Pokémon · reference data from {POKEMON_SOURCE},
-          generated {generatedLabel}. Usage figures are illustrative sample data —
-          not live stats. Unofficial fan project; not affiliated with Nintendo /
-          The Pokémon Company.
+          generated {generatedLabel}.{' '}
+          {USAGE_IS_SAMPLE
+            ? 'Usage figures are illustrative sample data — not live stats.'
+            : `Usage from ${USAGE.source} (${USAGE.season}) — the simulator ladder, not the official in-game one.`}{' '}
+          Unofficial fan project; not affiliated with Nintendo / The Pokémon
+          Company.
         </p>
       </footer>
     </div>

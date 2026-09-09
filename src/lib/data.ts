@@ -37,6 +37,9 @@ export const MOVEDEX = movedexJson as unknown as MoveDex
 export const ITEMDEX = itemdexJson as unknown as ItemDex
 export const MEGADEX = megadexJson as unknown as MegaDex
 
+/** true while the usage snapshot is the hand-authored placeholder, not an ingest. */
+export const USAGE_IS_SAMPLE = /placeholder|sample/i.test(USAGE.source)
+
 const normalize = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '')
 
 const moveByName = new Map(MOVEDEX.moves.map((m) => [normalize(m.name), m]))
