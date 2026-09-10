@@ -1,5 +1,4 @@
 import type { BaseStats, UsageEntry, UsageSnapshot } from '../types'
-import { DataPill } from './DataPill'
 
 interface Props {
   entry: UsageEntry | undefined
@@ -32,7 +31,6 @@ export function SpreadsPanel({ entry }: Props) {
     <section className="card usage">
       <div className="section-head">
         <h2>Common EV spreads</h2>
-        <DataPill />
       </div>
 
       <p className="usage__hint">

@@ -1,6 +1,5 @@
 import type { UsageEntry, UsageSnapshot } from '../types'
 import { RankedList } from './RankedList'
-import { DataPill } from './DataPill'
 
 interface Props {
   name: string
@@ -9,20 +8,16 @@ interface Props {
 }
 
 export function UsagePanel({ name, entry, snapshot }: Props) {
-  const label = `Reg ${snapshot.regulation} · ${snapshot.season} · ${snapshot.ratingCutoff} · ${snapshot.source}`
-
   if (!entry) {
     return (
       <section className="card usage">
         <div className="section-head">
           <h2>Usage</h2>
-          <DataPill />
         </div>
         <p className="muted-sm">
           No usage data for {name} in this snapshot — it sees little or no play
           on the {snapshot.season} ladder.
         </p>
-        <p className="usage__meta">{label}</p>
       </section>
     )
   }
@@ -34,7 +29,6 @@ export function UsagePanel({ name, entry, snapshot }: Props) {
     <section className="card usage">
       <div className="section-head">
         <h2>Usage</h2>
-        <DataPill />
       </div>
 
       {(entry.usagePct != null || entry.winPct != null) && (
@@ -74,10 +68,6 @@ export function UsagePanel({ name, entry, snapshot }: Props) {
           kind="move"
         />
       </div>
-
-      <p className="usage__meta">
-        {label} · captured {snapshot.capturedAt}
-      </p>
     </section>
   )
 }

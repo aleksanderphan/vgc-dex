@@ -1,6 +1,5 @@
 import type { UsageEntry, UsageSnapshot } from '../types'
 import { RankedList } from './RankedList'
-import { DataPill } from './DataPill'
 
 interface Props {
   entry: UsageEntry | undefined
@@ -17,7 +16,6 @@ export function ItemsPanel({ entry }: Props) {
     <section className="card usage">
       <div className="section-head">
         <h2>Common items</h2>
-        <DataPill />
       </div>
 
       <p className="usage__hint">Tap an item for details.</p>

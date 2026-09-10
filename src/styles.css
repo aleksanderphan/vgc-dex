@@ -527,10 +527,9 @@ button {
   gap: 2px;
 }
 
-.poke-mini__stat svg {
-  width: 11px;
-  height: 11px;
-  opacity: 0.75;
+.poke-mini__stat-lbl {
+  color: var(--text-dim);
+  opacity: 0.8;
 }
 
 @media (max-width: 360px) {
@@ -738,7 +737,6 @@ button {
   font-size: 12px;
   font-weight: 700;
   color: var(--text-dim);
-  text-transform: uppercase;
 }
 
 .stat-row__value {
@@ -810,12 +808,13 @@ button {
 .usage__stats {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 14px;
 }
 
 .usage__stat {
-  flex: 1 1 140px;
+  flex: 0 1 200px;
   max-width: 220px;
   background: var(--surface-2);
   border-radius: var(--r-md);
@@ -978,6 +977,15 @@ button {
   text-align: right;
 }
 
+/* Common moves: a type-coloured dot in place of the rank number */
+.ranked__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  justify-self: center;
+}
+
 /* Common items: sprite instead of a rank number, centred usage % */
 .ranked--item .ranked__row {
   grid-template-columns: 24px 1fr 64px 46px 12px;
@@ -1030,6 +1038,12 @@ button {
 .usage__meta--foot {
   margin-top: 20px;
   text-align: center;
+  line-height: 1.9;
+}
+
+.usage__meta--foot .pill {
+  vertical-align: middle;
+  margin-right: 4px;
 }
 
 /* ── EV spreads ─────────────────────────────────────────── */

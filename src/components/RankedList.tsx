@@ -2,7 +2,7 @@ import { useId, useState } from 'react'
 import type { AbilityInfo, ItemInfo, MoveInfo, UsageItem } from '../types'
 import { abilityInfo, itemInfo, moveInfo } from '../lib/data'
 import { TypeBadge } from './TypeBadge'
-import { titleCase } from '../lib/typechart'
+import { titleCase, TYPE_COLORS } from '../lib/typechart'
 
 export type RankedKind = 'ability' | 'move' | 'item'
 
@@ -141,6 +141,7 @@ export function RankedList({ title, items, accent, kind }: Props) {
           const detail = isOpen ? detailFor(kind, it.name) : null
           const itemSprite =
             kind === 'item' ? itemInfo(it.name)?.sprite : undefined
+          const moveType = kind === 'move' ? moveInfo(it.name)?.type : undefined
           return (
             <li className="ranked__item" key={it.name}>
               <button
@@ -158,6 +159,12 @@ export function RankedList({ title, items, accent, kind }: Props) {
                     width="24"
                     height="24"
                     loading="lazy"
+                  />
+                ) : moveType ? (
+                  <span
+                    className="ranked__dot"
+                    style={{ backgroundColor: TYPE_COLORS[moveType] }}
+                    title={titleCase(moveType)}
                   />
                 ) : (
                   <span className="ranked__rank">{i + 1}</span>
