@@ -96,7 +96,9 @@ describe('formsFor', () => {
 
   it('carries the Champions-original Megas (Staraptor, Raichu X/Y)', () => {
     const star = findPokemon('staraptor')
-    expect(star && formsFor(star).map((f) => f.name)).toContain('Mega Staraptor')
+    expect(star && formsFor(star).map((f) => f.name)).toContain(
+      'Mega Staraptor',
+    )
 
     const raichu = findPokemon('raichu')
     if (raichu) {

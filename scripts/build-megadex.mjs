@@ -129,7 +129,14 @@ async function resolveStone(baseSlug, key) {
   if (pinned) return pinned
   if (key === 'primal') return '' // held Orb, not a stone
 
-  const suffix = key === 'mega-x' ? 'x' : key === 'mega-y' ? 'y' : key === 'mega-z' ? 'z' : ''
+  const suffix =
+    key === 'mega-x'
+      ? 'x'
+      : key === 'mega-y'
+        ? 'y'
+        : key === 'mega-z'
+          ? 'z'
+          : ''
   const itemSuffix = suffix ? `-${suffix}` : ''
   const candidates = [
     `${baseSlug}ite${itemSuffix}`,
@@ -142,7 +149,9 @@ async function resolveStone(baseSlug, key) {
   }
   // PokéAPI carries no stone item for this form — don't invent a name. The card
   // just omits the Mega Stone line; pin the real name in STONE when known.
-  console.log(`     (stone: none on PokéAPI for ${baseSlug} ${key} — add to STONE when known)`)
+  console.log(
+    `     (stone: none on PokéAPI for ${baseSlug} ${key} — add to STONE when known)`,
+  )
   return ''
 }
 
@@ -164,7 +173,9 @@ async function fetchForm(baseSlug, variety) {
       isHidden: a.is_hidden,
     }))
 
-  const types = [...p.types].sort((a, b) => a.slot - b.slot).map((t) => t.type.name)
+  const types = [...p.types]
+    .sort((a, b) => a.slot - b.slot)
+    .map((t) => t.type.name)
 
   const artwork =
     p.sprites?.other?.['official-artwork']?.front_default ??
@@ -206,7 +217,9 @@ async function discover(entry) {
     // Keep only the megas that belong to this specific form; if none are
     // form-scoped, fall back to the plain species mega.
     const scoped = megas.filter((n) => n.startsWith(`${api}-`))
-    megas = scoped.length ? scoped : megas.filter((n) => n === `${species.name}-mega`)
+    megas = scoped.length
+      ? scoped
+      : megas.filter((n) => n === `${species.name}-mega`)
   }
   if (!megas.length) return null
 
@@ -215,7 +228,9 @@ async function discover(entry) {
     try {
       const form = await fetchForm(slug, variety)
       forms.push(form)
-      console.log(`  ok   ${form.name} (${form.types.join('/')})  stone: ${form.stone || '—'}`)
+      console.log(
+        `  ok   ${form.name} (${form.types.join('/')})  stone: ${form.stone || '—'}`,
+      )
     } catch (err) {
       console.log(`  SKIP ${slug} ${variety} — ${String(err)}`)
     }
@@ -227,7 +242,9 @@ async function discover(entry) {
 }
 
 async function main() {
-  console.log(`Scanning ${REG_MC_POKEMON.length} Pokémon for Mega / Primal forms…`)
+  console.log(
+    `Scanning ${REG_MC_POKEMON.length} Pokémon for Mega / Primal forms…`,
+  )
 
   const forms = {}
   for (const entry of REG_MC_POKEMON) {
@@ -243,7 +260,9 @@ async function main() {
   }
 
   await writeFile(OUT, JSON.stringify(payload, null, 2) + '\n')
-  console.log(`\nWrote Mega / Primal forms for ${Object.keys(forms).length} Pokémon to ${OUT}`)
+  console.log(
+    `\nWrote Mega / Primal forms for ${Object.keys(forms).length} Pokémon to ${OUT}`,
+  )
 }
 
 main().catch((err) => {
