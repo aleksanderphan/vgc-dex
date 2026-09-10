@@ -26,15 +26,13 @@ interface Props {
   stats: BaseStats
   /**
    * When set, each bar is drawn as the base spread with the Mega change stacked
-   * on top: a rainbow segment for a gain, a hatched segment for a drop.
+   * on the end: an accent segment for a gain, a faded-red segment for a drop.
    */
   baseline?: BaseStats
 }
 
 export function StatSpread({ stats, baseline }: Props) {
   const diff = Boolean(baseline)
-  const hasDrop =
-    diff && ROWS.some((r) => stats[r.key] < (baseline as BaseStats)[r.key])
 
   return (
     <div className={`stat-spread${diff ? ' stat-spread--diff' : ''}`}>
@@ -42,8 +40,8 @@ export function StatSpread({ stats, baseline }: Props) {
         const value = stats[r.key]
         const base = baseline ? baseline[r.key] : value
         const delta = value - base
-        // The solid part is whatever base and Mega share; the extra segment is
-        // the gain (rainbow) or the drop (hatched) tacked on after it.
+        // The solid part is whatever base and Mega share; the extra segment on
+        // the end is the gain (accent) or the drop (faded red).
         const solidPct = pct(Math.min(base, value))
         const gainPct = delta > 0 ? pct(value) - pct(base) : 0
         const dropPct = delta < 0 ? pct(base) - pct(value) : 0
@@ -84,25 +82,6 @@ export function StatSpread({ stats, baseline }: Props) {
           </div>
         )
       })}
-
-      {diff ? (
-        <p className="stat-spread__legend">
-          <span className="legend-item">
-            <span className="swatch swatch--base" />
-            base
-          </span>
-          <span className="legend-item">
-            <span className="swatch swatch--gain" />
-            Mega gain
-          </span>
-          {hasDrop ? (
-            <span className="legend-item">
-              <span className="swatch swatch--drop" />
-              Mega drop
-            </span>
-          ) : null}
-        </p>
-      ) : null}
     </div>
   )
 }
