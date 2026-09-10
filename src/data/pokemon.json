@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-09T08:51:17.060Z",
+  "generatedAt": "2026-09-10T06:32:48.211Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "count": 138,
+  "count": 139,
   "pokemon": [
     {
       "id": 3,
@@ -3038,6 +3038,32 @@
       ],
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/765.png",
       "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/765.png"
+    },
+    {
+      "id": 768,
+      "slug": "golisopod",
+      "name": "Golisopod",
+      "types": [
+        "bug",
+        "water"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 125,
+        "def": 140,
+        "spa": 60,
+        "spd": 90,
+        "spe": 40
+      },
+      "abilities": [
+        {
+          "slug": "emergency-exit",
+          "name": "Emergency Exit",
+          "isHidden": false
+        }
+      ],
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/768.png",
+      "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/768.png"
     },
     {
       "id": 778,

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-10T06:16:55.420Z",
+  "generatedAt": "2026-09-10T06:33:02.023Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "baseCount": 60,
+  "baseCount": 61,
   "forms": {
     "garchomp": [
       {
@@ -1511,6 +1511,29 @@
         ],
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10305.png",
         "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10305.png"
+      }
+    ],
+    "golisopod": [
+      {
+        "key": "mega",
+        "label": "Mega",
+        "name": "Mega Golisopod",
+        "stone": "",
+        "types": [
+          "bug",
+          "steel"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "atk": 150,
+          "def": 175,
+          "spa": 70,
+          "spd": 120,
+          "spe": 40
+        },
+        "abilities": [],
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10316.png",
+        "artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10316.png"
       }
     ],
     "floette": [

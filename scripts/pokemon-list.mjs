@@ -151,6 +151,7 @@ export const REG_MC_POKEMON = [
   // which are Champions-original and not on PokéAPI — the base still gets a
   // usage panel; the Mega switcher only shows where megadex has the form).
   'raichu',
+  'golisopod',
   'floette',
   'delphox',
   'froslass',

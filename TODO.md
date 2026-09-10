@@ -22,7 +22,7 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
   ability, Mega Stone, base stats and type matchups
   (`src/data/megadex.m-c.json`, `scripts/build-megadex.mjs`, PokéAPI). The ETL
   auto-discovers every `*-mega[-x|-y|-z]` / `*-primal` variety on the species —
-  60 bases now, incl. the Champions-original Megas (Mega Staraptor, Mega Raichu
+  61 bases now, incl. the Champions-original Megas (Mega Staraptor, Mega Raichu
   X/Y, Mega Delphox/Froslass/Baxcalibur/Clefable/Glimmora/…) and the Z-Megas
   (Garchomp-Z, Absol-Z, Lucario-Z). Mega Stone names come from the item endpoint
   where it has one, else `STONE` overrides, else the card omits the line. A form
@@ -102,7 +102,7 @@ These shape the data model, so resolve them before Phase 2.
 - [ ] Add `@pkmn/dex` + `@pkmn/data` for battle-accurate species/move/ability/item data and learnsets.
 - [ ] Reconciliation report: diff PokéAPI vs `@pkmn/dex` and pick the source of truth per field.
 - [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` / `ItemInfo` / `MegaForm` / `PokemonForm` added (`src/types.ts`).
-- [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone). Auto-discovers every `*-mega[-x|-y|-z]` / `*-primal` variety per species — **60 bases**, incl. Champions-original Megas (Mega Staraptor, Mega Raichu X/Y, Mega Delphox/Froslass/Baxcalibur/Clefable/Glimmora/Excadrill/Chandelure/…) and the Z-Megas (Garchomp-Z, Absol-Z, Lucario-Z), surfaced via the form switcher. Still TODO: real Mega Stone names for the Champions-original set (PokéAPI has no item for most — `STONE` map in the ETL), `golisopod` isn't in the pool yet (README wants Mega Golisopod→Steel for M-C), base-stat delta display, per-regulation legality.
+- [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone). Auto-discovers every `*-mega[-x|-y|-z]` / `*-primal` variety per species — **61 bases**, incl. Champions-original Megas (Mega Staraptor, Mega Raichu X/Y, Mega Golisopod (→ Steel), Mega Delphox/Froslass/Baxcalibur/Clefable/Glimmora/Excadrill/Chandelure/…) and the Z-Megas (Garchomp-Z, Absol-Z, Lucario-Z), surfaced via the form switcher. `formsFor` backfills a Mega's abilities from the base when PokéAPI lists none (Mega Golisopod). Still TODO: real Mega Stone names for the Champions-original set (PokéAPI has no item for most — `STONE` map in the ETL), base-stat delta display, per-regulation legality.
 - [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork; the PWA service worker runtime-caches them (`CacheFirst`) so they survive offline after first view. (Asset-pinning / self-hosting still an option if the GitHub host is a concern.)
 - [x] Unit tests for the normalizer + type chart — Vitest: `src/lib/typechart.test.ts` (effectiveness, dual-type stacking, immunities, matchup bucketing, offensive coverage, `titleCase`) and `src/lib/data.test.ts` (name normalizer case/punctuation-insensitivity, `usersOf` ordering + slug resolution, `popularSlugs`, `formsFor`, `searchPokemon`).
 

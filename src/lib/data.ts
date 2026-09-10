@@ -116,7 +116,13 @@ export function formsFor(pokemon: Pokemon): PokemonForm[] {
     sprite: pokemon.sprite,
     artwork: pokemon.artwork,
   }
-  return [base, ...megaFormsFor(pokemon.slug)]
+  // A few Mega forms come through with no ability listed (e.g. Mega Golisopod);
+  // fall back to the base Pokémon's abilities so the switcher never shows a
+  // blank ability row.
+  const megas = megaFormsFor(pokemon.slug).map((m) =>
+    m.abilities.length ? m : { ...m, abilities: pokemon.abilities },
+  )
+  return [base, ...megas]
 }
 
 export function findPokemon(slug: string): Pokemon | undefined {

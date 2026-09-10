@@ -140,7 +140,7 @@ Built (prototype):
   artwork (**Base / Mega**, or **Base / Mega X / Mega Y** for Charizard) that
   swaps the art, typing, ability, Mega Stone, base stats and type matchups
   (`src/data/megadex.m-c.json`, `npm run build:megadex` — auto-discovers every
-  Mega / Primal / Z-Mega variety per species; 60 bases in the curated pool,
+  Mega / Primal / Z-Mega variety per species; 61 bases in the curated pool,
   including the Champions-original Megas such as Mega Staraptor and Mega Raichu
   X/Y).
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
