@@ -26,14 +26,20 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
 - **Real usage data**: `scripts/ingest-usage.mjs` pulls the Pokémon Showdown
   ladder stats for `gen9championsvgc2026` (Smogon monthly "chaos" JSON via
   data.pkmn.cc) → `src/data/usage.m-c.json`. ~120 Pokémon, Mega/Primal formes
-  merged into the base, usage-weighted. No win-rate (source has none). The
-  "sample data" pill flips to "ladder data" (`components/DataPill.tsx`).
+  merged into the base, usage-weighted. Now also ingests **common EV spreads**
+  (Smogon's bucketed spreads scaled back to approximate real EVs, over-rounding
+  shaved to a legal 508) and **common teammates** (co-occurrence % on the same
+  team, teammate Mega formes merged into the base). No win-rate (source has
+  none); `counters` is empty in this format's payload. The "sample data" pill
+  flips to "ladder data" (`components/DataPill.tsx`).
 - Usage panel: **common abilities** then **common moves** stacked, then a
-  **Common items** section. Each ability/move/item row expands in place (several
-  at once) to short details from `src/data/movedex.m-c.json` /
-  `src/data/itemdex.m-c.json` (`build:movedex` / `build:itemdex`, PokéAPI; a
-  Champions-original move/ability/item with no PokéAPI record renders as a
-  clearly-labelled stub).
+  **Common items** section, a **Common EV spreads** section
+  (`components/SpreadsPanel.tsx`) and a **Common teammates** section of
+  sprite chips that deep-link to each teammate (`components/TeammatesPanel.tsx`).
+  Each ability/move/item row expands in place (several at once) to short details
+  from `src/data/movedex.m-c.json` / `src/data/itemdex.m-c.json`
+  (`build:movedex` / `build:itemdex`, PokéAPI; a Champions-original
+  move/ability/item with no PokéAPI record renders as a clearly-labelled stub).
 - Dedicated **move / ability / item pages** — hash-routed (`#move/<slug>`,
   `#ability/<slug>`, `#item/<slug>`, deep-linkable) via `App.tsx` +
   `components/EntityPage.tsx`. Shows PokéAPI's long-form effect, structured
@@ -107,7 +113,7 @@ These shape the data model, so resolve them before Phase 2.
 > **Showdown-ladder ingest**, not the hand-authored placeholder.
 
 - [x] `UsageSnapshot` schema defined (`src/types.ts`).
-- [x] Ingester: **Smogon / Showdown** (`data.pkmn.cc/stats/gen9championsvgc2026.json`) — `scripts/ingest-usage.mjs`: usage %, abilities, moves, items; Mega/Primal merged into the base; labelled as the simulator ladder in the snapshot `source` + `disclaimer` and via the "ladder data" pill. Still to pull from the same payload: `spreads`, `teammates`, `counters`.
+- [x] Ingester: **Smogon / Showdown** (`data.pkmn.cc/stats/gen9championsvgc2026.json`) — `scripts/ingest-usage.mjs`: usage %, abilities, moves, items, **EV spreads** (bucketed → approx real EVs, capped to 508) and **teammates** (co-occurrence %, teammate Mega formes merged); Mega/Primal merged into the base; labelled as the simulator ladder in the snapshot `source` + `disclaimer` and via the "ladder data" pill. `counters` is empty in this format's payload; `viability`/`happinesses`/`teraTypes` deliberately skipped (no Tera in Champions).
 - [ ] Ingester: **official in-game Battle Data** — per the extraction method found in Verify. Canonical "meta" source.
 - [ ] Ingester: **Pokémon Zone** Champions Ranked Seasons (Singles + Doubles) — pending licensing check.
 - [ ] Ingester: **Pikalytics** `/champions` (adds win rate + rating cutoffs) — pending licensing check.
@@ -155,7 +161,7 @@ These shape the data model, so resolve them before Phase 2.
 ## Phase 7 — Usage & move analytics UI
 
 - [x] Usage panel: usage %, win %, **common abilities** then **common moves** stacked, then a **Common items** section; each row expands in place (multiple at once) to short details, and links to the full move/ability/item page.
-- [~] Items % shipped (from the ladder ingest). Still: teammates and EV spreads (both are in the Smogon payload).
+- [x] Items %, **EV spreads** and **teammates** shipped from the ladder ingest — `SpreadsPanel` (approx EVs, per-spread %) and `TeammatesPanel` (sprite chips, co-occurrence %, deep-link to each). Still: fold win rate + rating cutoffs in once a source that publishes them lands (Pikalytics).
 - [~] Curated competitive-notes layer (`scripts/reference-notes.mjs`) covers a starter set of moves/abilities/items; extend as gaps show up, or replace with `@pkmn/dex` descriptions.
 - [ ] Compare view: 2–4 Pokémon side by side.
 - [ ] Trend charts: usage over time within a season (needs snapshot history from Phase 3).

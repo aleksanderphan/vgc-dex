@@ -92,12 +92,28 @@ export interface UsageItem {
   pct: number
 }
 
+/** A common EV spread from the usage snapshot (EVs are approximate — see ingest). */
+export interface UsageSpread {
+  nature: string
+  evs: BaseStats
+  pct: number
+}
+
+/** A common teammate: `pct` is co-occurrence on the same team. */
+export interface UsageTeammate {
+  slug: string
+  name: string
+  pct: number
+}
+
 export interface UsageEntry {
   usagePct?: number
   winPct?: number
   abilities: UsageItem[]
   moves: UsageItem[]
   items?: UsageItem[]
+  spreads?: UsageSpread[]
+  teammates?: UsageTeammate[]
 }
 
 export type MoveCategory = 'physical' | 'special' | 'status'

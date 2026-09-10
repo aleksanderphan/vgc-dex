@@ -5,6 +5,8 @@ import { TypeMatchups } from './TypeMatchups'
 import { TypeBadge } from './TypeBadge'
 import { UsagePanel } from './UsagePanel'
 import { ItemsPanel } from './ItemsPanel'
+import { SpreadsPanel } from './SpreadsPanel'
+import { TeammatesPanel } from './TeammatesPanel'
 import { formsFor, usageFor } from '../lib/data'
 
 interface Props {
@@ -99,6 +101,8 @@ export function PokemonView({ pokemon, snapshot }: Props) {
 
       <UsagePanel name={pokemon.name} entry={entry} snapshot={snapshot} />
       <ItemsPanel entry={entry} snapshot={snapshot} />
+      <SpreadsPanel entry={entry} snapshot={snapshot} />
+      <TeammatesPanel entry={entry} snapshot={snapshot} />
     </article>
   )
 }

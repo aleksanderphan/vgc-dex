@@ -143,11 +143,15 @@ Built (prototype):
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
   "Weak to" / "Resists" / "Immune to" defensively, each with ×4/×2/×½/×¼/×0 tags.
 - **Usage panel** — usage rate %, **common abilities** then **common moves**
-  ranked by percentage, followed by a **Common items** section — from a real
-  ingest of the Pokémon Showdown ladder (`scripts/ingest-usage.mjs`, Smogon
-  monthly stats via `data.pkmn.cc`; ~120 Pokémon, Mega/Primal formes merged into
-  the base species). No win rate — that source doesn't publish one. Tap any
-  ability, move or item to expand it in place (several can stay open at once).
+  ranked by percentage, followed by **Common items**, **Common EV spreads** and
+  **Common teammates** sections — from a real ingest of the Pokémon Showdown
+  ladder (`scripts/ingest-usage.mjs`, Smogon monthly stats via `data.pkmn.cc`;
+  ~120 Pokémon, Mega/Primal formes merged into the base species). Spreads are
+  Smogon's coarse buckets scaled back to approximate real EVs (over-rounding
+  shaved to a legal 508 total); teammate % is co-occurrence on the same team,
+  with teammate Mega formes merged and each chip deep-linking to that Pokémon.
+  No win rate — that source doesn't publish one. Tap any ability, move or item to
+  expand it in place (several can stay open at once).
 - **Move / ability / item pages** — the expanded row links through to a
   deep-linkable page (`#move/<slug>`, `#ability/<slug>`, `#item/<slug>`) with the
   full mechanical breakdown: PokéAPI's long-form effect text, structured stats
@@ -174,8 +178,8 @@ Planned — see [TODO.md](TODO.md):
 - **Move dex** — per move: distribution across the meta and top users.
 - **Meta overview** — usage leaderboard with a rating-cutoff toggle.
 - **Regulation switcher** — M‑A / M‑B / M‑C snapshots; usage **trends** over time.
-- Champions-original Megas, base-stat deltas on the Mega view, EV spreads,
-  teammates.
+- Champions-original Megas and base-stat deltas on the Mega view.
+- Compare view (2–4 Pokémon side by side).
 
 ---
 
@@ -217,7 +221,8 @@ UsageSnapshot  { regulation, season, ratingCutoff, source, capturedAt, disclaime
                                abilities: [{ name, pct }],   // ingested from the Showdown ladder
                                moves:     [{ name, pct }],
                                items:     [{ name, pct }],
-                               /* teammates, spreads — planned */ } } }
+                               spreads:   [{ nature, evs, pct }],   // approx real EVs
+                               teammates: [{ slug, name, pct }] } } } // co-occurrence %
 ```
 
 ## Tech stack
@@ -260,8 +265,8 @@ src/
     typechart.ts       type effectiveness + strong/weak-against helpers
     data.ts            loads + indexes the snapshots
   components/          SearchBar, PokemonView, BrowseGrid, StatSpread, TypeMatchups,
-                       UsagePanel, ItemsPanel, RankedList, EntityPage, DataPill,
-                       UpdateToast, TypeBadge
+                       UsagePanel, ItemsPanel, SpreadsPanel, TeammatesPanel,
+                       RankedList, EntityPage, DataPill, UpdateToast, TypeBadge
   vite-env.d.ts        Vite + vite-plugin-pwa ambient types
   App.tsx  main.tsx  styles.css   (App.tsx also does the hash routing: #slug vs #browse vs #move|ability|item/<slug>)
 ```
