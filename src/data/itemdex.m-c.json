@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-09T08:55:09.451Z",
+  "generatedAt": "2026-09-10T09:41:13.732Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "itemCount": 99,
+  "itemCount": 101,
   "items": [
     {
       "name": "Abomasite",
@@ -193,6 +193,16 @@
       "flingPower": 30,
       "effect": "Held: Fire-Type moves from holder do 20% more damage.",
       "longEffect": "Held: Increases the power of the holder’s Fire moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Charizardite X",
+      "slug": "charizardite-x",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charizardite-x.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Charizard to Mega Evolve into Mega Charizard X.",
+      "longEffect": "Held: Allows Charizard to Mega Evolve into Mega Charizard X.",
       "notes": []
     },
     {
@@ -786,6 +796,16 @@
       "flingPower": 10,
       "effect": "Held: Consumed when struck by a super-effective Fairy-type attack to halve the damage.",
       "longEffect": "Held: Consumed when struck by a super-effective Fairy-type attack to halve the damage.",
+      "notes": []
+    },
+    {
+      "name": "Sablenite",
+      "slug": "sablenite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sablenite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Sableye to Mega Evolve into Mega Sableye.",
+      "longEffect": "Held: Allows Sableye to Mega Evolve into Mega Sableye.",
       "notes": []
     },
     {

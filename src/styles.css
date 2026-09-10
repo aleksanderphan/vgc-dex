@@ -564,14 +564,16 @@ button {
   z-index: 2;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
   gap: 4px;
   padding: 0 var(--s-3);
 }
 
 .form-tab {
+  flex: 1 1 0;
+  min-width: 0;
   min-height: 34px;
-  padding: 6px 18px 8px;
+  padding: 6px 12px 8px;
+  text-align: center;
   border: 1px solid var(--border);
   border-top: 0;
   border-radius: 0 0 var(--r-md) var(--r-md);
@@ -1586,11 +1588,6 @@ button {
     grid-template-columns: 190px 1fr;
     justify-items: start;
     text-align: left;
-  }
-
-  /* Tabs still hang off the bottom edge; align them to the card's left. */
-  .poke__hero:has(.form-tabs) .form-tabs {
-    justify-content: flex-start;
   }
 
   .badge-wrap,

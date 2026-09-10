@@ -151,6 +151,20 @@ export function usageFor(slug: string): UsageEntry | undefined {
   return USAGE.entries[slug]
 }
 
+/**
+ * Usage for a specific form of a Pokémon. `base` (or an unknown key) returns the
+ * species-wide entry; a Mega / Primal key returns that forme's own split-out
+ * numbers, or `undefined` when the snapshot has none for it.
+ */
+export function usageForForm(
+  slug: string,
+  formKey: string,
+): UsageEntry | undefined {
+  const entry = USAGE.entries[slug]
+  if (!entry || formKey === 'base') return entry
+  return entry.forms?.[formKey]
+}
+
 /** Slugs ordered by usage %, for the "popular" quick-pick row. */
 export function popularSlugs(limit = 12): string[] {
   return Object.entries(USAGE.entries)

@@ -8,7 +8,7 @@ import { UsagePanel } from './UsagePanel'
 import { ItemsPanel } from './ItemsPanel'
 import { SpreadsPanel } from './SpreadsPanel'
 import { TeammatesPanel } from './TeammatesPanel'
-import { formsFor, usageFor } from '../lib/data'
+import { formsFor, usageForForm } from '../lib/data'
 import { TYPE_COLORS } from '../lib/typechart'
 
 interface Props {
@@ -24,7 +24,6 @@ const MINI_STATS: { key: 'atk' | 'spa' | 'spe'; label: string }[] = [
 ]
 
 export function PokemonView({ pokemon, snapshot }: Props) {
-  const entry = usageFor(pokemon.slug)
   const forms = formsFor(pokemon)
 
   // Which form tab is selected — pinned to the Pokémon it was chosen for, so
@@ -33,6 +32,11 @@ export function PokemonView({ pokemon, snapshot }: Props) {
   const formKey = picked.slug === pokemon.slug ? picked.key : 'base'
   const form = forms.find((f) => f.key === formKey) ?? forms[0]
   const hasForms = forms.length > 1
+
+  // Usage follows the selected form: the base tab shows the species-wide merge,
+  // a Mega / Primal tab its own split-out numbers (or nothing, when the
+  // snapshot has none for that forme).
+  const entry = usageForForm(pokemon.slug, form.key)
 
   // Collapse the hero into a sticky mini-bar (sprite + name + types, styled like
   // a search-result row) once the full hero has scrolled out of view.
@@ -180,7 +184,7 @@ export function PokemonView({ pokemon, snapshot }: Props) {
         <TypeMatchups types={form.types} />
       </section>
 
-      <UsagePanel name={pokemon.name} entry={entry} snapshot={snapshot} />
+      <UsagePanel name={form.name} entry={entry} snapshot={snapshot} />
       <ItemsPanel entry={entry} snapshot={snapshot} />
       <SpreadsPanel entry={entry} snapshot={snapshot} />
       <TeammatesPanel entry={entry} snapshot={snapshot} />

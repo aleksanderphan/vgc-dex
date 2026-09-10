@@ -106,6 +106,16 @@ export interface UsageTeammate {
   pct: number
 }
 
+/** A Mega / Primal forme's own usage, split out of the species-wide merge. */
+export interface UsageFormEntry {
+  usagePct?: number
+  abilities: UsageItem[]
+  moves: UsageItem[]
+  items?: UsageItem[]
+  spreads?: UsageSpread[]
+  teammates?: UsageTeammate[]
+}
+
 export interface UsageEntry {
   usagePct?: number
   winPct?: number
@@ -114,6 +124,8 @@ export interface UsageEntry {
   items?: UsageItem[]
   spreads?: UsageSpread[]
   teammates?: UsageTeammate[]
+  /** Per-forme breakdown, keyed by form-switcher key ("mega", "mega-x", …). */
+  forms?: Record<string, UsageFormEntry>
 }
 
 export type MoveCategory = 'physical' | 'special' | 'status'

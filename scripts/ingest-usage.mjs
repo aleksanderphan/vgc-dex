@@ -69,8 +69,23 @@ const toSlug = (name) =>
     .replace(/^-+|-+$/g, '')
 
 // "Charizard-Mega-Y" / "Groudon-Primal" → base display name.
-const baseName = (name) => name.replace(/-(Mega(-[XY])?|Primal)$/, '')
-const isForme = (name) => /-(Mega(-[XY])?|Primal)$/.test(name)
+const FORME_RE = /-(Mega(-[XYZ])?|Primal)$/
+const baseName = (name) => name.replace(FORME_RE, '')
+const isForme = (name) => FORME_RE.test(name)
+
+// Showdown forme name → the form key the app's form switcher uses (see
+// scripts/build-megadex.mjs). null for a base species.
+const FORME_KEYS = [
+  [/-Mega-X$/, 'mega-x'],
+  [/-Mega-Y$/, 'mega-y'],
+  [/-Mega-Z$/, 'mega-z'],
+  [/-Mega$/, 'mega'],
+  [/-Primal$/, 'primal'],
+]
+const formeKey = (name) => {
+  for (const [re, key] of FORME_KEYS) if (re.test(name)) return key
+  return null
+}
 
 async function getJSON(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'vgc-dex-etl' } })
@@ -186,8 +201,9 @@ const smogon = {
   disclaimer:
     `Usage from the Pokémon Showdown SIMULATOR ladder for the ${FORMAT} format ` +
     `(Smogon monthly "chaos" stats via data.pkmn.cc), not the official in-game ` +
-    `Champions ladder. Percentages are usage-weighted; Mega/Primal formes are ` +
-    `merged into the base species. No win-rate is published for this source. ` +
+    `Champions ladder. Percentages are usage-weighted. The base species figures ` +
+    `merge every Mega/Primal forme; each forme's own numbers show on its form ` +
+    `tab. No win-rate is published for this source. ` +
     `Teammate % is co-occurrence on the same team; EV spreads are Smogon's ` +
     `bucketed spreads scaled back to approximate real EVs.`,
   battlesOf: (raw) => raw.battles ?? null,
@@ -229,6 +245,33 @@ const smogon = {
         rawWeighted,
       ).filter((t) => t.slug !== slug)
 
+      // Per-forme breakdown so the app's form switcher can show a Mega / Primal
+      // form's own usage instead of the species-wide merge. Keyed by the form
+      // key the switcher uses ("mega", "mega-x", …). The base species entry
+      // stays the merge across every forme (the "Base" tab = overall).
+      const forms = {}
+      for (const e of group) {
+        const key = e.forme && formeKey(e.name)
+        const w = e.usage.weighted
+        if (!key || w <= 0) continue
+        const one = [e]
+        const fSpreads = mergeSpreads(one, w)
+        const fTeammates = mergeTeammates(
+          one,
+          w,
+          poolNames,
+          rawWeighted,
+        ).filter((t) => t.slug !== slug)
+        forms[key] = {
+          usagePct: round1(w * 100),
+          abilities: trim(mergeDist(one, 'abilities', w), 'abilities'),
+          moves: trim(mergeDist(one, 'moves', w), 'moves'),
+          items: trim(mergeDist(one, 'items', w), 'items'),
+          ...(fSpreads.length ? { spreads: fSpreads } : {}),
+          ...(fTeammates.length ? { teammates: fTeammates } : {}),
+        }
+      }
+
       entries[slug] = {
         usagePct: round1(totalW * 100),
         abilities: trim(mergeDist(group, 'abilities', totalW), 'abilities'),
@@ -236,6 +279,7 @@ const smogon = {
         items: trim(mergeDist(group, 'items', totalW), 'items'),
         ...(spreads.length ? { spreads } : {}),
         ...(teammates.length ? { teammates } : {}),
+        ...(Object.keys(forms).length ? { forms } : {}),
       }
     }
 

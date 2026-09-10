@@ -207,8 +207,10 @@ async function main() {
   const moveNames = new Set()
   const abilityNames = new Set()
   for (const entry of Object.values(usage.entries)) {
-    for (const m of entry.moves ?? []) moveNames.add(m.name)
-    for (const a of entry.abilities ?? []) abilityNames.add(a.name)
+    for (const src of [entry, ...Object.values(entry.forms ?? {})]) {
+      for (const m of src.moves ?? []) moveNames.add(m.name)
+      for (const a of src.abilities ?? []) abilityNames.add(a.name)
+    }
   }
 
   const moveList = [...moveNames].sort()

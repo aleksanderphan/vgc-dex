@@ -162,7 +162,9 @@ async function main() {
   const usage = JSON.parse(await readFile(USAGE, 'utf8'))
   const names = new Set()
   for (const entry of Object.values(usage.entries)) {
-    for (const it of entry.items ?? []) names.add(it.name)
+    for (const src of [entry, ...Object.values(entry.forms ?? {})]) {
+      for (const it of src.items ?? []) names.add(it.name)
+    }
   }
 
   const list = [...names].sort()
