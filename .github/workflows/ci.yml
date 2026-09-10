@@ -1,13 +1,12 @@
 name: CI
 
+# PRs are the only merge gate; a push to `main` just deploys (Vercel), so there's
+# no second CI run on the commit that already went green on its PR.
 on:
-  push:
-    branches: [main]
-    # Docs-only pushes don't need a build. PRs always run (merge gate).
-    paths-ignore: ['**/*.md']
   pull_request:
+  workflow_dispatch:
 
-# A newer push to the same branch/PR supersedes an in-flight run.
+# A newer push to the same PR supersedes an in-flight run.
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
