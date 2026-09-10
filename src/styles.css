@@ -39,6 +39,17 @@
   /* min hit area for touch */
   --tap: 44px;
 
+  /* Mega-form stat gain — the "rainbow" segment stacked on the base bar */
+  --mega-rainbow: linear-gradient(
+    90deg,
+    #ff5a5f,
+    #ff9f45,
+    #ffe14d,
+    #4fd18b,
+    #4f9dff,
+    #a06bff
+  );
+
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.38);
   --maxw: 760px;
   --header-h: 64px;
@@ -640,16 +651,75 @@ button {
 }
 
 .stat-row__track {
+  display: flex;
   height: 8px;
   background: var(--surface-2);
   border-radius: var(--r-pill);
-  overflow: hidden;
+  overflow: hidden; /* clips the stacked segments to the pill ends */
 }
 
 .stat-row__fill {
-  display: block;
   height: 100%;
-  border-radius: var(--r-pill);
+  flex: none;
+  min-width: 0;
+}
+
+/* the Mega increase, stacked right after the shared base portion */
+.stat-row__fill--gain {
+  min-width: 2px;
+  background-image: var(--mega-rainbow);
+  background-size: 100% 100%;
+}
+
+/* the Mega decrease — hatched, sits where the base bar used to reach */
+.stat-row__fill--drop {
+  min-width: 2px;
+  background-color: color-mix(in srgb, var(--bad) 16%, transparent);
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--bad) 55%, transparent) 0 3px,
+    transparent 3px 6px
+  );
+}
+
+.stat-spread__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.swatch--base {
+  background: var(--text-dim);
+}
+
+.swatch--gain {
+  background-image: var(--mega-rainbow);
+}
+
+.swatch--drop {
+  background-color: color-mix(in srgb, var(--bad) 16%, transparent);
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--bad) 55%, transparent) 0 3px,
+    transparent 3px 6px
+  );
 }
 
 /* ── Matchups ───────────────────────────────────────────── */
