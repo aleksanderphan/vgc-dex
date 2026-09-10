@@ -8,11 +8,10 @@ interface Props {
 }
 
 /** "Common held items" — sits directly below the abilities / moves lists. */
-export function ItemsPanel({ entry, snapshot }: Props) {
+export function ItemsPanel({ entry }: Props) {
   if (!entry?.items?.length) return null
 
   const sorted = [...entry.items].sort((a, b) => b.pct - a.pct)
-  const label = `Reg ${snapshot.regulation} · ${snapshot.season} · ${snapshot.ratingCutoff} · ${snapshot.source}`
 
   return (
     <section className="card usage">
@@ -31,10 +30,6 @@ export function ItemsPanel({ entry, snapshot }: Props) {
           kind="item"
         />
       </div>
-
-      <p className="usage__meta">
-        {label} · captured {snapshot.capturedAt}
-      </p>
     </section>
   )
 }

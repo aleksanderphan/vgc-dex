@@ -15,6 +15,27 @@ interface Props {
   snapshot: UsageSnapshot
 }
 
+// Compact offence/speed glyphs for the sticky mini bar (no in-repo assets, so
+// these stand in for the in-game stat icons): blade = Atk, starburst = SpA,
+// bolt = Spe.
+const MINI_STATS: {
+  key: 'atk' | 'spa' | 'spe'
+  label: string
+  path: string
+}[] = [
+  {
+    key: 'atk',
+    label: 'Attack',
+    path: 'M13.5 1.5 6 9l1 1 7.5-7.5zM5 10l-3 3-.5 2 2-.5 3-3z',
+  },
+  {
+    key: 'spa',
+    label: 'Sp. Atk',
+    path: 'M8 1l1.7 4.6L14.5 6l-3.9 3 1.4 4.7L8 11l-4 2.7L5.4 9 1.5 6l4.8-.4z',
+  },
+  { key: 'spe', label: 'Speed', path: 'M9 1 3 9h3.5L5 15l8-9H8.5z' },
+]
+
 export function PokemonView({ pokemon, snapshot }: Props) {
   const entry = usageFor(pokemon.slug)
   const forms = formsFor(pokemon)
@@ -60,6 +81,16 @@ export function PokemonView({ pokemon, snapshot }: Props) {
             />
           ) : null}
           <span className="poke-mini__name">{form.name}</span>
+          <span className="poke-mini__stats" aria-hidden="true">
+            {MINI_STATS.map((s) => (
+              <span className="poke-mini__stat" key={s.key} title={s.label}>
+                <svg viewBox="0 0 16 16">
+                  <path d={s.path} fill="currentColor" />
+                </svg>
+                {form.baseStats[s.key]}
+              </span>
+            ))}
+          </span>
           <span className="poke-mini__types">
             {form.types.map((t) => (
               <i
@@ -168,6 +199,11 @@ export function PokemonView({ pokemon, snapshot }: Props) {
       <ItemsPanel entry={entry} snapshot={snapshot} />
       <SpreadsPanel entry={entry} snapshot={snapshot} />
       <TeammatesPanel entry={entry} snapshot={snapshot} />
+
+      <p className="usage__meta usage__meta--foot">
+        {`Reg ${snapshot.regulation} · ${snapshot.season} · ${snapshot.ratingCutoff} · ${snapshot.source}`}{' '}
+        · captured {snapshot.capturedAt}
+      </p>
     </article>
   )
 }

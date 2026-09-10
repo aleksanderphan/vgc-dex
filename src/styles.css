@@ -510,6 +510,35 @@ button {
   font-size: 15px;
 }
 
+/* inline Atk / SpA / Spe on the sticky bar — number only, glyph icon */
+.poke-mini__stats {
+  display: flex;
+  gap: 8px;
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.poke-mini__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.poke-mini__stat svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0.75;
+}
+
+@media (max-width: 360px) {
+  .poke-mini__stats {
+    display: none;
+  }
+}
+
 /* ── Hero ───────────────────────────────────────────────── */
 
 .poke__hero {
@@ -949,6 +978,22 @@ button {
   text-align: right;
 }
 
+/* Common items: sprite instead of a rank number, centred usage % */
+.ranked--item .ranked__row {
+  grid-template-columns: 24px 1fr 64px 46px 12px;
+}
+
+.ranked__item-sprite {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.ranked--item .ranked__pct {
+  text-align: center;
+}
+
 .ranked__name {
   font-weight: 600;
   white-space: nowrap;
@@ -979,6 +1024,12 @@ button {
   margin: 16px 0 0;
   font-size: 11px;
   color: var(--text-dim);
+}
+
+/* single shared snapshot notice under all usage sections */
+.usage__meta--foot {
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* ── EV spreads ─────────────────────────────────────────── */

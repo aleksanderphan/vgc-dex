@@ -132,13 +132,15 @@ export function RankedList({ title, items, accent, kind }: Props) {
   }
 
   return (
-    <div className="ranked">
+    <div className={`ranked ranked--${kind}`}>
       <h3 className="ranked__title">{title}</h3>
       <ol className="ranked__list">
         {items.map((it, i) => {
           const isOpen = open.has(it.name)
           const panelId = `${baseId}-${i}`
           const detail = isOpen ? detailFor(kind, it.name) : null
+          const itemSprite =
+            kind === 'item' ? itemInfo(it.name)?.sprite : undefined
           return (
             <li className="ranked__item" key={it.name}>
               <button
@@ -148,7 +150,18 @@ export function RankedList({ title, items, accent, kind }: Props) {
                 aria-controls={panelId}
                 onClick={() => toggle(it.name)}
               >
-                <span className="ranked__rank">{i + 1}</span>
+                {itemSprite ? (
+                  <img
+                    className="ranked__item-sprite"
+                    src={itemSprite}
+                    alt=""
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="ranked__rank">{i + 1}</span>
+                )}
                 <span className="ranked__name">{it.name}</span>
                 <span className="ranked__track">
                   <span

@@ -8,11 +8,10 @@ interface Props {
 }
 
 /** "Common teammates" — co-occurrence on the same team, from the ladder ingest. */
-export function TeammatesPanel({ entry, snapshot }: Props) {
+export function TeammatesPanel({ entry }: Props) {
   if (!entry?.teammates?.length) return null
 
   const sorted = [...entry.teammates].sort((a, b) => b.pct - a.pct)
-  const label = `Reg ${snapshot.regulation} · ${snapshot.season} · ${snapshot.ratingCutoff} · ${snapshot.source}`
 
   return (
     <section className="card usage">
@@ -48,10 +47,6 @@ export function TeammatesPanel({ entry, snapshot }: Props) {
           )
         })}
       </ul>
-
-      <p className="usage__meta">
-        {label} · captured {snapshot.capturedAt}
-      </p>
     </section>
   )
 }

@@ -22,12 +22,11 @@ function evLine(evs: BaseStats) {
 }
 
 /** "Common EV spreads" — from the Showdown ladder ingest (approximate EVs). */
-export function SpreadsPanel({ entry, snapshot }: Props) {
+export function SpreadsPanel({ entry }: Props) {
   if (!entry?.spreads?.length) return null
 
   const sorted = [...entry.spreads].sort((a, b) => b.pct - a.pct)
   const max = sorted.reduce((m, s) => Math.max(m, s.pct), 0) || 100
-  const label = `Reg ${snapshot.regulation} · ${snapshot.season} · ${snapshot.ratingCutoff} · ${snapshot.source}`
 
   return (
     <section className="card usage">
@@ -58,10 +57,6 @@ export function SpreadsPanel({ entry, snapshot }: Props) {
           </li>
         ))}
       </ol>
-
-      <p className="usage__meta">
-        {label} · captured {snapshot.capturedAt}
-      </p>
     </section>
   )
 }
