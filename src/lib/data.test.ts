@@ -93,6 +93,17 @@ describe('formsFor', () => {
       expect(keys.length).toBeGreaterThanOrEqual(3)
     }
   })
+
+  it('carries the Champions-original Megas (Staraptor, Raichu X/Y)', () => {
+    const star = findPokemon('staraptor')
+    expect(star && formsFor(star).map((f) => f.name)).toContain('Mega Staraptor')
+
+    const raichu = findPokemon('raichu')
+    if (raichu) {
+      const keys = formsFor(raichu).map((f) => f.key)
+      expect(keys).toEqual(expect.arrayContaining(['base', 'mega-x', 'mega-y']))
+    }
+  })
 })
 
 describe('searchPokemon', () => {

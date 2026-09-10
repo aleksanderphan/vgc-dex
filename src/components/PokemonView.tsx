@@ -29,14 +29,20 @@ export function PokemonView({ pokemon, snapshot }: Props) {
     <article className="poke">
       <section className="card poke__hero">
         <div className="poke__art">
-          <img
-            key={form.artwork || form.sprite}
-            src={form.artwork || form.sprite}
-            alt={form.name}
-            width="220"
-            height="220"
-            decoding="async"
-          />
+          {form.artwork || form.sprite ? (
+            <img
+              key={form.artwork || form.sprite}
+              src={form.artwork || form.sprite}
+              alt={form.name}
+              width="220"
+              height="220"
+              decoding="async"
+            />
+          ) : (
+            <div className="poke__art-blank" role="img" aria-label={`${form.name} — no art`}>
+              No art yet
+            </div>
+          )}
         </div>
 
         {hasForms && (

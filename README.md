@@ -139,8 +139,10 @@ Built (prototype):
   abilities. Pokémon with a Mega Evolution get a form switcher beneath the
   artwork (**Base / Mega**, or **Base / Mega X / Mega Y** for Charizard) that
   swaps the art, typing, ability, Mega Stone, base stats and type matchups
-  (`src/data/megadex.m-c.json`, `npm run build:megadex` — 36 classic Megas in
-  the curated pool).
+  (`src/data/megadex.m-c.json`, `npm run build:megadex` — auto-discovers every
+  Mega / Primal / Z-Mega variety per species; 60 bases in the curated pool,
+  including the Champions-original Megas such as Mega Staraptor and Mega Raichu
+  X/Y).
 - **Type matchups** — "Strong against" (what its STAB hits super-effectively) and
   "Weak to" / "Resists" / "Immune to" defensively, each with ×4/×2/×½/×¼/×0 tags.
 - **Usage panel** — usage rate %, **common abilities** then **common moves**
@@ -175,11 +177,11 @@ Planned — see [TODO.md](TODO.md):
 - Regulation-scoped legality (show only Reg M‑C-legal species / moves / items /
   Megas, with a legality badge).
 - A source closer to the **official in-game** Champions ladder (Pikalytics /
-  Pokémon Zone / Battle Data) and Champions-original Mega data.
+  Pokémon Zone / Battle Data).
 - **Move dex** — per move: distribution across the meta and top users.
 - **Meta overview** — usage leaderboard with a rating-cutoff toggle.
 - **Regulation switcher** — M‑A / M‑B / M‑C snapshots; usage **trends** over time.
-- Champions-original Megas and base-stat deltas on the Mega view.
+- Real Mega Stone names for the Champions-original Megas, and base-stat deltas on the Mega view.
 - Compare view (2–4 Pokémon side by side).
 
 ---
