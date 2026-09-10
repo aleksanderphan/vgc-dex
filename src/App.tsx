@@ -59,7 +59,9 @@ export function App() {
   // lands back on it.
   useEffect(() => {
     if (route.kind === 'pokemon' && route.slug) setPokeSlug(route.slug)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    // `scroll-behavior` (smooth, or `auto` under prefers-reduced-motion) is set
+    // on <html> in styles.css, so let CSS decide how this scroll animates.
+    window.scrollTo(0, 0)
   }, [route])
 
   function select(next: string) {
