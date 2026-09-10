@@ -69,17 +69,18 @@ move dex, additional usage sources (official Battle Data, Pikalytics win-rate).
 
 ## Verify first (facts to pin to a primary source)
 
-These shape the data model, so resolve them before Phase 2.
+These shape the data model, so resolve them before Phase 2. Full write-up with
+citations: **[docs/regulation-verification.md](docs/regulation-verification.md)**.
 
-- [ ] Confirm the exact Reg M‑C **legal Pokémon list** and count (README says ~248) against Serebii / Victory Road / in-game rules.
-- [ ] Confirm the full **Mega Evolution list** legal in M‑C (base Megas + Z‑Megas) and any typing changes (e.g. Mega Golisopod → Steel).
+- [~] Reg M‑C **legal Pokémon list** and count. No official number is published — Pokémon HOME is the source of truth (Handbook §2.1.1). Official announcement: previous sets stay legal **+ 24 new**, same category bans as M‑A (no Restricted/Legendary/Mythical/Paradox/Treasures-of-Ruin; Battle Bond banned). Secondary counts disagree (Pokémon Zone 248, MetaVGC 260) → encode the pool as `M‑B ∪ {24 new}` and derive the count, don't assert it.
+- [~] Full **Mega list** legal in M‑C. Structure confirmed: M‑A Megas + M‑B's 16 + **M‑C's 6** (Mega Salamence, Mega Golisopod, Mega Baxcalibur, Z‑Megas Absol‑Z / Garchomp‑Z / Lucario‑Z). Typing changes per Serebii (Golisopod → Bug/Steel, Absol‑Z → Dark/Ghost, Garchomp‑Z → mono‑Dragon) but MetaVGC disagrees — needs an in‑game cross-check. The megadex ETL's 61 auto-discovered bases are NOT the legal set; build an explicit per‑reg `megasLegal` + type/ability overrides.
 - [x] Confirm whether **Terastallization** exists in Pokémon Champions — it does **not**. Tera data + UI removed (no Tera types, no Tera Blast).
-- [ ] Confirm **banned moves / banned items** for M‑C (if any) and the newly added item list.
-- [ ] Confirm the base-format details: Bo1 vs Bo3 by round, timer values, open-sheet policy.
-- [ ] Confirm the M‑A and M‑B rosters/Megas for the historical regulation switcher.
+- [x] **Banned moves / items** for M‑C: none published. Only the Item Clause + the format-wide **Battle Bond** ability ban (Handbook §2.2–2.3). **12 new held items** in M‑C (Serebii list: Leek, Rocky Helmet, Air Balloon, Red Card, Binding Band, Eject Button, Normal Gem, Terrain Extender, Electric/Psychic/Misty/Grassy Seed) + 6 new Mega Stones. Encode `itemsLegal` as an allow-list of per-set additions.
+- [x] **Base-format details** pinned to the Play! Pokémon VGC Tournament Handbook 2026 (EN): Double Battles, register 4–6 / bring 4, auto Lv. 50. **Swiss = Bo1 or Bo3 at TO discretion (Bo3 recommended Regional+); all top cut Bo3.** Timers: Team Preview 90s, move 45s, "Your Time" 7 min, game 20 min, no round clock. Species Clause = same Pokédex number; Item Clause. **Whole 2026 season is open team list** — everything shared except the Pokémon's stats (EV/IV).
+- [~] **M‑A / M‑B rosters + Megas** for the switcher: sourced (Serebii per-set pages + Victory Road + Bulbapedia) — see the doc's §5 table. M‑A = limited roster, base-game Megas only; M‑B = M‑A + ~22–27 species + 16 new Megas (used at 2026 Worlds). Encode as diffs off M‑A, not full lists.
 - [x] Determine whether Pokémon Showdown has a dedicated **Champions format id** — yes: `gen9championsvgc2026` (also `gen9championsbattlestadiumsingles`, `gen9championsou`). Ingested from `data.pkmn.cc/stats/gen9championsvgc2026.json`.
-- [ ] Check whether the official in-game **Battle Data** is exportable or exposed anywhere machine-readable; document the extraction method.
-- [ ] Check licensing / terms for Pikalytics and Pokémon Zone before ingesting their data programmatically.
+- [x] Official in-game **Battle Data** extraction: no in-game export, but **championsbattledata.com** (3rd-party fan mirror) exposes an auth-free JSON API (`/api/battle/:format/:name`, `?days=N` daily snapshots, Showdown ids, CSV/JSON assets). Wire it as a `SOURCES` adapter; attribute as a fan mirror, not official.
+- [x] **Pikalytics / Pokémon Zone licensing.** Pikalytics: **OK** — `robots.txt` allows all + AI crawlers, publishes sanctioned `/ai/pokedex/[format]/[pokemon]` Markdown endpoints + `llms.txt`; no formal ToS, just a trademark notice. Ingest politely, cache, attribute, courtesy-note them. Pokémon Zone: **NOT OK** — ToS bans "robot, spider, scraper, crawler … for any purpose", `robots.txt` disallows `/api/`. Drop it as an ingest source; cite in docs only.
 
 ---
 
@@ -112,8 +113,8 @@ These shape the data model, so resolve them before Phase 2.
 
 ## Phase 2 — Regulation & legality layer
 
-- [ ] Define the `Regulation` schema and encode **Reg M‑C** (legal Pokémon, moves, items, Megas, clauses, dates) from the verified lists.
-- [ ] Encode **Reg M‑A** and **Reg M‑B** too (for the switcher / historical snapshots).
+- [ ] Define the `Regulation` schema and encode **Reg M‑C** (legal Pokémon, moves, items, Megas, clauses, dates) from the verified lists — inputs pinned in [docs/regulation-verification.md](docs/regulation-verification.md). Pool = `M‑B ∪ {24 new}` minus banned categories; `itemsLegal` / `megasLegal` as per-set additive allow-lists; count derived from the list, not asserted.
+- [ ] Encode **Reg M‑A** and **Reg M‑B** too (for the switcher / historical snapshots) — as diffs off M‑A per the doc's §5 table.
 - [ ] `isLegal(pokemon|form|move|item, regulation)` helper + a legality badge value.
 - [ ] Movepool filter: given a Pokémon + regulation, return only legal moves.
 - [ ] Validate a full team/set against a regulation (species clause, item clause, Mega-per-battle, move legality) — reuse `@pkmn` rules where possible.
@@ -126,9 +127,9 @@ These shape the data model, so resolve them before Phase 2.
 
 - [x] `UsageSnapshot` schema defined (`src/types.ts`).
 - [x] Ingester: **Smogon / Showdown** (`data.pkmn.cc/stats/gen9championsvgc2026.json`) — `scripts/ingest-usage.mjs`: usage %, abilities, moves, items, **EV spreads** (bucketed → approx real EVs, capped to 508) and **teammates** (co-occurrence %, teammate Mega formes merged); Mega/Primal merged into the base; labelled as the simulator ladder in the snapshot `source` + `disclaimer` and via the "ladder data" pill. `counters` is empty in this format's payload; `viability`/`happinesses`/`teraTypes` deliberately skipped (no Tera in Champions).
-- [ ] Ingester: **official in-game Battle Data** — per the extraction method found in Verify. Canonical "meta" source.
-- [ ] Ingester: **Pokémon Zone** Champions Ranked Seasons (Singles + Doubles) — pending licensing check.
-- [ ] Ingester: **Pikalytics** `/champions` (adds win rate + rating cutoffs) — pending licensing check.
+- [ ] Ingester: **official in-game Battle Data** via **championsbattledata.com** (fan mirror, auth-free JSON API: `/api/battle/:format/:name`, `?days=N` daily snapshots, Showdown ids). Canonical "meta" source; attribute as an unofficial mirror, not official. See [docs/regulation-verification.md §6](docs/regulation-verification.md).
+- [x] ~~Ingester: **Pokémon Zone**~~ — **dropped.** Their ToS bans automated access "for any purpose" and `robots.txt` disallows `/api/`. Cite as a human cross-reference only, no ingest.
+- [ ] Ingester: **Pikalytics** — licensing **cleared** (`robots.txt` allows all + AI crawlers; sanctioned `/ai/pokedex/[format]/[pokemon]` Markdown endpoints + `llms.txt`; Champions format id `battledataregmbs3` → `…regmc…`). Adds win rate + rating cutoffs. Ingest politely, cache, attribute on every derived view, courtesy-note them if shipped publicly.
 - [ ] Optional: **Limitless** tournament results / team lists.
 - [~] Name-mapping layer: `ingest-usage.mjs` lower-cases + has a small override table, merges Mega/Primal, and **reports** every ≥0.5% Pokémon not in the pool. Still: promote that report to a hard failure once the pool is meant to be complete; handle gender/other forms.
 - [x] Per-source normalizer + keep raw payloads for reproducibility — `ingest-usage.mjs` now has a `SOURCES` registry (one adapter per source with `normalize(raw, poolNames)`; only `smogon` wired up, Pikalytics / Zone / official slot in beside it). Each run retains the gzipped raw payload in `data/raw/` (git-ignored; `meta.rawSha256` in the snapshot is the committed provenance record) and records `meta` (sourceId, url, battles, entryCount, sha). `--from <file>` re-normalizes a local raw payload; `--dry-run` writes nothing.
