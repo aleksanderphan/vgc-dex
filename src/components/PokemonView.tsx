@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Pokemon, UsageSnapshot } from '../types'
 import { StatSpread } from './StatSpread'
 import { TypeMatchups } from './TypeMatchups'
@@ -8,6 +8,7 @@ import { ItemsPanel } from './ItemsPanel'
 import { SpreadsPanel } from './SpreadsPanel'
 import { TeammatesPanel } from './TeammatesPanel'
 import { formsFor, usageFor } from '../lib/data'
+import { TYPE_COLORS } from '../lib/typechart'
 
 interface Props {
   pokemon: Pokemon
@@ -25,9 +26,57 @@ export function PokemonView({ pokemon, snapshot }: Props) {
   const form = forms.find((f) => f.key === formKey) ?? forms[0]
   const hasForms = forms.length > 1
 
+  // Collapse the hero into a sticky mini-bar (sprite + name + types, styled like
+  // a search-result row) once the full hero has scrolled out of view.
+  const heroRef = useRef<HTMLElement>(null)
+  const [mini, setMini] = useState(false)
+  useEffect(() => {
+    setMini(false)
+    const el = heroRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(
+      ([e]) => setMini(!e.isIntersecting && e.boundingClientRect.top < 0),
+      { threshold: 0 },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [pokemon.slug])
+
   return (
     <article className="poke">
-      <section className="card poke__hero">
+      {mini && (
+        <button
+          type="button"
+          className="poke-mini"
+          onClick={() => window.scrollTo({ top: 0 })}
+          aria-label={`${form.name} — back to top`}
+        >
+          {form.sprite || form.artwork ? (
+            <img
+              src={form.sprite || form.artwork}
+              alt=""
+              width="36"
+              height="36"
+            />
+          ) : null}
+          <span className="poke-mini__name">{form.name}</span>
+          <span className="poke-mini__types">
+            {form.types.map((t) => (
+              <i
+                key={t}
+                className="dot"
+                style={{ backgroundColor: TYPE_COLORS[t] }}
+                title={t}
+              />
+            ))}
+          </span>
+          <span className="poke-mini__hint" aria-hidden="true">
+            ↑
+          </span>
+        </button>
+      )}
+
+      <section className="card poke__hero" ref={heroRef}>
         <div className="poke__art">
           {form.artwork || form.sprite ? (
             <img

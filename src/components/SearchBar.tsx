@@ -81,7 +81,7 @@ export function SearchBar({
   }
 
   return (
-    <header className="search">
+    <div className="search">
       <div className="search__inner">
         <div className="search__field">
           <svg
@@ -191,6 +191,6 @@ export function SearchBar({
           </ul>
         )}
       </div>
-    </header>
+    </div>
   )
 }

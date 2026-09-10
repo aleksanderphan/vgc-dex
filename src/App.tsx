@@ -81,59 +81,6 @@ export function App() {
 
   return (
     <div className="app">
-      <SearchBar
-        value={query}
-        onChange={setQuery}
-        results={results}
-        onPick={select}
-        onSeeAll={() => select('browse')}
-      />
-
-      <div className="subnav">
-        <nav className="popular" aria-label="Popular Pokémon">
-          {popular.map((s) => {
-            const p = findPokemon(s)
-            if (!p) return null
-            const isActive = route.kind === 'pokemon' && s === activeSlug
-            return (
-              <button
-                key={s}
-                type="button"
-                className={`popular__chip${isActive ? ' is-active' : ''}`}
-                onClick={() => select(s)}
-              >
-                <img
-                  src={p.sprite}
-                  alt=""
-                  width="28"
-                  height="28"
-                  loading="lazy"
-                />
-                {p.name}
-              </button>
-            )
-          })}
-        </nav>
-        <button
-          type="button"
-          className={`subnav__all${route.kind === 'browse' ? ' is-active' : ''}`}
-          aria-pressed={route.kind === 'browse'}
-          onClick={() =>
-            select(
-              route.kind === 'browse' ? activeSlug || FALLBACK_SLUG : 'browse',
-            )
-          }
-        >
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"
-            />
-          </svg>
-          Browse
-        </button>
-      </div>
-
       <main className="content">
         {route.kind === 'browse' ? (
           <BrowseGrid
@@ -173,6 +120,63 @@ export function App() {
         </p>
         <p className="foot__version">v{__APP_VERSION__}</p>
       </footer>
+
+      <div className="dock" role="navigation" aria-label="Primary">
+        <div className="subnav">
+          <nav className="popular" aria-label="Popular Pokémon">
+            {popular.map((s) => {
+              const p = findPokemon(s)
+              if (!p) return null
+              const isActive = route.kind === 'pokemon' && s === activeSlug
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  className={`popular__chip${isActive ? ' is-active' : ''}`}
+                  onClick={() => select(s)}
+                >
+                  <img
+                    src={p.sprite}
+                    alt=""
+                    width="28"
+                    height="28"
+                    loading="lazy"
+                  />
+                  {p.name}
+                </button>
+              )
+            })}
+          </nav>
+          <button
+            type="button"
+            className={`subnav__all${route.kind === 'browse' ? ' is-active' : ''}`}
+            aria-pressed={route.kind === 'browse'}
+            onClick={() =>
+              select(
+                route.kind === 'browse'
+                  ? activeSlug || FALLBACK_SLUG
+                  : 'browse',
+              )
+            }
+          >
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"
+              />
+            </svg>
+            Browse
+          </button>
+        </div>
+
+        <SearchBar
+          value={query}
+          onChange={setQuery}
+          results={results}
+          onPick={select}
+          onSeeAll={() => select('browse')}
+        />
+      </div>
     </div>
   )
 }

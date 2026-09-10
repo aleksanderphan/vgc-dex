@@ -16,7 +16,11 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
   re-runnable). Sprites hotlinked from PokéAPI's GitHub.
 - Local Gen VI+ type chart + `strong against` / `weak to` / `resists` / `immune`
   helpers (`src/lib/typechart.ts`).
-- Sticky top search + `#slug` deep-linking + usage-ordered "popular" row.
+- Floating **bottom nav dock** (thumb-reachable): search + usage-ordered
+  "popular" row + Browse toggle, its results popover opening upward. `#slug`
+  deep-linking. The top is left clear for content; on a Pokémon page, once the
+  hero scrolls away a compact sprite bar (sprite + name + type dots, styled
+  like a search-result row) sticks to the top and taps back to the top.
 - Pokémon page: artwork, stat spread (no BST total), type badges, abilities.
   Pokémon with a Mega get a **Base / Mega** form switcher that swaps art, typing,
   ability, Mega Stone, base stats and type matchups
