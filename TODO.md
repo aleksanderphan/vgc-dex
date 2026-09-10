@@ -49,9 +49,13 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
   list back into the usage data.
 - No Terastallization: Pokémon Champions doesn't implement it, so there is no
   Tera type / Tera Blast data or UI.
+- **Tests + CI**: Vitest suite (`npm test`, 35 tests) over the type chart, the
+  name normalizer / lookup helpers, and a usage-snapshot consistency check;
+  `.github/workflows/ci.yml` gates `main` + PRs on version / typecheck / test /
+  build. `LICENSE` (MIT) + `NOTICE.md` for third-party data.
 
-Biggest gaps: real usage ingest (Phase 3), regulation legality filtering
-(Phase 2), Champions-original Megas, move dex, full browsable grid.
+Biggest gaps: regulation legality filtering (Phase 2), Champions-original Megas,
+move dex, additional usage sources (official Battle Data, Pikalytics win-rate).
 
 ---
 
@@ -77,11 +81,11 @@ These shape the data model, so resolve them before Phase 2.
 - [x] App shape: **static site + prebuilt JSON**, no server.
 - [x] Datastore: **flat JSON snapshots** in `src/data/` (revisit if it outgrows that).
 - [x] Frontend: **React 18 + Vite**, plain CSS.
-- [x] Init project (`package.json`, `tsconfig`, Vite). Still: lint/format + test runner.
-- [~] `.gitignore` — appended a Node/Vite section; the VisualStudio boilerplate above it can still be trimmed.
+- [x] Init project (`package.json`, `tsconfig`, Vite). Test runner: **Vitest** (`npm test`). Still: lint/format (ESLint + Prettier).
+- [x] `.gitignore` — trimmed the VisualStudio boilerplate down to a lean Node / Vite / editor ignore.
 - [x] Deploy target: **Vercel** (`vercel.json`; static Vite build, push-to-`main` = production).
-- [ ] Set up CI (typecheck + build + tests) — currently only Vercel's build gates merges.
-- [ ] Add `LICENSE` and a `NOTICE`/disclaimer file (disclaimer currently only in README + app footer).
+- [x] Set up CI — `.github/workflows/ci.yml` runs `version:check` + `typecheck` + `test` + `build` on every push to `main` and every PR (Vercel's build still gates deploys).
+- [x] Add `LICENSE` (MIT, code only) and `NOTICE.md` (third-party data sources + trademark disclaimer, keyed to each bundled snapshot).
 - [x] Repo layout: single app (`scripts/` + `src/`).
 
 ## Phase 1 — Reference data layer (PokéAPI + @pkmn)
@@ -96,7 +100,7 @@ These shape the data model, so resolve them before Phase 2.
 - [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` / `ItemInfo` / `MegaForm` / `PokemonForm` added (`src/types.ts`).
 - [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone) for 41 classic Megas in the pool, surfaced via the Base / Mega switcher (Charizard gets Base / Mega X / Mega Y). Still TODO: Champions-original Megas (Mega Raichu/Delphox/Froslass/…, Golisopod→Steel, Baxcalibur), Z-Megas, base-stat delta display, per-regulation legality.
 - [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork; the PWA service worker runtime-caches them (`CacheFirst`) so they survive offline after first view. (Asset-pinning / self-hosting still an option if the GitHub host is a concern.)
-- [ ] Unit tests for the normalizer + type chart (a manual sanity check was done, no runner yet).
+- [x] Unit tests for the normalizer + type chart — Vitest: `src/lib/typechart.test.ts` (effectiveness, dual-type stacking, immunities, matchup bucketing, offensive coverage, `titleCase`) and `src/lib/data.test.ts` (name normalizer case/punctuation-insensitivity, `usersOf` ordering + slug resolution, `popularSlugs`, `formsFor`, `searchPokemon`).
 
 ## Phase 2 — Regulation & legality layer
 
@@ -121,7 +125,7 @@ These shape the data model, so resolve them before Phase 2.
 - [~] Name-mapping layer: `ingest-usage.mjs` lower-cases + has a small override table, merges Mega/Primal, and **reports** every ≥0.5% Pokémon not in the pool. Still: promote that report to a hard failure once the pool is meant to be complete; handle gender/other forms.
 - [ ] Per-source normalizer + keep raw payloads for reproducibility (currently overwrites).
 - [ ] Snapshot store with history (don't overwrite; append dated snapshots).
-- [ ] Tests + a schema/consistency check (percentages sane, ids resolve, no source mixing).
+- [x] Tests + a schema/consistency check — `src/lib/data.test.ts` "usage snapshot consistency": `regulation` matches `REGULATION.code`, source is a real Showdown/Smogon ingest (not the placeholder), every entry key + teammate slug resolves in the pool, all percentages in range, EV spreads legal (sum ≤ 508, each 0–252), every usage-referenced move present in the movedex.
 
 ## Phase 4 — Merge / aggregation
 

@@ -285,9 +285,13 @@ npm run dev          # http://localhost:5173
 
 Other scripts: `npm run build` (typecheck + production build, incl. the PWA
 service worker), `npm run preview` (serve the built PWA locally — the SW only
-runs on a real build), `npm run typecheck`, `npm run build:icons`
-(regenerate `public/` PWA icons), and `npm run version:bump` (see
-[Versioning](#versioning)).
+runs on a real build), `npm run typecheck`, `npm test` (Vitest — type chart,
+lookup helpers, usage-snapshot consistency; `npm run test:watch` to iterate),
+`npm run build:icons` (regenerate `public/` PWA icons), and
+`npm run version:bump` (see [Versioning](#versioning)).
+
+CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs `version:check`,
+`typecheck`, `test`, and `build` on every push to `main` and every PR.
 
 **Refreshing the data** (all offline-safe, re-runnable):
 
@@ -355,6 +359,10 @@ commit the updated JSON to trigger a redeploy.
   Pokémon and Pokémon character names are trademarks of Nintendo.
 
 ## Attribution
+
+Source code is MIT-licensed ([LICENSE](LICENSE)); bundled third-party data keeps
+its own terms — see [NOTICE.md](NOTICE.md) for the per-source breakdown and the
+trademark disclaimer.
 
 - Reference data: [PokéAPI](https://pokeapi.co) and the
   [@pkmn / Pokémon Showdown](https://pkmn.dev) data packages.

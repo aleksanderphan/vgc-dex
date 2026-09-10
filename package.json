@@ -1,7 +1,7 @@
 {
   "name": "vgc-dex",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "Mobile-first Pokédex for Pokémon Champions VGC Doubles (Regulation M-C) with usage-rate and move-usage data.",
   "scripts": {
@@ -9,6 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "build:data": "node scripts/build-data.mjs",
     "build:movedex": "node scripts/build-movedex.mjs",
     "build:itemdex": "node scripts/build-itemdex.mjs",
@@ -28,6 +30,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
-    "vite-plugin-pwa": "^0.20.5"
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.9"
   }
 }
