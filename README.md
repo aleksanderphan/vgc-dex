@@ -181,7 +181,7 @@ Planned — see [TODO.md](TODO.md):
 - **Move dex** — per move: distribution across the meta and top users.
 - **Meta overview** — usage leaderboard with a rating-cutoff toggle.
 - **Regulation switcher** — M‑A / M‑B / M‑C snapshots; usage **trends** over time.
-- Real Mega Stone names for the Champions-original Megas, and base-stat deltas on the Mega view.
+- Real Mega Stone names for the Champions-original Megas.
 - Compare view (2–4 Pokémon side by side).
 
 ---

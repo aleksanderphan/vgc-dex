@@ -39,7 +39,11 @@ export function PokemonView({ pokemon, snapshot }: Props) {
               decoding="async"
             />
           ) : (
-            <div className="poke__art-blank" role="img" aria-label={`${form.name} — no art`}>
+            <div
+              className="poke__art-blank"
+              role="img"
+              aria-label={`${form.name} — no art`}
+            >
               No art yet
             </div>
           )}
@@ -94,8 +98,14 @@ export function PokemonView({ pokemon, snapshot }: Props) {
       <section className="card">
         <div className="section-head">
           <h2>Base stats{form.key !== 'base' ? ` — ${form.label}` : ''}</h2>
+          {form.key !== 'base' ? (
+            <span className="section-note">vs base form</span>
+          ) : null}
         </div>
-        <StatSpread stats={form.baseStats} />
+        <StatSpread
+          stats={form.baseStats}
+          baseline={form.key !== 'base' ? forms[0].baseStats : undefined}
+        />
       </section>
 
       <section className="card">

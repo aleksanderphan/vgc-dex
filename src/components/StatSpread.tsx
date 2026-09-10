@@ -20,16 +20,32 @@ function barColor(value: number): string {
 
 const MAX_STAT = 200 // bar scale ceiling; a few mons exceed this and clamp full
 
-export function StatSpread({ stats }: { stats: BaseStats }) {
+interface Props {
+  stats: BaseStats
+  /** When set, show the per-stat change from this spread (e.g. base → Mega). */
+  baseline?: BaseStats
+}
+
+export function StatSpread({ stats, baseline }: Props) {
   return (
-    <div className="stat-spread">
+    <div className={`stat-spread${baseline ? ' stat-spread--diff' : ''}`}>
       {ROWS.map((r) => {
         const value = stats[r.key]
         const pct = Math.min(100, (value / MAX_STAT) * 100)
+        const delta = baseline ? value - baseline[r.key] : 0
         return (
           <div className="stat-row" key={r.key}>
             <span className="stat-row__label">{r.label}</span>
             <span className="stat-row__value">{value}</span>
+            {baseline ? (
+              <span
+                className={`stat-row__delta${
+                  delta > 0 ? ' is-up' : delta < 0 ? ' is-down' : ' is-flat'
+                }`}
+              >
+                {delta > 0 ? `+${delta}` : delta < 0 ? delta : '±0'}
+              </span>
+            ) : null}
             <span className="stat-row__track">
               <span
                 className="stat-row__fill"
