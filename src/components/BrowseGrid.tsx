@@ -57,7 +57,8 @@ export function BrowseGrid({ query, onPick, onClearQuery }: Props) {
         !p.slug.replace(/-/g, ' ').includes(q)
       )
         return false
-      if (wanted.length && !wanted.every((t) => p.types.includes(t))) return false
+      if (wanted.length && !wanted.every((t) => p.types.includes(t)))
+        return false
       if (ability && !p.abilities.some((a) => a.name === ability)) return false
       if (onlyUsed && !usageFor(p.slug)) return false
       return true
@@ -74,7 +75,8 @@ export function BrowseGrid({ query, onPick, onClearQuery }: Props) {
           return bst(b) - bst(a) || a.name.localeCompare(b.name)
         default:
           return (
-            b.baseStats[sort] - a.baseStats[sort] || a.name.localeCompare(b.name)
+            b.baseStats[sort] - a.baseStats[sort] ||
+            a.name.localeCompare(b.name)
           )
       }
     })

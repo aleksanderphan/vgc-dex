@@ -117,7 +117,9 @@ export function App() {
           className={`subnav__all${route.kind === 'browse' ? ' is-active' : ''}`}
           aria-pressed={route.kind === 'browse'}
           onClick={() =>
-            select(route.kind === 'browse' ? activeSlug || FALLBACK_SLUG : 'browse')
+            select(
+              route.kind === 'browse' ? activeSlug || FALLBACK_SLUG : 'browse',
+            )
           }
         >
           <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
@@ -144,7 +146,11 @@ export function App() {
             <p className="muted-sm">No Pokémon in the dataset.</p>
           )
         ) : (
-          <EntityPage kind={route.kind} slug={route.slug} onPickPokemon={select} />
+          <EntityPage
+            kind={route.kind}
+            slug={route.slug}
+            onPickPokemon={select}
+          />
         )}
       </main>
 

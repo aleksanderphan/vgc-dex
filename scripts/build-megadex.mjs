@@ -29,12 +29,24 @@ const STAT_KEY = {
 //   key   — stable id used by the form switcher
 //   label — tab text
 //   stone — required Mega Stone (held item)
-const M = (base, stone) => [{ api: `${base}-mega`, key: 'mega', label: 'Mega', stone }]
+const M = (base, stone) => [
+  { api: `${base}-mega`, key: 'mega', label: 'Mega', stone },
+]
 
 const MEGAS = {
   charizard: [
-    { api: 'charizard-mega-x', key: 'mega-x', label: 'Mega X', stone: 'Charizardite X' },
-    { api: 'charizard-mega-y', key: 'mega-y', label: 'Mega Y', stone: 'Charizardite Y' },
+    {
+      api: 'charizard-mega-x',
+      key: 'mega-x',
+      label: 'Mega X',
+      stone: 'Charizardite X',
+    },
+    {
+      api: 'charizard-mega-y',
+      key: 'mega-y',
+      label: 'Mega Y',
+      stone: 'Charizardite Y',
+    },
   ],
   venusaur: M('venusaur', 'Venusaurite'),
   blastoise: M('blastoise', 'Blastoisinite'),
@@ -108,7 +120,9 @@ async function fetchForm(baseSlug, spec) {
       isHidden: a.is_hidden,
     }))
 
-  const types = [...p.types].sort((a, b) => a.slot - b.slot).map((t) => t.type.name)
+  const types = [...p.types]
+    .sort((a, b) => a.slot - b.slot)
+    .map((t) => t.type.name)
 
   const artwork =
     p.sprites?.other?.['official-artwork']?.front_default ??
@@ -142,7 +156,9 @@ async function main() {
         got.push(form)
         process.stdout.write(`  ok   ${form.name} (${form.types.join('/')})\n`)
       } catch (err) {
-        process.stdout.write(`  SKIP ${baseSlug} ${spec.api} — ${String(err)}\n`)
+        process.stdout.write(
+          `  SKIP ${baseSlug} ${spec.api} — ${String(err)}\n`,
+        )
       }
     }
     if (got.length) forms[baseSlug] = got
@@ -156,7 +172,9 @@ async function main() {
   }
 
   await writeFile(OUT, JSON.stringify(payload, null, 2) + '\n')
-  console.log(`\nWrote Mega forms for ${Object.keys(forms).length} Pokémon to ${OUT}`)
+  console.log(
+    `\nWrote Mega forms for ${Object.keys(forms).length} Pokémon to ${OUT}`,
+  )
 }
 
 main().catch((err) => {

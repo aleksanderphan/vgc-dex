@@ -123,7 +123,10 @@ async function fetchMove(name) {
   }
   const meta = m.meta ?? {}
   const flavor = oneLine(m.flavor_text_entries, 'flavor_text')
-  const short = subChance(oneLine(m.effect_entries, 'short_effect'), m.effect_chance)
+  const short = subChance(
+    oneLine(m.effect_entries, 'short_effect'),
+    m.effect_chance,
+  )
   const long = subChance(multiLine(m.effect_entries, 'effect'), m.effect_chance)
 
   return {
@@ -229,7 +232,9 @@ async function main() {
     process.exit(1)
   }
 
-  const stubs = [...moves, ...abilities].filter((x) => x.unlisted).map((x) => x.name)
+  const stubs = [...moves, ...abilities]
+    .filter((x) => x.unlisted)
+    .map((x) => x.name)
   if (stubs.length) {
     console.log(
       `\nNot in PokéAPI (likely Champions-original) — stubbed: ${stubs.join(', ')}`,

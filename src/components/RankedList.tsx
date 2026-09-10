@@ -60,7 +60,9 @@ function ItemDetail({ info }: { info: ItemInfo }) {
           loading="lazy"
         />
       ) : null}
-      <p className="detail__text">{info.effect || 'No description available.'}</p>
+      <p className="detail__text">
+        {info.effect || 'No description available.'}
+      </p>
     </div>
   )
 }

@@ -32,34 +32,35 @@ project combines three things that normally live in separate places:
 ## The format: Pokémon Champions VGC
 
 **Pokémon Champions** is the standalone competitive battling game (Nintendo Switch
-+ iOS + Android, released 8 April 2026). Pokémon are imported from Pokémon HOME.
-Official Play! Pokémon VGC events run on its regulation sets, and the game exposes
-an in-game **Battle Data** tab with daily usage rates for Ranked Battles and
-Online Competitions.
+
+- iOS + Android, released 8 April 2026). Pokémon are imported from Pokémon HOME.
+  Official Play! Pokémon VGC events run on its regulation sets, and the game exposes
+  an in-game **Battle Data** tab with daily usage rates for Ranked Battles and
+  Online Competitions.
 
 ### Base format (all "M‑series" regulations)
 
-| Rule | Value |
-| --- | --- |
-| Battle style | Double Battles |
-| Team | Bring 6, pick 4 at Team Preview |
-| Level | All Pokémon auto-set to Level 50 |
-| Team Preview | 90 seconds |
-| Move selection | 45 seconds per turn |
-| Player time bank | 7 minutes |
-| Max game length | 20 minutes |
-| Species Clause | No two Pokémon with the same Pokédex number |
-| Item Clause | No two Pokémon holding the same item |
-| Team sheets | Open Team Sheets at official TPCi events |
-| Mega Evolution | Multiple Mega Stones allowed; only one Mega Evolution per battle |
+| Rule             | Value                                                            |
+| ---------------- | ---------------------------------------------------------------- |
+| Battle style     | Double Battles                                                   |
+| Team             | Bring 6, pick 4 at Team Preview                                  |
+| Level            | All Pokémon auto-set to Level 50                                 |
+| Team Preview     | 90 seconds                                                       |
+| Move selection   | 45 seconds per turn                                              |
+| Player time bank | 7 minutes                                                        |
+| Max game length  | 20 minutes                                                       |
+| Species Clause   | No two Pokémon with the same Pokédex number                      |
+| Item Clause      | No two Pokémon holding the same item                             |
+| Team sheets      | Open Team Sheets at official TPCi events                         |
+| Mega Evolution   | Multiple Mega Stones allowed; only one Mega Evolution per battle |
 
 ### Regulation set timeline (Year 1)
 
-| Reg | Active | Notes |
-| --- | --- | --- |
-| **M‑A** | 8 Apr – 17 Jun 2026 | Mega Evolution reintroduced as the marquee mechanic. All Legendary / Mythical / Restricted Pokémon banned. Limited roster. |
-| **M‑B** | 17 Jun – 9 Sep 2026 | M‑A roster + ~22 new Pokémon; M‑A Megas + ~16 new Megas. Used at the 2026 World Championships. |
-| **M‑C** | 9 Sep – 2 Dec 2026 | **Current.** Same restrictions as M‑A (no Legendaries/Restricteds). ~248 Pokémon legal. Adds ~24 Pokémon (incl. Rillaboom, Baxcalibur, Cinderace, Inteleon, Persian‑Alola). Adds Mega Salamence, Mega Golisopod (→ Steel), Mega Baxcalibur, and the Z‑Megas Absol‑Z, Garchomp‑Z, Lucario‑Z. New items: Terrain Extender, terrain seeds, Rocky Helmet, Eject Button. |
+| Reg     | Active              | Notes                                                                                                                                                                                                                                                                                                                                                               |
+| ------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **M‑A** | 8 Apr – 17 Jun 2026 | Mega Evolution reintroduced as the marquee mechanic. All Legendary / Mythical / Restricted Pokémon banned. Limited roster.                                                                                                                                                                                                                                          |
+| **M‑B** | 17 Jun – 9 Sep 2026 | M‑A roster + ~22 new Pokémon; M‑A Megas + ~16 new Megas. Used at the 2026 World Championships.                                                                                                                                                                                                                                                                      |
+| **M‑C** | 9 Sep – 2 Dec 2026  | **Current.** Same restrictions as M‑A (no Legendaries/Restricteds). ~248 Pokémon legal. Adds ~24 Pokémon (incl. Rillaboom, Baxcalibur, Cinderace, Inteleon, Persian‑Alola). Adds Mega Salamence, Mega Golisopod (→ Steel), Mega Baxcalibur, and the Z‑Megas Absol‑Z, Garchomp‑Z, Lucario‑Z. New items: Terrain Extender, terrain seeds, Rocky Helmet, Eject Button. |
 
 > ⚠️ Roster counts and banned-move/item lists for Reg M‑C still need to be pinned
 > to a primary source — see the **Verify** section in [TODO.md](TODO.md). Treat the
@@ -93,12 +94,12 @@ Fair-use: cache aggressively; never call PokéAPI at request time from the app.
 PokéAPI does not model Champions legality, Mega mechanics, or competitive
 learnset legality. The [@pkmn](https://pkmn.dev) TypeScript packages do:
 
-| Package | Use |
-| --- | --- |
+| Package                    | Use                                                                                |
+| -------------------------- | ---------------------------------------------------------------------------------- |
 | `@pkmn/dex` + `@pkmn/data` | Battle-accurate species/moves/abilities/items, type chart, learnsets, format rules |
-| `@pkmn/sets` | Parse / serialize PokéPaste-style sets |
-| `@pkmn/smogon` | Wrapper over `data.pkmn.cc` for Smogon analyses + usage stats |
-| `@pkmn/sim` (optional) | Battle engine, for future damage-calc / legality validation |
+| `@pkmn/sets`               | Parse / serialize PokéPaste-style sets                                             |
+| `@pkmn/smogon`             | Wrapper over `data.pkmn.cc` for Smogon analyses + usage stats                      |
+| `@pkmn/sim` (optional)     | Battle engine, for future damage-calc / legality validation                        |
 
 **Plan:** PokéAPI is the display/reference layer; `@pkmn/dex` is the correctness
 layer for stats, learnsets, and "is this legal in Reg M‑C". Both sit behind one
@@ -107,13 +108,13 @@ it becomes available.
 
 ### Usage rate & move usage — Pokémon Champions ladder / tournament data
 
-| Source | What it gives | Access |
-| --- | --- | --- |
-| **Official in-game Battle Data** (Battle Menu → Battle Data) | Source of truth: most-used Pokémon / moves / items / abilities, tournament winners, per Ranked Season & Online Competition, updated daily | No public API — manual export / community mirror |
-| **Pokémon Zone – Champions Ranked Seasons** | Per-season Singles & Doubles usage derived from official data | Web (structured pages) |
-| **Pikalytics – `/champions`** | Usage %, win rate, top moves, items, abilities, teammates; ladder (Glicko cutoffs 0+/1500+/1630+/1760+) + tournaments | Web / undocumented JSON |
-| **Smogon usage stats** via `@pkmn/smogon` / `data.pkmn.cc/stats/<format>.json` | Machine-readable monthly "chaos" JSON: moves, items, abilities, spreads, teammates, checks & counters — **Pokémon Showdown simulator ladder, not the official in-game ladder** | Free HTTP / npm |
-| **Limitless / VGCPastes** | Tournament team lists & placements | Limitless tournaments API / spreadsheets |
+| Source                                                                         | What it gives                                                                                                                                                                  | Access                                           |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| **Official in-game Battle Data** (Battle Menu → Battle Data)                   | Source of truth: most-used Pokémon / moves / items / abilities, tournament winners, per Ranked Season & Online Competition, updated daily                                      | No public API — manual export / community mirror |
+| **Pokémon Zone – Champions Ranked Seasons**                                    | Per-season Singles & Doubles usage derived from official data                                                                                                                  | Web (structured pages)                           |
+| **Pikalytics – `/champions`**                                                  | Usage %, win rate, top moves, items, abilities, teammates; ladder (Glicko cutoffs 0+/1500+/1630+/1760+) + tournaments                                                          | Web / undocumented JSON                          |
+| **Smogon usage stats** via `@pkmn/smogon` / `data.pkmn.cc/stats/<format>.json` | Machine-readable monthly "chaos" JSON: moves, items, abilities, spreads, teammates, checks & counters — **Pokémon Showdown simulator ladder, not the official in-game ladder** | Free HTTP / npm                                  |
+| **Limitless / VGCPastes**                                                      | Tournament team lists & placements                                                                                                                                             | Limitless tournaments API / spreadsheets         |
 
 **Plan:** Treat the **official in-game Battle Data** as canonical for the "meta"
 view. Use Smogon/`@pkmn/smogon` as the always-available machine-readable

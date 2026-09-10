@@ -50,9 +50,7 @@ export const MOVE_NOTES = {
   'Draco Meteor': [
     "Lowers the user's Special Attack by two stages after damage; chain it with a switch or use once off a Choice item.",
   ],
-  Overheat: [
-    "Lowers the user's Special Attack by two stages after damage.",
-  ],
+  Overheat: ["Lowers the user's Special Attack by two stages after damage."],
   'Make It Rain': [
     "Hits both opponents in doubles and lowers the user's Special Attack by one stage.",
   ],
@@ -65,7 +63,7 @@ export const ABILITY_NOTES = {
     'The boosted move is also stopped by an opponent’s Psychic Terrain if the target is grounded.',
   ],
   Intimidate: [
-    "Lowers the Attack of both opposing Pokémon by one stage on switch-in.",
+    'Lowers the Attack of both opposing Pokémon by one stage on switch-in.',
     'Blocked or punished by Clear Body, Hyper Cutter, White Smoke, Full Metal Body, Inner Focus, Oblivious, Own Tempo, Scrappy (Gen 8+), Guard Dog (raises Attack instead), Rattled (raises Speed), and Defiant / Competitive (sharp offensive boost). Mirror Armor reflects the drop back onto the Intimidate user.',
   ],
   'Good as Gold': [
@@ -78,9 +76,7 @@ export const ABILITY_NOTES = {
   'Flame Body': [
     '30% chance to burn a Pokémon that hits the holder with a contact move.',
   ],
-  Regenerator: [
-    'Restores 1/3 of max HP whenever the holder switches out.',
-  ],
+  Regenerator: ['Restores 1/3 of max HP whenever the holder switches out.'],
   Unnerve: [
     'Opposing Pokémon cannot eat their Berries while the Unnerve user is on the field (also suppresses Booster Energy on switch-in for the turn it matters, and pairs with Neutralizing Gas discussions — but Unnerve only touches Berries).',
   ],
@@ -98,8 +94,12 @@ export const ITEM_NOTES = {
     '1.5× Special Attack, but the holder is locked into the first move it picks until it switches out.',
     'Selecting a move the holder cannot use afterwards (0 PP, disabled) leaves it Struggling — bring Protect coverage on a teammate, not the Choice user.',
   ],
-  'Choice Band': ['1.5× Attack, locked into the first move picked until switch-out.'],
-  'Choice Scarf': ['1.5× Speed, locked into the first move picked until switch-out.'],
+  'Choice Band': [
+    '1.5× Attack, locked into the first move picked until switch-out.',
+  ],
+  'Choice Scarf': [
+    '1.5× Speed, locked into the first move picked until switch-out.',
+  ],
   'Assault Vest': [
     '1.5× Special Defense.',
     'The holder cannot select status moves at all — including Protect, Substitute, Fake Out, Trick Room, Tailwind, Will-O-Wisp.',
@@ -112,7 +112,9 @@ export const ITEM_NOTES = {
     'Restores 25% of max HP once, automatically, when the holder drops to 50% HP or below.',
     'Consumed by Bug Bite / Pluck, tossed by Fling, and recyclable with Recycle; eaten earlier (75% HP) if the holder has Gluttony.',
   ],
-  Leftovers: ['Restores 1/16 (6.25%) of max HP at the end of every turn the holder is in.'],
+  Leftovers: [
+    'Restores 1/16 (6.25%) of max HP at the end of every turn the holder is in.',
+  ],
   'Safety Goggles': [
     'Blocks powder and spore moves (Spore, Rage Powder, Sleep Powder, Powder) and prevents Sand / Hail chip damage.',
     'Does not stop weather-based abilities such as Slush Rush or Sand Rush from activating.',
@@ -128,12 +130,16 @@ export const ITEM_NOTES = {
   'Mental Herb': [
     'Single use: cures infatuation, Taunt, Encore, Torment, Disable and Heal Block the moment one is applied, then the herb is gone.',
   ],
-  'Light Clay': ['Reflect, Light Screen and Aurora Veil set by the holder last 8 turns instead of 5.'],
+  'Light Clay': [
+    'Reflect, Light Screen and Aurora Veil set by the holder last 8 turns instead of 5.',
+  ],
   'Weakness Policy': [
     'When the holder is hit by a super-effective move it gains +2 Attack and +2 Special Attack, then the item is consumed.',
     'Triggers even on a hit that would not KO — pair with Substitute, a defensive spread, or a Sash. No effect on status or non-super-effective hits.',
   ],
-  'Mystic Water': ['Water-type moves used by the holder deal 1.2× damage. No downside, no lock-in.'],
+  'Mystic Water': [
+    'Water-type moves used by the holder deal 1.2× damage. No downside, no lock-in.',
+  ],
   'Black Glasses': ['Dark-type moves used by the holder deal 1.2× damage.'],
   'Miracle Seed': ['Grass-type moves used by the holder deal 1.2× damage.'],
   'Sharp Beak': ['Flying-type moves used by the holder deal 1.2× damage.'],

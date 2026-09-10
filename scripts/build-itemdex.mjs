@@ -34,11 +34,10 @@ const EFFECT_OVERRIDES = {
   'Booster Energy':
     'Held: activates the holder’s Protosynthesis or Quark Drive, boosting its highest stat.',
   'Fairy Feather': 'Held: Fairy-type moves from the holder do 20% more damage.',
-  'Ability Shield': "Held: the holder's Ability cannot be changed or suppressed.",
+  'Ability Shield':
+    "Held: the holder's Ability cannot be changed or suppressed.",
   'Punching Glove':
     'Held: punching moves do 10% more damage and no longer make contact.',
-  'Loaded Dice':
-    'Held: the holder’s multi-hit moves always hit at least four times.',
 }
 
 // Long-form fallback where PokéAPI has no `effect` entry at all.

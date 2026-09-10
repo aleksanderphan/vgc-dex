@@ -90,7 +90,8 @@ export function usersOf(kind: EntityKind, name: string): EntityUser[] {
   const out: EntityUser[] = []
   for (const [slug, entry] of Object.entries(USAGE.entries)) {
     const hit = (entry[field] ?? []).find((x) => normalize(x.name) === key)
-    if (hit) out.push({ slug, name: bySlug.get(slug)?.name ?? slug, pct: hit.pct })
+    if (hit)
+      out.push({ slug, name: bySlug.get(slug)?.name ?? slug, pct: hit.pct })
   }
   return out.sort((a, b) => b.pct - a.pct)
 }

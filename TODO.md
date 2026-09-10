@@ -81,10 +81,10 @@ These shape the data model, so resolve them before Phase 2.
 - [x] App shape: **static site + prebuilt JSON**, no server.
 - [x] Datastore: **flat JSON snapshots** in `src/data/` (revisit if it outgrows that).
 - [x] Frontend: **React 18 + Vite**, plain CSS.
-- [x] Init project (`package.json`, `tsconfig`, Vite). Test runner: **Vitest** (`npm test`). Still: lint/format (ESLint + Prettier).
+- [x] Init project (`package.json`, `tsconfig`, Vite). Test runner: **Vitest** (`npm test`). Lint/format: **ESLint 9** flat config (`eslint.config.js`, typescript-eslint + react-hooks + react-refresh, `eslint-config-prettier` last) via `npm run lint`, **Prettier** (`.prettierrc.json`: no semis, single quotes, trailing commas) via `npm run format` / `format:check`; whole tree reformatted once on adoption.
 - [x] `.gitignore` — trimmed the VisualStudio boilerplate down to a lean Node / Vite / editor ignore.
 - [x] Deploy target: **Vercel** (`vercel.json`; static Vite build, push-to-`main` = production).
-- [x] Set up CI — `.github/workflows/ci.yml` runs `version:check` + `typecheck` + `test` + `build` on every push to `main` and every PR (Vercel's build still gates deploys).
+- [x] Set up CI — `.github/workflows/ci.yml` runs `version:check` + `lint` + `format:check` + `test` + `build` (build is also the typecheck) on every push to `main` and every PR (Vercel's build still gates deploys).
 - [x] Add `LICENSE` (MIT, code only) and `NOTICE.md` (third-party data sources + trademark disclaimer, keyed to each bundled snapshot).
 - [x] Repo layout: single app (`scripts/` + `src/`).
 
@@ -149,11 +149,11 @@ These shape the data model, so resolve them before Phase 2.
 
 - [ ] Regulation switcher (default: current = M‑C) + season / rating-cutoff / source selectors.
 - [x] Search + usage-ordered "popular" row + a **Browse all** grid (`#browse`,
-  `components/BrowseGrid.tsx`): a "Browse" toggle by the popular row opens a
-  card grid over the whole pool, filterable by type (up to 2, AND) and ability,
-  sortable by usage % / BST / any base stat, with an "in usage data" toggle. The
-  sticky search box doubles as a name filter for the grid, and its dropdown has
-  a "view all N matches" jump. Still: role/archetype filter (needs role data).
+      `components/BrowseGrid.tsx`): a "Browse" toggle by the popular row opens a
+      card grid over the whole pool, filterable by type (up to 2, AND) and ability,
+      sortable by usage % / BST / any base stat, with an "in usage data" toggle. The
+      sticky search box doubles as a name filter for the grid, and its dropdown has
+      a "view all N matches" jump. Still: role/archetype filter (needs role data).
 - [~] Pokémon page: base stats, typing, abilities done; **Base/Mega form switcher** live (swaps art, typing, ability, Mega Stone, stats, matchups). Still: base-stat delta vs base form, Champions-legal movepool with legality badges.
 - [~] Move / ability / item **pages** shipped (`#move|ability|item/<slug>`, `EntityPage`): long-form effect, structured mechanics, curated notes, "run by" list. Still: a browsable move **dex** (grid/filter) and damage-roll numbers.
 - [ ] Meta overview page (usage leaderboard, movable cutoff).
@@ -173,8 +173,8 @@ These shape the data model, so resolve them before Phase 2.
 
 ## Phase 8 — Automation
 
-- [ ] Scheduled ETL: a GitHub Action on a monthly cron runs `ingest:usage` + the `build:*` ETLs and commits on change → Vercel redeploys. (Smogon updates monthly.)
-- [ ] Alert on ingest failure / schema drift / unmapped names.
+- [x] Scheduled ETL: `.github/workflows/refresh-data.yml` — weekly cron (06:00 UTC Monday) + `workflow_dispatch`. Source (Smogon monthly) only moves ~once a month, so weekly catches the drop within days and the commit-on-change guard makes the other runs cheap no-ops. Runs `ingest:usage` then `build:data` / `build:movedex` / `build:itemdex` / `build:megadex`, runs `npm test` as a schema/consistency guard, then commits `src/data` + `data/history` to `main` on change (with `version:bump`) → Vercel redeploys. `concurrency: refresh-data` (no cancel).
+- [~] Alert on ingest failure / schema drift / unmapped names — the refresh workflow opens a GitHub issue on any failed step (`gh issue create` in an `if: failure()` step), and the `npm test` guard catches schema drift. Still: surface the ingester's unmapped-name report as a hard failure (needs an `--strict` flag on `ingest-usage.mjs`).
 - [ ] Auto-open the next regulation (M‑D…) as a config entry, not a code change.
 - [ ] Snapshot retention policy.
 

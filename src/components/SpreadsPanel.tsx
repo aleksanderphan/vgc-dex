@@ -37,8 +37,8 @@ export function SpreadsPanel({ entry, snapshot }: Props) {
       </div>
 
       <p className="usage__hint">
-        Smogon buckets EVs coarsely — treat these as approximate shapes, not exact
-        sheets.
+        Smogon buckets EVs coarsely — treat these as approximate shapes, not
+        exact sheets.
       </p>
 
       <ol className="spread-list">

@@ -1,0 +1,79 @@
+name: Refresh data
+
+# Pulls the latest Showdown-ladder usage stats and rebuilds every derived dex,
+# then commits to `main` on change (Vercel redeploys).
+#
+# Smogon publishes the monthly stats near the 1st, so the source only moves
+# ~once a month. Weekly catches that drop within a few days; the commit-on-change
+# guard makes the other ~3 runs cheap no-ops. Bump to a shorter cron if a faster
+# source lands.
+#
+# Run it by hand any time from the Actions tab (workflow_dispatch).
+
+on:
+  schedule:
+    # 06:00 UTC every Monday.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+# Never run two refreshes at once; let an in-flight one finish rather than
+# cancelling it mid-commit.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write # push the refreshed snapshot
+  issues: write # file a ticket if the run breaks
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # version:bump counts every commit
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Fetch the ladder stats, then rebuild every dex that keys off the usage
+      # names so a newly-seen move / ability / item / mega still resolves.
+      - run: npm run ingest:usage
+      - run: npm run build:data
+      - run: npm run build:movedex
+      - run: npm run build:itemdex
+      - run: npm run build:megadex
+
+      # Schema / consistency guard — a drifted or unmapped payload fails here
+      # (and opens an issue) instead of shipping a broken snapshot.
+      - run: npm test
+
+      - name: Commit refreshed data
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- src/data data/history)" ]; then
+            echo "No data change — nothing to commit."
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data data/history
+          npm run version:bump
+          git add package.json
+          git commit -m 'Refresh usage data + derived dexes (automated)'
+          git push
+
+      - name: Open an issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Data refresh failed — $(date -u +%Y-%m-%d)" \
+            --body "The scheduled \`refresh-data\` run failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            || true

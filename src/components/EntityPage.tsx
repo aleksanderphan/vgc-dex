@@ -49,7 +49,10 @@ function signed(n: number): string {
 
 /** PokéAPI effect text: blank lines split paragraphs, `* ` lines are bullets. */
 function RichText({ text }: { text: string }) {
-  const paras = text.split('\n\n').map((p) => p.trim()).filter(Boolean)
+  const paras = text
+    .split('\n\n')
+    .map((p) => p.trim())
+    .filter(Boolean)
   return (
     <div className="rich-text">
       {paras.map((para, i) => {
@@ -111,9 +114,15 @@ function MoveFacts({ info }: { info: MoveInfo }) {
         value={info.accuracy == null ? '— (never misses)' : `${info.accuracy}%`}
       />
       <Fact label="PP" value={info.pp ?? '—'} />
-      <Fact label="Priority" value={info.priority === 0 ? '0' : signed(info.priority)} />
+      <Fact
+        label="Priority"
+        value={info.priority === 0 ? '0' : signed(info.priority)}
+      />
       {info.target ? (
-        <Fact label="Target" value={TARGET_LABEL[info.target] ?? titleCase(info.target)} />
+        <Fact
+          label="Target"
+          value={TARGET_LABEL[info.target] ?? titleCase(info.target)}
+        />
       ) : null}
       {hits ? <Fact label="Hits" value={`${hits}× per use`} /> : null}
       {info.critRate > 0 ? (
@@ -123,7 +132,10 @@ function MoveFacts({ info }: { info: MoveInfo }) {
         <Fact label="Drain" value={`heals ${info.drain}% of damage dealt`} />
       ) : null}
       {info.drain < 0 ? (
-        <Fact label="Recoil" value={`${Math.abs(info.drain)}% of damage dealt`} />
+        <Fact
+          label="Recoil"
+          value={`${Math.abs(info.drain)}% of damage dealt`}
+        />
       ) : null}
       {info.healing > 0 ? (
         <Fact label="Heal" value={`${info.healing}% of max HP`} />
@@ -254,8 +266,8 @@ export function EntityPage({ kind, slug, onPickPokemon }: Props) {
           </>
         ) : (
           <p className="detail__text detail__text--muted">
-            No reference text — {info.unlisted ? 'not in PokéAPI, ' : ''}likely a
-            Champions-original {KIND_LABEL[kind].toLowerCase()}.
+            No reference text — {info.unlisted ? 'not in PokéAPI, ' : ''}likely
+            a Champions-original {KIND_LABEL[kind].toLowerCase()}.
           </p>
         )}
 

@@ -40,7 +40,13 @@ const FORMAT = 'gen9championsvgc2026'
 // movedex / itemdex small) — a VGC set is only 4 moves, so anything below a few
 // percent is deep noise.
 const CAPS = { abilities: 5, moves: 12, items: 8, spreads: 5, teammates: 10 }
-const MIN_PCT = { abilities: 1.0, moves: 3.0, items: 3.0, spreads: 3.0, teammates: 8.0 }
+const MIN_PCT = {
+  abilities: 1.0,
+  moves: 3.0,
+  items: 3.0,
+  spreads: 3.0,
+  teammates: 8.0,
+}
 
 const round1 = (n) => Math.round(n * 10) / 10
 const EV_KEYS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe']
@@ -57,7 +63,10 @@ const NAME_OVERRIDES = {
 
 const toSlug = (name) =>
   NAME_OVERRIDES[name] ??
-  name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
 
 // "Charizard-Mega-Y" / "Groudon-Primal" → base display name.
 const baseName = (name) => name.replace(/-(Mega(-[XY])?|Primal)$/, '')
