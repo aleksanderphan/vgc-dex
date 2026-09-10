@@ -6,7 +6,16 @@ import { titleCase } from '../lib/typechart'
 
 export type RankedKind = 'ability' | 'move' | 'item'
 
+function Unlisted({ kind }: { kind: RankedKind }) {
+  return (
+    <p className="detail__text detail__text--muted">
+      Champions-original {kind} — not in PokéAPI. Open the page for notes.
+    </p>
+  )
+}
+
 function MoveDetail({ info }: { info: MoveInfo }) {
+  if (info.unlisted) return <Unlisted kind="move" />
   return (
     <>
       <div className="detail__facts">
@@ -34,6 +43,7 @@ function MoveDetail({ info }: { info: MoveInfo }) {
 }
 
 function AbilityDetail({ info }: { info: AbilityInfo }) {
+  if (info.unlisted) return <Unlisted kind="ability" />
   return <p className="detail__text">{info.effect}</p>
 }
 

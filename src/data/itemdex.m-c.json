@@ -1,20 +1,127 @@
 {
-  "generatedAt": "2026-09-09T07:40:21.098Z",
+  "generatedAt": "2026-09-09T08:55:09.451Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "itemCount": 28,
+  "itemCount": 99,
   "items": [
     {
-      "name": "Assault Vest",
-      "slug": "assault-vest",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/assault-vest.png",
+      "name": "Abomasite",
+      "slug": "abomasite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/abomasite.png",
       "flingPower": 80,
-      "effect": "Raises the holder’s Special Defense to 1.5×. Prevents the holder from selecting a status move.",
-      "longEffect": "Raises the holder’s Special Defense to 1.5×. Prevents the holder from selecting a status move.",
-      "notes": [
-        "1.5× Special Defense.",
-        "The holder cannot select status moves at all — including Protect, Substitute, Fake Out, Trick Room, Tailwind, Will-O-Wisp."
-      ]
+      "effect": "Held: Allows Abomasnow to Mega Evolve into Mega Abomasnow.",
+      "longEffect": "Held: Allows Abomasnow to Mega Evolve into Mega Abomasnow.",
+      "notes": []
+    },
+    {
+      "name": "Absolite",
+      "slug": "absolite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/absolite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Absol to Mega Evolve into Mega Absol.",
+      "longEffect": "Held: Allows Absol to Mega Evolve into Mega Absol.",
+      "notes": []
+    },
+    {
+      "name": "Aerodactylite",
+      "slug": "aerodactylite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aerodactylite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Aerodactyl to Mega Evolve into Mega Aerodactyl.",
+      "longEffect": "Held: Allows Aerodactyl to Mega Evolve into Mega Aerodactyl.",
+      "notes": []
+    },
+    {
+      "name": "Aggronite",
+      "slug": "aggronite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aggronite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Aggron to Mega Evolve into Mega Aggron.",
+      "longEffect": "Held: Allows Aggron to Mega Evolve into Mega Aggron.",
+      "notes": []
+    },
+    {
+      "name": "Alakazite",
+      "slug": "alakazite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/alakazite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Alakazam to Mega Evolve into Mega Alakazam.",
+      "longEffect": "Held: Allows Alakazam to Mega Evolve into Mega Alakazam.",
+      "notes": []
+    },
+    {
+      "name": "Altarianite",
+      "slug": "altarianite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/altarianite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Altaria to Mega Evolve into Mega Altaria.",
+      "longEffect": "Held: Allows Altaria to Mega Evolve into Mega Altaria.",
+      "notes": []
+    },
+    {
+      "name": "Ampharosite",
+      "slug": "ampharosite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ampharosite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Ampharos to Mega Evolve into Mega Ampharos.",
+      "longEffect": "Held: Allows Ampharos to Mega Evolve into Mega Ampharos.",
+      "notes": []
+    },
+    {
+      "name": "Audinite",
+      "slug": "audinite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/audinite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Audino to Mega Evolve into Mega Audino.",
+      "longEffect": "Held: Allows Audino to Mega Evolve into Mega Audino.",
+      "notes": []
+    },
+    {
+      "name": "Banettite",
+      "slug": "banettite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/banettite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Banette to Mega Evolve into Mega Banette.",
+      "longEffect": "Held: Allows Banette to Mega Evolve into Mega Banette.",
+      "notes": []
+    },
+    {
+      "name": "Beedrillite",
+      "slug": "beedrillite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/beedrillite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Beedrill to Mega Evolve into Mega Beedrill.",
+      "longEffect": "Held: Allows Beedrill to Mega Evolve into Mega Beedrill.",
+      "notes": []
+    },
+    {
+      "name": "Big Root",
+      "slug": "big-root",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/big-root.png",
+      "flingPower": 10,
+      "effect": "Held: Increases HP recovered from draining moves, Ingrain, and Aqua Ring by 3/10 (30%).",
+      "longEffect": "Held: HP restored from Absorb, Aqua Ring, Drain Punch, Dream Eater, Giga Drain, Ingrain, Leech Life, Leech Seed, and Mega Drain is increased by 30%. Damage inflicted is not affected.",
+      "notes": []
+    },
+    {
+      "name": "Black Belt",
+      "slug": "black-belt",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-belt.png",
+      "flingPower": 30,
+      "effect": "Held: Fighting-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Fighting moves by 20%.",
+      "notes": []
     },
     {
       "name": "Black Glasses",
@@ -29,16 +136,84 @@
       ]
     },
     {
-      "name": "Choice Band",
-      "slug": "choice-band",
-      "category": "choice",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-band.png",
+      "name": "Blastoisinite",
+      "slug": "blastoisinite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blastoisinite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Blastoise to Mega Evolve into Mega Blastoise.",
+      "longEffect": "Held: Allows Blastoise to Mega Evolve into Mega Blastoise.",
+      "notes": []
+    },
+    {
+      "name": "Blazikenite",
+      "slug": "blazikenite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blazikenite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Blaziken to Mega Evolve into Mega Blaziken.",
+      "longEffect": "Held: Allows Blaziken to Mega Evolve into Mega Blaziken.",
+      "notes": []
+    },
+    {
+      "name": "Bright Powder",
+      "slug": "bright-powder",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bright-powder.png",
       "flingPower": 10,
-      "effect": "Held: Increases Attack by 50%, but restricts the holder to only one move.",
-      "longEffect": "Held in battle\n: Holder has 1.5× its Attack. When the holder attempts to use a move, all its other moves are disabled until it leaves battle or loses this item.\n\nThe restriction ends even if this item is swapped for another Choice item\nvia Trick or Switcheroo.",
-      "notes": [
-        "1.5× Attack, locked into the first move picked until switch-out."
-      ]
+      "effect": "Held: Increases the holder’s evasion by 1/9 (11 1/9%).",
+      "longEffect": "Held in battle\n: Moves targeting the holder have 0.9× chance to hit.",
+      "notes": []
+    },
+    {
+      "name": "Cameruptite",
+      "slug": "cameruptite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cameruptite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Camerupt to Mega Evolve into Mega Camerupt.",
+      "longEffect": "Held: Allows Camerupt to Mega Evolve into Mega Camerupt.",
+      "notes": []
+    },
+    {
+      "name": "Chandelurite",
+      "slug": "chandelurite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Charcoal",
+      "slug": "charcoal",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charcoal.png",
+      "flingPower": 30,
+      "effect": "Held: Fire-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Fire moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Charizardite Y",
+      "slug": "charizardite-y",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charizardite-y.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Charizard to Mega Evolve into Mega Charizard Y.",
+      "longEffect": "Held: Allows Charizard to Mega Evolve into Mega Charizard Y.",
+      "notes": []
+    },
+    {
+      "name": "Charti Berry",
+      "slug": "charti-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charti-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Rock-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Rock-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
     },
     {
       "name": "Choice Scarf",
@@ -53,43 +228,134 @@
       ]
     },
     {
-      "name": "Choice Specs",
-      "slug": "choice-specs",
-      "category": "choice",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-specs.png",
+      "name": "Chople Berry",
+      "slug": "chople-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chople-berry.png",
       "flingPower": 10,
-      "effect": "Held: Increases Special Attack by 50%, but restricts the holder to only one move.",
-      "longEffect": "Held: Increases the holder’s Special Attack by 50%, but restricts it to the first move it uses until it leaves battle or loses this item. If this item is swapped for another Choice item via Trick or Switcheroo, the holder’s restriction is still lifted, but it will again be restricted to the next move it uses.\n(Quirk: If the holder is switched in by U-Turn and it also knows U-Turn, U-Turn becomes its restricted move.)",
-      "notes": [
-        "1.5× Special Attack, but the holder is locked into the first move it picks until it switches out.",
-        "Selecting a move the holder cannot use afterwards (0 PP, disabled) leaves it Struggling — bring Protect coverage on a teammate, not the Choice user."
-      ]
+      "effect": "Held: Consumed when struck by a super-effective Fighting-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Fighting-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
     },
     {
-      "name": "Clear Amulet",
-      "slug": "clear-amulet",
+      "name": "Clefablite",
+      "slug": "clefablite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Coba Berry",
+      "slug": "coba-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/coba-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Flying-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Flying-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "Colbur Berry",
+      "slug": "colbur-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/colbur-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Dark-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Dark-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "Damp Rock",
+      "slug": "damp-rock",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/damp-rock.png",
+      "flingPower": 60,
+      "effect": "Held: Rain Dance by the holder lasts 8 rounds instead of 5.",
+      "longEffect": "Held: The holder’s Rain Dance will create rain lasting for eight turns rather than five. As this item affects the move rather than the weather itself, the effect is not lost if the holder leaves battle or drops this item.",
+      "notes": []
+    },
+    {
+      "name": "Delphoxite",
+      "slug": "delphoxite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Dragon Fang",
+      "slug": "dragon-fang",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragon-fang.png",
+      "flingPower": 70,
+      "effect": "Held: Dragon-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Dragon moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Dragoninite",
+      "slug": "dragoninite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Drampanite",
+      "slug": "drampanite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Excadrite",
+      "slug": "excadrite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Expert Belt",
+      "slug": "expert-belt",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/expert-belt.png",
+      "flingPower": 10,
+      "effect": "Held: Holder’s Super Effective moves do 20% extra damage.",
+      "longEffect": "Held: When the holder hits with a super-effective move, its power is raised by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Fairy Feather",
+      "slug": "fairy-feather",
       "category": "held-items",
       "sprite": null,
       "flingPower": null,
-      "effect": "Held: prevents the holder's stats from being lowered by other Pokémon.",
-      "longEffect": "Held: the holder's stats cannot be lowered by any other Pokémon — Intimidate, Snarl, Icy Wind, Parting Shot, Sticky Web, etc.\nSelf-inflicted drops (Close Combat, Draco Meteor, Overheat, Superpower) still apply.",
-      "notes": [
-        "Prevents the holder's stats from being lowered by any other Pokémon — Intimidate, Snarl, Icy Wind, Parting Shot, sticky-web-style drops.",
-        "Does not stop self-inflicted drops (Draco Meteor, Close Combat, Overheat)."
-      ]
+      "effect": "Held: Fairy-type moves from the holder do 20% more damage.",
+      "longEffect": "Held: Fairy-type moves from the holder do 20% more damage.",
+      "notes": []
     },
     {
-      "name": "Covert Cloak",
-      "slug": "covert-cloak",
-      "category": "held-items",
+      "name": "Floettite",
+      "slug": "floettite",
+      "category": "mega-stones",
       "sprite": null,
-      "flingPower": null,
-      "effect": "Held: protects the holder from the additional effects of attacking moves.",
-      "longEffect": "Held: the holder ignores the additional effects of attacking moves used against it — flinch (Rock Slide, Fake Out), burn (Scald), stat drops (Make It Rain), Salt Cure residual, and so on.\nThe primary effect of a status move is unaffected (Thunder Wave still paralyses).",
-      "notes": [
-        "The holder is immune to the additional effects of attacking moves — no flinch from Rock Slide / Fake Out, no burn from Scald, no drops from Make It Rain, no Salt Cure residual, etc.",
-        "Does not block the primary effect of a status move (Thunder Wave still paralyses)."
-      ]
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
     },
     {
       "name": "Focus Sash",
@@ -99,6 +365,26 @@
       "flingPower": 10,
       "effect": "Held: Holder survives any single-hit attack at 1 HP if at max HP, then the item is consumed.",
       "longEffect": "Held: If the holder has full HP and is attacked for regular damage that would faint it, this item is consumed and prevents the holder’s HP from lowering below 1. This effect works against multi-hit attacks, but does not work against the effects of Doom Desire or Future Sight.",
+      "notes": []
+    },
+    {
+      "name": "Froslassite",
+      "slug": "froslassite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Galladite",
+      "slug": "galladite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/galladite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Gallade to Mega Evolve into Mega Gallade.",
+      "longEffect": "Held: Allows Gallade to Mega Evolve into Mega Gallade.",
       "notes": []
     },
     {
@@ -122,6 +408,46 @@
       "notes": []
     },
     {
+      "name": "Gengarite",
+      "slug": "gengarite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gengarite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Gengar to Mega Evolve into Mega Gengar.",
+      "longEffect": "Held: Allows Gengar to Mega Evolve into Mega Gengar.",
+      "notes": []
+    },
+    {
+      "name": "Glalitite",
+      "slug": "glalitite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/glalitite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Glalie to Mega Evolve into Mega Glalie.",
+      "longEffect": "Held: Allows Glalie to Mega Evolve into Mega Glalie.",
+      "notes": []
+    },
+    {
+      "name": "Glimmoranite",
+      "slug": "glimmoranite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Greninjite",
+      "slug": "greninjite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
       "name": "Gyaradosite",
       "slug": "gyaradosite",
       "category": "mega-stones",
@@ -129,6 +455,76 @@
       "flingPower": 80,
       "effect": "Held: Allows Gyarados to Mega Evolve into Mega Gyarados.",
       "longEffect": "Held: Allows Gyarados to Mega Evolve into Mega Gyarados.",
+      "notes": []
+    },
+    {
+      "name": "Haban Berry",
+      "slug": "haban-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/haban-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Dragon-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Dragon-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "Heracronite",
+      "slug": "heracronite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heracronite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Heracross to Mega Evolve into Mega Heracross.",
+      "longEffect": "Held: Allows Heracross to Mega Evolve into Mega Heracross.",
+      "notes": []
+    },
+    {
+      "name": "Houndoominite",
+      "slug": "houndoominite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/houndoominite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Houndoom to Mega Evolve into Mega Houndoom.",
+      "longEffect": "Held: Allows Houndoom to Mega Evolve into Mega Houndoom.",
+      "notes": []
+    },
+    {
+      "name": "Iron Ball",
+      "slug": "iron-ball",
+      "category": "bad-held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/iron-ball.png",
+      "flingPower": 130,
+      "effect": "Held: Holder’s Speed is halved. Negates all Ground-type immunities, and makes Flying-types take neutral damage from Ground-type moves. Arena Trap. Spikes, and Toxic Spikes affect the holder.",
+      "longEffect": "Held: Decreases the holder’s Speed by 50%. If the holder is Flying or has Levitate, it takes regular damage from Ground attacks and is suspectible to Spikes and Toxic Spikes.",
+      "notes": []
+    },
+    {
+      "name": "Kangaskhanite",
+      "slug": "kangaskhanite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kangaskhanite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Kangaskhan to Mega Evolve into Mega Kangaskhan.",
+      "longEffect": "Held: Allows Kangaskhan to Mega Evolve into Mega Kangaskhan.",
+      "notes": []
+    },
+    {
+      "name": "Kasib Berry",
+      "slug": "kasib-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kasib-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Ghost-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Ghost-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "King's Rock",
+      "slug": "kings-rock",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kings-rock.png",
+      "flingPower": 30,
+      "effect": "Held: Damaging moves gain a 10% chance to make their target flinch. Traded on a Poliwhirl: Holder evolves into Politoed. Traded on a Slowpoke: Holder evolves into Slowking.",
+      "longEffect": "Held in battle\n: Holder’s damaging moves have a 10% chance to make their target flinch. This chance applies independently to each hit of a multi-hit move.\n\nThis item’s chance is rolled independently of any other move effects;\ne.g., a move with a 30% chance to flinch normally will have a 37% total chance to flinch when used with this item, because 3% of the time, both effects activate.\n\nHeld by Poliwhirl or Slowbro\n: Holder evolves into Politoed or Slowking, respectively, when traded.",
       "notes": []
     },
     {
@@ -169,26 +565,83 @@
       ]
     },
     {
-      "name": "Loaded Dice",
-      "slug": "loaded-dice",
-      "category": "held-items",
-      "sprite": null,
-      "flingPower": null,
-      "effect": "Held: the holder’s multi-hit moves always hit at least four times.",
-      "longEffect": "Held: multi-hit moves that would roll 2–5 hits instead hit 4–5 times.\nFor Triple Axel and Triple Kick it removes the accuracy check on the later hits rather than adding hits.",
-      "notes": [
-        "Multi-hit moves that roll 2–5 hits (Bullet Seed, Rock Blast, Scale Shot, Bone Rush) always hit at least 4 times.",
-        "For Triple Axel / Triple Kick it removes the accuracy check on the later hits instead."
-      ]
+      "name": "Lopunnite",
+      "slug": "lopunnite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lopunnite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Lopunny to Mega Evolve into Mega Lopunny.",
+      "longEffect": "Held: Allows Lopunny to Mega Evolve into Mega Lopunny.",
+      "notes": []
     },
     {
-      "name": "Lum Berry",
-      "slug": "lum-berry",
-      "category": "medicine",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lum-berry.png",
-      "flingPower": 10,
-      "effect": "Held: Consumed to cure any status condition or confusion.",
-      "longEffect": "Held in battle\n: When the holder is afflicted with a major status ailment, it consumes this item to cure the ailment.\n\nUsed on a party Pokémon\n: Cures any major status ailment.",
+      "name": "Lucarionite",
+      "slug": "lucarionite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lucarionite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Lucario to Mega Evolve into Mega Lucario.",
+      "longEffect": "Held: Allows Lucario to Mega Evolve into Mega Lucario.",
+      "notes": []
+    },
+    {
+      "name": "Magnet",
+      "slug": "magnet",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/magnet.png",
+      "flingPower": 30,
+      "effect": "Held: Electric-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Electric moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Malamarite",
+      "slug": "malamarite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Manectite",
+      "slug": "manectite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/manectite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Manectric to Mega Evolve into Mega Manectric.",
+      "longEffect": "Held: Allows Manectric to Mega Evolve into Mega Manectric.",
+      "notes": []
+    },
+    {
+      "name": "Mawilite",
+      "slug": "mawilite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mawilite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Mawile to Mega Evolve into Mega Mawile.",
+      "longEffect": "Held: Allows Mawile to Mega Evolve into Mega Mawile.",
+      "notes": []
+    },
+    {
+      "name": "Medichamite",
+      "slug": "medichamite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/medichamite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Medicham to Mega Evolve into Mega Medicham.",
+      "longEffect": "Held: Allows Medicham to Mega Evolve into Mega Medicham.",
+      "notes": []
+    },
+    {
+      "name": "Meganiumite",
+      "slug": "meganiumite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
       "notes": []
     },
     {
@@ -214,16 +667,14 @@
       "notes": []
     },
     {
-      "name": "Miracle Seed",
-      "slug": "miracle-seed",
+      "name": "Metal Coat",
+      "slug": "metal-coat",
       "category": "type-enhancement",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/miracle-seed.png",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metal-coat.png",
       "flingPower": 30,
-      "effect": "Held: Grass-Type moves from holder do 20% more damage.",
-      "longEffect": "Held: Increases the power of the holder’s Grass moves by 20%.",
-      "notes": [
-        "Grass-type moves used by the holder deal 1.2× damage."
-      ]
+      "effect": "Held: Steel-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Steel moves by 20%.\nHeld by Onix or Scyther: Evolves the holder into Steelix or Scizor when traded, respectively.",
+      "notes": []
     },
     {
       "name": "Mystic Water",
@@ -238,39 +689,113 @@
       ]
     },
     {
-      "name": "Rocky Helmet",
-      "slug": "rocky-helmet",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rocky-helmet.png",
-      "flingPower": 60,
-      "effect": "Held: When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage.",
-      "longEffect": "Held\n: When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage.",
-      "notes": [
-        "A Pokémon that hits the holder with a contact move loses 1/6 of its max HP.",
-        "Stacks with Rough Skin / Iron Barbs and with Life Orb recoil on the attacker."
-      ]
+      "name": "Never-Melt Ice",
+      "slug": "never-melt-ice",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/never-melt-ice.png",
+      "flingPower": 30,
+      "effect": "Held: Ice-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Ice moves by 20%.",
+      "notes": []
     },
     {
-      "name": "Safety Goggles",
-      "slug": "safety-goggles",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/safety-goggles.png",
-      "flingPower": 80,
-      "effect": "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm.",
-      "longEffect": "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm.",
-      "notes": [
-        "Blocks powder and spore moves (Spore, Rage Powder, Sleep Powder, Powder) and prevents Sand / Hail chip damage.",
-        "Does not stop weather-based abilities such as Slush Rush or Sand Rush from activating."
-      ]
+      "name": "Occa Berry",
+      "slug": "occa-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/occa-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Fire-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Fire-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
     },
     {
-      "name": "Salamencite",
-      "slug": "salamencite",
+      "name": "Passho Berry",
+      "slug": "passho-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/passho-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Water-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Water-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "Pidgeotite",
+      "slug": "pidgeotite",
       "category": "mega-stones",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/salamencite.png",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pidgeotite.png",
       "flingPower": 80,
-      "effect": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
-      "longEffect": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
+      "effect": "Held: Allows Pidgeot to Mega Evolve into Mega Pidgeot.",
+      "longEffect": "Held: Allows Pidgeot to Mega Evolve into Mega Pidgeot.",
+      "notes": []
+    },
+    {
+      "name": "Pinsirite",
+      "slug": "pinsirite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pinsirite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Pinsir to Mega Evolve into Mega Pinsir.",
+      "longEffect": "Held: Allows Pinsir to Mega Evolve into Mega Pinsir.",
+      "notes": []
+    },
+    {
+      "name": "Pyroarite",
+      "slug": "pyroarite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Quick Claw",
+      "slug": "quick-claw",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/quick-claw.png",
+      "flingPower": 80,
+      "effect": "Held: Holder has a 3/16 (18.75%) chance to move first.",
+      "longEffect": "Held in battle\n: Whenever the holder attempts to use a move, it has a 3/16 chance to act first among moves with the same priority. If multiple Pokémon have this effect at the same time, Speed is the tie-breaker as normal, but the effect of Trick Room is ignored.",
+      "notes": []
+    },
+    {
+      "name": "Raichunite X",
+      "slug": "raichunite-x",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Raichunite Y",
+      "slug": "raichunite-y",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Roseli Berry",
+      "slug": "roseli-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/roseli-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Fairy-type attack to halve the damage.",
+      "longEffect": "Held: Consumed when struck by a super-effective Fairy-type attack to halve the damage.",
+      "notes": []
+    },
+    {
+      "name": "Sceptilite",
+      "slug": "sceptilite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sceptilite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Sceptile to Mega Evolve into Mega Sceptile.",
+      "longEffect": "Held: Allows Sceptile to Mega Evolve into Mega Sceptile.",
       "notes": []
     },
     {
@@ -281,6 +806,36 @@
       "flingPower": 80,
       "effect": "Held: Allows Scizor to Mega Evolve into Mega Scizor.",
       "longEffect": "Held: Allows Scizor to Mega Evolve into Mega Scizor.",
+      "notes": []
+    },
+    {
+      "name": "Scope Lens",
+      "slug": "scope-lens",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scope-lens.png",
+      "flingPower": 30,
+      "effect": "Held: Raises the holder’s critical hit ratio by one stage.",
+      "longEffect": "Held: Raises the holder’s critical hit counter by 1.",
+      "notes": []
+    },
+    {
+      "name": "Scovillainite",
+      "slug": "scovillainite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Scraftinite",
+      "slug": "scraftinite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
       "notes": []
     },
     {
@@ -296,6 +851,46 @@
       ]
     },
     {
+      "name": "Sharpedonite",
+      "slug": "sharpedonite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sharpedonite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Sharpedo to Mega Evolve into Mega Sharpedo.",
+      "longEffect": "Held: Allows Sharpedo to Mega Evolve into Mega Sharpedo.",
+      "notes": []
+    },
+    {
+      "name": "Shuca Berry",
+      "slug": "shuca-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shuca-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Ground-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Ground-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
+    },
+    {
+      "name": "Silk Scarf",
+      "slug": "silk-scarf",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/silk-scarf.png",
+      "flingPower": 10,
+      "effect": "Held: Normal-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Normal moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Silver Powder",
+      "slug": "silver-powder",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/silver-powder.png",
+      "flingPower": 10,
+      "effect": "Held: Bug-Type moves from holder do 20% more damage.",
+      "longEffect": "Held in battle\n: Holder’s Bug-type moves have 1.2× their power.",
+      "notes": []
+    },
+    {
       "name": "Sitrus Berry",
       "slug": "sitrus-berry",
       "category": "medicine",
@@ -309,6 +904,66 @@
       ]
     },
     {
+      "name": "Slowbronite",
+      "slug": "slowbronite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/slowbronite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Slowbro to Mega Evolve into Mega Slowbro.",
+      "longEffect": "Held: Allows Slowbro to Mega Evolve into Mega Slowbro.",
+      "notes": []
+    },
+    {
+      "name": "Soft Sand",
+      "slug": "soft-sand",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/soft-sand.png",
+      "flingPower": 10,
+      "effect": "Held: Ground-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Ground moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Spell Tag",
+      "slug": "spell-tag",
+      "category": "type-enhancement",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/spell-tag.png",
+      "flingPower": 30,
+      "effect": "Held: Ghost-Type moves from holder do 20% more damage.",
+      "longEffect": "Held: Increases the power of the holder’s Ghost moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Staraptite",
+      "slug": "staraptite",
+      "category": "mega-stones",
+      "sprite": null,
+      "flingPower": 80,
+      "effect": "Held: lets the matching Pokémon Mega Evolve.",
+      "longEffect": "Held: lets the matching Pokémon Mega Evolve.",
+      "notes": []
+    },
+    {
+      "name": "Steelixite",
+      "slug": "steelixite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/steelixite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Steelix to Mega Evolve into Mega Steelix.",
+      "longEffect": "Held: Allows Steelix to Mega Evolve into Mega Steelix.",
+      "notes": []
+    },
+    {
+      "name": "Swampertite",
+      "slug": "swampertite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/swampertite.png",
+      "flingPower": 80,
+      "effect": "Held: Allows Swampert to Mega Evolve into Mega Swampert.",
+      "longEffect": "Held: Allows Swampert to Mega Evolve into Mega Swampert.",
+      "notes": []
+    },
+    {
       "name": "Tyranitarite",
       "slug": "tyranitarite",
       "category": "mega-stones",
@@ -319,17 +974,44 @@
       "notes": []
     },
     {
-      "name": "Weakness Policy",
-      "slug": "weakness-policy",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/weakness-policy.png",
+      "name": "Venusaurite",
+      "slug": "venusaurite",
+      "category": "mega-stones",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/venusaurite.png",
       "flingPower": 80,
-      "effect": "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages.",
-      "longEffect": "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages.",
-      "notes": [
-        "When the holder is hit by a super-effective move it gains +2 Attack and +2 Special Attack, then the item is consumed.",
-        "Triggers even on a hit that would not KO — pair with Substitute, a defensive spread, or a Sash. No effect on status or non-super-effective hits."
-      ]
+      "effect": "Held: Allows Venusaur to Mega Evolve into Mega Venusaur.",
+      "longEffect": "Held: Allows Venusaur to Mega Evolve into Mega Venusaur.",
+      "notes": []
+    },
+    {
+      "name": "White Herb",
+      "slug": "white-herb",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/white-herb.png",
+      "flingPower": 10,
+      "effect": "Held: Resets all lowered stats to normal at end of turn. Consumed after use.",
+      "longEffect": "Held in battle\n: At the end of each turn, if any of the holder’s stats have a negative stat modifier, the holder consumes this item to remove the modifiers from those stats.",
+      "notes": []
+    },
+    {
+      "name": "Wide Lens",
+      "slug": "wide-lens",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wide-lens.png",
+      "flingPower": 10,
+      "effect": "Held: Provides a 1/10 (10%) boost in accuracy to the holder.",
+      "longEffect": "Held: Increases the accuracy of any move the holder uses by 10% (multiplied; i.e. 70% accuracy is increased to 77%).",
+      "notes": []
+    },
+    {
+      "name": "Yache Berry",
+      "slug": "yache-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/yache-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Ice-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Ice-type damage, it consumes this item to halve the amount of damage taken.",
+      "notes": []
     }
   ]
 }

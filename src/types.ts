@@ -92,12 +92,28 @@ export interface UsageItem {
   pct: number
 }
 
+/** A common EV spread from the usage snapshot (EVs are approximate — see ingest). */
+export interface UsageSpread {
+  nature: string
+  evs: BaseStats
+  pct: number
+}
+
+/** A common teammate: `pct` is co-occurrence on the same team. */
+export interface UsageTeammate {
+  slug: string
+  name: string
+  pct: number
+}
+
 export interface UsageEntry {
   usagePct?: number
   winPct?: number
   abilities: UsageItem[]
   moves: UsageItem[]
   items?: UsageItem[]
+  spreads?: UsageSpread[]
+  teammates?: UsageTeammate[]
 }
 
 export type MoveCategory = 'physical' | 'special' | 'status'
@@ -138,6 +154,8 @@ export interface MoveInfo {
   longEffect: string
   /** curated competitive notes PokéAPI's text doesn't cover. */
   notes: string[]
+  /** true when PokéAPI has no record (likely a Champions-original move). */
+  unlisted?: boolean
 }
 
 export interface AbilityInfo {
@@ -147,6 +165,7 @@ export interface AbilityInfo {
   effect: string
   longEffect: string
   notes: string[]
+  unlisted?: boolean
 }
 
 export interface ItemInfo {
@@ -158,6 +177,7 @@ export interface ItemInfo {
   effect: string
   longEffect: string
   notes: string[]
+  unlisted?: boolean
 }
 
 export interface ItemDex {
@@ -176,6 +196,19 @@ export interface MoveDex {
   abilities: AbilityInfo[]
 }
 
+/** Provenance for a usage ingest — written by `scripts/ingest-usage.mjs`. */
+export interface UsageMeta {
+  sourceId: string
+  sourceUrl: string
+  fetchedFrom: string
+  battles: number | null
+  entryCount: number
+  /** sha256 of the raw upstream payload (the payload itself lives in git-ignored data/raw/). */
+  rawSha256: string
+  rawPayload: string | null
+  generator: string
+}
+
 export interface UsageSnapshot {
   regulation: string
   season: string
@@ -183,6 +216,7 @@ export interface UsageSnapshot {
   source: string
   capturedAt: string
   disclaimer?: string
+  meta?: UsageMeta
   entries: Record<string, UsageEntry>
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { SearchBar } from './components/SearchBar'
 import { PokemonView } from './components/PokemonView'
+import { BrowseGrid } from './components/BrowseGrid'
 import { EntityPage } from './components/EntityPage'
 import type { EntityKind } from './lib/data'
 import {
@@ -9,6 +10,7 @@ import {
   POKEMON_SOURCE,
   REGULATION,
   USAGE,
+  USAGE_IS_SAMPLE,
   findPokemon,
   popularSlugs,
   searchPokemon,
@@ -17,6 +19,7 @@ import {
 const FALLBACK_SLUG = POKEMON[0]?.slug ?? ''
 
 type Route =
+  | { kind: 'browse' }
   | { kind: 'pokemon'; slug: string }
   | { kind: EntityKind; slug: string }
 
@@ -24,6 +27,7 @@ const ENTITY_KINDS: EntityKind[] = ['move', 'ability', 'item']
 
 function parseHash(): Route {
   const raw = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim()
+  if (raw === 'browse') return { kind: 'browse' }
   const slash = raw.indexOf('/')
   if (slash > 0) {
     const head = raw.slice(0, slash)
@@ -80,29 +84,60 @@ export function App() {
         onChange={setQuery}
         results={results}
         onPick={select}
+        onSeeAll={() => select('browse')}
       />
 
-      <nav className="popular" aria-label="Popular Pokémon">
-        {popular.map((s) => {
-          const p = findPokemon(s)
-          if (!p) return null
-          const isActive = route.kind === 'pokemon' && s === activeSlug
-          return (
-            <button
-              key={s}
-              type="button"
-              className={`popular__chip${isActive ? ' is-active' : ''}`}
-              onClick={() => select(s)}
-            >
-              <img src={p.sprite} alt="" width="28" height="28" loading="lazy" />
-              {p.name}
-            </button>
-          )
-        })}
-      </nav>
+      <div className="subnav">
+        <nav className="popular" aria-label="Popular Pokémon">
+          {popular.map((s) => {
+            const p = findPokemon(s)
+            if (!p) return null
+            const isActive = route.kind === 'pokemon' && s === activeSlug
+            return (
+              <button
+                key={s}
+                type="button"
+                className={`popular__chip${isActive ? ' is-active' : ''}`}
+                onClick={() => select(s)}
+              >
+                <img
+                  src={p.sprite}
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                />
+                {p.name}
+              </button>
+            )
+          })}
+        </nav>
+        <button
+          type="button"
+          className={`subnav__all${route.kind === 'browse' ? ' is-active' : ''}`}
+          aria-pressed={route.kind === 'browse'}
+          onClick={() =>
+            select(route.kind === 'browse' ? activeSlug || FALLBACK_SLUG : 'browse')
+          }
+        >
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"
+            />
+          </svg>
+          Browse
+        </button>
+      </div>
 
       <main className="content">
-        {route.kind === 'pokemon' ? (
+        {route.kind === 'browse' ? (
+          <BrowseGrid
+            query={query}
+            onPick={select}
+            onClearQuery={() => setQuery('')}
+          />
+        ) : route.kind === 'pokemon' ? (
           pokemon ? (
             <PokemonView pokemon={pokemon} snapshot={USAGE} />
           ) : (
@@ -121,10 +156,14 @@ export function App() {
         </p>
         <p className="foot__meta">
           {POKEMON.length} Pokémon · reference data from {POKEMON_SOURCE},
-          generated {generatedLabel}. Usage figures are illustrative sample data —
-          not live stats. Unofficial fan project; not affiliated with Nintendo /
-          The Pokémon Company.
+          generated {generatedLabel}.{' '}
+          {USAGE_IS_SAMPLE
+            ? 'Usage figures are illustrative sample data — not live stats.'
+            : `Usage from ${USAGE.source} (${USAGE.season}) — the simulator ladder, not the official in-game one.`}{' '}
+          Unofficial fan project; not affiliated with Nintendo / The Pokémon
+          Company.
         </p>
+        <p className="foot__version">v{__APP_VERSION__}</p>
       </footer>
     </div>
   )

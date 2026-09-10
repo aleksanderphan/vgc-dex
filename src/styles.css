@@ -141,7 +141,8 @@ button {
 }
 
 .search__result:hover,
-.search__result:focus-visible {
+.search__result:focus-visible,
+.search__result.is-active {
   background: var(--surface-2);
 }
 
@@ -168,6 +169,13 @@ button {
   font-size: 12px;
 }
 
+.search__result--all {
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
 .dot {
   width: 10px;
   height: 10px;
@@ -175,7 +183,46 @@ button {
   display: inline-block;
 }
 
-/* ── Popular quick-pick row ─────────────────────────────── */
+/* ── Popular quick-pick row + browse toggle ─────────────── */
+
+.subnav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subnav .popular {
+  flex: 1;
+  min-width: 0;
+  padding-right: 4px;
+}
+
+.subnav__all {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+  padding: 7px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.subnav__all.is-active {
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.subnav__all:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
 .popular {
   display: flex;
@@ -251,6 +298,9 @@ button {
   letter-spacing: 0.04em;
   padding: 3px 8px;
   border-radius: 999px;
+  background: rgba(47, 177, 112, 0.14);
+  color: #6bd39c;
+  border: 1px solid rgba(47, 177, 112, 0.4);
 }
 
 .pill--warn {
@@ -668,6 +718,107 @@ button {
   color: var(--text-dim);
 }
 
+/* ── EV spreads ─────────────────────────────────────────── */
+
+.spread-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.spread {
+  display: grid;
+  gap: 5px;
+}
+
+.spread__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.spread__nature {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.spread__pct {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.spread__track {
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.spread__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #6c8cff;
+}
+
+.spread__evs {
+  margin: 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+/* ── Teammates ──────────────────────────────────────────── */
+
+.teammates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.teammate {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 5px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.teammate:hover {
+  border-color: var(--accent);
+}
+
+.teammate:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.teammate__sprite {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.teammate__pct {
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
 /* ── Move / ability / item page ─────────────────────────── */
 
 .entity {
@@ -864,6 +1015,189 @@ button {
   margin-top: 8px;
 }
 
+.foot__version {
+  margin-top: 8px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+}
+
+/* ── Browse: filter bar + all-Pokémon grid ─────────────── */
+
+.browse {
+  display: grid;
+  gap: 12px;
+}
+
+.browse__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.type-filter {
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  opacity: 0.32;
+  transition: opacity 0.12s ease;
+}
+
+.type-filter.is-on {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px currentColor;
+}
+
+.type-filter:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.browse__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.browse__control {
+  display: grid;
+  gap: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.browse__control select {
+  font: inherit;
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+.browse__check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: end;
+  padding-bottom: 7px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.browse__check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.browse__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.browse__clear {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+}
+
+.browse__clear:hover {
+  color: var(--text);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+  gap: 8px;
+}
+
+.grid__card {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 3px;
+  padding: 12px 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  text-align: center;
+}
+
+.grid__card:hover {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.grid__card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.grid__card img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.grid__no {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.grid__name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.grid__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.grid__metric {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.grid__metric--none {
+  color: var(--text-dim);
+}
+
 /* ── ≥ 560px: hero becomes a row ────────────────────────── */
 
 @media (min-width: 560px) {
@@ -912,4 +1246,46 @@ button {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+
+/* ── PWA update toast ───────────────────────────────────── */
+
+.update-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 24px);
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+}
+
+.update-toast__action {
+  padding: 5px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.update-toast__close {
+  padding: 4px 6px;
+  border: 0;
+  background: none;
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.update-toast__close:hover {
+  color: var(--text);
 }

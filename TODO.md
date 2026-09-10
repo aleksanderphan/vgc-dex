@@ -11,23 +11,35 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
 ## Shipped in the prototype
 
 - Vite + React 18 + TS app, mobile-first plain CSS, dark theme.
-- `scripts/build-data.mjs` ETL → `src/data/pokemon.json` (94-Pokémon curated
-  Reg M‑C pool incl. the Mega-capable classics; re-runnable). Sprites hotlinked
-  from PokéAPI's GitHub.
+- `scripts/build-data.mjs` ETL → `src/data/pokemon.json` (138-Pokémon curated
+  pool: the Mega-capable classics + every Showdown-ladder regular ≳0.5%;
+  re-runnable). Sprites hotlinked from PokéAPI's GitHub.
 - Local Gen VI+ type chart + `strong against` / `weak to` / `resists` / `immune`
   helpers (`src/lib/typechart.ts`).
 - Sticky top search + `#slug` deep-linking + usage-ordered "popular" row.
 - Pokémon page: artwork, stat spread (no BST total), type badges, abilities.
   Pokémon with a Mega get a **Base / Mega** form switcher that swaps art, typing,
   ability, Mega Stone, base stats and type matchups
-  (`src/data/megadex.m-c.json`, `scripts/build-megadex.mjs`, PokéAPI — 7 classic
-  Megas in the pool; Champions-original Megas would need hand-adding).
-- Usage panel: usage % / win %, **common abilities** then **common moves**
-  stacked (was side-by-side), then a **Common items** section — reading
-  `src/data/usage.m-c.json` (**labelled SAMPLE**, `source: "placeholder"`). Each
-  ability/move/item row expands in place to its short details (several at once)
+  (`src/data/megadex.m-c.json`, `scripts/build-megadex.mjs`, PokéAPI — 41 classic
+  Megas in the pool; Champions-original Megas — Mega Raichu, Delphox, Baxcalibur,
+  Golisopod… — would need hand-adding, PokéAPI has none of them).
+- **Real usage data**: `scripts/ingest-usage.mjs` pulls the Pokémon Showdown
+  ladder stats for `gen9championsvgc2026` (Smogon monthly "chaos" JSON via
+  data.pkmn.cc) → `src/data/usage.m-c.json`. ~120 Pokémon, Mega/Primal formes
+  merged into the base, usage-weighted. Now also ingests **common EV spreads**
+  (Smogon's bucketed spreads scaled back to approximate real EVs, over-rounding
+  shaved to a legal 508) and **common teammates** (co-occurrence % on the same
+  team, teammate Mega formes merged into the base). No win-rate (source has
+  none); `counters` is empty in this format's payload. The "sample data" pill
+  flips to "ladder data" (`components/DataPill.tsx`).
+- Usage panel: **common abilities** then **common moves** stacked, then a
+  **Common items** section, a **Common EV spreads** section
+  (`components/SpreadsPanel.tsx`) and a **Common teammates** section of
+  sprite chips that deep-link to each teammate (`components/TeammatesPanel.tsx`).
+  Each ability/move/item row expands in place (several at once) to short details
   from `src/data/movedex.m-c.json` / `src/data/itemdex.m-c.json`
-  (`scripts/build-movedex.mjs`, `scripts/build-itemdex.mjs`, PokéAPI).
+  (`build:movedex` / `build:itemdex`, PokéAPI; a Champions-original
+  move/ability/item with no PokéAPI record renders as a clearly-labelled stub).
 - Dedicated **move / ability / item pages** — hash-routed (`#move/<slug>`,
   `#ability/<slug>`, `#item/<slug>`, deep-linkable) via `App.tsx` +
   `components/EntityPage.tsx`. Shows PokéAPI's long-form effect, structured
@@ -37,9 +49,13 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · `[?]` blocked / needs a
   list back into the usage data.
 - No Terastallization: Pokémon Champions doesn't implement it, so there is no
   Tera type / Tera Blast data or UI.
+- **Tests + CI**: Vitest suite (`npm test`, 35 tests) over the type chart, the
+  name normalizer / lookup helpers, and a usage-snapshot consistency check;
+  `.github/workflows/ci.yml` gates `main` + PRs on version / typecheck / test /
+  build. `LICENSE` (MIT) + `NOTICE.md` for third-party data.
 
-Biggest gaps: real usage ingest (Phase 3), regulation legality filtering
-(Phase 2), Champions-original Megas, move dex, full browsable grid.
+Biggest gaps: regulation legality filtering (Phase 2), Champions-original Megas,
+move dex, additional usage sources (official Battle Data, Pikalytics win-rate).
 
 ---
 
@@ -53,7 +69,7 @@ These shape the data model, so resolve them before Phase 2.
 - [ ] Confirm **banned moves / banned items** for M‑C (if any) and the newly added item list.
 - [ ] Confirm the base-format details: Bo1 vs Bo3 by round, timer values, open-sheet policy.
 - [ ] Confirm the M‑A and M‑B rosters/Megas for the historical regulation switcher.
-- [ ] Determine whether Pokémon Showdown has a dedicated **Champions / Reg M‑C format id** (affects `@pkmn/smogon` + Smogon stats URLs); note that VGC format names are reused across series.
+- [x] Determine whether Pokémon Showdown has a dedicated **Champions format id** — yes: `gen9championsvgc2026` (also `gen9championsbattlestadiumsingles`, `gen9championsou`). Ingested from `data.pkmn.cc/stats/gen9championsvgc2026.json`.
 - [ ] Check whether the official in-game **Battle Data** is exportable or exposed anywhere machine-readable; document the extraction method.
 - [ ] Check licensing / terms for Pikalytics and Pokémon Zone before ingesting their data programmatically.
 
@@ -65,26 +81,26 @@ These shape the data model, so resolve them before Phase 2.
 - [x] App shape: **static site + prebuilt JSON**, no server.
 - [x] Datastore: **flat JSON snapshots** in `src/data/` (revisit if it outgrows that).
 - [x] Frontend: **React 18 + Vite**, plain CSS.
-- [x] Init project (`package.json`, `tsconfig`, Vite). Still: lint/format + test runner.
-- [~] `.gitignore` — appended a Node/Vite section; the VisualStudio boilerplate above it can still be trimmed.
+- [x] Init project (`package.json`, `tsconfig`, Vite). Test runner: **Vitest** (`npm test`). Still: lint/format (ESLint + Prettier).
+- [x] `.gitignore` — trimmed the VisualStudio boilerplate down to a lean Node / Vite / editor ignore.
 - [x] Deploy target: **Vercel** (`vercel.json`; static Vite build, push-to-`main` = production).
-- [ ] Set up CI (typecheck + build + tests) — currently only Vercel's build gates merges.
-- [ ] Add `LICENSE` and a `NOTICE`/disclaimer file (disclaimer currently only in README + app footer).
+- [x] Set up CI — `.github/workflows/ci.yml` runs `version:check` + `typecheck` + `test` + `build` on every push to `main` and every PR (Vercel's build still gates deploys).
+- [x] Add `LICENSE` (MIT, code only) and `NOTICE.md` (third-party data sources + trademark disclaimer, keyed to each bundled snapshot).
 - [x] Repo layout: single app (`scripts/` + `src/`).
 
 ## Phase 1 — Reference data layer (PokéAPI + @pkmn)
 
 - [x] ETL pulls from PokéAPI and writes a committed snapshot (`npm run build:data`); the app never calls PokéAPI at runtime.
-- [~] Snapshot covers a **curated 94-mon subset**, not the full legal dex — expand to the whole Reg M‑C pool once the list is verified.
+- [~] Snapshot covers a **curated 138-mon subset** (Mega classics + Showdown-ladder regulars), not the full legal dex — expand to the whole Reg M‑C pool once the list is verified.
 - [ ] Pin the ETL to a PokéAPI dataset version / commit for reproducibility.
 - [x] Import species, base stats, types, abilities, sprites.
 - [~] Import **moves** + **abilities** + **items** — `scripts/build-movedex.mjs` + `scripts/build-itemdex.mjs` cover every name referenced by the usage data → `src/data/movedex.m-c.json` / `itemdex.m-c.json`, now with the long-form effect, structured mechanics (multi-hit, drain/recoil, ailment + %, stat changes, target, generation, Fling power) and curated `scripts/reference-notes.mjs`. Still TODO: whole-dex coverage, a browsable move index, per-source reconciliation. (Type chart is encoded locally.)
 - [ ] Add `@pkmn/dex` + `@pkmn/data` for battle-accurate species/move/ability/item data and learnsets.
 - [ ] Reconciliation report: diff PokéAPI vs `@pkmn/dex` and pick the source of truth per field.
 - [~] Normalized to the internal `Pokemon` type; `MoveInfo` / `AbilityInfo` / `ItemInfo` / `MegaForm` / `PokemonForm` added (`src/types.ts`).
-- [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone) for 36 classic Megas in the pool, surfaced via the Base / Mega switcher (Charizard gets Base / Mega X / Mega Y). Still TODO: Champions-original Megas (Golisopod→Steel, Baxcalibur), Z-Megas, base-stat delta display, per-regulation legality.
-- [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork (revisit if offline/asset-pinning is needed).
-- [ ] Unit tests for the normalizer + type chart (a manual sanity check was done, no runner yet).
+- [~] Mega forms: `scripts/build-megadex.mjs` → `src/data/megadex.m-c.json` (types, base stats, ability, Mega Stone) for 41 classic Megas in the pool, surfaced via the Base / Mega switcher (Charizard gets Base / Mega X / Mega Y). Still TODO: Champions-original Megas (Mega Raichu/Delphox/Froslass/…, Golisopod→Steel, Baxcalibur), Z-Megas, base-stat delta display, per-regulation legality.
+- [x] Sprite strategy: hotlink PokéAPI's GitHub sprites/artwork; the PWA service worker runtime-caches them (`CacheFirst`) so they survive offline after first view. (Asset-pinning / self-hosting still an option if the GitHub host is a concern.)
+- [x] Unit tests for the normalizer + type chart — Vitest: `src/lib/typechart.test.ts` (effectiveness, dual-type stacking, immunities, matchup bucketing, offensive coverage, `titleCase`) and `src/lib/data.test.ts` (name normalizer case/punctuation-insensitivity, `usersOf` ordering + slug resolution, `popularSlugs`, `formsFor`, `searchPokemon`).
 
 ## Phase 2 — Regulation & legality layer
 
@@ -97,25 +113,25 @@ These shape the data model, so resolve them before Phase 2.
 
 ## Phase 3 — Usage data ingestion
 
-> The app already consumes a `UsageSnapshot` — everything here is about
-> **replacing the placeholder** `src/data/usage.m-c.json` with real data.
+> The app consumes a `UsageSnapshot`; `src/data/usage.m-c.json` is now a real
+> **Showdown-ladder ingest**, not the hand-authored placeholder.
 
-- [x] `UsageSnapshot` schema defined (`src/types.ts`) + a hand-authored sample the UI reads.
-- [ ] Ingester: **Smogon / `@pkmn/smogon`** (`data.pkmn.cc/stats/<format>.json`) — moves, items, abilities, spreads, teammates, checks. Machine-readable baseline. Label as "simulator ladder".
+- [x] `UsageSnapshot` schema defined (`src/types.ts`).
+- [x] Ingester: **Smogon / Showdown** (`data.pkmn.cc/stats/gen9championsvgc2026.json`) — `scripts/ingest-usage.mjs`: usage %, abilities, moves, items, **EV spreads** (bucketed → approx real EVs, capped to 508) and **teammates** (co-occurrence %, teammate Mega formes merged); Mega/Primal merged into the base; labelled as the simulator ladder in the snapshot `source` + `disclaimer` and via the "ladder data" pill. `counters` is empty in this format's payload; `viability`/`happinesses`/`teraTypes` deliberately skipped (no Tera in Champions).
 - [ ] Ingester: **official in-game Battle Data** — per the extraction method found in Verify. Canonical "meta" source.
 - [ ] Ingester: **Pokémon Zone** Champions Ranked Seasons (Singles + Doubles) — pending licensing check.
-- [ ] Ingester: **Pikalytics** `/champions` (usage %, win rate, moves, items, abilities, teammates, cutoffs) — pending licensing check.
+- [ ] Ingester: **Pikalytics** `/champions` (adds win rate + rating cutoffs) — pending licensing check.
 - [ ] Optional: **Limitless** tournament results / team lists.
-- [ ] Name-mapping layer: reconcile each source's naming (forms, Megas, "Urshifu-*") to internal ids; fail loudly on unmapped names.
-- [ ] Per-source normalizer → `UsageSnapshot`; keep raw payloads for reproducibility.
-- [ ] Snapshot store with history (don't overwrite; append dated snapshots).
-- [ ] Tests + a schema/consistency check (percentages sane, ids resolve, no source mixing).
+- [~] Name-mapping layer: `ingest-usage.mjs` lower-cases + has a small override table, merges Mega/Primal, and **reports** every ≥0.5% Pokémon not in the pool. Still: promote that report to a hard failure once the pool is meant to be complete; handle gender/other forms.
+- [x] Per-source normalizer + keep raw payloads for reproducibility — `ingest-usage.mjs` now has a `SOURCES` registry (one adapter per source with `normalize(raw, poolNames)`; only `smogon` wired up, Pikalytics / Zone / official slot in beside it). Each run retains the gzipped raw payload in `data/raw/` (git-ignored; `meta.rawSha256` in the snapshot is the committed provenance record) and records `meta` (sourceId, url, battles, entryCount, sha). `--from <file>` re-normalizes a local raw payload; `--dry-run` writes nothing.
+- [x] Snapshot store with history — every ingest appends `data/history/usage.m-c.<date>.json` (committed, never overwritten across days); `src/data/usage.m-c.json` stays the canonical latest the app imports. Retention/pruning is Phase 8.
+- [x] Tests + a schema/consistency check — `src/lib/data.test.ts` "usage snapshot consistency": `regulation` matches `REGULATION.code`, source is a real Showdown/Smogon ingest (not the placeholder), every entry key + teammate slug resolves in the pool, all percentages in range, EV spreads legal (sum ≤ 508, each 0–252), every usage-referenced move present in the movedex.
 
 ## Phase 4 — Merge / aggregation
 
 - [x] Join reference + usage into the per-Pokémon view (`PokemonView` + `usageFor`).
 - [~] "Popular" row sorts by usage %; a full meta leaderboard page is still TODO.
-- [ ] Move-usage index: invert usage data to "which Pokémon carry move X and at what %".
+- [x] Move-usage index: `usersOf(kind, name)` in `lib/data.ts` inverts the usage data; the move / ability / item pages show a "Run by" list. Still: a standalone move-usage view.
 - [~] Source provenance shown on the usage panel + footer; not yet on every derived view.
 - [x] Empty state when a Pokémon has no usage entry (`UsagePanel` fallback).
 - [ ] Empty state for a whole regulation with no usage snapshot yet.
@@ -132,18 +148,24 @@ These shape the data model, so resolve them before Phase 2.
 ## Phase 6 — Dex UI
 
 - [ ] Regulation switcher (default: current = M‑C) + season / rating-cutoff / source selectors.
-- [~] Search + usage-ordered "popular" row exist; still need a full browsable/filterable grid (by type/ability/role).
+- [x] Search + usage-ordered "popular" row + a **Browse all** grid (`#browse`,
+  `components/BrowseGrid.tsx`): a "Browse" toggle by the popular row opens a
+  card grid over the whole pool, filterable by type (up to 2, AND) and ability,
+  sortable by usage % / BST / any base stat, with an "in usage data" toggle. The
+  sticky search box doubles as a name filter for the grid, and its dropdown has
+  a "view all N matches" jump. Still: role/archetype filter (needs role data).
 - [~] Pokémon page: base stats, typing, abilities done; **Base/Mega form switcher** live (swaps art, typing, ability, Mega Stone, stats, matchups). Still: base-stat delta vs base form, Champions-legal movepool with legality badges.
-- [~] Move / ability / item **pages** shipped (`#move|ability|item/<slug>`, `EntityPage`): long-form effect, structured mechanics, curated notes, "run by" list. Still: a browsable move **dex** (grid/filter), damage-roll numbers, top-users beyond the 25-mon sample.
+- [~] Move / ability / item **pages** shipped (`#move|ability|item/<slug>`, `EntityPage`): long-form effect, structured mechanics, curated notes, "run by" list. Still: a browsable move **dex** (grid/filter) and damage-roll numbers.
 - [ ] Meta overview page (usage leaderboard, movable cutoff).
 - [~] Sample-data pill + snapshot label + footer note; extend "which source" labelling as more sources land.
 - [x] Responsive, mobile-first, dark theme (palette tokens in `styles.css`; a light mode / toggle could be added later).
-- [~] Accessibility pass — ranked-list rows and the form switcher are real buttons with `aria-expanded` / `aria-controls` / `role="tab"` + focus-visible outlines. Still: keyboard nav in the search results list, a wider sweep.
+- [x] Installable **PWA** — `vite-plugin-pwa` (Workbox) precaches the shell; fully offline (all data is bundled), sprites runtime-cached `CacheFirst`; `registerType: 'prompt'` shows a Reload toast on a new deploy (`components/UpdateToast.tsx`). Icons: `scripts/make-icons.mjs` (no deps). Still: real screenshots/shortcuts in the manifest, a Lighthouse PWA pass.
+- [~] Accessibility pass — ranked-list rows and the form switcher are real buttons with `aria-expanded` / `aria-controls` / `role="tab"` + focus-visible outlines. The search box is now an ARIA combobox (`role="combobox"` + `aria-activedescendant` over a `role="listbox"`): ↑/↓ cycle a highlight through the results and the "view all" row, Enter runs the highlighted row, Escape clears. Still: a wider sweep (browse-grid filter controls, focus handling on hash-route change).
 
 ## Phase 7 — Usage & move analytics UI
 
 - [x] Usage panel: usage %, win %, **common abilities** then **common moves** stacked, then a **Common items** section; each row expands in place (multiple at once) to short details, and links to the full move/ability/item page.
-- [~] Items % shipped (sample). Still: teammates and sample EV spreads in the panel.
+- [x] Items %, **EV spreads** and **teammates** shipped from the ladder ingest — `SpreadsPanel` (approx EVs, per-spread %) and `TeammatesPanel` (sprite chips, co-occurrence %, deep-link to each). Still: fold win rate + rating cutoffs in once a source that publishes them lands (Pikalytics).
 - [~] Curated competitive-notes layer (`scripts/reference-notes.mjs`) covers a starter set of moves/abilities/items; extend as gaps show up, or replace with `@pkmn/dex` descriptions.
 - [ ] Compare view: 2–4 Pokémon side by side.
 - [ ] Trend charts: usage over time within a season (needs snapshot history from Phase 3).
@@ -151,7 +173,7 @@ These shape the data model, so resolve them before Phase 2.
 
 ## Phase 8 — Automation
 
-- [ ] Scheduled ETL (usage refresh on the source's cadence — Smogon monthly, Battle Data daily).
+- [ ] Scheduled ETL: a GitHub Action on a monthly cron runs `ingest:usage` + the `build:*` ETLs and commits on change → Vercel redeploys. (Smogon updates monthly.)
 - [ ] Alert on ingest failure / schema drift / unmapped names.
 - [ ] Auto-open the next regulation (M‑D…) as a config entry, not a code change.
 - [ ] Snapshot retention policy.
