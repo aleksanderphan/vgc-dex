@@ -11,7 +11,13 @@ interface Props {
   onSeeAll?: () => void
 }
 
-export function SearchBar({ value, onChange, results, onPick, onSeeAll }: Props) {
+export function SearchBar({
+  value,
+  onChange,
+  results,
+  onPick,
+  onSeeAll,
+}: Props) {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(-1)
   const blurTimer = useRef<number | undefined>(undefined)

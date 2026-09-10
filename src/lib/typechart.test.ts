@@ -90,7 +90,9 @@ describe('defensiveMatchups', () => {
 
 describe('offensiveCoverage', () => {
   it('reports every type a STAB hits for super-effective', () => {
-    const cov = offensiveCoverage(['fire']).map((m) => m.type).sort()
+    const cov = offensiveCoverage(['fire'])
+      .map((m) => m.type)
+      .sort()
     expect(cov).toEqual(['bug', 'grass', 'ice', 'steel'].sort())
   })
 

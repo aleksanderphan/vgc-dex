@@ -1,0 +1,9 @@
+# Generated / vendored — not ours to format.
+dist
+dev-dist
+coverage
+package-lock.json
+src/data
+data
+public
+.claude

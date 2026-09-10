@@ -19,8 +19,8 @@ export function UsagePanel({ name, entry, snapshot }: Props) {
           <DataPill />
         </div>
         <p className="muted-sm">
-          No usage data for {name} in this snapshot — it sees little or no play on
-          the {snapshot.season} ladder.
+          No usage data for {name} in this snapshot — it sees little or no play
+          on the {snapshot.season} ladder.
         </p>
         <p className="usage__meta">{label}</p>
       </section>

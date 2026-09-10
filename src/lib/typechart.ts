@@ -227,7 +227,9 @@ export function offensiveCoverage(attackerTypes: TypeName[]): Matchup[] {
     for (const a of attackerTypes) best = Math.max(best, effectiveness(a, d))
     if (best >= 2) out.push({ type: d, multiplier: best })
   }
-  out.sort((a, b) => b.multiplier - a.multiplier || a.type.localeCompare(b.type))
+  out.sort(
+    (a, b) => b.multiplier - a.multiplier || a.type.localeCompare(b.type),
+  )
   return out
 }
 
