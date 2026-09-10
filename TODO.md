@@ -160,7 +160,7 @@ These shape the data model, so resolve them before Phase 2.
 - [~] Sample-data pill + snapshot label + footer note; extend "which source" labelling as more sources land.
 - [x] Responsive, mobile-first, dark theme (palette tokens in `styles.css`; a light mode / toggle could be added later).
 - [x] Installable **PWA** — `vite-plugin-pwa` (Workbox) precaches the shell; fully offline (all data is bundled), sprites runtime-cached `CacheFirst`; `registerType: 'prompt'` shows a Reload toast on a new deploy (`components/UpdateToast.tsx`). Icons: `scripts/make-icons.mjs` (no deps). Still: real screenshots/shortcuts in the manifest, a Lighthouse PWA pass.
-- [~] Accessibility pass — ranked-list rows and the form switcher are real buttons with `aria-expanded` / `aria-controls` / `role="tab"` + focus-visible outlines. Still: keyboard nav in the search results list, a wider sweep.
+- [~] Accessibility pass — ranked-list rows and the form switcher are real buttons with `aria-expanded` / `aria-controls` / `role="tab"` + focus-visible outlines. The search box is now an ARIA combobox (`role="combobox"` + `aria-activedescendant` over a `role="listbox"`): ↑/↓ cycle a highlight through the results and the "view all" row, Enter runs the highlighted row, Escape clears. Still: a wider sweep (browse-grid filter controls, focus handling on hash-route change).
 
 ## Phase 7 — Usage & move analytics UI
 

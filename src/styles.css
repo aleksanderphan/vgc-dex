@@ -141,7 +141,8 @@ button {
 }
 
 .search__result:hover,
-.search__result:focus-visible {
+.search__result:focus-visible,
+.search__result.is-active {
   background: var(--surface-2);
 }
 
