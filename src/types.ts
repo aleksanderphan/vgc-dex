@@ -196,6 +196,19 @@ export interface MoveDex {
   abilities: AbilityInfo[]
 }
 
+/** Provenance for a usage ingest — written by `scripts/ingest-usage.mjs`. */
+export interface UsageMeta {
+  sourceId: string
+  sourceUrl: string
+  fetchedFrom: string
+  battles: number | null
+  entryCount: number
+  /** sha256 of the raw upstream payload (the payload itself lives in git-ignored data/raw/). */
+  rawSha256: string
+  rawPayload: string | null
+  generator: string
+}
+
 export interface UsageSnapshot {
   regulation: string
   season: string
@@ -203,6 +216,7 @@ export interface UsageSnapshot {
   source: string
   capturedAt: string
   disclaimer?: string
+  meta?: UsageMeta
   entries: Record<string, UsageEntry>
 }
 

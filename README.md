@@ -252,6 +252,9 @@ scripts/
   build-megadex.mjs    PokéAPI ETL -> src/data/megadex.m-c.json  (Mega forms for the pool)
   reference-notes.mjs  hand-authored competitive notes, merged into movedex/itemdex by the ETLs
   make-icons.mjs       dependency-free PNG generator -> public/ PWA icons (npm run build:icons)
+data/
+  history/             dated copies of every usage ingest (usage.m-c.<date>.json) — appended, never overwritten
+  raw/                 gzipped raw upstream payloads (git-ignored; sha256 recorded in the snapshot `meta`)
 public/                pwa-192.png, pwa-512.png, pwa-maskable-512.png, apple-touch-icon.png, favicon.svg
 src/
   data/
@@ -297,11 +300,18 @@ CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs `version:check`
 
 ```bash
 npm run build:data      # reference: PokéAPI -> pokemon.json  (edit pokemon-list.mjs first)
-npm run ingest:usage    # usage: Showdown/Smogon ladder -> usage.m-c.json
+npm run ingest:usage    # usage: Showdown/Smogon ladder -> usage.m-c.json (+ data/history + data/raw)
 npm run build:movedex   # then rebuild the detail dexes so every
 npm run build:itemdex   #   move / ability / item in usage.m-c.json resolves
 npm run build:megadex   # Mega forms for the pool
 ```
+
+`ingest:usage` uses a `SOURCES` registry (one adapter per usage source; only
+`smogon` is wired up). Each run retains the gzipped raw payload in `data/raw/`
+(git-ignored; `meta.rawSha256` in the snapshot is the committed provenance
+record) and appends a dated copy to `data/history/`. Flags:
+`--from <file>` normalizes a local raw payload instead of fetching;
+`--dry-run` normalizes and writes nothing.
 
 `ingest:usage` prints any Pokémon with ≥0.5% usage that isn't in the reference
 pool — add those to `scripts/pokemon-list.mjs` and re-run `build:data`.

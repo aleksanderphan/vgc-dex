@@ -123,8 +123,8 @@ These shape the data model, so resolve them before Phase 2.
 - [ ] Ingester: **Pikalytics** `/champions` (adds win rate + rating cutoffs) — pending licensing check.
 - [ ] Optional: **Limitless** tournament results / team lists.
 - [~] Name-mapping layer: `ingest-usage.mjs` lower-cases + has a small override table, merges Mega/Primal, and **reports** every ≥0.5% Pokémon not in the pool. Still: promote that report to a hard failure once the pool is meant to be complete; handle gender/other forms.
-- [ ] Per-source normalizer + keep raw payloads for reproducibility (currently overwrites).
-- [ ] Snapshot store with history (don't overwrite; append dated snapshots).
+- [x] Per-source normalizer + keep raw payloads for reproducibility — `ingest-usage.mjs` now has a `SOURCES` registry (one adapter per source with `normalize(raw, poolNames)`; only `smogon` wired up, Pikalytics / Zone / official slot in beside it). Each run retains the gzipped raw payload in `data/raw/` (git-ignored; `meta.rawSha256` in the snapshot is the committed provenance record) and records `meta` (sourceId, url, battles, entryCount, sha). `--from <file>` re-normalizes a local raw payload; `--dry-run` writes nothing.
+- [x] Snapshot store with history — every ingest appends `data/history/usage.m-c.<date>.json` (committed, never overwritten across days); `src/data/usage.m-c.json` stays the canonical latest the app imports. Retention/pruning is Phase 8.
 - [x] Tests + a schema/consistency check — `src/lib/data.test.ts` "usage snapshot consistency": `regulation` matches `REGULATION.code`, source is a real Showdown/Smogon ingest (not the placeholder), every entry key + teammate slug resolves in the pool, all percentages in range, EV spreads legal (sum ≤ 508, each 0–252), every usage-referenced move present in the movedex.
 
 ## Phase 4 — Merge / aggregation

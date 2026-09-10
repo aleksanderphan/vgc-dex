@@ -7,6 +7,9 @@ dev-dist/
 .vite/
 coverage/
 
+# ingest raw-payload cache — regenerable; sha256 is recorded in the snapshot meta
+data/raw/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
