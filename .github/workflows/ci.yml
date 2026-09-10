@@ -3,7 +3,14 @@ name: CI
 on:
   push:
     branches: [main]
+    # Docs-only pushes don't need a build. PRs always run (merge gate).
+    paths-ignore: ['**/*.md']
   pull_request:
+
+# A newer push to the same branch/PR supersedes an in-flight run.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   check:
@@ -18,6 +25,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run version:check
-      - run: npm run typecheck
       - run: npm test
+      # `build` is `tsc --noEmit && vite build` — this is also the typecheck.
       - run: npm run build
