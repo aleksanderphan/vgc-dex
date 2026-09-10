@@ -114,23 +114,6 @@ export function PokemonView({ pokemon, snapshot }: Props) {
           )}
         </div>
 
-        {hasForms && (
-          <div className="form-tabs" role="tablist" aria-label="Forms">
-            {forms.map((f) => (
-              <button
-                key={f.key}
-                type="button"
-                role="tab"
-                aria-selected={f.key === form.key}
-                className={`form-tab${f.key === form.key ? ' is-active' : ''}`}
-                onClick={() => setPicked({ slug: pokemon.slug, key: f.key })}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
-        )}
-
         <div className="poke__id">
           <span className="poke__no">
             #{String(pokemon.id).padStart(4, '0')}
@@ -158,6 +141,23 @@ export function PokemonView({ pokemon, snapshot }: Props) {
             </p>
           ) : null}
         </div>
+
+        {hasForms && (
+          <div className="form-tabs" role="tablist" aria-label="Forms">
+            {forms.map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                role="tab"
+                aria-selected={f.key === form.key}
+                className={`form-tab${f.key === form.key ? ' is-active' : ''}`}
+                onClick={() => setPicked({ slug: pokemon.slug, key: f.key })}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="card">

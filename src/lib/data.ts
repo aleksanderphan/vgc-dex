@@ -116,12 +116,19 @@ export function formsFor(pokemon: Pokemon): PokemonForm[] {
     sprite: pokemon.sprite,
     artwork: pokemon.artwork,
   }
-  // A few Mega forms come through with no ability listed (e.g. Mega Golisopod);
-  // fall back to the base Pokémon's abilities so the switcher never shows a
-  // blank ability row.
-  const megas = megaFormsFor(pokemon.slug).map((m) =>
-    m.abilities.length ? m : { ...m, abilities: pokemon.abilities },
-  )
+  // A Mega Evolution / Primal form always has exactly one ability, and it's
+  // never a Hidden Ability. PokéAPI carries no ability at all for the
+  // Champions-original Megas (Mega Tatsugiri, Mega Golisopod) — fall back to the
+  // base Pokémon's primary (non-hidden) ability rather than dumping its whole
+  // list, which would render the Mega with two ability chips.
+  const megas = megaFormsFor(pokemon.slug).map((m) => {
+    const source = m.abilities.length ? m.abilities : pokemon.abilities
+    const primary = source.find((a) => !a.isHidden) ?? source[0]
+    return {
+      ...m,
+      abilities: primary ? [{ ...primary, isHidden: false }] : [],
+    }
+  })
   return [base, ...megas]
 }
 

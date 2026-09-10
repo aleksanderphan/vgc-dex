@@ -541,37 +541,62 @@ button {
 /* ── Hero ───────────────────────────────────────────────── */
 
 .poke__hero {
+  position: relative;
   display: grid;
   gap: 12px;
   justify-items: center;
   text-align: center;
 }
 
+/* Reserve room for the browser-style form tabs that hang below the card. */
+.poke__hero:has(.form-tabs) {
+  margin-bottom: calc(var(--s-3) + 34px);
+}
+
+/* Form switcher styled as browser tabs, fused to the bottom edge of the hero
+   card and protruding just below it. */
 .form-tabs {
-  grid-column: 1 / -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  z-index: 2;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 6px;
-  padding: 4px;
-  background: var(--surface-2);
-  border-radius: var(--r-pill);
+  gap: 4px;
+  padding: 0 var(--s-3);
 }
 
 .form-tab {
-  min-height: 36px;
-  padding: 6px 16px;
-  border: 0;
-  border-radius: var(--r-pill);
-  background: none;
+  min-height: 34px;
+  padding: 6px 18px 8px;
+  border: 1px solid var(--border);
+  border-top: 0;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  background: var(--surface-2);
   color: var(--text-dim);
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
 }
 
+/* The selected tab takes the card's own surface + covers the 1px of card
+   border above it, so it reads as one piece with the card. */
 .form-tab.is-active {
-  background: var(--accent);
-  color: #fff;
+  margin-top: -1px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.28),
+    inset 0 -2px 0 var(--accent);
+}
+
+.form-tab:not(.is-active):hover {
+  color: var(--text);
+  background: var(--surface-3);
 }
 
 .form-tab:not(.is-active):active {
@@ -1563,22 +1588,9 @@ button {
     text-align: left;
   }
 
-  /* With a form switcher: art top-left, tabs directly beneath it, id on the
-     right spanning both rows. Without one, default placement (art | id). */
-  .poke__hero:has(.form-tabs) .poke__art {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
+  /* Tabs still hang off the bottom edge; align them to the card's left. */
   .poke__hero:has(.form-tabs) .form-tabs {
-    grid-column: 1;
-    grid-row: 2;
     justify-content: flex-start;
-  }
-
-  .poke__hero:has(.form-tabs) .poke__id {
-    grid-column: 2;
-    grid-row: 1 / span 2;
   }
 
   .badge-wrap,

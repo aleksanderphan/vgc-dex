@@ -106,6 +106,16 @@ describe('formsFor', () => {
       expect(keys).toEqual(expect.arrayContaining(['base', 'mega-x', 'mega-y']))
     }
   })
+
+  it('gives every Mega form exactly one, non-hidden ability', () => {
+    for (const p of POKEMON) {
+      for (const f of formsFor(p)) {
+        if (f.key === 'base') continue
+        expect(f.abilities).toHaveLength(1)
+        expect(f.abilities[0].isHidden).toBe(false)
+      }
+    }
+  })
 })
 
 describe('searchPokemon', () => {

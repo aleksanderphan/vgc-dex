@@ -79,6 +79,19 @@ const STONE = {
   tyranitar: { mega: 'Tyranitarite' },
 }
 
+// base slug → { <form key> : <ability display name> }. Overrides whatever
+// PokéAPI reports for that form's ability (a Mega / Primal always has exactly
+// one, never a Hidden Ability). Use this for the Champions-original Megas that
+// PokéAPI carries no ability for, or where its record is wrong for the Champions
+// game. Leave an entry `null` to record "known gap, real ability still TBD" —
+// the app then falls back to the base Pokémon's primary ability.
+const MEGA_ABILITY = {
+  // PokéAPI returns no ability for these two — confirm the real Champions
+  // ability and replace null with the display name (e.g. 'Emergency Exit').
+  tatsugiri: { mega: null },
+  golisopod: { mega: null },
+}
+
 function titleCase(slug) {
   return slug
     .split(/[-\s]/)
@@ -165,13 +178,41 @@ async function fetchForm(baseSlug, variety) {
     if (k) baseStats[k] = s.base_stat
   }
 
-  const abilities = [...p.abilities]
-    .sort((a, b) => a.slot - b.slot)
-    .map((a) => ({
-      slug: a.ability.name,
-      name: titleCase(a.ability.name),
-      isHidden: a.is_hidden,
-    }))
+  // A Mega / Primal form always has exactly one ability and it's never Hidden.
+  // Honour a MEGA_ABILITY override first; otherwise take PokéAPI's first
+  // non-hidden ability. `null` in the map means "known gap" — emit no ability
+  // and let the app fall back to the base Pokémon's primary one.
+  const override = MEGA_ABILITY[baseSlug]?.[meta.key]
+  let abilities
+  if (override !== undefined) {
+    abilities = override
+      ? [
+          {
+            slug: override.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+            name: override,
+            isHidden: false,
+          },
+        ]
+      : []
+    if (override === null)
+      console.log(
+        `     (ability: none on PokéAPI for ${baseSlug} ${meta.key} — add to MEGA_ABILITY when known)`,
+      )
+  } else {
+    const first =
+      [...p.abilities]
+        .sort((a, b) => a.slot - b.slot)
+        .find((a) => !a.is_hidden) ?? [...p.abilities][0]
+    abilities = first
+      ? [
+          {
+            slug: first.ability.name,
+            name: titleCase(first.ability.name),
+            isHidden: false,
+          },
+        ]
+      : []
+  }
 
   const types = [...p.types]
     .sort((a, b) => a.slot - b.slot)
