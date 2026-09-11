@@ -506,8 +506,27 @@ button {
 
 .poke-mini__hint {
   flex: none;
-  color: var(--text-dim);
-  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.poke-mini:hover .poke-mini__hint,
+.poke-mini:active .poke-mini__hint {
+  background: var(--surface-3);
+  border-color: var(--accent);
+}
+
+.poke-mini__hint svg {
+  width: 14px;
+  height: 14px;
 }
 
 /* inline Atk / SpA / Spe on the sticky bar — number only, glyph icon */
@@ -923,8 +942,9 @@ button {
 }
 
 .ranked__detail {
-  margin: 4px 0 8px;
-  padding: 10px 12px;
+  position: relative;
+  margin: 3px 0 6px;
+  padding: 8px 40px 8px 10px;
   font-size: 12px;
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -935,8 +955,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .detail__item {
@@ -954,12 +973,15 @@ button {
 }
 
 .detail__fact {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-pill);
-  padding: 3px 8px;
   color: var(--text-dim);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.detail__facts > * + *::before {
+  content: '·';
+  margin: 0 6px;
+  color: var(--text-dim);
 }
 
 .detail__fact b {
@@ -969,7 +991,7 @@ button {
 
 .detail__text {
   margin: 0;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -978,14 +1000,37 @@ button {
 }
 
 .detail__more {
-  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
   align-items: center;
-  min-height: 32px;
-  margin-top: 6px;
-  font-size: 12px;
-  font-weight: 700;
+  justify-content: center;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
   color: var(--accent);
   text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.detail__more-icon {
+  width: 16px;
+  height: 16px;
+  /* optical center: the chevron's ink sits left of its viewBox's true middle */
+  transform: translateX(1px);
+}
+
+.detail__more:hover {
+  background: var(--surface-3);
+  border-color: var(--accent);
+}
+
+.detail__more:active {
+  transform: translateY(-50%) scale(0.92);
 }
 
 .detail__more:hover {

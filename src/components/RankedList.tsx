@@ -3,6 +3,7 @@ import type { AbilityInfo, ItemInfo, MoveInfo, UsageItem } from '../types'
 import { abilityInfo, itemInfo, moveInfo } from '../lib/data'
 import { TypeBadge } from './TypeBadge'
 import { titleCase, TYPE_COLORS } from '../lib/typechart'
+import { targetLabel, signed } from '../lib/moveLabels'
 
 export type RankedKind = 'ability' | 'move' | 'item'
 
@@ -32,8 +33,12 @@ function MoveDetail({ info }: { info: MoveInfo }) {
         </span>
         {info.priority !== 0 ? (
           <span className="detail__fact">
-            Priority{' '}
-            <b>{info.priority > 0 ? `+${info.priority}` : info.priority}</b>
+            Priority <b>{signed(info.priority)}</b>
+          </span>
+        ) : null}
+        {info.target ? (
+          <span className="detail__fact">
+            Target <b>{targetLabel(info.target)}</b>
           </span>
         ) : null}
       </div>
@@ -69,8 +74,27 @@ function ItemDetail({ info }: { info: ItemInfo }) {
 
 function MoreLink({ kind, slug }: { kind: RankedKind; slug: string }) {
   return (
-    <a className="detail__more" href={`#${kind}/${slug}`}>
-      Full details &amp; competitive notes →
+    <a
+      className="detail__more"
+      href={`#${kind}/${slug}`}
+      title="Full details & competitive notes"
+      aria-label="Full details & competitive notes"
+    >
+      <svg
+        className="detail__more-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M9 5l7 7-7 7"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </a>
   )
 }

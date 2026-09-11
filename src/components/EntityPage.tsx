@@ -5,6 +5,7 @@ import { entityBySlug, usersOf } from '../lib/data'
 import { TypeBadge } from './TypeBadge'
 import { DataPill } from './DataPill'
 import { titleCase } from '../lib/typechart'
+import { targetLabel, signed } from '../lib/moveLabels'
 
 const KIND_LABEL: Record<EntityKind, string> = {
   move: 'Move',
@@ -22,29 +23,10 @@ const STAT_LABEL: Record<string, string> = {
   evasion: 'Evasion',
 }
 
-const TARGET_LABEL: Record<string, string> = {
-  'selected-pokemon': 'One selected target',
-  'all-opponents': 'Both opponents',
-  'all-other-pokemon': 'All other Pokémon',
-  'random-opponent': 'A random opponent',
-  'users-field': "User's side",
-  'user-and-allies': "User's side",
-  'entire-field': 'The whole field',
-  'opponents-field': "Opponents' side",
-  user: 'The user',
-  ally: 'An ally',
-  'all-pokemon': 'Every Pokémon',
-  'specific-move': 'Depends on the move',
-}
-
 function genLabel(gen: string | null): string | null {
   if (!gen) return null
   const roman = gen.replace('generation-', '').toUpperCase()
   return roman ? `Gen ${roman}` : null
-}
-
-function signed(n: number): string {
-  return n > 0 ? `+${n}` : `${n}`
 }
 
 /** PokéAPI effect text: blank lines split paragraphs, `* ` lines are bullets. */
@@ -119,10 +101,7 @@ function MoveFacts({ info }: { info: MoveInfo }) {
         value={info.priority === 0 ? '0' : signed(info.priority)}
       />
       {info.target ? (
-        <Fact
-          label="Target"
-          value={TARGET_LABEL[info.target] ?? titleCase(info.target)}
-        />
+        <Fact label="Target" value={targetLabel(info.target)} />
       ) : null}
       {hits ? <Fact label="Hits" value={`${hits}× per use`} /> : null}
       {info.critRate > 0 ? (
