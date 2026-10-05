@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-28T12:47:36.935Z",
+  "generatedAt": "2026-10-05T13:29:07.039Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "moveCount": 301,
-  "abilityCount": 125,
+  "moveCount": 306,
+  "abilityCount": 122,
   "moves": [
     {
       "name": "Accelerock",
@@ -82,6 +82,31 @@
       "statChanges": [],
       "effect": "Has double power if the user has no held item.",
       "longEffect": "Inflicts regular damage. If the user has no held item, this move has double power.",
+      "notes": []
+    },
+    {
+      "name": "Aerial Ace",
+      "slug": "aerial-ace",
+      "type": "flying",
+      "category": "physical",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Never misses.",
+      "longEffect": "Inflicts regular damage. Ignores accuracy and evasion modifiers.",
       "notes": []
     },
     {
@@ -182,36 +207,6 @@
       "statChanges": [],
       "effect": "User switches places with the friendly Pokémon opposite it.",
       "longEffect": "User switches position on the field with the friendly Pokémon opposite it. If the user is in the middle position in a triple battle, or there are no other friendly Pokémon, this move will fail.",
-      "notes": []
-    },
-    {
-      "name": "Amnesia",
-      "slug": "amnesia",
-      "type": "psychic",
-      "category": "status",
-      "power": null,
-      "accuracy": null,
-      "pp": 20,
-      "priority": 0,
-      "target": "user",
-      "generation": "generation-i",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [
-        {
-          "stat": "special-defense",
-          "change": 2
-        }
-      ],
-      "effect": "Raises the user’s Special Defense by two stages.",
-      "longEffect": "Raises the user’s Special Defense by two stages.",
       "notes": []
     },
     {
@@ -375,31 +370,6 @@
       "notes": []
     },
     {
-      "name": "Assurance",
-      "slug": "assurance",
-      "type": "dark",
-      "category": "physical",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 10,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-iv",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Power is doubled if the target has already received damage this turn.",
-      "longEffect": "Inflicts regular damage. If the target takes damage this turn for any reason before this move is used, this move has double power.",
-      "notes": []
-    },
-    {
       "name": "Aura Sphere",
       "slug": "aura-sphere",
       "type": "fighting",
@@ -447,36 +417,6 @@
       "statChanges": [],
       "effect": "Reduces damage five turns, but must be used during hail.",
       "longEffect": "Places the Aurora Veil effect on the user’s side of the field for the next 5 turns. If the weather is not Hail, or the weather is disabled by the effects of Cloud Nine or Air Lock, this move will fail. Any regular damage dealt to an affected Pokémon is reduced by ½. (If there are multiple Pokémon on the affected field, the reduction is ⅓.)",
-      "notes": []
-    },
-    {
-      "name": "Baby-Doll Eyes",
-      "slug": "baby-doll-eyes",
-      "type": "fairy",
-      "category": "status",
-      "power": null,
-      "accuracy": 100,
-      "pp": 30,
-      "priority": 1,
-      "target": "selected-pokemon",
-      "generation": "generation-vi",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [
-        {
-          "stat": "attack",
-          "change": -1
-        }
-      ],
-      "effect": "Lowers the target’s Attack by one stage.",
-      "longEffect": "Lowers the target’s Attack by one stage.",
       "notes": []
     },
     {
@@ -602,31 +542,6 @@
       "statChanges": [],
       "effect": "User pays half its max HP to max out its Attack.",
       "longEffect": "User pays half its max HP to raise its Attack to +6 stages. If the user cannot pay the HP cost, this move will fail.",
-      "notes": []
-    },
-    {
-      "name": "Bite",
-      "slug": "bite",
-      "type": "dark",
-      "category": "physical",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 25,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-i",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 30,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Has a chance to make the target flinch.",
-      "longEffect": "Inflicts regular damage. Has a chance to make the target flinch.",
       "notes": []
     },
     {
@@ -832,31 +747,6 @@
       "statChanges": [],
       "effect": "Destroys Reflect and Light Screen.",
       "longEffect": "Destroys any Light Screen or Reflect on the target’s side of the field, then inflicts regular damage.",
-      "notes": []
-    },
-    {
-      "name": "Brutal Swing",
-      "slug": "brutal-swing",
-      "type": "dark",
-      "category": "physical",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 20,
-      "priority": 0,
-      "target": "all-other-pokemon",
-      "generation": "generation-vii",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Inflicts regular damage with no additional effect.",
-      "longEffect": "Inflicts regular damage.",
       "notes": []
     },
     {
@@ -1083,6 +973,36 @@
       "notes": []
     },
     {
+      "name": "Charge Beam",
+      "slug": "charge-beam",
+      "type": "electric",
+      "category": "special",
+      "power": 50,
+      "accuracy": 90,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 70,
+      "statChanges": [
+        {
+          "stat": "special-attack",
+          "change": 1
+        }
+      ],
+      "effect": "Has a chance to raise the user’s Special Attack by one stage.",
+      "longEffect": "Inflicts regular damage. Has a chance to raise the user’s Special Attack by one stage.",
+      "notes": []
+    },
+    {
       "name": "Charm",
       "slug": "charm",
       "type": "fairy",
@@ -1113,6 +1033,36 @@
       "notes": []
     },
     {
+      "name": "Chilling Water",
+      "slug": "chilling-water",
+      "type": "water",
+      "category": "special",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "attack",
+          "change": -1
+        }
+      ],
+      "effect": "The user attacks the target by showering it with water that's so cold it saps the target's power. This also lowers the target's Attack stat.",
+      "longEffect": "The user attacks the target by showering it with water that's so cold it saps the target's power. This also lowers the target's Attack stat.",
+      "notes": []
+    },
+    {
       "name": "Chilly Reception",
       "slug": "chilly-reception",
       "type": "ice",
@@ -1135,31 +1085,6 @@
       "statChanges": [],
       "effect": "The user tells a chillingly bad joke before switching places with a party Pokémon in waiting. This summons a snowstorm lasting five turns.",
       "longEffect": "The user tells a chillingly bad joke before switching places with a party Pokémon in waiting. This summons a snowstorm lasting five turns.",
-      "notes": []
-    },
-    {
-      "name": "Circle Throw",
-      "slug": "circle-throw",
-      "type": "fighting",
-      "category": "physical",
-      "power": 60,
-      "accuracy": 90,
-      "pp": 10,
-      "priority": -6,
-      "target": "selected-pokemon",
-      "generation": "generation-v",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Ends wild battles. Forces trainers to switch Pokémon.",
-      "longEffect": "Inflicts regular damage, then switches the target out for another of its trainer’s Pokémon, selected at random.\n\nIf the target is under the effect of Ingrain or Suction Cups, or it has a Substitute, or its Trainer has no more usable Pokémon, it will not be switched out. If the target is a wild Pokémon, the battle ends instead.",
       "notes": []
     },
     {
@@ -1342,6 +1267,40 @@
       ],
       "effect": "Raises the user’s Attack, Defense, and accuracy by one stage each.",
       "longEffect": "Raises the user’s Attack, Defense, and accuracy by one stage each.",
+      "notes": []
+    },
+    {
+      "name": "Cosmic Power",
+      "slug": "cosmic-power",
+      "type": "psychic",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-iii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "defense",
+          "change": 1
+        },
+        {
+          "stat": "special-defense",
+          "change": 1
+        }
+      ],
+      "effect": "Raises the user’s Defense and Special Defense by one stage.",
+      "longEffect": "Raises the user’s Defense and Special Defense by one stage.",
       "notes": []
     },
     {
@@ -1687,6 +1646,31 @@
       ]
     },
     {
+      "name": "Dragon Cheer",
+      "slug": "dragon-cheer",
+      "type": "dragon",
+      "category": "status",
+      "power": 0,
+      "accuracy": 0,
+      "pp": 15,
+      "priority": 0,
+      "target": "all-allies",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user raises its allies’ morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more.",
+      "longEffect": "The user raises its allies’ morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more.",
+      "notes": []
+    },
+    {
       "name": "Dragon Claw",
       "slug": "dragon-claw",
       "type": "dragon",
@@ -1793,6 +1777,31 @@
       "statChanges": [],
       "effect": "Inflicts regular damage with no additional effect.",
       "longEffect": "Inflicts regular damage.",
+      "notes": []
+    },
+    {
+      "name": "Dragon Tail",
+      "slug": "dragon-tail",
+      "type": "dragon",
+      "category": "physical",
+      "power": 60,
+      "accuracy": 90,
+      "pp": 10,
+      "priority": -6,
+      "target": "selected-pokemon",
+      "generation": "generation-v",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Ends wild battles. Forces trainers to switch Pokémon.",
+      "longEffect": "Inflicts regular damage, then switches the target out for another of its trainer’s Pokémon, selected at random.\n\nIf the target is under the effect of Ingrain or Suction Cups, or it has a Substitute, or its Trainer has no more usable Pokémon, it will not be switched out. If the target is a wild Pokémon, the battle ends instead.",
       "notes": []
     },
     {
@@ -2070,16 +2079,16 @@
       ]
     },
     {
-      "name": "Endure",
-      "slug": "endure",
+      "name": "Endeavor",
+      "slug": "endeavor",
       "type": "normal",
-      "category": "status",
+      "category": "physical",
       "power": null,
-      "accuracy": null,
-      "pp": 10,
-      "priority": 4,
-      "target": "user",
-      "generation": "generation-ii",
+      "accuracy": 100,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-iii",
       "minHits": null,
       "maxHits": null,
       "drain": 0,
@@ -2090,8 +2099,8 @@
       "flinchChance": 0,
       "statChance": 0,
       "statChanges": [],
-      "effect": "Prevents the user’s HP from lowering below 1 this turn.",
-      "longEffect": "The user’s HP cannot be lowered below 1 by any means for the remainder of this turn.\n\nIf the user successfully used Detect, Endure, Protect, Quick Guard, or Wide Guard on the last turn, this move has a 50% chance to fail.\n\nThis move cannot be selected by Assist or Metronome.",
+      "effect": "Lowers the target’s HP to equal the user’s.",
+      "longEffect": "Inflicts exactly enough damage to lower the target’s HP to equal the user’s. If the target’s HP is not higher than the user’s, this move has no effect. Type immunity applies, but other type effects are ignored. This effect counts as damage for moves that respond to damage.",
       "notes": []
     },
     {
@@ -2464,6 +2473,56 @@
       "notes": []
     },
     {
+      "name": "Fire Blast",
+      "slug": "fire-blast",
+      "type": "fire",
+      "category": "special",
+      "power": 110,
+      "accuracy": 85,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
+    },
+    {
+      "name": "Fire Punch",
+      "slug": "fire-punch",
+      "type": "fire",
+      "category": "physical",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 10,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
+    },
+    {
       "name": "Fire Spin",
       "slug": "fire-spin",
       "type": "fire",
@@ -2486,6 +2545,31 @@
       "statChanges": [],
       "effect": "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
       "longEffect": "Inflicts regular damage. For the next 2–5 turns, the target cannot leave the field and is damaged for 1/16 its max HP at the end of each turn. The user continues to use other moves during this time. If the user leaves the field, this effect ends.\n\nHas a 3/8 chance each to hit 2 or 3 times, and a 1/8 chance each to hit 4 or 5 times. Averages to 3 hits per use.\n\nRapid Spin cancels this effect.",
+      "notes": []
+    },
+    {
+      "name": "First Impression",
+      "slug": "first-impression",
+      "type": "bug",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 2,
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Can only be used as the first move after the user enters battle.",
+      "longEffect": "Inflicts regular damage. Can only be used on the user’s first turn after entering the field.",
       "notes": []
     },
     {
@@ -2624,31 +2708,6 @@
       "notes": []
     },
     {
-      "name": "Fling",
-      "slug": "fling",
-      "type": "dark",
-      "category": "physical",
-      "power": null,
-      "accuracy": 100,
-      "pp": 10,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-iv",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Throws held item at the target; power depends on the item.",
-      "longEffect": "Inflicts regular damage. Power and type are determined by the user’s held item. The item is consumed. If the user is not holding an item, or its item has no set type and power, this move will fail.\n\nThis move ignores Sticky Hold.\n\nIf the user is under the effect of Embargo, this move will fail.",
-      "notes": []
-    },
-    {
       "name": "Flip Turn",
       "slug": "flip-turn",
       "type": "water",
@@ -2729,6 +2788,31 @@
       "notes": []
     },
     {
+      "name": "Focus Energy",
+      "slug": "focus-energy",
+      "type": "normal",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "priority": 0,
+      "target": "user",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Increases the user’s chance to score a critical hit.",
+      "longEffect": "User’s critical hit rate is two levels higher until it leaves the field. If the user has already used Focus Energy since entering the field, this move will fail.\n\nThis effect is passed on by Baton Pass.",
+      "notes": []
+    },
+    {
       "name": "Follow Me",
       "slug": "follow-me",
       "type": "normal",
@@ -2803,31 +2887,6 @@
       "statChanges": [],
       "effect": "Super-effective against Water.",
       "longEffect": "Inflicts regular damage. This move is super-effective against the Water type.\n\nThe target’s other type will affect damage as usual. If this move’s type is changed, it remains super-effective against Water regardless of its type.",
-      "notes": []
-    },
-    {
-      "name": "Frost Breath",
-      "slug": "frost-breath",
-      "type": "ice",
-      "category": "special",
-      "power": 60,
-      "accuracy": 90,
-      "pp": 10,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-v",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 6,
-      "ailment": null,
-      "ailmentChance": 100,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Always scores a critical hit.",
-      "longEffect": "Inflicts regular damage. Always scores a critical hit.",
       "notes": []
     },
     {
@@ -2906,6 +2965,31 @@
       "notes": []
     },
     {
+      "name": "Glaive Rush",
+      "slug": "glaive-rush",
+      "type": "dragon",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ix",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "The user throws its entire body into a reckless charge. After this move is used, attacks on the user cannot miss and will inflict double damage until the user’s next turn.",
+      "longEffect": "The user throws its entire body into a reckless charge. After this move is used, attacks on the user cannot miss and will inflict double damage until the user’s next turn.",
+      "notes": []
+    },
+    {
       "name": "Grass Knot",
       "slug": "grass-knot",
       "type": "grass",
@@ -2928,6 +3012,31 @@
       "statChanges": [],
       "effect": "Inflicts more damage to heavier targets, with a maximum of 120 power.",
       "longEffect": "Inflicts regular damage. Power increases with the target’s weight in kilograms, to a maximum of 120.\n\nTarget’s weight | Power\n--------------- | ----:\nUp to 10kg | 20\nUp to 25kg | 40\nUp to 50kg | 60\nUp to 100kg | 80\nUp to 200kg | 100\nAbove 200kg | 120",
+      "notes": []
+    },
+    {
+      "name": "Grassy Glide",
+      "slug": "grassy-glide",
+      "type": "grass",
+      "category": "physical",
+      "power": 55,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1.",
+      "longEffect": "If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1.",
       "notes": []
     },
     {
@@ -3341,31 +3450,6 @@
       "notes": []
     },
     {
-      "name": "Hydro Cannon",
-      "slug": "hydro-cannon",
-      "type": "water",
-      "category": "special",
-      "power": 150,
-      "accuracy": 90,
-      "pp": 5,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-iii",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "User foregoes its next turn to recharge.",
-      "longEffect": "Inflicts regular damage. User loses its next turn to \"recharge\", and cannot attack or switch out during that turn.",
-      "notes": []
-    },
-    {
       "name": "Hydro Pump",
       "slug": "hydro-pump",
       "type": "water",
@@ -3513,6 +3597,36 @@
       "statChanges": [],
       "effect": "Has a chance to freeze the target and a chance to make the target flinch.",
       "longEffect": "Inflicts regular damage. Has a chance to freeze the target and a separate chance to make the target flinch.",
+      "notes": []
+    },
+    {
+      "name": "Ice Hammer",
+      "slug": "ice-hammer",
+      "type": "ice",
+      "category": "physical",
+      "power": 100,
+      "accuracy": 90,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 100,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": -1
+        }
+      ],
+      "effect": "Lowers user’s Speed by one stage.",
+      "longEffect": "Inflicts regular damage, then lowers the user’s Speed by one stage.",
       "notes": []
     },
     {
@@ -4005,6 +4119,31 @@
       "notes": []
     },
     {
+      "name": "Lava Plume",
+      "slug": "lava-plume",
+      "type": "fire",
+      "category": "special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "all-other-pokemon",
+      "generation": "generation-iv",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "burn",
+      "ailmentChance": 30,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to burn the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to burn the target.",
+      "notes": []
+    },
+    {
       "name": "Leaf Blade",
       "slug": "leaf-blade",
       "type": "grass",
@@ -4407,31 +4546,6 @@
       "notes": []
     },
     {
-      "name": "Megahorn",
-      "slug": "megahorn",
-      "type": "bug",
-      "category": "physical",
-      "power": 120,
-      "accuracy": 85,
-      "pp": 10,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-ii",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Inflicts regular damage with no additional effect.",
-      "longEffect": "Inflicts regular damage.",
-      "notes": []
-    },
-    {
       "name": "Memento",
       "slug": "memento",
       "type": "dark",
@@ -4796,6 +4910,31 @@
       "notes": []
     },
     {
+      "name": "Nuzzle",
+      "slug": "nuzzle",
+      "type": "electric",
+      "category": "physical",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "paralysis",
+      "ailmentChance": 100,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Has a chance to paralyze the target.",
+      "longEffect": "Inflicts regular damage. Has a chance to paralyze the target.",
+      "notes": []
+    },
+    {
       "name": "Overheat",
       "slug": "overheat",
       "type": "fire",
@@ -4934,6 +5073,31 @@
       "statChanges": [],
       "effect": "User and target both faint after three turns.",
       "longEffect": "Every Pokémon is given a counter that starts at 3 and decreases by 1 at the end of every turn, including this one. When a Pokémon’s counter reaches zero, that Pokémon faints. A Pokémon that leaves the field will lose its counter; its replacement does not inherit the effect, and other Pokémon’s counters remain.\n\nThis effect is passed on by Baton Pass.\n\nThis move cannot be copied by Mirror Move.",
+      "notes": []
+    },
+    {
+      "name": "Petal Blizzard",
+      "slug": "petal-blizzard",
+      "type": "grass",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "target": "all-other-pokemon",
+      "generation": "generation-vi",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Inflicts regular damage.",
+      "longEffect": "Inflicts regular damage.",
       "notes": []
     },
     {
@@ -5139,6 +5303,31 @@
       "statChanges": [],
       "effect": "Inflicts regular damage with no additional effect.",
       "longEffect": "Inflicts regular damage.",
+      "notes": []
+    },
+    {
+      "name": "Power Trip",
+      "slug": "power-trip",
+      "type": "dark",
+      "category": "physical",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-vii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Power is higher the more the user’s stats have been raised, to a maximum of 31×.",
+      "longEffect": "Inflicts regular damage. Power is increased by 100% its original value for every stage any of the user’s stats have been raised. Accuracy, evasion, and lowered stats do not affect this move’s power. For a Pokémon with all five stats modified to +6, this move’s power is 31×.",
       "notes": []
     },
     {
@@ -5851,6 +6040,31 @@
       "notes": []
     },
     {
+      "name": "Safeguard",
+      "slug": "safeguard",
+      "type": "normal",
+      "category": "status",
+      "power": null,
+      "accuracy": null,
+      "pp": 25,
+      "priority": 0,
+      "target": "users-field",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Protects the user’s field from major status ailments and confusion for five turns.",
+      "longEffect": "Protects Pokémon on the user’s side of the field from major status effects and confusion for five turns. Does not cancel existing ailments. This effect remains even if the user leaves the field.\n\nIf Yawn is used while this move is in effect, it will immediately fail.\n\nDefog used by an opponent will end this effect.\n\nThis effect does not prevent the confusion caused by Outrage, Petal Dance, or Thrash.",
+      "notes": []
+    },
+    {
       "name": "Salt Cure",
       "slug": "salt-cure",
       "type": "rock",
@@ -5901,18 +6115,18 @@
       "notes": []
     },
     {
-      "name": "Scary Face",
-      "slug": "scary-face",
-      "type": "normal",
-      "category": "status",
-      "power": null,
-      "accuracy": 100,
-      "pp": 10,
+      "name": "Scale Shot",
+      "slug": "scale-shot",
+      "type": "dragon",
+      "category": "physical",
+      "power": 25,
+      "accuracy": 90,
+      "pp": 20,
       "priority": 0,
       "target": "selected-pokemon",
-      "generation": "generation-ii",
-      "minHits": null,
-      "maxHits": null,
+      "generation": "generation-viii",
+      "minHits": 2,
+      "maxHits": 5,
       "drain": 0,
       "healing": 0,
       "critRate": 0,
@@ -5920,14 +6134,9 @@
       "ailmentChance": 0,
       "flinchChance": 0,
       "statChance": 0,
-      "statChanges": [
-        {
-          "stat": "speed",
-          "change": -2
-        }
-      ],
-      "effect": "Lowers the target’s Speed by two stages.",
-      "longEffect": "Lowers the target’s Speed by two stages.",
+      "statChanges": [],
+      "effect": "Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.",
+      "longEffect": "Inflicts regular damage two to five times in a row, raising the user’s Speed and lowering the user’s Defense by one stage each upon last hit.",
       "notes": []
     },
     {
@@ -6154,31 +6363,6 @@
       "statChanges": [],
       "effect": "Changes the target’s ability to Simple.",
       "longEffect": "Changes the target’s ability to Simple.",
-      "notes": []
-    },
-    {
-      "name": "Sing",
-      "slug": "sing",
-      "type": "normal",
-      "category": "status",
-      "power": null,
-      "accuracy": 55,
-      "pp": 15,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-i",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": "sleep",
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Puts the target to sleep.",
-      "longEffect": "Puts the target to sleep.",
       "notes": []
     },
     {
@@ -6412,31 +6596,6 @@
       "notes": []
     },
     {
-      "name": "Solar Blade",
-      "slug": "solar-blade",
-      "type": "grass",
-      "category": "physical",
-      "power": 125,
-      "accuracy": 100,
-      "pp": 10,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-vii",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Requires a turn to charge before attacking.",
-      "longEffect": "Inflicts regular damage. User charges for one turn before attacking.\n\nDuring Sunny Day, the charge turn is skipped.\n\nDuring Hail, Rain Dance, or Sandstorm, power is halved.\n\nThis move cannot be selected by Sleep Talk.",
-      "notes": []
-    },
-    {
       "name": "Speed Swap",
       "slug": "speed-swap",
       "type": "psychic",
@@ -6589,31 +6748,6 @@
       "statChanges": [],
       "effect": "Ends the effect of Electric, Grassy, Misty, or Psychic Terrains. Fails if no Terrain is active.",
       "longEffect": "Ends the effect of Electric, Grassy, Misty, or Psychic Terrains. Fails if no Terrain is active.",
-      "notes": []
-    },
-    {
-      "name": "Sticky Web",
-      "slug": "sticky-web",
-      "type": "bug",
-      "category": "status",
-      "power": null,
-      "accuracy": null,
-      "pp": 20,
-      "priority": 0,
-      "target": "opponents-field",
-      "generation": "generation-vi",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Covers the opposing field, lowering opponents’ Speed by one stage upon switching in.",
-      "longEffect": "Shoots a web over the opponents’ side of the field, which lowers the Speed of any opposing Pokémon that enters the field by one stage.\n\nPokémon in the air, such as Flying-types and those with Levitate, are unaffected. Rapid Spin removes Sticky Web from the user’s side of the field; Defog removes it from both sides.",
       "notes": []
     },
     {
@@ -6806,6 +6940,36 @@
       "notes": []
     },
     {
+      "name": "String Shot",
+      "slug": "string-shot",
+      "type": "bug",
+      "category": "status",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "priority": 0,
+      "target": "all-opponents",
+      "generation": "generation-i",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [
+        {
+          "stat": "speed",
+          "change": -2
+        }
+      ],
+      "effect": "Lowers the target’s Speed by two stages.",
+      "longEffect": "Lowers the target’s Speed by two stages.",
+      "notes": []
+    },
+    {
       "name": "Struggle Bug",
       "slug": "struggle-bug",
       "type": "bug",
@@ -6970,31 +7134,6 @@
       "notes": []
     },
     {
-      "name": "Surf",
-      "slug": "surf",
-      "type": "water",
-      "category": "special",
-      "power": 90,
-      "accuracy": 100,
-      "pp": 15,
-      "priority": 0,
-      "target": "all-other-pokemon",
-      "generation": "generation-i",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "Inflicts regular damage and can hit Dive users.",
-      "longEffect": "Inflicts regular damage.\n\nIf the target is in the first turn of Dive, this move will hit with double power.",
-      "notes": []
-    },
-    {
       "name": "Swagger",
       "slug": "swagger",
       "type": "normal",
@@ -7155,6 +7294,31 @@
       "statChanges": [],
       "effect": "Spurred by desperation, the user attacks the target. This move's power is doubled if the user's previous move failed.",
       "longEffect": "Spurred by desperation, the user attacks the target. This move's power is doubled if the user's previous move failed.",
+      "notes": []
+    },
+    {
+      "name": "Terrain Pulse",
+      "slug": "terrain-pulse",
+      "type": "normal",
+      "category": "special",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-viii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": null,
+      "ailmentChance": 0,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "If any terrain is active and the user is grounded, this moves power is doubled and changes type to match that terrains type.",
+      "longEffect": "If any terrain is active and the user is grounded, this moves power is doubled and changes type to match that terrains type.",
       "notes": []
     },
     {
@@ -7360,36 +7524,6 @@
       "statChanges": [],
       "effect": "Badly poisons the target, inflicting more damage every turn.",
       "longEffect": "Badly poisons the target. Never misses when used by a Poison-type Pokémon.",
-      "notes": []
-    },
-    {
-      "name": "Trailblaze",
-      "slug": "trailblaze",
-      "type": "grass",
-      "category": "physical",
-      "power": 50,
-      "accuracy": 100,
-      "pp": 20,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-ix",
-      "minHits": null,
-      "maxHits": null,
-      "drain": 0,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [
-        {
-          "stat": "speed",
-          "change": 1
-        }
-      ],
-      "effect": "The user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
-      "longEffect": "The user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
       "notes": []
     },
     {
@@ -7802,6 +7936,31 @@
       "notes": []
     },
     {
+      "name": "Whirlpool",
+      "slug": "whirlpool",
+      "type": "water",
+      "category": "special",
+      "power": 35,
+      "accuracy": 85,
+      "pp": 15,
+      "priority": 0,
+      "target": "selected-pokemon",
+      "generation": "generation-ii",
+      "minHits": null,
+      "maxHits": null,
+      "drain": 0,
+      "healing": 0,
+      "critRate": 0,
+      "ailment": "trap",
+      "ailmentChance": 100,
+      "flinchChance": 0,
+      "statChance": 0,
+      "statChanges": [],
+      "effect": "Prevents the target from leaving battle and inflicts 1/16 its max HP in damage for 2-5 turns.",
+      "longEffect": "Inflicts regular damage. For the next 2–5 turns, the target cannot leave the field and is damaged for 1/16 its max HP at the end of each turn. The user continues to use other moves during this time. If the user leaves the field, this effect ends.\n\nHas a 3/8 chance each to hit 2 or 3 times, and a 1/8 chance each to hit 4 or 5 times. Averages to 3 hits per use.\n\nIf the target is in the first turn of Dive, this move will hit with double power.",
+      "notes": []
+    },
+    {
       "name": "Wide Guard",
       "slug": "wide-guard",
       "type": "rock",
@@ -7824,31 +7983,6 @@
       "statChanges": [],
       "effect": "Prevents any multi-target moves from hitting friendly Pokémon this turn.",
       "longEffect": "Moves with multiple targets will not hit friendly Pokémon for the remainder of this turn. If the user is last to act this turn, this move will fail.\n\nThis move cannot be selected by Assist or Metronome.",
-      "notes": []
-    },
-    {
-      "name": "Wild Charge",
-      "slug": "wild-charge",
-      "type": "electric",
-      "category": "physical",
-      "power": 90,
-      "accuracy": 100,
-      "pp": 15,
-      "priority": 0,
-      "target": "selected-pokemon",
-      "generation": "generation-v",
-      "minHits": null,
-      "maxHits": null,
-      "drain": -25,
-      "healing": 0,
-      "critRate": 0,
-      "ailment": null,
-      "ailmentChance": 0,
-      "flinchChance": 0,
-      "statChance": 0,
-      "statChanges": [],
-      "effect": "User receives 1/4 the damage it inflicts in recoil.",
-      "longEffect": "Inflicts regular damage. User takes 1/4 the damage it inflicts in recoil.",
       "notes": []
     },
     {
@@ -8031,6 +8165,15 @@
       "notes": []
     },
     {
+      "name": "auraguard",
+      "slug": "auraguard",
+      "generation": null,
+      "effect": "",
+      "longEffect": "",
+      "notes": [],
+      "unlisted": true
+    },
+    {
       "name": "Berserk",
       "slug": "berserk",
       "generation": "generation-vii",
@@ -8207,13 +8350,12 @@
       "notes": []
     },
     {
-      "name": "firemane",
-      "slug": "firemane",
-      "generation": null,
-      "effect": "",
-      "longEffect": "",
-      "notes": [],
-      "unlisted": true
+      "name": "Fire Mane",
+      "slug": "fire-mane",
+      "generation": "generation-ix",
+      "effect": "Boosts the power of the Pokémon's Fire-type moves by 50%.",
+      "longEffect": "Boosts the power of the Pokémon's Fire-type moves by 50%.",
+      "notes": []
     },
     {
       "name": "Flame Body",
@@ -8285,6 +8427,16 @@
       ]
     },
     {
+      "name": "Grassy Surge",
+      "slug": "grassy-surge",
+      "generation": "generation-vii",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+      "longEffect": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+      "notes": [
+        "Sets Grassy Terrain for 5 turns (8 with Terrain Extender): grounded Pokémon heal 1/16 max HP per turn, Grass moves are boosted 1.3×, and Earthquake / Bulldoze / Magnitude are halved."
+      ]
+    },
+    {
       "name": "Guts",
       "slug": "guts",
       "generation": "generation-iii",
@@ -8309,14 +8461,6 @@
       "notes": []
     },
     {
-      "name": "Heavy Metal",
-      "slug": "heavy-metal",
-      "generation": "generation-v",
-      "effect": "Doubles the Pokémon's weight.",
-      "longEffect": "This Pokémon has double the usual weight for its species.",
-      "notes": []
-    },
-    {
       "name": "Hospitality",
       "slug": "hospitality",
       "generation": "generation-ix",
@@ -8330,6 +8474,14 @@
       "generation": "generation-iii",
       "effect": "Doubles Attack in battle.",
       "longEffect": "This Pokémon's Attack is doubled while in battle.\n\nThis bonus does not count as a stat modifier.\n\nThis ability functions identically to Pure Power.",
+      "notes": []
+    },
+    {
+      "name": "Ice Body",
+      "slug": "ice-body",
+      "generation": "generation-iv",
+      "effect": "Heals for 1/16 max HP after each turn during hail. Protects against hail damage.",
+      "longEffect": "This Pokémon heals for 1/16 of its maximum HP after each turn during hail, and it does not take hail damage regardless of type.",
       "notes": []
     },
     {
@@ -8392,14 +8544,6 @@
       "notes": []
     },
     {
-      "name": "Leaf Guard",
-      "slug": "leaf-guard",
-      "generation": "generation-iv",
-      "effect": "Protects against major status ailments during strong sunlight.",
-      "longEffect": "This Pokémon cannot be given a major status ailment during strong sunlight.\n\nThis ability does not heal prior status ailments. Rest will fail altogether with this ability in effect. Yawn will immediately fail if used on this Pokémon during strong sunlight, and an already-used Yawn will fail if the weather turns to strong sunlight in the meantime.",
-      "notes": []
-    },
-    {
       "name": "Levitate",
       "slug": "levitate",
       "generation": "generation-iii",
@@ -8440,6 +8584,14 @@
       "notes": []
     },
     {
+      "name": "Magician",
+      "slug": "magician",
+      "generation": "generation-vi",
+      "effect": "Steals the target's held item when the bearer uses a damaging move.",
+      "longEffect": "Steals the target's held item when the bearer uses a damaging move.",
+      "notes": []
+    },
+    {
       "name": "Mega Launcher",
       "slug": "mega-launcher",
       "generation": "generation-vi",
@@ -8453,6 +8605,14 @@
       "generation": "generation-ix",
       "effect": "The Pokémon can use its moves as if the weather were harsh sunlight.",
       "longEffect": "Even when the sunlight has not turned harsh, the Pokémon can use its moves as if the weather were harsh sunlight.",
+      "notes": []
+    },
+    {
+      "name": "Merciless",
+      "slug": "merciless",
+      "generation": "generation-vii",
+      "effect": "This Pokémon's moves critical hit against poisoned targets.",
+      "longEffect": "This Pokémon's moves critical hit against poisoned targets.",
       "notes": []
     },
     {
@@ -8485,14 +8645,6 @@
       "generation": "generation-v",
       "effect": "Halves damage taken from full HP.",
       "longEffect": "This Pokémon takes half as much damage when it is hit having full HP.",
-      "notes": []
-    },
-    {
-      "name": "Natural Cure",
-      "slug": "natural-cure",
-      "generation": "generation-iii",
-      "effect": "Cures any major status ailment upon switching out.",
-      "longEffect": "This Pokémon is cured of any major status ailment when it is switched out for another Pokémon.\n\nIf this ability is acquired during battle, the Pokémon is cured upon leaving battle before losing the temporary ability.",
       "notes": []
     },
     {
@@ -8568,14 +8720,6 @@
       "notes": []
     },
     {
-      "name": "Plus",
-      "slug": "plus",
-      "generation": "generation-iii",
-      "effect": "Increases Special Attack to 1.5× when a friendly Pokémon has Plus or Minus.",
-      "longEffect": "This Pokémon has 1.5× its Special Attack if any friendly Pokémon has Plus or Minus.\n\nThis bonus does not count as a stat modifier. If either ability is disabled by Gastro Acid, both lose their effect.",
-      "notes": []
-    },
-    {
       "name": "Poison Point",
       "slug": "poison-point",
       "generation": "generation-iii",
@@ -8620,6 +8764,14 @@
       "notes": []
     },
     {
+      "name": "Psychic Surge",
+      "slug": "psychic-surge",
+      "generation": "generation-vii",
+      "effect": "When this Pokémon enters battle, it changes the terrain to Psychic Terrain.",
+      "longEffect": "When this Pokémon enters battle, it changes the terrain to Psychic Terrain.",
+      "notes": []
+    },
+    {
       "name": "Pure Power",
       "slug": "pure-power",
       "generation": "generation-iii",
@@ -8641,22 +8793,6 @@
       "generation": "generation-vii",
       "effect": "Opposing Pokémon cannot use priority attacks.",
       "longEffect": "When an opposing Pokémon attempts to use a move that targets this Pokémon or an ally, and that move has priority, it will fail.",
-      "notes": []
-    },
-    {
-      "name": "Rain Dish",
-      "slug": "rain-dish",
-      "generation": "generation-iii",
-      "effect": "Heals for 1/16 max HP after each turn during rain.",
-      "longEffect": "This Pokémon heals for 1/16 of its maximum HP after each turn during rain.",
-      "notes": []
-    },
-    {
-      "name": "Reckless",
-      "slug": "reckless",
-      "generation": "generation-iv",
-      "effect": "Strengthens recoil moves to 1.2× their power.",
-      "longEffect": "This Pokémon's recoil moves and crash moves have 1.2× their base power.\n\nStruggle is unaffected.\n\nThe \"crash moves\" are the moves that damage the user upon missing: Jump Kick and High Jump Kick.",
       "notes": []
     },
     {
@@ -8790,14 +8926,6 @@
       "notes": []
     },
     {
-      "name": "Snow Cloak",
-      "slug": "snow-cloak",
-      "generation": "generation-iv",
-      "effect": "Increases evasion to 1.25× during hail. Protects against hail damage.",
-      "longEffect": "During hail, this Pokémon has 1.25× its evasion, and it does not take hail damage regardless of type.\n\nThe evasion bonus does not count as a stat modifier.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is halved in snow.",
-      "notes": []
-    },
-    {
       "name": "Snow Warning",
       "slug": "snow-warning",
       "generation": "generation-iv",
@@ -8862,14 +8990,6 @@
       "notes": []
     },
     {
-      "name": "Static",
-      "slug": "static",
-      "generation": "generation-iii",
-      "effect": "Has a 30% chance of paralyzing attacking Pokémon on contact.",
-      "longEffect": "Whenever a move makes contact with this Pokémon, the move's user has a 30% chance of being paralyzed.\n\nPokémon that are immune to Electric-type moves can still be paralyzed by this ability.\n\nOverworld: If the lead Pokémon has this ability, there is a 50% chance that encounters will be with an Electric Pokémon, if applicable.",
-      "notes": []
-    },
-    {
       "name": "Strong Jaw",
       "slug": "strong-jaw",
       "generation": "generation-vi",
@@ -8886,22 +9006,6 @@
       "notes": []
     },
     {
-      "name": "Super Luck",
-      "slug": "super-luck",
-      "generation": "generation-iv",
-      "effect": "Raises moves' critical hit rates one stage.",
-      "longEffect": "This Pokémon's moves have critical hit rates one stage higher than normal.",
-      "notes": []
-    },
-    {
-      "name": "Swarm",
-      "slug": "swarm",
-      "generation": "generation-iii",
-      "effect": "Strengthens Bug moves to inflict 1.5× damage at 1/3 max HP or less.",
-      "longEffect": "When this Pokémon has 1/3 or less of its HP remaining, its Bug-type moves inflict 1.5× as much regular damage.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is increased.",
-      "notes": []
-    },
-    {
       "name": "Swift Swim",
       "slug": "swift-swim",
       "generation": "generation-iii",
@@ -8910,11 +9014,11 @@
       "notes": []
     },
     {
-      "name": "Synchronize",
-      "slug": "synchronize",
-      "generation": "generation-iii",
-      "effect": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them.",
-      "longEffect": "Whenever this Pokémon is burned, paralyzed, or poisoned, the Pokémon who gave this Pokémon that ailment is also given the ailment.\n\nThis ability passes back bad poison when this Pokémon is badly poisoned. This ability cannot pass on a status ailment that the Pokémon did not directly receive from another Pokémon, such as the poison from Toxic Spikes or the burn from a Flame Orb.\n\nOverworld: If the lead Pokémon has this ability, wild Pokémon have a 50% chance of having the lead Pokémon's nature, and a 50% chance of being given a random nature as usual, including the lead Pokémon's nature. This does not work on Pokémon received outside of battle or roaming legendaries.",
+      "name": "Symbiosis",
+      "slug": "symbiosis",
+      "generation": "generation-vi",
+      "effect": "Passes the bearer's held item to an ally when the ally uses up its item.",
+      "longEffect": "Passes the bearer's held item to an ally when the ally uses up its item.",
       "notes": []
     },
     {
@@ -8931,6 +9035,14 @@
       "generation": "generation-v",
       "effect": "Protects against friendly Pokémon's damaging moves.",
       "longEffect": "This Pokémon does not take damage from friendly Pokémon's moves, including single-target moves aimed at it.",
+      "notes": []
+    },
+    {
+      "name": "Thermal Exchange",
+      "slug": "thermal-exchange",
+      "generation": "generation-ix",
+      "effect": "Raises Attack when hit by a Fire-type move. Cannot be burned.",
+      "longEffect": "Boosts the Attack stat when the Pokémon is hit by a Fire-type move. The Pokémon also cannot be burned.",
       "notes": []
     },
     {
