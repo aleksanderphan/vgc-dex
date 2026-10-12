@@ -3,7 +3,7 @@
   "season": "gen9championsvgc2026 (Showdown ladder)",
   "ratingCutoff": "weighted (Smogon default)",
   "source": "Pokémon Showdown ladder — Smogon monthly stats (data.pkmn.cc)",
-  "capturedAt": "2026-10-05",
+  "capturedAt": "2026-10-12",
   "disclaimer": "Usage from the Pokémon Showdown SIMULATOR ladder for the gen9championsvgc2026 format (Smogon monthly \"chaos\" stats via data.pkmn.cc), not the official in-game Champions ladder. Percentages are usage-weighted. The base species figures merge every Mega/Primal forme; each forme's own numbers show on its form tab. No win-rate is published for this source. Teammate % is co-occurrence on the same team; EV spreads are Smogon's bucketed spreads scaled back to approximate real EVs.",
   "meta": {
     "sourceId": "smogon",
@@ -12,7 +12,7 @@
     "battles": 1631943,
     "entryCount": 126,
     "rawSha256": "77b38edce8e083f58f3a94f03c307b3e8a05bf076805da4bb3d0475e57209ec0",
-    "rawPayload": "data/raw/smogon.gen9championsvgc2026.2026-10-05.json.gz",
+    "rawPayload": "data/raw/smogon.gen9championsvgc2026.2026-10-12.json.gz",
     "generator": "scripts/ingest-usage.mjs"
   },
   "entries": {
