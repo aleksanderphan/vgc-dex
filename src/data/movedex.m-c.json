@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T14:18:51.714Z",
+  "generatedAt": "2026-10-19T11:59:24.194Z",
   "source": "PokéAPI (pokeapi.co) v2",
   "moveCount": 306,
   "abilityCount": 122,
@@ -9082,7 +9082,7 @@
       "slug": "trace",
       "generation": "generation-iii",
       "effect": "Copies an opponent's ability upon entering battle.",
-      "longEffect": "When this Pokémon enters battle, it copies a random opponent's ability.\n\nThis ability cannot copy Flower Gift, Forecast, Illusion, Imposter, Multitype, Trace, Wonder Guard, or Zen Mode.",
+      "longEffect": "When this Pokémon enters battle, it copies a random opponent's ability.\n\nThis ability cannot copy Flower Gift, Forecast, Illusion, Imposter, Multitype, Trace, or Zen Mode.",
       "notes": []
     },
     {
