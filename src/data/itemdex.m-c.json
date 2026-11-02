@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-26T12:10:48.957Z",
+  "generatedAt": "2026-11-02T14:40:18.147Z",
   "source": "PokéAPI (pokeapi.co) v2",
-  "itemCount": 110,
+  "itemCount": 113,
   "items": [
     {
       "name": "Abomasite",
@@ -134,26 +134,6 @@
       "notes": []
     },
     {
-      "name": "Big Root",
-      "slug": "big-root",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/big-root.png",
-      "flingPower": 10,
-      "effect": "Held: Increases HP recovered from draining moves, Ingrain, and Aqua Ring by 3/10 (30%).",
-      "longEffect": "Held: HP restored from Absorb, Aqua Ring, Drain Punch, Dream Eater, Giga Drain, Ingrain, Leech Life, Leech Seed, and Mega Drain is increased by 30%. Damage inflicted is not affected.",
-      "notes": []
-    },
-    {
-      "name": "Binding Band",
-      "slug": "binding-band",
-      "category": "held-items",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/binding-band.png",
-      "flingPower": 30,
-      "effect": "Held: Doubles the per-turn damage of multi-turn trapping moves.",
-      "longEffect": "Held\n: Moves used by the holder that trap and damage a target for multiple turns (e.g. Bind, Fire Spin) inflict twice their usual per-turn damage.",
-      "notes": []
-    },
-    {
       "name": "Black Belt",
       "slug": "black-belt",
       "category": "type-enhancement",
@@ -193,6 +173,16 @@
       "flingPower": 80,
       "effect": "Held: Allows Blaziken to Mega Evolve into Mega Blaziken.",
       "longEffect": "Held: Allows Blaziken to Mega Evolve into Mega Blaziken.",
+      "notes": []
+    },
+    {
+      "name": "Bright Powder",
+      "slug": "bright-powder",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bright-powder.png",
+      "flingPower": 10,
+      "effect": "Held: Increases the holder’s evasion by 1/9 (11 1/9%).",
+      "longEffect": "Held in battle\n: Moves targeting the holder have 0.9× chance to hit.",
       "notes": []
     },
     {
@@ -243,6 +233,16 @@
       "flingPower": 80,
       "effect": "Held: Allows Charizard to Mega Evolve into Mega Charizard Y.",
       "longEffect": "Held: Allows Charizard to Mega Evolve into Mega Charizard Y.",
+      "notes": []
+    },
+    {
+      "name": "Charti Berry",
+      "slug": "charti-berry",
+      "category": "type-protection",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charti-berry.png",
+      "flingPower": 10,
+      "effect": "Held: Consumed when struck by a super-effective Rock-type attack to halve the damage.",
+      "longEffect": "Held in battle\n: When the holder would take super-effective Rock-type damage, it consumes this item to halve the amount of damage taken.",
       "notes": []
     },
     {
@@ -588,6 +588,16 @@
       "notes": []
     },
     {
+      "name": "King's Rock",
+      "slug": "kings-rock",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kings-rock.png",
+      "flingPower": 30,
+      "effect": "Held: Damaging moves gain a 10% chance to make their target flinch. Traded on a Poliwhirl: Holder evolves into Politoed. Traded on a Slowpoke: Holder evolves into Slowking.",
+      "longEffect": "Held in battle\n: Holder’s damaging moves have a 10% chance to make their target flinch. This chance applies independently to each hit of a multi-hit move.\n\nThis item’s chance is rolled independently of any other move effects;\ne.g., a move with a 30% chance to flinch normally will have a 37% total chance to flinch when used with this item, because 3% of the time, both effects activate.\n\nHeld by Poliwhirl or Slowbro\n: Holder evolves into Politoed or Slowking, respectively, when traded.",
+      "notes": []
+    },
+    {
       "name": "Leftovers",
       "slug": "leftovers",
       "category": "held-items",
@@ -778,6 +788,16 @@
       "flingPower": 30,
       "effect": "Held: Ice-Type moves from holder do 20% more damage.",
       "longEffect": "Held: Increases the power of the holder’s Ice moves by 20%.",
+      "notes": []
+    },
+    {
+      "name": "Normal Gem",
+      "slug": "normal-gem",
+      "category": "jewels",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/normal-gem.png",
+      "flingPower": null,
+      "effect": "Held: When the holder uses a damaging Normal-type move, the move has 1.5× power and this item is consumed.",
+      "longEffect": "Held\n: When the holder uses a damaging Normal-type move, the move has 1.5× power and this item is consumed.",
       "notes": []
     },
     {
@@ -1126,6 +1146,16 @@
       "flingPower": 10,
       "effect": "Held: Provides a 1/10 (10%) boost in accuracy to the holder.",
       "longEffect": "Held: Increases the accuracy of any move the holder uses by 10% (multiplied; i.e. 70% accuracy is increased to 77%).",
+      "notes": []
+    },
+    {
+      "name": "Zoom Lens",
+      "slug": "zoom-lens",
+      "category": "held-items",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/zoom-lens.png",
+      "flingPower": 10,
+      "effect": "Held: Provides a 1/5 (20%) boost in accuracy if the holder moves after the target.",
+      "longEffect": "Held: Raises the holder’s Accuracy by 20% when it goes last.\nIngame description is incorrect.",
       "notes": []
     }
   ]
